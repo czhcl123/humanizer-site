@@ -24,6 +24,12 @@ export default function RootLayout({
   return (
     <html lang="zh">
       <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+        <meta name="theme-color" content="#fe6e00" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-title" content="实用计算器" />
+        <link rel="manifest" href="/manifest.json" />
         <link rel="icon" href="/favicon.svg" />
       </head>
       <body className="min-h-full flex flex-col antialiased bg-gray-50">

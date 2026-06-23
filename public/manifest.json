@@ -1,0 +1,19 @@
+{
+  "name": "实用计算器",
+  "short_name": "计算器",
+  "description": "折扣计算器、BMI计算器、日期计算器、农历转换、单位换算 - 免费在线工具",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fafafa",
+  "theme_color": "#fe6e00",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [],
+  "categories": ["utilities", "shopping"]
+}
