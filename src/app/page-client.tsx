@@ -61,7 +61,7 @@ function HomePageContent({ initialLang }: { initialLang?: 'zh' | 'en' }) {
             value={search}
             onChange={e => setSearch(e.target.value)}
             placeholder={t.searchPlaceholder}
-            className="flex-1 px-4 py-2.5 bg-gray-100 border border-gray-200 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-orange-300 focus:bg-white transition-all min-w-0"
+            className="flex-1 pl-5 pr-4 py-2.5 bg-gray-100 border border-gray-200 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-orange-300 focus:bg-white transition-all min-w-0"
           />
           <Link
             href={`/?lang=${nextLang}`}
@@ -79,10 +79,10 @@ function HomePageContent({ initialLang }: { initialLang?: 'zh' | 'en' }) {
         {/* Tool cards */}
         <section>
           <p className="text-xs text-gray-400 uppercase tracking-wide mb-3 font-medium">{t.toolsLabel}</p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
             {filtered.length === 0 && search ? null : filtered.map(calc => (
               <Link key={calc.path} href={`${calc.path}?lang=${lang}`}
-                className={`block p-5 rounded-xl border transition-all ${calc.color} hover:shadow-md hover:-translate-y-0.5 active:scale-[0.98]`}>
+                className={`block p-4 rounded-xl border transition-all ${calc.color} shadow-sm hover:shadow-lg hover:-translate-y-0.5 active:scale-[0.98]`}>
                 <div className="text-2xl mb-2">{calc.icon}</div>
                 <div className="font-semibold text-gray-800">{calc.name}</div>
                 <div className="text-sm text-gray-500 mt-0.5">{calc.desc}</div>
