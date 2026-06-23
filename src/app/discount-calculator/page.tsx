@@ -1,13 +1,33 @@
 import type { Metadata } from 'next'
 import DiscountCalculatorClient from './discount-client'
 
-export const metadata: Metadata = {
-  title: '折扣计算器',
-  description: '输入商品原价和折扣力度，快速计算折后价和节省金额。支持1-99折各种折扣场景。',
-  openGraph: {
-    title: '折扣计算器 - 实用计算器',
-    description: '输入商品原价和折扣力度，快速计算折后价和节省金额',
-  },
+export async function generateMetadata({
+  searchParams,
+}: {
+  searchParams: Promise<{ lang?: string }>
+}) {
+  const sp = await searchParams
+  const lang = (sp && sp.lang) === 'en' ? 'en' : 'zh'
+
+  const data = {
+    zh: {
+      title: '在线折扣计算器_打折省钱金额计算_实用计算器',
+      description: '输入商品原价和折扣力度（1-99折），快速计算折后价和节省金额。支持微信、电商平台各种折扣场景，免费使用。',
+    },
+    en: {
+      title: 'Online Discount Calculator_Save Money on Sales_ Practical Tools',
+      description: 'Calculate the final price and savings instantly. Enter original price and discount rate (1-99). Free, no download needed.',
+    },
+  }
+
+  return {
+    title: data[lang].title,
+    description: data[lang].description,
+    openGraph: {
+      title: data[lang].title,
+      description: data[lang].description,
+    },
+  }
 }
 
 const faqSchema = {
@@ -47,7 +67,7 @@ export default async function DiscountCalculatorPage({
   searchParams: Promise<{ lang?: string }>
 }) {
   const sp = await searchParams
-  const lang = (sp.lang === 'en' ? 'en' : 'zh') as 'zh' | 'en'
+  const lang = (sp && sp.lang) === 'en' ? 'en' : 'zh'
   return (
     <>
       <script
