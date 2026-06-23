@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import HomePageClient from './page-client'
 
+export const dynamic = 'force-dynamic'
+
 export async function generateMetadata({
   searchParams,
 }: {
