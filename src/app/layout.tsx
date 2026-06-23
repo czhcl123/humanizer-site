@@ -1,26 +1,44 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-export const metadata: Metadata = {
-  metadataBase: new URL('https://tools-site-production.up.railway.app'),
-  title: { default: '实用计算器 - 在线工具箱', template: '%s | 实用计算器' },
-  description: '提供折扣计算器、BMI计算器、日期计算器、农历转换、单位换算等实用在线工具，无需下载，打开即用。',
-  openGraph: {
-    type: 'website',
-    siteName: '实用计算器',
-    title: '实用计算器 - 在线工具箱',
-    description: '提供折扣计算器、BMI计算器、日期计算器、农历转换、单位换算等实用在线工具',
-    images: [{ url: '/og-image.svg', width: 1200, height: 630 }],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: '实用计算器 - 在线工具箱',
-    description: '提供折扣计算器、BMI计算器、日期计算器、农历转换、单位换算等实用在线工具',
-  },
-  icons: {
-    icon: '/favicon.svg',
-  },
-};
+export async function generateMetadata({
+  searchParams,
+}: {
+  searchParams: Promise<{ lang?: string }>;
+}) {
+  const sp = await searchParams;
+  const lang = sp.lang === 'en' ? 'en' : 'zh';
+
+  const titles = {
+    zh: { default: '实用计算器 - 在线工具箱', template: '%s | 实用计算器' },
+    en: { default: 'Practical Tools - Free Online Calculators', template: '%s | Practical Tools' },
+  };
+  const descriptions = {
+    zh: '提供折扣计算器、BMI计算器、日期计算器、农历转换、单位换算等实用在线工具，无需下载，打开即用。',
+    en: 'Free online calculators: discount, BMI, date countdown, lunar calendar, unit converter. No download needed, works instantly.',
+  };
+
+  return {
+    metadataBase: new URL('https://tools-site-production.up.railway.app'),
+    title: { default: titles[lang].default, template: titles[lang].template },
+    description: descriptions[lang],
+    openGraph: {
+      type: 'website',
+      siteName: lang === 'zh' ? '实用计算器' : 'Practical Tools',
+      title: titles[lang].default,
+      description: descriptions[lang],
+      images: [{ url: '/og-image.svg', width: 1200, height: 630 }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: titles[lang].default,
+      description: descriptions[lang],
+    },
+    icons: {
+      icon: '/favicon.svg',
+    },
+  };
+}
 
 const websiteSchema = {
   '@context': 'https://schema.org',
