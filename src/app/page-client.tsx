@@ -102,9 +102,10 @@ function EmbeddedDiscountCalculator({ lang }: { lang: 'zh' | 'en' }) {
   )
 }
 
-function HomePageContent() {
+function HomePageContent({ initialLang }: { initialLang?: 'zh' | 'en' }) {
   const searchParams = useSearchParams()
-  const lang = (searchParams.get('lang') === 'en' ? 'en' : 'zh') as 'zh' | 'en'
+  const rawLang = searchParams.get('lang')
+  const lang: 'zh' | 'en' = initialLang ?? (rawLang === 'en' ? 'en' : 'zh')
   const nextLang: 'zh' | 'en' = lang === 'zh' ? 'en' : 'zh'
   const calculators = lang === 'zh' ? CALCULATORS_ZH : CALCULATORS_EN
   const [search, setSearch] = useState('')
@@ -199,10 +200,10 @@ function HomePageContent() {
   )
 }
 
-export default function HomePageClient() {
+export default function HomePageClient({ initialLang }: { initialLang?: 'zh' | 'en' }) {
   return (
     <Suspense fallback={<div className="min-h-screen bg-gray-50" />}>
-      <HomePageContent />
+      <HomePageContent initialLang={initialLang} />
     </Suspense>
   )
 }
