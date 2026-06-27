@@ -66,7 +66,7 @@ function u(key: keyof typeof t.en, lang: 'zh' | 'en') {
 
 function DiscountCalculatorContent({ initialLang }: { initialLang?: 'zh' | 'en' }) {
   const searchParams = useSearchParams()
-  const lang: 'zh' | 'en' = initialLang ?? (searchParams.get('lang') === 'en' ? 'en' : 'zh')
+  const lang: 'zh' | 'en' = initialLang ?? (searchParams.get('lang') === 'zh' ? 'zh' : 'en')
   const pathname = usePathname()
   const nextLang: 'zh' | 'en' = lang === 'zh' ? 'en' : 'zh'
 

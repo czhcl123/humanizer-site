@@ -9,7 +9,7 @@ export async function generateMetadata({
   searchParams: Promise<{ lang?: string }>
 }) {
   const sp = await searchParams
-  const lang = sp.lang === 'en' ? 'en' : 'zh'
+  const lang = sp.lang === 'zh' ? 'zh' : 'en'
 
   const titles = {
     zh: { default: '实用计算器 - 在线工具箱', template: '%s | 实用计算器' },
@@ -36,6 +36,6 @@ export default async function HomePage({
   searchParams: Promise<{ lang?: string }>
 }) {
   const sp = await searchParams
-  const lang = sp.lang === 'en' ? 'en' : 'zh'
+  const lang = sp.lang === 'zh' ? 'zh' : 'en'
   return <HomePageClient initialLang={lang} />
 }

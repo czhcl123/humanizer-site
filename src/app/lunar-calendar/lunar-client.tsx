@@ -113,7 +113,7 @@ function solarToLunar(year: number, month: number, day: number) {
 
 function LunarCalendarContent({ initialLang }: { initialLang?: 'zh' | 'en' }) {
   const searchParams = useSearchParams()
-  const lang = (searchParams.get('lang') === 'en' ? 'en' : 'zh') as 'zh' | 'en'
+  const lang = (searchParams.get('lang') === 'zh' ? 'zh' : 'en') as 'zh' | 'en'
   const pathname = usePathname()
   const nextLang: 'zh' | 'en' = lang === 'zh' ? 'en' : 'zh'
   const [solarDate, setSolarDate] = useState('')

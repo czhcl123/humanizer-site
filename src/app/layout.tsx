@@ -3,9 +3,11 @@ import "./globals.css";
 const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
-  name: '实用计算器',
+  name: 'Practical Tools',
+  alternateName: '实用计算器',
   url: 'https://tools-site-production.up.railway.app',
-  description: '提供折扣计算器、BMI计算器、日期计算器、农历转换、单位换算等实用在线工具',
+  description: 'Free online calculators and tools: discount calculator, BMI, date, lunar calendar, unit converter, QR code generator, word counter, JSON formatter, HEIC to JPG, invoice generator.',
+  inLanguage: ['en', 'zh'],
   potentialAction: {
     '@type': 'SearchAction',
     target: {
@@ -22,13 +24,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="zh">
+    <html lang="en">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
         <meta name="theme-color" content="#f97316" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-        <meta name="apple-mobile-web-app-title" content="实用计算器" />
+        <meta name="apple-mobile-web-app-title" content="Practical Tools" />
         <link rel="manifest" href="/manifest.json" />
         <link rel="icon" href="/favicon.svg" />
       </head>

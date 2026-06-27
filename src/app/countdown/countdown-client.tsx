@@ -49,7 +49,7 @@ function getDaysDiff(target: Date, today: Date) {
 
 function CountdownContent({ initialLang }: { initialLang?: 'zh' | 'en' }) {
   const searchParams = useSearchParams()
-  const lang = (searchParams.get('lang') === 'en' ? 'en' : 'zh') as 'zh' | 'en'
+  const lang = (searchParams.get('lang') === 'zh' ? 'zh' : 'en') as 'zh' | 'en'
   const pathname = usePathname()
   const nextLang: 'zh' | 'en' = lang === 'zh' ? 'en' : 'zh'
   const [targetDate, setTargetDate] = useState('')

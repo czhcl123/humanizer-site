@@ -1,6 +1,6 @@
 export default function NotFound() {
   return (
-    <html lang="zh">
+    <html lang="en">
       <body className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-6xl font-bold text-orange-500 mb-4">404</h1>

@@ -6,6 +6,11 @@ import { useSearchParams } from 'next/navigation'
 import Footer from '../components/Footer'
 
 const CALCULATORS_ZH = [
+  { path: '/qr-code-generator', name: 'QR码生成器', desc: '在线生成可下载二维码', icon: '📱', color: 'bg-rose-50 border-rose-200 hover:shadow-lg hover:shadow-rose-200/50 hover:-translate-y-0.5 hover:bg-rose-100' },
+  { path: '/word-counter', name: '字数统计', desc: '中英文字数实时统计', icon: '📝', color: 'bg-indigo-50 border-indigo-200 hover:shadow-lg hover:shadow-indigo-200/50 hover:-translate-y-0.5 hover:bg-indigo-100' },
+  { path: '/json-formatter', name: 'JSON格式化', desc: 'JSON格式化与验证', icon: '🔧', color: 'bg-emerald-50 border-emerald-200 hover:shadow-lg hover:shadow-emerald-200/50 hover:-translate-y-0.5 hover:bg-emerald-100' },
+  { path: '/heic-to-jpg', name: 'HEIC转JPG', desc: 'iPhone照片转JPG', icon: '🖼️', color: 'bg-pink-50 border-pink-200 hover:shadow-lg hover:shadow-pink-200/50 hover:-translate-y-0.5 hover:bg-pink-100' },
+  { path: '/invoice-generator', name: '发票生成器', desc: '免费PDF发票', icon: '📄', color: 'bg-amber-50 border-amber-200 hover:shadow-lg hover:shadow-amber-200/50 hover:-translate-y-0.5 hover:bg-amber-100' },
   { path: '/discount-calculator', name: '折扣计算器', desc: '计算折扣价、省钱金额', icon: '🏷️', color: 'bg-orange-50 border-orange-200 hover:shadow-lg hover:shadow-orange-200/50 hover:-translate-y-0.5 hover:bg-orange-100' },
   { path: '/bmi-calculator', name: 'BMI计算器', desc: '身体质量指数计算', icon: '⚖️', color: 'bg-blue-50 border-blue-200 hover:shadow-lg hover:shadow-blue-200/50 hover:-translate-y-0.5 hover:bg-blue-100' },
   { path: '/countdown', name: '日期计算器', desc: '计算日期间隔与倒计时', icon: '📅', color: 'bg-green-50 border-green-200 hover:shadow-lg hover:shadow-green-200/50 hover:-translate-y-0.5 hover:bg-green-100' },
@@ -14,6 +19,11 @@ const CALCULATORS_ZH = [
 ]
 
 const CALCULATORS_EN = [
+  { path: '/qr-code-generator', name: 'QR Code Generator', desc: 'Generate downloadable QR codes', icon: '📱', color: 'bg-rose-50 border-rose-200 hover:shadow-lg hover:shadow-rose-200/50 hover:-translate-y-0.5 hover:bg-rose-100' },
+  { path: '/word-counter', name: 'Word Counter', desc: 'Real-time word & char count', icon: '📝', color: 'bg-indigo-50 border-indigo-200 hover:shadow-lg hover:shadow-indigo-200/50 hover:-translate-y-0.5 hover:bg-indigo-100' },
+  { path: '/json-formatter', name: 'JSON Formatter', desc: 'Format & validate JSON', icon: '🔧', color: 'bg-emerald-50 border-emerald-200 hover:shadow-lg hover:shadow-emerald-200/50 hover:-translate-y-0.5 hover:bg-emerald-100' },
+  { path: '/heic-to-jpg', name: 'HEIC to JPG', desc: 'iPhone photos to JPG', icon: '🖼️', color: 'bg-pink-50 border-pink-200 hover:shadow-lg hover:shadow-pink-200/50 hover:-translate-y-0.5 hover:bg-pink-100' },
+  { path: '/invoice-generator', name: 'Invoice Generator', desc: 'Free PDF invoices', icon: '📄', color: 'bg-amber-50 border-amber-200 hover:shadow-lg hover:shadow-amber-200/50 hover:-translate-y-0.5 hover:bg-amber-100' },
   { path: '/discount-calculator', name: 'Discount Calculator', desc: 'Calculate discounted price & savings', icon: '🏷️', color: 'bg-orange-50 border-orange-200 hover:shadow-lg hover:shadow-orange-200/50 hover:-translate-y-0.5 hover:bg-orange-100' },
   { path: '/bmi-calculator', name: 'BMI Calculator', desc: 'Body Mass Index calculation', icon: '⚖️', color: 'bg-blue-50 border-blue-200 hover:shadow-lg hover:shadow-blue-200/50 hover:-translate-y-0.5 hover:bg-blue-100' },
   { path: '/countdown', name: 'Date Calculator', desc: 'Calculate days between dates', icon: '📅', color: 'bg-green-50 border-green-200 hover:shadow-lg hover:shadow-green-200/50 hover:-translate-y-0.5 hover:bg-green-100' },
@@ -24,7 +34,7 @@ const CALCULATORS_EN = [
 function HomePageContent({ initialLang }: { initialLang?: 'zh' | 'en' }) {
   const searchParams = useSearchParams()
   const rawLang = searchParams.get('lang')
-  const lang: 'zh' | 'en' = initialLang ?? (rawLang === 'en' ? 'en' : 'zh')
+  const lang: 'zh' | 'en' = initialLang ?? (rawLang === 'zh' ? 'zh' : 'en')
   const nextLang: 'zh' | 'en' = lang === 'zh' ? 'en' : 'zh'
   const calculators = lang === 'zh' ? CALCULATORS_ZH : CALCULATORS_EN
   const [search, setSearch] = useState('')
@@ -36,12 +46,12 @@ function HomePageContent({ initialLang }: { initialLang?: 'zh' | 'en' }) {
 
   const t = {
     zh: {
-      searchPlaceholder: '🔍 搜索工具...',
+      searchPlaceholder: '搜索工具...',
       toolsLabel: '全部工具',
       sitemapTitle: '网站地图',
     },
     en: {
-      searchPlaceholder: '🔍 Search tools...',
+      searchPlaceholder: 'Search tools...',
       toolsLabel: 'All Tools',
       sitemapTitle: 'Sitemap',
     },
@@ -56,13 +66,16 @@ function HomePageContent({ initialLang }: { initialLang?: 'zh' | 'en' }) {
             <span className="text-xl">🧮</span>
             <span className="hidden sm:inline text-sm">{lang === 'zh' ? '实用计算器' : 'Tools'}</span>
           </Link>
-          <input
-            type="search"
-            value={search}
-            onChange={e => setSearch(e.target.value)}
-            placeholder={t.searchPlaceholder}
-            className="flex-1 pl-5 pr-4 py-2.5 bg-gray-100 border border-gray-200 rounded-full text-sm shadow-sm transition-all focus:outline-none focus:ring-2 focus:ring-orange-400 focus:bg-white focus:border-orange-300 focus:shadow-md min-w-0"
-          />
+          <div className="relative flex-1 min-w-0">
+            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none select-none">🔍</span>
+            <input
+              type="search"
+              value={search}
+              onChange={e => setSearch(e.target.value)}
+              placeholder={t.searchPlaceholder}
+              className="w-full pl-9 pr-4 py-2.5 bg-gray-100 border border-gray-200 rounded-full text-sm shadow-sm transition-all focus:outline-none focus:ring-2 focus:ring-orange-400 focus:bg-white focus:border-orange-300 focus:shadow-md"
+            />
+          </div>
           <Link
             href={`/?lang=${nextLang}`}
             title={lang === 'zh' ? 'Switch to English' : '切换到中文'}

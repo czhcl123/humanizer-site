@@ -7,7 +7,7 @@ export async function generateMetadata({
   searchParams: Promise<{ lang?: string }>
 }) {
   const sp = await searchParams
-  const lang = (sp && sp.lang) === 'en' ? 'en' : 'zh'
+  const lang = (sp && sp.lang) === 'zh' ? 'zh' : 'en'
 
   const data = {
     zh: {
@@ -67,7 +67,7 @@ export default async function DiscountCalculatorPage({
   searchParams: Promise<{ lang?: string }>
 }) {
   const sp = await searchParams
-  const lang = (sp && sp.lang) === 'en' ? 'en' : 'zh'
+  const lang = (sp && sp.lang) === 'zh' ? 'zh' : 'en'
   return (
     <>
       <script

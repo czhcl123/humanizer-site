@@ -47,7 +47,7 @@ export default async function CountdownPage({
   searchParams: Promise<{ lang?: string }>
 }) {
   const sp = await searchParams
-  const lang = (sp.lang === 'en' ? 'en' : 'zh') as 'zh' | 'en'
+  const lang = (sp.lang === 'zh' ? 'zh' : 'en') as 'zh' | 'en'
   return (
     <>
       <script
