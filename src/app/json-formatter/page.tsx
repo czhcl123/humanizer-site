@@ -11,11 +11,11 @@ export async function generateMetadata({
 
   const data = {
     zh: {
-      title: 'JSON格式化工具_在线JSON验证美化压缩_实用计算器',
+      title: 'JSON格式化工具 - 在线JSON验证、美化与压缩',
       description: '免费在线JSON格式化、美化、压缩、验证工具。支持自定义缩进、错误提示、语法高亮。开发者、API调试必备。',
     },
     en: {
-      title: 'JSON Formatter_Online JSON Beautifier & Validator_实用计算器',
+      title: 'JSON Formatter - Online JSON Beautifier & Validator',
       description: 'Free online JSON formatter, beautifier, minifier, and validator. Custom indent, error messages, syntax highlighting. Essential for developers.',
     },
   }
@@ -37,43 +37,83 @@ export async function generateMetadata({
   }
 }
 
-const faqSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'JSON格式化是什么？',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: '把压缩的单行JSON转成带缩进的多行格式,便于阅读和编辑。',
+const faqSchemas = {
+  zh: {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'JSON格式化是什么？',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: '把压缩的单行JSON转成带缩进的多行格式,便于阅读和编辑。',
+        },
       },
-    },
-    {
-      '@type': 'Question',
-      name: '支持大文件吗？',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: '支持10MB以内的JSON。更大文件建议使用专业工具如jq。',
+      {
+        '@type': 'Question',
+        name: '支持大文件吗？',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: '支持10MB以内的JSON。更大文件建议使用专业工具如jq。',
+        },
       },
-    },
-    {
-      '@type': 'Question',
-      name: '数据安全吗？',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: '所有处理在浏览器本地完成,数据不上传任何服务器。',
+      {
+        '@type': 'Question',
+        name: '数据安全吗？',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: '所有处理在浏览器本地完成,数据不上传任何服务器。',
+        },
       },
-    },
-    {
-      '@type': 'Question',
-      name: 'JSON和JSON5区别？',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'JSON5是JSON的超集,支持注释、尾逗号、单引号等。本工具使用标准JSON规范。',
+      {
+        '@type': 'Question',
+        name: 'JSON和JSON5区别？',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'JSON5是JSON的超集,支持注释、尾逗号、单引号等。本工具使用标准JSON规范。',
+        },
       },
-    },
-  ],
+    ],
+  },
+  en: {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'What is JSON formatting?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Converting minified single-line JSON into a human-readable, indented multi-line format that is easier to read and edit.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Does this tool support large files?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes, files up to 10MB are supported. For larger files, we recommend a desktop tool like jq or a streaming JSON parser.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Is my data secure?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes. All processing happens locally in your browser. Your JSON is never uploaded to any server, and nothing is logged or stored.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'What is the difference between JSON and JSON5?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'JSON5 is a superset of JSON that supports comments, trailing commas, single quotes, and other relaxed syntax. This tool uses the standard JSON specification.',
+        },
+      },
+    ],
+  },
 }
 
 export default async function JsonFormatterPage({
@@ -87,7 +127,7 @@ export default async function JsonFormatterPage({
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchemas[lang]) }}
       />
       <JsonFormatterClient initialLang={lang} />
     </>
