@@ -1,20 +1,20 @@
 {
-  "name": "实用计算器 - 在线工具箱",
-  "short_name": "实用计算器",
-  "description": "折扣计算器、BMI计算器、日期计算器、农历转换、单位换算等实用在线工具",
+  "name": "AI Humanizer",
+  "short_name": "AI Humanizer",
+  "description": "Free online AI text humanizer. Rewrite AI text to bypass GPTZero, Turnitin AI, and Originality.ai detection.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#f9fafb",
-  "theme_color": "#f97316",
+  "background_color": "#8b5cf6",
+  "theme_color": "#8b5cf6",
   "icons": [
     {
       "src": "/favicon.svg",
       "sizes": "any",
       "type": "image/svg+xml",
-      "purpose": "any maskable"
+      "purpose": "any"
     }
   ],
-  "screenshots": [],
-  "categories": ["utilities", "productivity"],
-  "lang": "zh-CN"
+  "lang": "en",
+  "scope": "/",
+  "categories": ["utilities", "productivity"]
 }

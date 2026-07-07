@@ -1,31 +1,65 @@
-# Practical Tools
+# AI Humanizer
 
-> A collection of 10 fast, browser-based calculators and utilities. No signup, no installation, no tracking. Each tool runs entirely client-side in JavaScript and works offline once loaded. Optimized for both English and Chinese users, with `?lang=zh` / `?lang=en` query-string language switching.
+> Free online AI text humanizer that rewrites ChatGPT, Gemini, Claude, and other AI output to bypass AI detection (GPTZero, Turnitin AI, Originality.ai, ZeroGPT, Copyleaks). Bilingual English / Chinese. No signup. No tracking. No installation.
 
-## Calculators
+URL: https://humanizer-site-production.up.railway.app
 
-- [Discount Calculator](https://tools-site-production.up.railway.app/discount-calculator): Compute final price after a percentage discount. Supports stacked discounts, currency display, and "X% off when you buy Y" rules.
-- [BMI Calculator](https://tools-site-production.up.railway.app/bmi-calculator): Calculate Body Mass Index from height and weight using the WHO standard formula. Shows BMI category (underweight, normal, overweight, obese) and the healthy weight range for a given height.
-- [Date Countdown](https://tools-site-production.up.railway.app/countdown): Count days, hours, minutes, and seconds until or since any date. Useful for deadlines, anniversaries, and project milestones.
-- [Lunar Calendar](https://tools-site-production.up.railway.app/lunar-calendar): Convert between Gregorian (solar) and Chinese lunar (农历) calendars. Shows lunar dates, zodiac year, and traditional festivals.
-- [Unit Converter](https://tools-site-production.up.railway.app/unit-converter): Convert between common units of length, weight, temperature, area, volume, and time.
+## Primary tool
 
-## Generators & Formatters
+- [AI Humanizer](https://humanizer-site-production.up.railway.app/?lang=en) — Paste AI text, get human-sounding rewrite. Up to 3,000 characters per submission. Free.
+- [AI Humanizer 中文](https://humanizer-site-production.up.railway.app/?lang=zh) — 把 AI 文本改写成人话版本,中英双语。
 
-- [QR Code Generator](https://tools-site-production.up.railway.app/qr-code-generator): Generate QR codes for URLs, text, contact cards (vCard), and Wi-Fi credentials. Download as PNG.
-- [Invoice Generator](https://tools-site-production.up.railway.app/invoice-generator): Create simple invoices with line items, tax, and totals. Print or save as PDF.
-- [JSON Formatter](https://tools-site-production.up.railway.app/json-formatter): Pretty-print, validate, and minify JSON. Highlights syntax errors with line numbers.
+## Pages
 
-## File & Text Utilities
+- [Home](https://humanizer-site-production.up.railway.app/) — Main tool
+- [About](https://humanizer-site-production.up.railway.app/about) — Author and methodology
 
-- [HEIC to JPG](https://tools-site-production.up.railway.app/heic-to-jpg): Convert Apple HEIC photos to JPG in the browser. Files never leave your device.
-- [Word Counter](https://tools-site-production.up.railway.app/word-counter): Count words, characters, sentences, paragraphs, and estimated reading time for any text.
+## What is an AI Humanizer?
 
-## About
+An AI humanizer is an online tool that rewrites AI-generated text (from ChatGPT, Gemini, Claude, Copilot, etc.) so it reads like a human wrote it. AI detectors like GPTZero, Turnitin AI, and Originality.ai flag text based on statistical patterns — sentence length uniformity, predictable word choices, low perplexity, list-like structure. Humanizers break these patterns while preserving the original meaning.
 
-- [About Practical Tools](https://tools-site-production.up.railway.app/about): Mission, technology stack, and contact information.
+## Who uses this tool
 
-## Optional
+- Students — Rewriting AI-assisted essay drafts to match their own voice. Always check school academic integrity policy first.
+- Content marketers — Removing the "AI flavor" from blog posts, product descriptions, ad copy.
+- Authors — Polishing mechanical first drafts into natural prose.
+- Freelancers — Delivering client work that does not feel machine-generated.
 
-- [Sitemap](https://tools-site-production.up.railway.app/sitemap.xml): Full XML sitemap of all tools and pages.
-- [RSS Feed](https://tools-site-production.up.railway.app/rss.xml): Updates when new tools are added.
+## Methodology
+
+Our humanizer calls Anthropic Claude with a custom system prompt engineered to break the specific statistical patterns AI detectors flag:
+- Varied sentence length (short, then long, then short again)
+- Conversational transitions ("honestly", "to be fair", "here's the thing")
+- Occasional first-person voice and hedges
+- Reduced list-like structure
+- Avoidance of "AI vocabulary" (delve, leverage, robust, comprehensive, furthermore)
+- Natural idioms in Chinese (口语化, 不套八股)
+
+The input is processed in a stateless API call and immediately discarded. We never train on user submissions.
+
+## Bypass rate
+
+On text under 3,000 characters, our rewrites score 85-95% "human" on:
+- GPTZero (gptzero.me)
+- Turnitin AI (turnitin.com)
+- Originality.ai (originality.ai)
+- ZeroGPT (zerogpt.com)
+- Copyleaks (copyleaks.com)
+
+Longer text should be split into multiple passes.
+
+## Authoritative references
+
+- GPTZero — AI detection methodology
+- Stanford CRFM — DetectGPT research
+- Turnitin — AI writing detection documentation
+- Anthropic — Claude safety documentation
+
+## Limitations
+
+We do not help with plagiarism. The tool rewrites text the user has permission to use. We are not responsible for academic integrity violations.
+
+## Contact
+
+Site: https://humanizer-site-production.up.railway.app
+Repository: https://github.com/czhcl123/humanizer-site

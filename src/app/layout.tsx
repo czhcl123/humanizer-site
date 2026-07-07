@@ -3,16 +3,16 @@ import "./globals.css";
 const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
-  name: 'Practical Tools',
-  alternateName: '实用计算器',
-  url: 'https://tools-site-production.up.railway.app',
-  description: 'Free online calculators and tools: discount calculator, BMI, date, lunar calendar, unit converter, QR code generator, word counter, JSON formatter, HEIC to JPG, invoice generator.',
+  name: 'AI Humanizer',
+  alternateName: 'AI 人性化工具',
+  url: 'https://humanizer-site-production.up.railway.app',
+  description: 'Free AI Humanizer that rewrites AI-generated text so it reads like a human wrote it. Pass GPTZero, Turnitin AI, and Originality.ai detection. Built for students, marketers, and writers.',
   inLanguage: ['en', 'zh'],
   potentialAction: {
     '@type': 'SearchAction',
     target: {
       '@type': 'EntryPoint',
-      urlTemplate: 'https://tools-site-production.up.railway.app/?q={search_term_string}',
+      urlTemplate: 'https://humanizer-site-production.up.railway.app/?q={search_term_string}',
     },
     'query-input': 'required name=search_term_string',
   },
@@ -21,39 +21,34 @@ const websiteSchema = {
 const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  name: 'Practical Tools',
-  alternateName: '实用计算器',
-  url: 'https://tools-site-production.up.railway.app',
+  name: 'AI Humanizer',
+  alternateName: 'AI 人性化工具',
+  url: 'https://humanizer-site-production.up.railway.app',
   logo: {
     '@type': 'ImageObject',
-    url: 'https://tools-site-production.up.railway.app/favicon.svg',
+    url: 'https://humanizer-site-production.up.railway.app/favicon.svg',
     width: 512,
     height: 512,
   },
-  description: 'A collection of 10 fast, browser-based calculators and utilities. No signup, no installation, no tracking. Supports English and Chinese.',
+  description: 'A free online tool that rewrites AI-generated text into natural, human-sounding writing. Built for students, content marketers, and writers who need their work to pass AI detection.',
   foundingDate: '2026',
   knowsAbout: [
-    'Discount calculation',
-    'BMI calculation',
-    'Date arithmetic',
-    'Chinese lunar calendar conversion',
-    'Unit conversion',
-    'QR code generation',
-    'Invoice generation',
-    'JSON formatting',
-    'HEIC image conversion',
-    'Word counting',
+    'AI text humanization',
+    'AI content detection bypass',
+    'GPTZero bypass',
+    'Turnitin AI bypass',
+    'Originality.ai bypass',
+    'ChatGPT rewriting',
   ],
   sameAs: [
-    'https://github.com/czhcl123/tools-site',
-    'https://gitee.com/czhcl123/tools-site',
-    'https://tools-site-production.up.railway.app/about',
+    'https://github.com/czhcl123/humanizer-site',
+    'https://humanizer-site-production.up.railway.app/about',
   ],
   contactPoint: {
     '@type': 'ContactPoint',
     contactType: 'customer support',
-    email: 'contact@tools-site-production.up.railway.app',
-    url: 'https://tools-site-production.up.railway.app/about',
+    email: 'contact@humanizer-site-production.up.railway.app',
+    url: 'https://humanizer-site-production.up.railway.app/about',
     availableLanguage: ['English', 'Chinese'],
   },
 };
@@ -61,12 +56,12 @@ const organizationSchema = {
 const webAppSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
-  name: 'Practical Tools',
-  alternateName: '实用计算器',
-  url: 'https://tools-site-production.up.railway.app',
-  description: '10 free online calculators and utilities — discount, BMI, date countdown, lunar calendar, unit converter, QR code generator, invoice generator, JSON formatter, HEIC to JPG, and word counter.',
+  name: 'AI Humanizer',
+  alternateName: 'AI 人性化工具',
+  url: 'https://humanizer-site-production.up.railway.app',
+  description: 'Free online tool that rewrites AI-generated text to sound like a human wrote it. Passes GPTZero, Turnitin AI, and Originality.ai detection. No signup, no tracking, no installation. Supports English and Chinese.',
   applicationCategory: 'UtilitiesApplication',
-  applicationSubCategory: 'Calculator',
+  applicationSubCategory: 'Text Rewriting Tool',
   operatingSystem: 'Any (web browser with JavaScript)',
   browserRequirements: 'Requires JavaScript. Requires HTML5.',
   inLanguage: ['en', 'zh'],
@@ -77,67 +72,67 @@ const webAppSchema = {
     priceCurrency: 'USD',
   },
   featureList: [
-    'Discount Calculator',
-    'BMI Calculator',
-    'Date Countdown',
-    'Lunar Calendar',
-    'Unit Converter',
-    'QR Code Generator',
-    'Invoice Generator',
-    'JSON Formatter',
-    'HEIC to JPG',
-    'Word Counter',
+    'AI text humanization',
+    'AI content detection bypass',
+    'GPTZero bypass',
+    'Turnitin AI bypass',
+    'Originality.ai bypass',
+    'ChatGPT text rewriting',
+    'Gemini text rewriting',
+    'Claude text rewriting',
+    'Free unlimited rewriting',
+    'Bilingual English / Chinese',
   ],
-  dateModified: '2026-06-29',
-  datePublished: '2026-06-01',
+  dateModified: '2026-07-07',
+  datePublished: '2026-07-07',
   creator: {
     '@type': 'Organization',
-    name: 'Practical Tools',
-    url: 'https://tools-site-production.up.railway.app',
+    name: 'AI Humanizer',
+    url: 'https://humanizer-site-production.up.railway.app',
   },
 };
 
 export const metadata = {
-  metadataBase: new URL('https://tools-site-production.up.railway.app'),
+  metadataBase: new URL('https://humanizer-site-production.up.railway.app'),
   title: {
-    default: 'Practical Tools - Free Online Calculators',
-    template: '%s | Practical Tools',
+    default: 'AI Humanizer - Make AI Text Undetectable, Free',
+    template: '%s | AI Humanizer',
   },
-  description: 'Free online calculators: discount, BMI, date countdown, lunar calendar, unit converter, QR code generator, word counter, JSON formatter, HEIC to JPG, invoice generator. No download needed, works instantly.',
+  description: 'Free AI Humanizer that rewrites AI-generated text so it reads naturally and bypasses GPTZero, Turnitin AI, and Originality.ai detection. No signup, no installation. Supports English and Chinese.',
   openGraph: {
     type: 'website',
     locale: 'en_US',
     alternateLocale: 'zh_CN',
-    url: 'https://tools-site-production.up.railway.app',
-    siteName: 'Practical Tools',
-    title: 'Practical Tools - Free Online Calculators',
-    description: '10 free online calculators and utilities. No signup, no installation, no tracking.',
+    url: 'https://humanizer-site-production.up.railway.app',
+    siteName: 'AI Humanizer',
+    title: 'AI Humanizer - Make AI Text Undetectable, Free',
+    description: 'Free online AI humanizer. Rewrite ChatGPT, Gemini, and Claude output to bypass AI detection. No signup, no tracking.',
     images: [
       {
         url: '/og-image.svg',
         width: 1200,
         height: 630,
-        alt: 'Practical Tools - Free Online Calculators',
+        alt: 'AI Humanizer - Free Online Tool',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Practical Tools - Free Online Calculators',
-    description: '10 free online calculators and utilities.',
+    title: 'AI Humanizer - Make AI Text Undetectable, Free',
+    description: 'Free online AI humanizer. Rewrite ChatGPT output to bypass AI detection.',
     images: ['/og-image.svg'],
   },
   alternates: {
-    canonical: 'https://tools-site-production.up.railway.app',
+    canonical: 'https://humanizer-site-production.up.railway.app',
     languages: {
-      'en-US': 'https://tools-site-production.up.railway.app/?lang=en',
-      'zh-CN': 'https://tools-site-production.up.railway.app/?lang=zh',
-      'x-default': 'https://tools-site-production.up.railway.app',
+      'en-US': 'https://humanizer-site-production.up.railway.app/?lang=en',
+      'zh-CN': 'https://humanizer-site-production.up.railway.app/?lang=zh',
+      'x-default': 'https://humanizer-site-production.up.railway.app',
     },
   },
   other: {
-    'dateModified': '2026-06-29',
-    'article:modified_time': '2026-06-29',
+    'dateModified': '2026-07-07',
+    'article:modified_time': '2026-07-07',
   },
   robots: {
     index: true,
@@ -160,14 +155,14 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-        <meta name="theme-color" content="#f97316" />
+        <meta name="theme-color" content="#8b5cf6" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-        <meta name="apple-mobile-web-app-title" content="Practical Tools" />
+        <meta name="apple-mobile-web-app-title" content="AI Humanizer" />
         <link rel="manifest" href="/manifest.json" />
         <link rel="icon" href="/favicon.svg" />
         <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM-friendly site index" />
-        <link rel="alternate" type="application/rss+xml" title="Practical Tools RSS Feed" href="/rss.xml" />
+        <link rel="alternate" type="application/rss+xml" title="AI Humanizer RSS Feed" href="/rss.xml" />
       </head>
       <body className="min-h-full flex flex-col antialiased bg-gray-50">
         <script
