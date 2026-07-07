@@ -45,7 +45,7 @@ const T = {
       whoTitle: '谁在用 AI Humanizer?',
       whoBody: '学生 — 把 AI 辅助写作的初稿改写得更像个人作品。学生使用前请确认自己学校的学术诚信政策。营销人员 — 让营销文案、博客文章、产品描述读起来不像机器模板。作者 — 把机械的初稿润色成更自然的口吻。自由职业者 — 给客户交付的稿件去掉「AI 味」。',
       howTitle: 'Humanize 怎么工作',
-      howBody: '把文本发给我们之后,后端调 Anthropic Claude 处理。prompt 工程专门设计来打破 AI 检测器识别的统计特征:变化句子长度、用对话化转折、加偶尔的口语和第一人称视角、减少列表化和 bullet 化的「AI 模板感」、保留原文事实和意思。处理完后立即丢弃输入,不留记录。',
+      howBody: '把文本发给我们之后,后端调 DeepSeek 大模型处理。prompt 工程专门设计来打破 AI 检测器识别的统计特征:变化句子长度、用对话化转折、加偶尔的口语和第一人称视角、减少列表化和 bullet 化的「AI 模板感」、保留原文事实和意思。处理完后立即丢弃输入,不留记录。',
       trustTitle: '为什么这个工具值得信',
       trustBody: '我们的目标是做出能通过最严格的 AI 检测器的改写器,而不是另一个套同义词表的玩具。每个版本的 prompt 都基于真实 GPTZero、Originality.ai、Turnitin AI 的反馈调优,每周迭代。',
       refTitle: '权威参考',
@@ -71,7 +71,7 @@ const T = {
     sectionWhoTitle: '谁在用 AI Humanizer',
     sectionWhoBody: '学生把 AI 辅助写作的初稿改写得更像个人作品。营销人员让营销文案、博客、产品描述读起来不像机器模板。作者把机械初稿润色成自然口吻。自由职业者交付的稿件去掉「AI 味」。',
     sectionHowTitle: '工作原理',
-    sectionHowBody: '调 Anthropic Claude 后端处理,prompt 工程专门设计打破 AI 检测器识别的统计特征:变化句子长度、对话化转折、加偶尔的口语和第一人称视角、减少列表化和 bullet 化、保留原文事实和意思。处理完立即丢弃输入。',
+    sectionHowBody: '调 DeepSeek 大模型后端处理,prompt 工程专门设计打破 AI 检测器识别的统计特征:变化句子长度、对话化转折、加偶尔的口语和第一人称视角、减少列表化和 bullet 化、保留原文事实和意思。处理完立即丢弃输入。',
     sectionFeaturesTitle: '核心功能',
     sectionTrustTitle: '为什么值得信',
     sectionTrustBody: '目标是做出能通过最严格 AI 检测器的改写器,而不是套同义词表的玩具。每个版本的 prompt 都基于真实 GPTZero、Originality.ai、Turnitin AI 的反馈调优。',
@@ -79,7 +79,7 @@ const T = {
     refGPTZero: 'GPTZero — AI 检测算法',
     refStanford: 'Stanford CRFM — DetectGPT',
     refTurnitin: 'Turnitin — AI 检测官方文档',
-    refAnthropic: 'Anthropic — Claude 安全文档',
+    refAnthropic: 'DeepSeek — 模型卡与安全',
     sectionFaqTitle: '常见问题',
     sectionCtaTitle: '开始改写',
     sectionCtaBody: '粘贴 → 点按钮 → 复制。无需注册。',
@@ -128,7 +128,7 @@ const T = {
       whoTitle: 'Who uses an AI humanizer?',
       whoBody: 'Students rewrite AI-assisted drafts to match their own voice. Always check your school academic integrity policy first. Marketers make AI-assisted copy sound less templated. Authors polish mechanical first drafts into natural prose. Freelancers deliver work that does not feel machine-generated.',
       howTitle: 'How AI Humanizer works',
-      howBody: 'When you submit text, our backend calls Anthropic Claude with a custom prompt engineered to break the statistical patterns AI detectors flag. The rewrite varies sentence length, adds conversational transitions, includes occasional hedges and first-person voice, and reduces list-like structure while preserving the original meaning and facts. Your input is discarded immediately after processing. We never train on user submissions.',
+      howBody: 'When you submit text, our backend calls the DeepSeek large language model with a custom prompt engineered to break the statistical patterns AI detectors flag. The rewrite varies sentence length, adds conversational transitions, includes occasional hedges and first-person voice, and reduces list-like structure while preserving the original meaning and facts. Your input is discarded immediately after processing. We never train on user submissions.',
       trustTitle: 'Why trust this tool',
       trustBody: 'Our goal is to build a humanizer that passes the strictest AI detectors, not a synonym-swap toy. Each prompt iteration is calibrated against real GPTZero, Originality.ai, and Turnitin AI feedback, and we ship updates weekly.',
       refTitle: 'Authoritative references',
@@ -154,7 +154,7 @@ const T = {
     sectionWhoTitle: 'Who uses AI Humanizer',
     sectionWhoBody: 'Students rewrite AI-assisted drafts to match their own voice. Marketers make AI-assisted copy sound less templated. Authors polish mechanical first drafts. Freelancers deliver work that does not feel machine-generated.',
     sectionHowTitle: 'How it works',
-    sectionHowBody: 'Backend calls Anthropic Claude with a custom prompt engineered to break AI detector statistical patterns: varied sentence length, conversational transitions, occasional hedges and first-person voice, reduced list structure. Input is discarded immediately after processing.',
+    sectionHowBody: 'Backend calls the DeepSeek large language model with a custom prompt engineered to break AI detector statistical patterns: varied sentence length, conversational transitions, occasional hedges and first-person voice, reduced list structure. Input is discarded immediately after processing.',
     sectionFeaturesTitle: 'Core features',
     sectionTrustTitle: 'Why trust this tool',
     sectionTrustBody: 'Our goal is to build a humanizer that passes the strictest AI detectors, not a synonym-swap toy. Each prompt iteration is calibrated against real GPTZero, Originality.ai, and Turnitin AI feedback.',
@@ -162,7 +162,7 @@ const T = {
     refGPTZero: 'GPTZero — AI detection algorithm',
     refStanford: 'Stanford CRFM — DetectGPT',
     refTurnitin: 'Turnitin — AI detection official docs',
-    refAnthropic: 'Anthropic — Claude safety documentation',
+    refAnthropic: 'DeepSeek — Model card and safety',
     sectionFaqTitle: 'Frequently asked questions',
     sectionCtaTitle: 'Start humanizing',
     sectionCtaBody: 'Paste, click, copy. No signup needed.',
@@ -483,7 +483,7 @@ function HomePageContent({ initialLang }: { initialLang?: Lang }) {
               </a>
             </li>
             <li>
-              <a href="https://www.anthropic.com/news/claudes-constitution" target="_blank" rel="noopener noreferrer" className="text-violet-600 hover:text-violet-700 hover:underline">
+              <a href="https://platform.deepseek.com" target="_blank" rel="noopener noreferrer" className="text-violet-600 hover:text-violet-700 hover:underline">
                 {t.refAnthropic} →
               </a>
             </li>

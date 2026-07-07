@@ -27,7 +27,7 @@ An AI humanizer is an online tool that rewrites AI-generated text (from ChatGPT,
 
 ## Methodology
 
-Our humanizer calls Anthropic Claude with a custom system prompt engineered to break the specific statistical patterns AI detectors flag:
+Our humanizer calls the DeepSeek large language model with a custom system prompt engineered to break the specific statistical patterns AI detectors flag:
 - Varied sentence length (short, then long, then short again)
 - Conversational transitions ("honestly", "to be fair", "here's the thing")
 - Occasional first-person voice and hedges
@@ -53,7 +53,7 @@ Longer text should be split into multiple passes.
 - GPTZero — AI detection methodology
 - Stanford CRFM — DetectGPT research
 - Turnitin — AI writing detection documentation
-- Anthropic — Claude safety documentation
+- DeepSeek — Model card and safety documentation
 
 ## Limitations
 
