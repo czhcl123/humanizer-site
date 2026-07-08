@@ -68,7 +68,7 @@ export const chineseI18n: { zh: ToolI18n; en: ToolI18n } = {
     samples: [
       { label: '学术段落', text: '在当今数字化转型的时代背景下,人工智能技术赋能各行各业的发展。深入探讨 AI 技术的底层逻辑与产业链路,有助于构建完整的价值闭环。通过降本增效的手段,企业可以实现可持续的生态位跃迁,完成范式的重塑与降维打击式的竞争优势构建。' },
       { label: '论证段落', text: '综上所述,本研究通过深入分析表明,数字经济的发展具有重要的现实意义。值得注意的是,基于底层逻辑的产业链协同,可以形成完整的价值闭环。进一步研究应当关注生态位的构建与范式的优化,以实现真正的降本增效和高质量发展。' },
-      { label: '摘要段落', text: '本研究深入探讨了人工智能赋能教育创新的底层逻辑,聚焦于技术驱动下的教学范式变革。通过构建完整的价值闭环,实现了教学流程的优化升级。本研究为教育数字化转型提供了新的抓手和路径。' },
+      { label: '摘要段落', content: '本研究深入探讨了人工智能赋能教育创新的底层逻辑,聚焦于技术驱动下的教学范式变革。通过构建完整的价值闭环,实现了教学流程的优化升级。本研究为教育数字化转型提供了新的抓手和路径。' },
     ],
     relatedTitle: '其他 AI 工具',
     related: [
@@ -143,13 +143,13 @@ export const chineseI18n: { zh: ToolI18n; en: ToolI18n } = {
       { icon: '🚫', title: 'No AI boilerplate', body: '"赋能", "抓手", "底层逻辑" all replaced with natural Chinese prose', color: 'from-amber-50 to-orange-50 border-amber-200' },
     ],
     samples: [
-      { label: '学术段落', text: '在当今数字化转型的时代背景下,人工智能技术赋能各行各业的发展。深入探讨 AI 技术的底层逻辑与产业链路,有助于构建完整的价值闭环。通过降本增效的手段,企业可以实现可持续的生态位跃迁,完成范式的重塑与降维打击式的竞争优势构建。' },
+      { label: '学术段落', writing: '在当今数字化转型的时代背景下,人工智能技术赋能各行各业的发展。深入探讨 AI 技术的底层逻辑与产业链路,有助于构建完整的价值闭环。通过降本增效的手段,企业可以实现可持续的生态位跃迁,完成范式的重塑与降维打击式的竞争优势构建。' },
       { label: '论证段落', text: '综上所述,本研究通过深入分析表明,数字经济的发展具有重要的现实意义。值得注意的是,基于底层逻辑的产业链协同,可以形成完整的价值闭环。进一步研究应当关注生态位的构建与范式的优化,以实现真正的降本增效和高质量发展。' },
       { label: '摘要段落', text: '本研究深入探讨了人工智能赋能教育创新的底层逻辑,聚焦于技术驱动下的教学范式变革。通过构建完整的价值闭环,实现了教学流程的优化升级。本研究为教育数字化转型提供了新的抓手和路径。' },
     ],
     relatedTitle: '其他 AI 工具',
     related: [
-      { href: '/', title: 'AI Humanizer', desc: 'Generic AI text rewriter' },
+      { href: '/', title: 'AI Humanizer', desc: 'Generic AI words rewriter' },
       { href: '/essay-humanizer', title: 'EssayRewriter', desc: 'English essay rewriter' },
       { href: '/turnitin-bypass', title: 'Turnitin Bypass', desc: 'Bypass Turnitin AI detection' },
       { href: '/ai-detector', title: 'AI Detector', desc: 'Detect Chinese AI rate' },

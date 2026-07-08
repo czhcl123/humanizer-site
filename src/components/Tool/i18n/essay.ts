@@ -68,7 +68,7 @@ export const essayI18n: { zh: ToolI18n; en: ToolI18n } = {
     samples: [
       { label: '气候论文', text: 'Climate change represents one of the most pressing challenges facing humanity in the 21st century. The scientific consensus overwhelmingly indicates that human activities, particularly the burning of fossil fuels, are the primary drivers of global warming. It is imperative that we take decisive action to mitigate these effects and transition to sustainable energy sources.' },
       { label: 'AI 伦理论文', text: 'The rapid advancement of artificial intelligence has raised significant ethical concerns regarding privacy, employment, and decision-making autonomy. As AI systems become increasingly integrated into various aspects of society, it is crucial to establish robust frameworks that ensure these technologies are developed and deployed responsibly.' },
-      { label: '历史论文', text: 'The Industrial Revolution fundamentally transformed European society in the 18th and 19th centuries. The shift from agrarian economies to industrial production led to unprecedented urbanization, the rise of the working class, and significant technological innovations that continue to shape the modern world.' },
+      { label: '历史论文', content: 'The Industrial Revolution fundamentally transformed European society in the 18th and 19th centuries. The shift from agrarian economies to industrial production led to unprecedented urbanization, the rise of the working class, and significant technological innovations that continue to shape the modern world.' },
     ],
     relatedTitle: '其他 AI 工具',
     related: [
@@ -101,7 +101,7 @@ export const essayI18n: { zh: ToolI18n; en: ToolI18n } = {
     charCount: 'characters',
     rateLimit: 'Free tier: 5 submissions per day per IP',
     errorEmpty: 'Please paste text first',
-    errorTooLong: 'Text exceeds 3,000 character limit. Please split into multiple submissions.',
+    errorTooLong: 'writing exceeds 3,000 character limit. Please split into multiple submissions.',
     errorNetwork: 'Network error, please try again',
     errorApi: 'Rewrite failed, please retry',
     verdictLabel: 'Detection Verdict',
@@ -117,7 +117,7 @@ export const essayI18n: { zh: ToolI18n; en: ToolI18n } = {
     howTitle: 'How it works',
     howBody: 'The backend calls DeepSeek with a prompt engineered for academic writing contexts: preserve thesis and evidence, replace AI document tells ("In today\'s world", "In conclusion", "It is important to note") with concrete hooks and student voice, vary paragraph length, occasionally use first-person reasoning. Stateless API — your input is discarded immediately after rewrite. No storage, no analysis, no training.',
     trustTitle: 'Why trust it',
-    trustBody: 'Each prompt iteration is calibrated against real GPTZero, Originality.ai, and Turnitin AI student-paper feedback. Weekly updates. The goal is not a thesaurus wrapper — it is an paper rewriter that passes the strictest detectors. Users are responsible for following their school academic integrity policy — the tool helps you rewrite text you have permission to use, it does not help with plagiarism.',
+    trustBody: 'Each prompt iteration is calibrated against real GPTZero, Originality.ai, and Turnitin AI student-paper feedback. Weekly updates. The goal is not a thesaurus wrapper — it is an paper rewriter that passes the strictest detectors. Users are responsible for following their school academic integrity policy — the tool helps you rewrite words you have permission to use, it does not help with plagiarism.',
     ctaTitle: 'Humanize your composition now',
     ctaBody: 'Paste, click, copy. No signup.',
     faqTitle: 'Frequently asked questions',
@@ -143,13 +143,13 @@ export const essayI18n: { zh: ToolI18n; en: ToolI18n } = {
       { icon: '🌐', title: 'EN + ZH', body: 'English and Simplified Chinese writing supported', color: 'from-amber-50 to-orange-50 border-amber-200' },
     ],
     samples: [
-      { label: 'Climate composition', text: 'Climate change represents one of the most pressing challenges facing humanity in the 21st century. The scientific consensus overwhelmingly indicates that human activities, particularly the burning of fossil fuels, are the primary drivers of global warming. It is imperative that we take decisive action to mitigate these effects and transition to sustainable energy sources.' },
+      { label: 'Climate composition', submission: 'Climate change represents one of the most pressing challenges facing humanity in the 21st century. The scientific consensus overwhelmingly indicates that human activities, particularly the burning of fossil fuels, are the primary drivers of global warming. It is imperative that we take decisive action to mitigate these effects and transition to sustainable energy sources.' },
       { label: 'AI ethics academic writing', text: 'The rapid advancement of artificial intelligence has raised significant ethical concerns regarding privacy, employment, and decision-making autonomy. As AI systems become increasingly integrated into various aspects of society, it is crucial to establish robust frameworks that ensure these technologies are developed and deployed responsibly.' },
       { label: 'History composition', text: 'The Industrial Revolution fundamentally transformed European society in the 18th and 19th centuries. The shift from agrarian economies to industrial production led to unprecedented urbanization, the rise of the working class, and significant technological innovations that continue to shape the modern world.' },
     ],
     relatedTitle: 'Other AI tools',
     related: [
-      { href: '/', title: 'AI Humanizer', desc: 'Generic AI text rewriter, bypass GPTZero + Turnitin' },
+      { href: '/', title: 'AI Humanizer', desc: 'Generic AI material rewriter, bypass GPTZero + Turnitin' },
       { href: '/turnitin-bypass', title: 'Turnitin Bypass', desc: 'Specifically tuned to bypass Turnitin AI paper detection' },
       { href: '/ai-detector', title: 'AI Detector', desc: 'Detect if a text is AI-generated' },
       { href: '/walterwrites', title: 'Walterwrites AI', desc: 'Mimic the natural Walter Writes style' },

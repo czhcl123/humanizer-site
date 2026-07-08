@@ -68,7 +68,7 @@ export const walterwritesI18n: { zh: ToolI18n; en: ToolI18n } = {
     samples: [
       { label: '博客风格', text: 'In today\'s rapidly evolving digital landscape, artificial intelligence has fundamentally transformed the way businesses operate. By leveraging cutting-edge machine learning algorithms, organizations can unlock unprecedented value and drive meaningful innovation across diverse industry verticals. It is important to note that strategic implementation remains crucial for sustainable success.' },
       { label: '营销风格', text: 'Our revolutionary platform empowers enterprises to harness the power of AI-driven insights. Through robust integration capabilities and comprehensive analytics, we enable stakeholders to navigate complex challenges with confidence. Furthermore, our commitment to excellence ensures unparalleled outcomes for forward-thinking organizations.' },
-      { label: '邮件风格', text: 'I hope this message finds you well. I am writing to discuss the innovative opportunities that our cutting-edge solutions can provide for your organization. By leveraging state-of-the-art technology, we can facilitate transformative outcomes that drive sustainable growth and competitive advantage in today\'s dynamic marketplace.' },
+      { label: '邮件风格', content: 'I hope this message finds you well. I am writing to discuss the innovative opportunities that our cutting-edge solutions can provide for your organization. By leveraging state-of-the-art technology, we can facilitate transformative outcomes that drive sustainable growth and competitive advantage in today\'s dynamic marketplace.' },
     ],
     relatedTitle: '其他 AI 工具',
     related: [
@@ -89,7 +89,7 @@ export const walterwritesI18n: { zh: ToolI18n; en: ToolI18n } = {
     heroTag3: 'EN + ZH',
     heroTag4: '100% free',
     inputLabel: 'Paste your AI text',
-    inputPlaceholder: 'Paste text from ChatGPT, Claude, or Gemini. We\'ll rewrite it in the natural Walter Writes voice.',
+    inputPlaceholder: 'Paste writing from ChatGPT, Claude, or Gemini. We\'ll rewrite it in the natural Walter Writes voice.',
     outputLabel: 'Walter Writes output',
     outputPlaceholder: 'The natural rewrite will appear here.',
     actionLabel: 'Rewrite in Walter Writes style',
@@ -127,7 +127,7 @@ export const walterwritesI18n: { zh: ToolI18n; en: ToolI18n } = {
       { q: 'What scenarios is this best for?', a: 'Blog posts, product copy, marketing content, emails, social media posts. Anything you want to read like "a real friend wrote it". Not for academic essays — use EssayRewriter or Turnitin Bypass for those.' },
       { q: 'Are my facts and data preserved?', a: 'Yes. All facts, numbers, citations, and proper nouns are kept exactly. Only the surface expression is rewritten.' },
       { q: 'Does it support Chinese?', a: 'Yes. Both English and Simplified Chinese supported in the Walter Writes style. The Chinese version is more conversational with "说实话", "其实", "说白了", "有意思的是" transitions.' },
-      { q: 'Do you store my text?', a: 'No. Stateless API. Input discarded immediately after rewrite. We never train on user submissions.' },
+      { q: 'Do you store my words?', a: 'No. Stateless API. Input discarded immediately after rewrite. We never train on user submissions.' },
     ],
     refsTitle: 'References',
     refs: [
@@ -145,7 +145,7 @@ export const walterwritesI18n: { zh: ToolI18n; en: ToolI18n } = {
     samples: [
       { label: 'Blog voice', text: 'In today\'s rapidly evolving digital landscape, artificial intelligence has fundamentally transformed the way businesses operate. By leveraging cutting-edge machine learning algorithms, organizations can unlock unprecedented value and drive meaningful innovation across diverse industry verticals. It is important to note that strategic implementation remains crucial for sustainable success.' },
       { label: 'Marketing voice', text: 'Our revolutionary platform empowers enterprises to harness the power of AI-driven insights. Through robust integration capabilities and comprehensive analytics, we enable stakeholders to navigate complex challenges with confidence. Furthermore, our commitment to excellence ensures unparalleled outcomes for forward-thinking organizations.' },
-      { label: 'Email voice', text: 'I hope this message finds you well. I am writing to discuss the innovative opportunities that our cutting-edge solutions can provide for your organization. By leveraging state-of-the-art technology, we can facilitate transformative outcomes that drive sustainable growth and competitive advantage in today\'s dynamic marketplace.' },
+      { label: 'Email voice', submission: 'I hope this message finds you well. I am writing to discuss the innovative opportunities that our cutting-edge solutions can provide for your organization. By leveraging state-of-the-art technology, we can facilitate transformative outcomes that drive sustainable growth and competitive advantage in today\'s dynamic marketplace.' },
     ],
     relatedTitle: 'Other AI tools',
     related: [

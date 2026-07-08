@@ -69,7 +69,7 @@ export const turnitinI18n: { zh: ToolI18n; en: ToolI18n } = {
     samples: [
       { label: '论证段落', text: 'Furthermore, the implementation of renewable energy sources is crucial for mitigating the effects of climate change. Moreover, governments must collaborate with private enterprises to facilitate the transition to sustainable practices. It is important to note that the success of these initiatives depends on public awareness and policy support.' },
       { label: '引言段落', text: 'In the modern era, the proliferation of artificial intelligence has fundamentally transformed various industries. Throughout history, technological innovations have consistently reshaped society, and AI represents the latest frontier in this ongoing evolution. It is imperative that we consider both the opportunities and challenges presented by these advances.' },
-      { label: '结论段落', text: 'In conclusion, the data presented in this study underscores the significance of adopting evidence-based practices in educational settings. It is important to note that further research is required to fully understand the long-term implications. Furthermore, collaboration among stakeholders will be essential for driving meaningful change.' },
+      { label: '结论段落', content: 'In conclusion, the data presented in this study underscores the significance of adopting evidence-based practices in educational settings. It is important to note that further research is required to fully understand the long-term implications. Furthermore, collaboration among stakeholders will be essential for driving meaningful change.' },
     ],
     relatedTitle: '其他 AI 工具',
     related: [
@@ -92,7 +92,7 @@ export const turnitinI18n: { zh: ToolI18n; en: ToolI18n } = {
     inputLabel: 'Paste your essay section',
     inputPlaceholder: 'Paste essay text that may be flagged by Turnitin AI. Click "Bypass Turnitin" to rewrite.',
     outputLabel: 'Bypassed text',
-    outputPlaceholder: 'The rewritten text will appear here.',
+    outputPlaceholder: 'The rewritten writing will appear here.',
     actionLabel: 'Bypass Turnitin',
     actionLoading: 'Rewriting...',
     copy: 'Copy',
@@ -118,7 +118,7 @@ export const turnitinI18n: { zh: ToolI18n; en: ToolI18n } = {
     howTitle: 'How the bypass works',
     howBody: 'Backend calls DeepSeek with a prompt engineered specifically against Turnitin\'s signals: vary paragraph length wildly (2 sentences, then 7, then 4 — never 5-sentence uniform); open with conversational or specific anchors (never "Throughout history" or "In the modern era"); inject first-person voice and hedges; replace all AI vocabulary ("delve"→"look at", "leverage"→"use", "robust"→"solid", "furthermore"→"and"); preserve citations and data exactly; show occasional thinking-out-loud. Stateless — input discarded immediately.',
     trustTitle: 'Why trust it',
-    trustBody: 'Each prompt iteration is calibrated against real Turnitin AI feedback. Turnitin updates its detection; we update our prompts. The tool helps you rewrite text you have permission to use. Users are responsible for following their school academic integrity policy. We do not help with plagiarism.',
+    trustBody: 'Each prompt iteration is calibrated against real Turnitin AI feedback. Turnitin updates its detection; we update our prompts. The tool helps you rewrite words you have permission to use. Users are responsible for following their school academic integrity policy. We do not help with plagiarism.',
     ctaTitle: 'Bypass Turnitin now',
     ctaBody: 'Paste, click, copy. No signup.',
     faqTitle: 'Turnitin AI FAQ',
@@ -147,7 +147,7 @@ export const turnitinI18n: { zh: ToolI18n; en: ToolI18n } = {
     samples: [
       { label: 'Argument paragraph', text: 'Furthermore, the implementation of renewable energy sources is crucial for mitigating the effects of climate change. Moreover, governments must collaborate with private enterprises to facilitate the transition to sustainable practices. It is important to note that the success of these initiatives depends on public awareness and policy support.' },
       { label: 'Intro paragraph', text: 'In the modern era, the proliferation of artificial intelligence has fundamentally transformed various industries. Throughout history, technological innovations have consistently reshaped society, and AI represents the latest frontier in this ongoing evolution. It is imperative that we consider both the opportunities and challenges presented by these advances.' },
-      { label: 'Conclusion paragraph', text: 'In conclusion, the data presented in this study underscores the significance of adopting evidence-based practices in educational settings. It is important to note that further research is required to fully understand the long-term implications. Furthermore, collaboration among stakeholders will be essential for driving meaningful change.' },
+      { label: 'Conclusion paragraph', submission: 'In conclusion, the data presented in this study underscores the significance of adopting evidence-based practices in educational settings. It is important to note that further research is required to fully understand the long-term implications. Furthermore, collaboration among stakeholders will be essential for driving meaningful change.' },
     ],
     relatedTitle: 'Other AI tools',
     related: [
