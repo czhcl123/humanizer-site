@@ -75,7 +75,7 @@ export const walterwritesI18n: { zh: ToolI18n; en: ToolI18n } = {
       { href: '/', title: 'AI Humanizer', desc: '通用 AI 文本改写' },
       { href: '/essay-humanizer', title: 'Essay Humanizer', desc: '学生论文改写' },
       { href: '/ai-detector', title: 'AI Detector', desc: '检测文本 AI 率' },
-      { href: '/降ai率', title: '降 AI 率', desc: '中文论文 AI 率降低' },
+      { href: '/jiang-ai-lv', title: '降 AI 率', desc: '中文论文 AI 率降低' },
     ],
   },
   en: {
@@ -152,7 +152,7 @@ export const walterwritesI18n: { zh: ToolI18n; en: ToolI18n } = {
       { href: '/', title: 'AI Humanizer', desc: 'Generic AI text rewriter' },
       { href: '/essay-humanizer', title: 'Essay Humanizer', desc: 'Tuned for student essays' },
       { href: '/ai-detector', title: 'AI Detector', desc: 'Detect if text is AI-generated' },
-      { href: '/降ai率', title: '降 AI 率', desc: 'Reduce Chinese AI rate' },
+      { href: '/jiang-ai-lv', title: '降 AI 率', desc: 'Reduce Chinese AI rate' },
     ],
   },
 }

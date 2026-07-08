@@ -531,7 +531,7 @@ function HomePageContent({ initialLang }: { initialLang?: Lang }) {
               <div className="font-semibold text-violet-700 text-sm mb-1">AI Detector →</div>
               <div className="text-xs text-gray-500 leading-relaxed">{isZh ? '检测文本 AI 率,基于 GPTZero / Originality.ai 同源原理' : 'Detect AI probability. Based on GPTZero / Originality.ai principles.'}</div>
             </Link>
-            <Link href={`/降ai率?lang=${lang}`} className="block p-3 bg-white border border-gray-200 hover:border-violet-300 rounded-lg transition-colors">
+            <Link href={`/jiang-ai-lv?lang=${lang}`} className="block p-3 bg-white border border-gray-200 hover:border-violet-300 rounded-lg transition-colors">
               <div className="font-semibold text-violet-700 text-sm mb-1">降 AI 率 →</div>
               <div className="text-xs text-gray-500 leading-relaxed">{isZh ? '降低中文论文 AI 率,过知网 / 维普 / GPTZero 中文' : 'Reduce Chinese AI rate. Pass CNKI / CQVIP / GPTZero Chinese.'}</div>
             </Link>
@@ -549,7 +549,7 @@ function HomePageContent({ initialLang }: { initialLang?: Lang }) {
             <Link href={`/turnitin-bypass?lang=${lang}`} className="text-sm text-gray-500 hover:text-violet-600 transition-colors py-0.5">Turnitin</Link>
             <Link href={`/walterwrites?lang=${lang}`} className="text-sm text-gray-500 hover:text-violet-600 transition-colors py-0.5">Walterwrites</Link>
             <Link href={`/ai-detector?lang=${lang}`} className="text-sm text-gray-500 hover:text-violet-600 transition-colors py-0.5">Detector</Link>
-            <Link href={`/降ai率?lang=${lang}`} className="text-sm text-gray-500 hover:text-violet-600 transition-colors py-0.5">降 AI 率</Link>
+            <Link href={`/jiang-ai-lv?lang=${lang}`} className="text-sm text-gray-500 hover:text-violet-600 transition-colors py-0.5">降 AI 率</Link>
             <Link href={`/about?lang=${lang}`} className="text-sm text-gray-500 hover:text-violet-600 transition-colors py-0.5">About</Link>
             <a href="/llms.txt" className="text-sm text-gray-500 hover:text-violet-600 transition-colors py-0.5">llms.txt</a>
             <a href="/rss.xml" className="text-sm text-gray-500 hover:text-violet-600 transition-colors py-0.5">RSS</a>

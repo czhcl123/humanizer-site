@@ -76,7 +76,7 @@ export const turnitinI18n: { zh: ToolI18n; en: ToolI18n } = {
       { href: '/', title: 'AI Humanizer', desc: '通用 AI 文本改写器' },
       { href: '/essay-humanizer', title: 'Essay Humanizer', desc: '学生论文专门改写' },
       { href: '/ai-detector', title: 'AI Detector', desc: '检测文本是否是 AI 生成' },
-      { href: '/降ai率', title: '降 AI 率', desc: '中文论文 AI 率降低' },
+      { href: '/jiang-ai-lv', title: '降 AI 率', desc: '中文论文 AI 率降低' },
     ],
   },
   en: {
@@ -154,7 +154,7 @@ export const turnitinI18n: { zh: ToolI18n; en: ToolI18n } = {
       { href: '/', title: 'AI Humanizer', desc: 'Generic AI text rewriter' },
       { href: '/essay-humanizer', title: 'Essay Humanizer', desc: 'Tuned specifically for student essays' },
       { href: '/ai-detector', title: 'AI Detector', desc: 'Detect if a text is AI-generated' },
-      { href: '/降ai率', title: '降 AI 率', desc: 'Reduce Chinese AI rate in essays' },
+      { href: '/jiang-ai-lv', title: '降 AI 率', desc: 'Reduce Chinese AI rate in essays' },
     ],
   },
 }

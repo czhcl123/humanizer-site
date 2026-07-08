@@ -33,11 +33,11 @@ export async function generateMetadata({ searchParams }: { searchParams: Promise
     description: descriptions[lang],
     openGraph: { title: titles[lang], description: descriptions[lang] },
     alternates: {
-      canonical: 'https://humanizer-site-production.up.railway.app/%E9%99%8Dai%E7%8E%87',
+      canonical: 'https://humanizer-site-production.up.railway.app/jiang-ai-lv',
       languages: {
-        'zh-CN': '/%E9%99%8Dai%E7%8E%87?lang=zh',
-        'en-US': '/%E9%99%8Dai%E7%8E%87?lang=en',
-        'x-default': '/%E9%99%8Dai%E7%8E%87',
+        'zh-CN': '/jiang-ai-lv?lang=zh',
+        'en-US': '/jiang-ai-lv?lang=en',
+        'x-default': '/jiang-ai-lv',
       },
     },
   }

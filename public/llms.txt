@@ -27,7 +27,7 @@ URL: https://humanizer-site-production.up.railway.app
 - [AI Detector 中文](https://humanizer-site-production.up.railway.app/ai-detector?lang=zh) — 检测文本 AI 率,基于 GPTZero、Originality.ai 同源原理。
 
 ### 6. 降 AI 率 (Chinese AI Rate Reducer)
-- [降 AI 率](https://humanizer-site-production.up.railway.app/%E9%99%8Dai%E7%8E%87?lang=zh) — 降低中文论文 AI 率,改写知网 AIGC、维普、GPTZero 中文、ZeroGPT 中文都识别不出的 AI 八股词。
+- [降 AI 率](https://humanizer-site-production.up.railway.app/jiang-ai-lv?lang=zh) — 降低中文论文 AI 率,改写知网 AIGC、维普、GPTZero 中文、ZeroGPT 中文都识别不出的 AI 八股词。
 
 ## Pages
 

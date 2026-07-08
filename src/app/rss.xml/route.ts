@@ -50,8 +50,8 @@ export async function GET() {
     </item>
     <item>
       <title>降 AI 率 - 免费中文论文 AI 率降低工具</title>
-      <link>${base}/%E9%99%8Dai%E7%8E%87</link>
-      <guid>${base}/%E9%99%8Dai%E7%8E%87</guid>
+      <link>${base}/jiang-ai-lv</link>
+      <guid>${base}/jiang-ai-lv</guid>
       <pubDate>${now}</pubDate>
       <description>免费在线降低中文论文 AI 率。改写知网 AIGC、维普、GPTZero 中文、ZeroGPT 中文都识别不出的 AI 八股词,保留论点、引用、数据。</description>
     </item>

@@ -75,7 +75,7 @@ export const detectorI18n: { zh: ToolI18n; en: ToolI18n } = {
       { href: '/', title: 'AI Humanizer', desc: '通用 AI 文本改写' },
       { href: '/essay-humanizer', title: 'Essay Humanizer', desc: '学生论文改写' },
       { href: '/turnitin-bypass', title: 'Turnitin Bypass', desc: '绕过 Turnitin AI 检测' },
-      { href: '/降ai率', title: '降 AI 率', desc: '中文论文 AI 率降低' },
+      { href: '/jiang-ai-lv', title: '降 AI 率', desc: '中文论文 AI 率降低' },
     ],
   },
   en: {

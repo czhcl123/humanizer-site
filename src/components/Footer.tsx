@@ -51,7 +51,7 @@ export default function Footer({ lang = 'en' }: FooterProps) {
           <span className="text-gray-200">·</span>
           <Link href={`/ai-detector?lang=${lang}`} className="text-gray-400 hover:text-violet-500 transition-colors">{t.detector}</Link>
           <span className="text-gray-200">·</span>
-          <Link href={`/降ai率?lang=${lang}`} className="text-gray-400 hover:text-violet-500 transition-colors">{t.chinese}</Link>
+          <Link href={`/jiang-ai-lv?lang=${lang}`} className="text-gray-400 hover:text-violet-500 transition-colors">{t.chinese}</Link>
           <span className="text-gray-200">·</span>
           <Link href={`/about?lang=${lang}`} className="text-gray-400 hover:text-violet-500 transition-colors">{t.about}</Link>
           <span className="text-gray-200">·</span>
