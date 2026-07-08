@@ -21,35 +21,35 @@ export async function generateMetadata({ searchParams }: { searchParams: Promise
   const sp = await searchParams
   const lang = sp.lang === 'zh' ? 'zh' : 'en'
   const titles = {
-    zh: 'AI composition Humanizer - 免费论文改写,绕过 Turnitin 检测',
+    zh: 'AI Essay Humanizer - 免费学生论文改写,绕过 Turnitin 检测',
     en: 'AI EssayRewriter - Free text Rewriter, Bypass Turnitin',
   }
   const descriptions = {
-    zh: '免费 AI EssayRewriter,专门为学生论文改写优化。绕过 GPTZero、Turnitin、Originality.ai 论文检测,保留论点、引用、事实。中英双语。',
-    en: 'Free AI student work Humanizer optimized for student papers. Bypass GPTZero, Turnitin AI, and Originality.ai paper detection. Preserves thesis, citations, and facts. Bilingual.',
+    zh: '免费 AI Humanizer 改写 AI 生成的文本,绕过 GPTZero、Turnitin、Originality.ai 检测。保留引用、事实、数据。中英双语。',
+    en: 'Free AI Humanizer that rewrites AI-generated text to bypass GPTZero, Turnitin AI, and Originality.ai detection. Preserves citations, dates, and proper nouns. Bilingual.',
   }
   return {
     title: titles[lang],
     description: descriptions[lang],
     openGraph: { title: titles[lang], description: descriptions[lang] },
     alternates: {
-      canonical: 'https://humanizer-site-production.up.railway.app/document-humanizer',
+      canonical: 'https://humanizer-site-production.up.railway.app/essay-humanizer',
       languages: {
-        'zh-CN': '/paper-humanizer?lang=zh',
-        'en-US': '/paper-humanizer?lang=en',
-        'x-default': '/writing-humanizer',
+        'zh-CN': '/essay-humanizer?lang=zh',
+        'en-US': '/essay-humanizer?lang=en',
+        'x-default': '/essay-humanizer',
       },
     },
   }
 }
 
-export default async function paperPage({ searchParams }: { searchParams: Promise<{ lang?: string }> }) {
+export default async function essayPage({ searchParams }: { searchParams: Promise<{ lang?: string }> }) {
   const sp = await searchParams
   const lang = sp.lang === 'zh' ? 'zh' : 'en'
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <ToolClient mode="paper" initialLang={lang} i18n={essayI18n} />
+      <ToolClient mode="essay" initialLang={lang} i18n={essayI18n} />
     </>
   )
 }

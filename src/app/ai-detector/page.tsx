@@ -25,8 +25,8 @@ export async function generateMetadata({ searchParams }: { searchParams: Promise
     en: 'AI Detector - Free AI Content Detection Tool',
   }
   const descriptions = {
-    zh: '免费在线 AI 内容检测器。检测文本 AI 生成概率 + 详细检测信号(句子均匀度、AI 词汇、可预测性)。基于 GPTZero、Originality.ai 同源原理。',
-    en: 'Free online AI content detector. Analyzes AI-generation probability plus detailed detection signals (sentence uniformity, AI vocabulary, predictability). Based on the same principles as GPTZero, Originality.ai.',
+    zh: '免费 AI Humanizer,改写 ChatGPT / Gemini / Claude 输出,绕过 GPTZero、Turnitin、Originality.ai 检测,无需注册,中英双语。',
+    en: 'Free AI Humanizer that rewrites AI-generated text to bypass GPTZero, Turnitin AI, and Originality.ai detection.',
   }
   return {
     title: titles[lang],

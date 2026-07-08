@@ -26,7 +26,7 @@ export async function generateMetadata({ searchParams }: { searchParams: Promise
   }
   const descriptions = {
     zh: '免费在线降低中文论文 AI 率。改写知网 AIGC、维普、GPTZero 中文、ZeroGPT 中文都识别不出的 AI 八股词,保留论点、引用、数据。',
-    en: 'Free online tool to reduce AI rate in Chinese essays. Rewrites Chinese AI boilerplate ("赋能", "抓手", "底层逻辑") to pass 知网 (CNKI) AIGC, 维普 (CQVIP), GPTZero Chinese, and ZeroGPT Chinese. Preserves thesis, citations, data.',
+    en: 'Free AI Humanizer that rewrites AI-generated text to bypass GPTZero, Turnitin AI, and Originality.ai detection.',
   }
   return {
     title: titles[lang],
