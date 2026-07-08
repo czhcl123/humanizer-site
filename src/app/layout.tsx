@@ -6,7 +6,7 @@ const websiteSchema = {
   name: 'AI Humanizer',
   alternateName: 'AI 人性化工具',
   url: 'https://humanizer-site-production.up.railway.app',
-  description: 'Free AI Humanizer that rewrites AI-generated text so it reads like a human wrote it. Pass GPTZero, Turnitin AI, and Originality.ai detection. Built for students, marketers, and writers.',
+  description: 'Free AI Humanizer that rewrites AI-generated text so it reads naturally and bypasses GPTZero, Turnitin AI, and Originality.ai detection. No signup, no installation. Supports English and Chinese.',
   inLanguage: ['en', 'zh'],
   potentialAction: {
     '@type': 'SearchAction',
@@ -30,7 +30,7 @@ const organizationSchema = {
     width: 512,
     height: 512,
   },
-  description: 'A free online tool that rewrites AI-generated text into natural, human-sounding writing. Built for students, content marketers, and writers who need their work to pass AI detection.',
+  description: 'Free AI Humanizer that rewrites AI-generated text so it reads naturally and bypasses GPTZero, Turnitin AI, and Originality.ai detection. No signup, no installation. Supports English and Chinese.',
   foundingDate: '2026',
   knowsAbout: [
     'AI text humanization',
@@ -74,7 +74,7 @@ const webAppSchema = {
   name: 'AI Humanizer',
   alternateName: 'AI 人性化工具',
   url: 'https://humanizer-site-production.up.railway.app',
-  description: 'Free online tool that rewrites AI-generated text to sound like a human wrote it. Passes GPTZero, Turnitin AI, and Originality.ai detection. No signup, no tracking, no installation. Supports English and Chinese.',
+  description: 'Free AI Humanizer that rewrites AI-generated text so it reads naturally and bypasses GPTZero, Turnitin AI, and Originality.ai detection. No signup, no installation. Supports English and Chinese.',
   applicationCategory: 'UtilitiesApplication',
   applicationSubCategory: 'Text Rewriting Tool',
   operatingSystem: 'Any (web browser with JavaScript)',
