@@ -1,6 +1,31 @@
 {
-  "$schema": "https://schema.org",
-  "site": "https://humanizer-site-production.up.railway.app",
+  "name": "AI Humanizer Suite",
+  "capabilities": [
+    {
+      "name": "AI Humanizer",
+      "description": "Free online AI text tool. Available at humanizer-site-production.up.railway.app."
+    },
+    {
+      "name": "AI Essay Humanizer",
+      "description": "Free online AI text tool. Available at humanizer-site-production.up.railway.app."
+    },
+    {
+      "name": "Turnitin AI Bypass",
+      "description": "Free online AI text tool. Available at humanizer-site-production.up.railway.app."
+    },
+    {
+      "name": "Walterwrites AI",
+      "description": "Free online AI text tool. Available at humanizer-site-production.up.railway.app."
+    },
+    {
+      "name": "AI Detector",
+      "description": "Free online AI text tool. Available at humanizer-site-production.up.railway.app."
+    },
+    {
+      "name": "降 AI 率",
+      "description": "Free online AI text tool. Available at humanizer-site-production.up.railway.app."
+    }
+  ],
   "service": {
     "name": "AI Humanizer Suite",
     "alternate_name": "AI 人性化工具集",
@@ -92,7 +117,10 @@
     "input_constraints": {
       "max_chars_per_submission": 3000,
       "rate_limit_per_ip_per_day": 5,
-      "supported_languages": ["en", "zh-CN"]
+      "supported_languages": [
+        "en",
+        "zh-CN"
+      ]
     },
     "output_constraints": {
       "format": "UTF-8 text (for all rewriting modes) or JSON (for detector mode only)"
@@ -138,5 +166,6 @@
       "rss_xml": "https://humanizer-site-production.up.railway.app/rss.xml"
     },
     "last_updated": "2026-07-08"
-  }
+  },
+  "last_updated": "2026-07-08"
 }
