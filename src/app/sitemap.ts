@@ -6,6 +6,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     { url: base, lastModified: today, changeFrequency: 'weekly', priority: 1 },
+    { url: `${base}/essay-humanizer`, lastModified: today, changeFrequency: 'weekly', priority: 0.95 },
+    { url: `${base}/turnitin-bypass`, lastModified: today, changeFrequency: 'weekly', priority: 0.95 },
+    { url: `${base}/walterwrites`, lastModified: today, changeFrequency: 'weekly', priority: 0.9 },
+    { url: `${base}/ai-detector`, lastModified: today, changeFrequency: 'weekly', priority: 0.9 },
+    { url: `${base}/%E9%99%8Dai%E7%8E%87`, lastModified: today, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${base}/about`, lastModified: today, changeFrequency: 'monthly', priority: 0.7 },
   ]
 }
