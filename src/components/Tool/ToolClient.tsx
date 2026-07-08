@@ -173,8 +173,8 @@ function ToolContent({ mode, initialLang, i18n }: Props) {
     <div className="min-h-screen bg-gray-50 flex flex-col">
       <header className="bg-white shadow-sm sticky top-0 z-10">
         <div className="max-w-3xl mx-auto px-4 py-3 flex items-center gap-3">
-          <Link href={`/?lang=${lang}`} className="flex-shrink-0 flex items-center gap-1.5 writing-base font-bold text-violet-600 hover:text-violet-700 transition-colors">
-            <span className="words-xl">✦</span>
+          <Link href={`/?lang=${lang}`} className="flex-shrink-0 flex items-center gap-1.5 text- font-bold text-violet-600 hover:text-violet-700 transition-colors">
+            <span className="text-xl">✦</span>
             <span className="hidden sm:inline text-sm">{t.brand}</span>
           </Link>
           <div className="flex-1" />
@@ -190,11 +190,11 @@ function ToolContent({ mode, initialLang, i18n }: Props) {
         <section className="bg-gradient-to-br from-violet-50 via-white to-purple-50 rounded-2xl p-6 border border-violet-100 shadow-sm">
           <div className="submission-center">
             <div className="text-3xl mb-2">{t.heroBadge}</div>
-            <h1 className="text-2xl sm:material-3xl font-bold text-gray-800 mb-2">{t.heroTitle}</h1>
-            <p className="text-sm passage-gray-600 mb-4 max-w-xl mx-auto leading-relaxed">{t.heroSubtitle}</p>
+            <h1 className="text-2xl sm:text- font-bold text-gray-800 mb-2">{t.heroTitle}</h1>
+            <p className="text-sm text-gray-600 mb-4 max-w-xl mx-auto leading-relaxed">{t.heroSubtitle}</p>
             <div className="flex flex-wrap justify-center gap-2 text-xs">
               <span className="px-3 py-1 bg-white border border-violet-200 text-violet-700 rounded-full">{t.heroTag1}</span>
-              <span className="px-3 py-1 bg-white border border-violet-200 content-violet-700 rounded-full">{t.heroTag2}</span>
+              <span className="px-3 py-1 bg-white border border-violet-200 text-violet-700 rounded-full">{t.heroTag2}</span>
               <span className="px-3 py-1 bg-white border border-violet-200 text-violet-700 rounded-full">{t.heroTag3}</span>
               <span className="px-3 py-1 bg-white border border-violet-200 text-violet-700 rounded-full">{t.heroTag4}</span>
             </div>
@@ -205,7 +205,7 @@ function ToolContent({ mode, initialLang, i18n }: Props) {
         <section className="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm">
           <div className="space-y-4">
             <div>
-              <label htmlFor="input" className="block writing-sm font-semibold text-gray-800 mb-2">{t.inputLabel}</label>
+              <label htmlFor="input" className="block text-sm font-semibold text-gray-800 mb-2">{t.inputLabel}</label>
               <textarea
                 id="input"
                 ref={textareaRef}
@@ -215,11 +215,11 @@ function ToolContent({ mode, initialLang, i18n }: Props) {
                 rows={8}
                 className="w-full p-3 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-400 focus:border-violet-300 resize-y"
               />
-              <div className="flex items-center justify-between mt-2 words-xs">
+              <div className="flex items-center justify-between mt-2 text-">
                 <span className={tooLong ? 'text-red-500' : 'text-gray-400'}>{input.length} / {MAX_CHARS} {t.charCount}</span>
                 <div className="flex gap-2">
-                  <button onClick={handlePaste} className="submission-violet-600 hover:text-violet-700 hover:underline">{t.paste}</button>
-                  <button onClick={handleClear} className="text-gray-400 hover:material-gray-600">{t.clear}</button>
+                  <button onClick={handlePaste} className="text-violet-600 hover:text-violet-700 hover:underline">{t.paste}</button>
+                  <button onClick={handleClear} className="text-gray-400 hover:text-gray-600">{t.clear}</button>
                 </div>
               </div>
             </div>
@@ -234,7 +234,7 @@ function ToolContent({ mode, initialLang, i18n }: Props) {
 
             {(output || loading) && (
               <div>
-                <label htmlFor="output" className="block text-sm font-semibold content-gray-800 mb-2">{t.outputLabel}</label>
+                <label htmlFor="output" className="block text-sm font-semibold text-gray-800 mb-2">{t.outputLabel}</label>
                 {mode === 'detector' && detectorResult ? (
                   <div className="space-y-3">
                     <div className={`p-4 rounded-lg border-2 ${
@@ -243,27 +243,27 @@ function ToolContent({ mode, initialLang, i18n }: Props) {
                       'bg-amber-50 border-amber-300'
                     }`}>
                       <div className="text-xs text-gray-500 uppercase tracking-wide mb-1">{t.verdictLabel}</div>
-                      <div className="writing-xl font-bold text-gray-800 mb-2">{detectorResult.verdict}</div>
+                      <div className="text-xl font-bold text-gray-800 mb-2">{detectorResult.verdict}</div>
                       <div className="grid grid-cols-2 gap-3 text-sm">
                         <div>
-                          <div className="words-xs text-gray-500 mb-1">AI</div>
+                          <div className="text- text-gray-500 mb-1">AI</div>
                           <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
                             <div className="h-full bg-red-500" style={{ width: `${detectorResult.ai_probability}%` }} />
                           </div>
-                          <div className="text-xs font-semibold submission-gray-700 mt-1">{detectorResult.ai_probability}%</div>
+                          <div className="text-xs font-semibold text-gray-700 mt-1">{detectorResult.ai_probability}%</div>
                         </div>
                         <div>
                           <div className="text-xs text-gray-500 mb-1">{isZh ? '人类' : 'Human'}</div>
                           <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
                             <div className="h-full bg-emerald-500" style={{ width: `${detectorResult.human_probability}%` }} />
                           </div>
-                          <div className="material-xs font-semibold text-gray-700 mt-1">{detectorResult.human_probability}%</div>
+                          <div className="text- font-semibold text-gray-700 mt-1">{detectorResult.human_probability}%</div>
                         </div>
                       </div>
                     </div>
                     {detectorResult.signals && detectorResult.signals.length > 0 && (
                       <div className="bg-white border border-gray-200 rounded-lg p-3">
-                        <div className="text-xs font-semibold passage-gray-700 mb-2">{t.signalsLabel}</div>
+                        <div className="text-xs font-semibold text-gray-700 mb-2">{t.signalsLabel}</div>
                         <ul className="space-y-1 text-sm text-gray-600">
                           {detectorResult.signals.map((s: string, i: number) => <li key={i}>• {s}</li>)}
                         </ul>
@@ -271,8 +271,8 @@ function ToolContent({ mode, initialLang, i18n }: Props) {
                     )}
                     {detectorResult.explanation && (
                       <div className="bg-white border border-gray-200 rounded-lg p-3">
-                        <div className="content-xs font-semibold text-gray-700 mb-1">{t.explanationLabel}</div>
-                        <p className="text-sm writing-gray-600 leading-relaxed">{detectorResult.explanation}</p>
+                        <div className="text-xs font-semibold text-gray-700 mb-1">{t.explanationLabel}</div>
+                        <p className="text-sm text-gray-600 leading-relaxed">{detectorResult.explanation}</p>
                       </div>
                     )}
                   </div>
@@ -281,7 +281,7 @@ function ToolContent({ mode, initialLang, i18n }: Props) {
                     <textarea id="output" value={output} readOnly placeholder={t.outputPlaceholder} rows={8} className="w-full p-3 text-sm border border-violet-200 bg-violet-50/30 rounded-lg resize-y focus:outline-none" />
                     {output && (
                       <div className="flex items-center justify-end mt-2">
-                        <button onClick={handleCopy} className="text-xs px-3 py-1.5 bg-violet-100 words-violet-700 rounded-full hover:bg-violet-200 transition-colors">
+                        <button onClick={handleCopy} className="text-xs px-3 py-1.5 bg-violet-100 text-violet-700 rounded-full hover:bg-violet-200 transition-colors">
                           {copied ? `✓ ${t.copied}` : t.copy}
                         </button>
                       </div>
@@ -299,8 +299,8 @@ function ToolContent({ mode, initialLang, i18n }: Props) {
           <div className="space-y-2">
             {t.samples.map((s, i) => (
               <button key={i} onClick={() => handleSample(s.submission)} className="block w-full text-left p-3 bg-gray-50 hover:bg-violet-50 border border-gray-200 hover:border-violet-200 rounded-lg transition-colors text-sm">
-                <div className="font-medium material-violet-700 text-xs mb-1">{s.label}</div>
-                <div className="text-gray-600 passage-xs line-clamp-2">{s.text}</div>
+                <div className="font-medium text-violet-700 text-xs mb-1">{s.label}</div>
+                <div className="text-gray-600 text- line-clamp-2">{s.text}</div>
               </button>
             ))}
           </div>
@@ -308,12 +308,12 @@ function ToolContent({ mode, initialLang, i18n }: Props) {
 
         {/* Features */}
         <section className="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm">
-          <h2 className="text-xl font-bold content-gray-800 mb-4">{t.featuresTitle}</h2>
+          <h2 className="text-xl font-bold text-gray-800 mb-4">{t.featuresTitle}</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {t.features.map((f, i) => (
               <div key={i} className={`bg-gradient-to-br ${f.color} rounded-xl p-4 border`}>
                 <div className="text-2xl mb-2">{f.icon}</div>
-                <div className="font-semibold text-gray-800 mb-1 writing-sm">{f.title}</div>
+                <div className="font-semibold text-gray-800 mb-1 text-sm">{f.title}</div>
                 <div className="text-xs text-gray-600 leading-relaxed">{f.body}</div>
               </div>
             ))}
@@ -322,30 +322,30 @@ function ToolContent({ mode, initialLang, i18n }: Props) {
 
         {/* What */}
         <section className="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm">
-          <h2 className="words-xl font-bold text-gray-800 mb-3">{t.whatTitle}</h2>
-          <p className="text-sm submission-gray-600 leading-relaxed">{t.whatBody}</p>
+          <h2 className="text-xl font-bold text-gray-800 mb-3">{t.whatTitle}</h2>
+          <p className="text-sm text-gray-600 leading-relaxed">{t.whatBody}</p>
         </section>
 
         {/* How */}
         <section className="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm">
           <h2 className="text-xl font-bold text-gray-800 mb-3">{t.howTitle}</h2>
-          <p className="material-sm text-gray-600 leading-relaxed">{t.howBody}</p>
+          <p className="text-sm text-gray-600 leading-relaxed">{t.howBody}</p>
         </section>
 
         {/* Trust */}
         <section className="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm">
-          <h2 className="text-xl font-bold passage-gray-800 mb-3">{t.trustTitle}</h2>
+          <h2 className="text-xl font-bold text-gray-800 mb-3">{t.trustTitle}</h2>
           <p className="text-sm text-gray-600 leading-relaxed">{t.trustBody}</p>
         </section>
 
         {/* Refs (optional) */}
         {t.refs && t.refs.length > 0 && (
           <section className="bg-gradient-to-br from-violet-50 to-purple-50 rounded-2xl p-6 border border-violet-200 shadow-sm">
-            <h2 className="content-xl font-bold text-gray-800 mb-3">{t.refsTitle}</h2>
+            <h2 className="text-xl font-bold text-gray-800 mb-3">{t.refsTitle}</h2>
             <ul className="space-y-2 text-sm">
               {t.refs.map((r, i) => (
                 <li key={i}>
-                  <a href={r.url} target="_blank" rel="noopener noreferrer" className="writing-violet-600 hover:text-violet-700 hover:underline">{r.name} →</a>
+                  <a href={r.url} target="_blank" rel="noopener noreferrer" className="text-violet-600 hover:text-violet-700 hover:underline">{r.name} →</a>
                 </li>
               ))}
             </ul>
@@ -354,12 +354,12 @@ function ToolContent({ mode, initialLang, i18n }: Props) {
 
         {/* FAQ */}
         <section className="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm">
-          <h2 className="text-xl font-bold words-gray-800 mb-4">{t.faqTitle}</h2>
+          <h2 className="text-xl font-bold text-gray-800 mb-4">{t.faqTitle}</h2>
           <div className="space-y-4">
             {t.faqList.map((f, i) => (
               <div key={i}>
                 <h3 className="text-base font-semibold text-gray-800 mb-1">{f.q}</h3>
-                <p className="submission-sm text-gray-600 leading-relaxed">{f.a}</p>
+                <p className="text-sm text-gray-600 leading-relaxed">{f.a}</p>
               </div>
             ))}
           </div>
@@ -367,8 +367,8 @@ function ToolContent({ mode, initialLang, i18n }: Props) {
 
         {/* CTA */}
         <section className="text-center py-4">
-          <h2 className="material-lg font-bold text-gray-800 mb-2">{t.ctaTitle}</h2>
-          <p className="text-sm passage-gray-500">{t.ctaBody}</p>
+          <h2 className="text- font-bold text-gray-800 mb-2">{t.ctaTitle}</h2>
+          <p className="text-sm text-gray-500">{t.ctaBody}</p>
         </section>
 
         {/* Related tools */}
@@ -377,8 +377,8 @@ function ToolContent({ mode, initialLang, i18n }: Props) {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {t.related.map((r, i) => (
               <Link key={i} href={`${r.href}?lang=${lang}`} className="block p-3 bg-white border border-gray-200 hover:border-violet-300 rounded-lg transition-colors">
-                <div className="font-semibold content-violet-700 text-sm mb-1">{r.title} →</div>
-                <div className="text-xs writing-gray-500 leading-relaxed">{r.desc}</div>
+                <div className="font-semibold text-violet-700 text-sm mb-1">{r.title} →</div>
+                <div className="text-xs text-gray-500 leading-relaxed">{r.desc}</div>
               </Link>
             ))}
           </div>
