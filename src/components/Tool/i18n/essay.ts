@@ -1,6 +1,6 @@
 import type { ToolI18n } from '../ToolClient'
 
-export const paperI18n: { zh: ToolI18n; en: ToolI18n } = {
+export const essayI18n: { zh: ToolI18n; en: ToolI18n } = {
   zh: {
     brand: 'AI Essay Humanizer',
     homeLabel: 'AI Humanizer 首页',

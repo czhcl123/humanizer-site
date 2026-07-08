@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import ToolClient from '../../components/Tool/ToolClient'
-import { paperI18n } from '../../components/Tool/i18n/paper'
+import { essayI18n } from '../../components/Tool/i18n/essay'
 
 export const dynamic = 'force-dynamic'
 
@@ -49,7 +49,7 @@ export default async function paperPage({ searchParams }: { searchParams: Promis
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <ToolClient mode="paper" initialLang={lang} i18n={paperI18n} />
+      <ToolClient mode="paper" initialLang={lang} i18n={essayI18n} />
     </>
   )
 }
