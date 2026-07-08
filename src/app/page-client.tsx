@@ -516,8 +516,8 @@ function HomePageContent({ initialLang }: { initialLang?: Lang }) {
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <Link href={`/essay-humanizer?lang=${lang}`} className="block p-3 bg-white border border-gray-200 hover:border-violet-300 rounded-lg transition-colors">
-              <div className="font-semibold text-violet-700 text-sm mb-1">AI Essay Humanizer →</div>
-              <div className="text-xs text-gray-500 leading-relaxed">{isZh ? '学生论文专用改写,绕过 GPTZero / Turnitin / Originality.ai' : 'Tuned for student essays. Bypass GPTZero / Turnitin / Originality.ai.'}</div>
+              <div className="font-semibold text-violet-700 text-sm mb-1">AI EssayRewriter →</div>
+              <div className="text-xs text-gray-500 leading-relaxed">{isZh ? '学生论文改写,绕过 GPTZero / Turnitin / Originality.ai' : 'Tuned for student papers. Bypass GPTZero / Turnitin / Originality.ai.'}</div>
             </Link>
             <Link href={`/turnitin-bypass?lang=${lang}`} className="block p-3 bg-white border border-gray-200 hover:border-violet-300 rounded-lg transition-colors">
               <div className="font-semibold text-violet-700 text-sm mb-1">Turnitin AI Bypass →</div>

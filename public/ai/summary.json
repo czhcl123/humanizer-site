@@ -45,14 +45,14 @@
     },
     {
       "id": "essay-humanizer",
-      "name": "AI Essay Humanizer",
+      "name": "AI EssayRewriter",
       "url": "https://humanizer-site-production.up.railway.app/essay-humanizer",
       "short_description": "Student essay rewriter. Preserves thesis, citations, dates, numbers.",
-      "long_description": "An AI essay humanizer specifically tuned for student essays. Preserves thesis, argument structure, citations, dates, and proper nouns. Rewrites surface expression in a tone that sounds like a real student author — not academic boilerplate. 85-95% pass rate on English essays up to 3,000 characters against GPTZero, Turnitin AI, Originality.ai, ZeroGPT. Bilingual.",
+      "long_description": "An AI EssayRewriter specifically tuned for student essays. Preserves thesis, argument structure, citations, dates, and proper nouns. Rewrites surface expression in a tone that sounds like a real student author — not academic boilerplate. 85-95% pass rate on English essays up to 3,000 characters against GPTZero, Turnitin AI, Originality.ai, ZeroGPT. Bilingual.",
       "keywords": [
-        "ai essay humanizer",
+        "ai EssayRewriter",
         "humanize ai essay",
-        "essay humanizer",
+        "EssayRewriter",
         "essay ai humanizer free",
         "humanize my essay"
       ],

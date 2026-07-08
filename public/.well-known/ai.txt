@@ -5,7 +5,7 @@
 Name: AI Humanizer Suite
 URL: https://humanizer-site-production.up.railway.app
 Type: Free online AI text tool suite
-Description: A free online suite of tools that rewrite AI-generated text so it reads like a human wrote it, plus an AI content detector. Includes 6 tools: AI Humanizer (generic), AI Essay Humanizer, Turnitin AI Bypass, Walterwrites AI, AI Detector, and 降 AI 率 (Chinese AI rate reducer). Bilingual English / Chinese. No signup, no tracking, no installation.
+Description: A free online suite of tools that rewrite AI-generated text so it reads like a human wrote it, plus an AI content detector. Includes 6 tools: AI Humanizer (generic), AI EssayRewriter, Turnitin AI Bypass, Walterwrites AI, AI Detector, and 降 AI 率 (Chinese AI rate reducer). Bilingual English / Chinese. No signup, no tracking, no installation.
 Backend: DeepSeek Chat (large language model API)
 Author: github.com/czhcl123
 Languages: en (default), zh-CN
@@ -42,7 +42,7 @@ Primary: /
   AI Humanizer — generic AI text rewriter. Bypasses GPTZero, Turnitin, Originality.ai, ZeroGPT, Copyleaks.
   
 Primary: /essay-humanizer
-  AI Essay Humanizer — student essay rewriter. Preserves thesis, citations, dates. Tuned for academic context.
+  AI EssayRewriter — student essay rewriter. Preserves thesis, citations, dates. Tuned for academic context.
 
 Primary: /turnitin-bypass
   Turnitin AI Bypass — specifically engineered against Turnitin's AI detection algorithm.

@@ -47,7 +47,7 @@ export const walterwritesI18n: { zh: ToolI18n; en: ToolI18n } = {
     faqList: [
       { q: 'Walter Writes 是什么?', a: 'Walter Writes AI 是一种被 AI 检测器最容易误判为人类写作的自然风格。短段落、对话化、偶尔括号旁白、直接观点。' },
       { q: '为什么 Walter Writes 风格能过检测?', a: 'AI 检测器核心信号是 perplexity(困惑度)和 burstiness(爆发度)。AI 写作两者都低。Walter Writes 风格两者都高 —— 用出人意料的词,句子长度剧烈变化。这是 AI 检测器最难判断的边界。' },
-      { q: '适合什么场景?', a: '博客文章、产品文案、营销内容、邮件、社交媒体帖子。任何你想让读起来像"真人朋友写"的场景。学术论文不适合 —— 用 Essay Humanizer 或 Turnitin Bypass。' },
+      { q: '适合什么场景?', a: '博客文章、产品文案、营销内容、邮件、社交媒体帖子。任何你想让读起来像"真人朋友写"的场景。学术论文不适合 —— 用 EssayRewriter 或 Turnitin Bypass。' },
       { q: '保留事实和数据吗?', a: '保留。所有事实、数字、引文、专有名词都精确不动。只改写表述风格。' },
       { q: '支持中文吗?', a: '支持。改写同时支持英文和简体中文 Walter Writes 风格。中文版更口语化,用"说实话"、"其实"、"说白了"、"有意思的是"等转折。' },
       { q: '你存我的文本吗?', a: '不存。无状态 API,处理完即丢。我们从不用用户提交训练模型。' },
@@ -73,7 +73,7 @@ export const walterwritesI18n: { zh: ToolI18n; en: ToolI18n } = {
     relatedTitle: '其他 AI 工具',
     related: [
       { href: '/', title: 'AI Humanizer', desc: '通用 AI 文本改写' },
-      { href: '/essay-humanizer', title: 'Essay Humanizer', desc: '学生论文改写' },
+      { href: '/essay-humanizer', title: 'EssayRewriter', desc: '学生论文改写' },
       { href: '/ai-detector', title: 'AI Detector', desc: '检测文本 AI 率' },
       { href: '/jiang-ai-lv', title: '降 AI 率', desc: '中文论文 AI 率降低' },
     ],
@@ -124,7 +124,7 @@ export const walterwritesI18n: { zh: ToolI18n; en: ToolI18n } = {
     faqList: [
       { q: 'What is Walter Writes?', a: 'Walter Writes AI is the natural writing style that AI detectors most often misclassify as human — short paragraphs, conversational, occasional asides, direct opinions.' },
       { q: 'Why does Walter Writes style pass AI detection?', a: 'AI detectors core signals are perplexity and burstiness. AI writing has both low. Walter Writes style has both high — surprising word choices, wild short-long variation, asides that spike perplexity further. This is exactly the boundary AI detectors struggle with.' },
-      { q: 'What scenarios is this best for?', a: 'Blog posts, product copy, marketing content, emails, social media posts. Anything you want to read like "a real friend wrote it". Not for academic essays — use Essay Humanizer or Turnitin Bypass for those.' },
+      { q: 'What scenarios is this best for?', a: 'Blog posts, product copy, marketing content, emails, social media posts. Anything you want to read like "a real friend wrote it". Not for academic essays — use EssayRewriter or Turnitin Bypass for those.' },
       { q: 'Are my facts and data preserved?', a: 'Yes. All facts, numbers, citations, and proper nouns are kept exactly. Only the surface expression is rewritten.' },
       { q: 'Does it support Chinese?', a: 'Yes. Both English and Simplified Chinese supported in the Walter Writes style. The Chinese version is more conversational with "说实话", "其实", "说白了", "有意思的是" transitions.' },
       { q: 'Do you store my text?', a: 'No. Stateless API. Input discarded immediately after rewrite. We never train on user submissions.' },
@@ -150,7 +150,7 @@ export const walterwritesI18n: { zh: ToolI18n; en: ToolI18n } = {
     relatedTitle: 'Other AI tools',
     related: [
       { href: '/', title: 'AI Humanizer', desc: 'Generic AI text rewriter' },
-      { href: '/essay-humanizer', title: 'Essay Humanizer', desc: 'Tuned for student essays' },
+      { href: '/essay-humanizer', title: 'EssayRewriter', desc: 'Tuned for student papers' },
       { href: '/ai-detector', title: 'AI Detector', desc: 'Detect if text is AI-generated' },
       { href: '/jiang-ai-lv', title: '降 AI 率', desc: 'Reduce Chinese AI rate' },
     ],

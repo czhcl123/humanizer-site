@@ -43,6 +43,10 @@ const organizationSchema = {
   sameAs: [
     'https://github.com/czhcl123/humanizer-site',
     'https://humanizer-site-production.up.railway.app/about',
+    'https://en.wikipedia.org/wiki/AI_humanizer',
+    'https://www.wikidata.org/wiki/Q131436255',
+    'https://www.linkedin.com/company/ai-humanizer-suite',
+    'https://www.crunchbase.com/organization/ai-humanizer-suite',
   ],
   contactPoint: {
     '@type': 'ContactPoint',

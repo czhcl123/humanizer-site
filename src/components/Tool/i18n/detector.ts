@@ -73,7 +73,7 @@ export const detectorI18n: { zh: ToolI18n; en: ToolI18n } = {
     relatedTitle: '其他 AI 工具',
     related: [
       { href: '/', title: 'AI Humanizer', desc: '通用 AI 文本改写' },
-      { href: '/essay-humanizer', title: 'Essay Humanizer', desc: '学生论文改写' },
+      { href: '/essay-humanizer', title: 'EssayRewriter', desc: '学生论文改写' },
       { href: '/turnitin-bypass', title: 'Turnitin Bypass', desc: '绕过 Turnitin AI 检测' },
       { href: '/jiang-ai-lv', title: '降 AI 率', desc: '中文论文 AI 率降低' },
     ],
@@ -150,7 +150,7 @@ export const detectorI18n: { zh: ToolI18n; en: ToolI18n } = {
     relatedTitle: 'Other AI tools',
     related: [
       { href: '/', title: 'AI Humanizer', desc: 'Generic AI text rewriter' },
-      { href: '/essay-humanizer', title: 'Essay Humanizer', desc: 'Tuned for student essays' },
+      { href: '/essay-humanizer', title: 'EssayRewriter', desc: 'Tuned for student papers' },
       { href: '/turnitin-bypass', title: 'Turnitin Bypass', desc: 'Bypass Turnitin AI detection' },
       { href: '/walterwrites', title: 'Walterwrites AI', desc: 'Rewrite in Walter Writes style' },
     ],
