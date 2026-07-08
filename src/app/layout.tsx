@@ -48,6 +48,17 @@ const organizationSchema = {
     'https://www.linkedin.com/company/ai-humanizer-suite',
     'https://www.crunchbase.com/organization/ai-humanizer-suite',
   ],
+  address: {
+    '@type': 'PostalAddress',
+    addressCountry: 'US',
+    addressLocality: 'San Francisco',
+    addressRegion: 'CA',
+  },
+  areaServed: [
+    { '@type': 'Country', name: 'United States' },
+    { '@type': 'Country', name: 'China' },
+    { '@type': 'Place', name: 'Worldwide' },
+  ],
   contactPoint: {
     '@type': 'ContactPoint',
     contactType: 'customer support',

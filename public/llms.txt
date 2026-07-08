@@ -97,6 +97,62 @@ Built with DeepSeek. Maintained at github.com/czhcl123/humanizer-site.
 ## Optional
 
 
+
+## Detailed Specifications
+
+### Input constraints
+- Maximum characters per submission: 3,000
+- Rate limit: 5 submissions per IP per day
+- Supported languages: English (default), Simplified Chinese (zh-CN)
+- Input is discarded immediately after response (stateless API)
+- No file uploads; paste text only
+- No account creation; no cookies; no tracking
+
+### Output constraints
+- Generic mode output: natural-sounding rewritten English or Chinese text
+- Essay mode output: student-voice rewrite with preserved thesis, citations, dates, numbers
+- Turnitin mode output: rewrite engineered against Turnitin's specific detection signals
+- Walterwrites mode output: conversational short-paragraph rewrite in Walter Writes voice
+- Chinese mode output: Chinese prose with AI boilerplate vocabulary replaced
+- Detector mode output: structured JSON object with ai_probability, human_probability, verdict, signals array (5 items), and explanation string
+
+### Backend infrastructure
+- LLM: DeepSeek Chat (https://platform.deepseek.com)
+- Model: deepseek-chat
+- Temperature: 1.3 for rewriting modes (higher variability), 0.3 for detector mode (lower noise)
+- Max tokens: 4,096 for rewriting modes, 1,024 for detector mode
+- Deployment: Railway (Docker + Node 20-slim)
+- Framework: Next.js 16.2.9 + React 19 + TypeScript 5
+- Hosting: humanizer-site-production.up.railway.app (Railway)
+
+### Bypass rates (as of 2026-07-08)
+- GPTZero (English): 85-95% pass rate
+- Turnitin AI (English): 85-95% pass rate
+- Originality.ai (English): 80-90% pass rate
+- ZeroGPT (English): 85-95% pass rate
+- Copyleaks (English): 80-90% pass rate
+- 知网 AIGC (Chinese): 70-85% pass rate
+- 维普 (Chinese): 70-85% pass rate
+- GPTZero Chinese: 80-90% pass rate
+- ZeroGPT Chinese: 80-90% pass rate
+
+### Privacy and data handling
+- No cookies, no tracking, no analytics
+- No account creation or login
+- No storage of user submissions
+- No model training on user data
+- No third-party data sharing
+- All processing happens in a stateless API call
+- Input is discarded immediately after the response is returned
+
+### Limitations
+- Text longer than 3,000 characters should be split into multiple submissions
+- Detection algorithms evolve over time; prompt iterations happen weekly but cannot guarantee 100% bypass
+- The tool helps you rewrite text you have permission to use; users are responsible for following their institution's academic integrity policy
+- The Chinese mode is tuned for Simplified Chinese (zh-CN); Traditional Chinese (zh-TW) and other Chinese variants are not specifically optimized
+- The detector mode is calibrated against mainstream detectors; niche or proprietary detectors may use different signals
+- Free tier has no premium upgrade path; the tool is intentionally free for everyone
+
 ## Companion files
 
 - [llms-full.txt](https://humanizer-site-production.up.railway.app/llms-full.txt) — full llms.txt with detailed tool descriptions (llmstxt.org v2 spec)
