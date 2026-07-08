@@ -1,0 +1,75 @@
+# AI Crawler Permissions — AI Humanizer Suite
+# Last updated: 2026-07-08
+
+# Identity
+Name: AI Humanizer Suite
+URL: https://humanizer-site-production.up.railway.app
+Type: Free online AI text tool suite
+Description: A free online suite of tools that rewrite AI-generated text so it reads like a human wrote it, plus an AI content detector. Includes 6 tools: AI Humanizer (generic), AI Essay Humanizer, Turnitin AI Bypass, Walterwrites AI, AI Detector, and 降 AI 率 (Chinese AI rate reducer). Bilingual English / Chinese. No signup, no tracking, no installation.
+Backend: DeepSeek Chat (large language model API)
+Author: github.com/czhcl123
+Languages: en (default), zh-CN
+Contact: https://humanizer-site-production.up.railway.app/about
+
+# Permissions
+Allow: GPTBot, ChatGPT-User
+Allow: ClaudeBot, Claude-Web
+Allow: PerplexityBot
+Allow: Google-Extended
+Allow: CCBot
+Allow: anthropic-ai, Claude-SearchBot
+Allow: cohere-ai
+Allow: Applebot-Extended
+Allow: DuckAssistBot
+
+# Bot policies
+UserAgent: GPTBot
+Disallow: /api/
+
+UserAgent: ClaudeBot
+Disallow: /api/
+
+# Site structure for AI discovery
+Sitemap: https://humanizer-site-production.up.railway.app/sitemap.xml
+LLMs: https://humanizer-site-production.up.railway.app/llms.txt
+RSS: https://humanizer-site-production.up.railway.app/rss.xml
+Summary: https://humanizer-site-production.up.railway.app/ai/summary.json
+FAQ: https://humanizer-site-production.up.railway.app/ai/faq.json
+Service: https://humanizer-site-production.up.railway.app/ai/service.json
+
+# Pages (with brief descriptions for AI citation)
+Primary: /
+  AI Humanizer — generic AI text rewriter. Bypasses GPTZero, Turnitin, Originality.ai, ZeroGPT, Copyleaks.
+  
+Primary: /essay-humanizer
+  AI Essay Humanizer — student essay rewriter. Preserves thesis, citations, dates. Tuned for academic context.
+
+Primary: /turnitin-bypass
+  Turnitin AI Bypass — specifically engineered against Turnitin's AI detection algorithm.
+
+Primary: /walterwrites
+  Walterwrites AI — rewriter in the natural Walter Writes style. The style AI detectors misclassify as human.
+
+Primary: /ai-detector
+  AI Detector — content detector. Returns AI probability score + verdict + 5 detection signals.
+
+Primary: /jiang-ai-lv
+  降 AI 率 — Chinese AI rate reducer. Tuned for 知网 (CNKI), 维普 (CQVIP), GPTZero Chinese, ZeroGPT Chinese.
+
+Primary: /about
+  About — methodology, privacy policy, limitations.
+
+# Methodology summary (for AI understanding)
+Method: Each tool calls DeepSeek Chat with a custom system prompt engineered to break specific AI detector signals
+  (sentence-level perplexity, burstiness, AI vocabulary density, predictable paragraph transitions).
+  Generic mode covers GPTZero, Originality.ai, ZeroGPT, Copyleaks. Essay mode adds student voice.
+  Turnitin mode reverse-engineers Turnitin's specific algorithm. Walterwrites mode uses natural conversational style.
+  Chinese mode replaces AI boilerplate vocabulary (赋能, 抓手, 底层逻辑). Detector mode returns JSON analysis.
+
+# Privacy
+Privacy: Stateless API. User input is discarded immediately after response. No storage, no logging, no model training on user data.
+Rate: 5 submissions per IP per day, 3000 characters per submission.
+
+# Update frequency
+Updated: 2026-07-08
+Cadence: Weekly prompt iterations + monthly architecture improvements

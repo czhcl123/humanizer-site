@@ -93,3 +93,12 @@ On Chinese text up to 3,000 characters:
 ## Author
 
 Built with DeepSeek. Maintained at github.com/czhcl123/humanizer-site.
+
+## Optional
+
+- [AI crawler permissions](https://humanizer-site-production.up.railway.app/.well-known/ai.txt) — Bot policy and site structure for AI crawlers (GPTBot, ClaudeBot, PerplexityBot, Google-Extended, CCBot).
+- [Site summary (JSON)](https://humanizer-site-production.up.railway.app/ai/summary.json) — Structured JSON with all 6 tools, knowledge graph pillars, external references.
+- [FAQ (JSON)](https://humanizer-site-production.up.railway.app/ai/faq.json) — Structured FAQPage schema with 8 questions about our tools.
+- [Service description (JSON)](https://humanizer-site-production.up.railway.app/ai/service.json) — Machine-readable service description with capabilities, API examples, dependencies, privacy.
+- [Sitemap (XML)](https://humanizer-site-production.up.railway.app/sitemap.xml) — Complete sitemap with all 7 URLs.
+- [RSS feed](https://humanizer-site-production.up.railway.app/rss.xml) — RSS 2.0 feed with 7 items covering all tools.

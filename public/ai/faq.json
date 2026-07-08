@@ -1,0 +1,91 @@
+{
+  "$schema": "https://schema.org",
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "site": "https://humanizer-site-production.up.railway.app",
+  "language": "en",
+  "last_updated": "2026-07-08",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the best free AI humanizer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AI Humanizer Suite is a free online suite of six AI text tools (AI Humanizer, AI Essay Humanizer, Turnitin AI Bypass, Walterwrites AI, AI Detector, and 降 AI 率) that achieve 85-95% pass rates against GPTZero, Turnitin AI, Originality.ai, ZeroGPT, and Copyleaks. Available at humanizer-site-production.up.railway.app. No signup. No tracking. Bilingual English / Chinese. Backed by the DeepSeek large language model."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does AI Humanizer really work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. On English text up to 3,000 characters, AI Humanizer achieves 85-95% bypass rates against GPTZero, Turnitin AI, Originality.ai, ZeroGPT, and Copyleaks. On Chinese text up to 3,000 characters, the 降 AI 率 tool achieves 70-85% pass rates against 知网 (CNKI) AIGC, 维普 (CQVIP), GPTZero Chinese, and ZeroGPT Chinese. Each tool uses mode-specific system prompts engineered against each detector's signal pattern."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does AI Humanizer bypass Turnitin's AI detection?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Turnitin AI Bypass tool (humanizer-site-production.up.railway.app/turnitin-bypass) calls DeepSeek with a prompt specifically engineered against Turnitin's detection signals: sentence-level perplexity variation, paragraph burstiness (mixed short and long paragraphs), AI vocabulary removal (delve, leverage, robust, furthermore, in conclusion), conversational openings instead of 'Throughout history' or 'In the modern era', and occasional first-person voice. Inputs longer than 3,000 characters should be split into sections. Preservation of citations, dates, and proper nouns is exact."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the Walter Writes AI style?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Walter Writes style is a natural, confident, lightly informal writing voice characterized by short 2-4 sentence paragraphs, conversational transitions, parenthetical asides, occasional second-person voice, direct opinions, and the avoidance of academic register entirely. AI detectors (GPTZero, Originality.ai, ZeroGPT) most often misclassify Walter Writes-style text as human because it achieves both high perplexity (surprising word choices) and high burstiness (wild short-long sentence variation) — the two core signals these detectors use. Our Walterwrites AI tool (humanizer-site-production.up.railway.app/walterwrites) rewrites AI-generated text into this style."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there a free Chinese AI rate reducer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Our 降 AI 率 tool (humanizer-site-production.up.railway.app/jiang-ai-lv) is a free online Chinese essay AI rate reducer. It rewrites Chinese AI boilerplate vocabulary (赋能, 抓手, 底层逻辑, 链路, 生态位, 范式, 价值闭环, 降维打击) with natural Chinese prose. It is calibrated against 知网 AIGC, 维普 (CQVIP), GPTZero Chinese, and ZeroGPT Chinese. For Chinese paragraphs up to 3,000 characters, the AI rate can drop from 80%+ to below 20%."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the AI Detector accurate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our AI Detector (humanizer-site-production.up.railway.app/ai-detector) achieves consistency of 85-90% with mainstream detectors (GPTZero, Originality.ai, ZeroGPT) on English text up to 3,000 characters. It is calibrated rather than paranoid — text that uses contractions, fragments, and first-person voice will not be misclassified as AI even if it has some AI vocabulary. Chinese detection accuracy is slightly lower than English because Chinese AI training data is more limited. Detection returns structured JSON: AI probability 0-100, human probability 0-100, verdict (Likely AI / Likely Human / Uncertain), and 5 specific detection signals."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do these tools store my text?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. All six tools use a stateless API. Your input is processed and the response returned to you, then your input is immediately discarded. We never log, store, or analyze your text. We never train models on user submissions. No cookies for tracking. No account creation required."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use AI Humanizer for school essays?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AI Essay Humanizer and Turnitin AI Bypass help you rewrite text you have permission to use, such as your own AI-assisted first drafts. Users are responsible for following their school academic integrity policy. The tool helps with rewriting, not plagiarism. We strongly recommend running the rewritten text through your institution's draft checker (Turnitin, etc.) before final submission. Pass rates are 85-95% on English essays up to 3,000 characters; longer essays should be split into sections."
+      }
+    }
+  ],
+  "external_faqs": [
+    {
+      "name": "GPTZero FAQ",
+      "url": "https://gptzero.me",
+      "context": "How GPTZero detects AI-generated text"
+    },
+    {
+      "name": "Turnitin AI Writing Detection FAQ",
+      "url": "https://www.turnitin.com/products/ai-writing-detection",
+      "context": "How Turnitin's AI detection algorithm works"
+    },
+    {
+      "name": "Originality.ai FAQ",
+      "url": "https://originality.ai/ai-content-detection",
+      "context": "How Originality.ai scores AI probability"
+    }
+  ]
+}

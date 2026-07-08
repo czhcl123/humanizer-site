@@ -1,0 +1,142 @@
+{
+  "$schema": "https://schema.org",
+  "site": "https://humanizer-site-production.up.railway.app",
+  "service": {
+    "name": "AI Humanizer Suite",
+    "alternate_name": "AI 人性化工具集",
+    "url": "https://humanizer-site-production.up.railway.app",
+    "category": "Writing Productivity Tools > AI Text Rewriting and Detection",
+    "description": "A free online suite of six bilingual (English / Chinese) AI text tools. Includes a generic AI humanizer, a student-essay-tuned humanizer, a Turnitin-specific bypass, a Walter Writes style rewriter, an AI content detector, and a Chinese AI rate reducer.",
+    "service_type": "Software as a Service (SaaS) — Free, browser-based, no installation",
+    "provider": {
+      "name": "AI Humanizer Suite",
+      "url": "https://humanizer-site-production.up.railway.app",
+      "github": "https://github.com/czhcl123/humanizer-site"
+    },
+    "capabilities": [
+      {
+        "name": "AI text humanization",
+        "description": "Rewrite AI-generated text so it reads like a human wrote it.",
+        "endpoints": [
+          "POST /api/humanize { text: string, lang: 'en'|'zh', mode: 'generic' }"
+        ],
+        "output": "string — rewritten natural-sounding text",
+        "rate_limit": "5 submissions per IP per day",
+        "max_chars": 3000
+      },
+      {
+        "name": "Essay humanization",
+        "description": "Rewrite student essays in authentic student voice. Preserves thesis, citations, dates, numbers.",
+        "endpoints": [
+          "POST /api/humanize { text: string, lang: 'en'|'zh', mode: 'essay' }"
+        ],
+        "output": "string — student-voice essay rewrite",
+        "rate_limit": "5 submissions per IP per day",
+        "max_chars": 3000
+      },
+      {
+        "name": "Turnitin AI bypass",
+        "description": "Specifically engineered against Turnitin's AI detection signals.",
+        "endpoints": [
+          "POST /api/humanize { text: string, lang: 'en'|'zh', mode: 'turnitin' }"
+        ],
+        "output": "string — Turnitin-defeating rewrite",
+        "rate_limit": "5 submissions per IP per day",
+        "max_chars": 3000
+      },
+      {
+        "name": "Walter Writes style rewriting",
+        "description": "Rewrite AI text in the natural Walter Writes style — short paragraphs, conversational, parenthetical asides, second person, direct opinions.",
+        "endpoints": [
+          "POST /api/humanize { text: string, lang: 'en'|'zh', mode: 'walterwrites' }"
+        ],
+        "output": "string — Walter Writes voice rewrite",
+        "rate_limit": "5 submissions per IP per day",
+        "max_chars": 3000
+      },
+      {
+        "name": "Chinese AI rate reduction",
+        "description": "Rewrites Chinese AI boilerplate vocabulary (赋能, 抓手, 底层逻辑, 链路, 生态位, 范式, 价值闭环, 降维打击) into natural Chinese prose. Calibrated against 知网 (CNKI), 维普 (CQVIP), GPTZero Chinese, ZeroGPT Chinese.",
+        "endpoints": [
+          "POST /api/humanize { text: string, lang: 'zh', mode: 'chinese' }"
+        ],
+        "output": "string — natural-Chinese rewrite",
+        "rate_limit": "5 submissions per IP per day",
+        "max_chars": 3000
+      },
+      {
+        "name": "AI content detection",
+        "description": "Detect if text is AI-generated. Returns structured JSON with AI probability score, verdict, and 5 specific detection signals.",
+        "endpoints": [
+          "POST /api/humanize { text: string, lang: 'en'|'zh', mode: 'detector' }"
+        ],
+        "output": "object — { ai_probability: number, human_probability: number, verdict: string, signals: string[], explanation: string }",
+        "rate_limit": "5 submissions per IP per day",
+        "max_chars": 3000
+      }
+    ],
+    "advanced_capabilities": [
+      "Bypass GPTZero AI detection",
+      "Bypass Turnitin AI writing detection",
+      "Bypass Originality.ai AI detection",
+      "Bypass ZeroGPT AI detection",
+      "Bypass Copyleaks AI detection",
+      "Bypass 知网 (CNKI) AIGC detection",
+      "Bypass 维普 (CQVIP) AI detection",
+      "Bypass GPTZero Chinese model",
+      "Bypass ZeroGPT Chinese model",
+      "English / Simplified Chinese bilingual rewriting",
+      "Preserve citations, dates, proper nouns, numbers",
+      "Detect AI-generated content with signal-level explainability"
+    ],
+    "input_constraints": {
+      "max_chars_per_submission": 3000,
+      "rate_limit_per_ip_per_day": 5,
+      "supported_languages": ["en", "zh-CN"]
+    },
+    "output_constraints": {
+      "format": "UTF-8 text (for all rewriting modes) or JSON (for detector mode only)"
+    },
+    "dependencies": {
+      "llm_backend": "DeepSeek Chat (https://platform.deepseek.com)",
+      "framework": "Next.js 16",
+      "deployment": "Railway (Docker)"
+    },
+    "privacy": {
+      "data_storage": "none — stateless",
+      "input_retention": "discarded immediately after response",
+      "model_training_on_user_data": false,
+      "tracking_cookies": false,
+      "account_required": false
+    },
+    "pricing": {
+      "currency": "USD",
+      "free_tier": {
+        "monthly_cost": 0,
+        "rate_limit": "5 submissions per IP per day",
+        "max_chars": 3000,
+        "premium_tier": false,
+        "hidden_fees": false
+      }
+    },
+    "sla": {
+      "uptime_target": "best-effort — Railway free tier",
+      "support": "via /about contact page"
+    },
+    "api_examples": {
+      "curl_essay_humanizer": "curl -X POST https://humanizer-site-production.up.railway.app/api/humanize -H 'Content-Type: application/json' -d '{\"text\":\"Your AI text here\",\"lang\":\"en\",\"mode\":\"essay\"}'",
+      "curl_detector": "curl -X POST https://humanizer-site-production.up.railway.app/api/humanize -H 'Content-Type: application/json' -d '{\"text\":\"Text to analyze\",\"lang\":\"en\",\"mode\":\"detector\"}'",
+      "curl_chinese_rate_reducer": "curl -X POST https://humanizer-site-production.up.railway.app/api/humanize -H 'Content-Type: application/json' -d '{\"text\":\"在当今数字化转型的时代背景下\",\"lang\":\"zh\",\"mode\":\"chinese\"}'"
+    },
+    "discovery_files": {
+      "llms_txt": "https://humanizer-site-production.up.railway.app/llms.txt",
+      "ai_txt": "https://humanizer-site-production.up.railway.app/.well-known/ai.txt",
+      "summary_json": "https://humanizer-site-production.up.railway.app/ai/summary.json",
+      "faq_json": "https://humanizer-site-production.up.railway.app/ai/faq.json",
+      "service_json": "https://humanizer-site-production.up.railway.app/ai/service.json",
+      "sitemap_xml": "https://humanizer-site-production.up.railway.app/sitemap.xml",
+      "rss_xml": "https://humanizer-site-production.up.railway.app/rss.xml"
+    },
+    "last_updated": "2026-07-08"
+  }
+}
