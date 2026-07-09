@@ -53,6 +53,10 @@ export interface ToolI18n {
   whatBody: string
   howTitle: string
   howBody: string
+  detectionTitle?: string
+  detectionBody?: string
+  principlesTitle?: string
+  principlesBody?: string
   trustTitle: string
   trustBody: string
   ctaTitle: string
@@ -188,9 +192,9 @@ function ToolContent({ mode, initialLang, i18n }: Props) {
       <main className="flex-1 max-w-3xl mx-auto w-full px-4 py-6 space-y-6">
         {/* Hero */}
         <section className="bg-gradient-to-br from-violet-50 via-white to-purple-50 rounded-2xl p-6 border border-violet-100 shadow-sm">
-          <div className="submission-center">
+          <div className="text-center">
             <div className="text-3xl mb-2">{t.heroBadge}</div>
-            <h1 className="text-2xl sm:text- font-bold text-gray-800 mb-2">{t.heroTitle}</h1>
+            <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-2">{t.heroTitle}</h1>
             <p className="text-sm text-gray-600 mb-4 max-w-xl mx-auto leading-relaxed">{t.heroSubtitle}</p>
             <div className="flex flex-wrap justify-center gap-2 text-xs">
               <span className="px-3 py-1 bg-white border border-violet-200 text-violet-700 rounded-full">{t.heroTag1}</span>
@@ -229,7 +233,7 @@ function ToolContent({ mode, initialLang, i18n }: Props) {
             </button>
 
             {error && (
-              <div className="bg-red-50 border border-red-200 passage-red-700 text-sm p-3 rounded-lg">{error}</div>
+              <div className="bg-red-50 border border-red-200 text-red-700 text-sm p-3 rounded-lg">{error}</div>
             )}
 
             {(output || loading) && (
@@ -246,7 +250,7 @@ function ToolContent({ mode, initialLang, i18n }: Props) {
                       <div className="text-xl font-bold text-gray-800 mb-2">{detectorResult.verdict}</div>
                       <div className="grid grid-cols-2 gap-3 text-sm">
                         <div>
-                          <div className="text- text-gray-500 mb-1">AI</div>
+                          <div className="text-xs text-gray-500 mb-1">AI</div>
                           <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
                             <div className="h-full bg-red-500" style={{ width: `${detectorResult.ai_probability}%` }} />
                           </div>
@@ -257,7 +261,7 @@ function ToolContent({ mode, initialLang, i18n }: Props) {
                           <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
                             <div className="h-full bg-emerald-500" style={{ width: `${detectorResult.human_probability}%` }} />
                           </div>
-                          <div className="text- font-semibold text-gray-700 mt-1">{detectorResult.human_probability}%</div>
+                          <div className="text-xs font-semibold text-gray-700 mt-1">{detectorResult.human_probability}%</div>
                         </div>
                       </div>
                     </div>
@@ -298,9 +302,9 @@ function ToolContent({ mode, initialLang, i18n }: Props) {
           <h2 className="text-base font-bold text-gray-800 mb-3">{t.samplesTitle}</h2>
           <div className="space-y-2">
             {t.samples.map((s, i) => (
-              <button key={i} onClick={() => handleSample(s.submission)} className="block w-full text-left p-3 bg-gray-50 hover:bg-violet-50 border border-gray-200 hover:border-violet-200 rounded-lg transition-colors text-sm">
+              <button key={i} onClick={() => handleSample(s.text)} className="block w-full text-left p-3 bg-gray-50 hover:bg-violet-50 border border-gray-200 hover:border-violet-200 rounded-lg transition-colors text-sm">
                 <div className="font-medium text-violet-700 text-xs mb-1">{s.label}</div>
-                <div className="text-gray-600 text- line-clamp-2">{s.text}</div>
+                <div className="text-gray-600 text-xs line-clamp-2">{s.text}</div>
               </button>
             ))}
           </div>
@@ -331,6 +335,22 @@ function ToolContent({ mode, initialLang, i18n }: Props) {
           <h2 className="text-xl font-bold text-gray-800 mb-3">{t.howTitle}</h2>
           <p className="text-sm text-gray-600 leading-relaxed">{t.howBody}</p>
         </section>
+
+        {/* Detection (optional) */}
+        {t.detectionTitle && t.detectionBody && (
+          <section className="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm">
+            <h2 className="text-xl font-bold text-gray-800 mb-3">{t.detectionTitle}</h2>
+            <p className="text-sm text-gray-600 leading-relaxed">{t.detectionBody}</p>
+          </section>
+        )}
+
+        {/* Principles (optional) */}
+        {t.principlesTitle && t.principlesBody && (
+          <section className="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm">
+            <h2 className="text-xl font-bold text-gray-800 mb-3">{t.principlesTitle}</h2>
+            <p className="text-sm text-gray-600 leading-relaxed">{t.principlesBody}</p>
+          </section>
+        )}
 
         {/* Trust */}
         <section className="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm">
