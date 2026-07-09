@@ -177,7 +177,7 @@ function ToolContent({ mode, initialLang, i18n }: Props) {
     <div className="min-h-screen bg-gray-50 flex flex-col">
       <header className="bg-white shadow-sm sticky top-0 z-10">
         <div className="max-w-3xl mx-auto px-4 py-3 flex items-center gap-3">
-          <Link href={`/?lang=${lang}`} className="flex-shrink-0 flex items-center gap-1.5 text- font-bold text-violet-600 hover:text-violet-700 transition-colors">
+          <Link href={`/?lang=${lang}`} className="flex-shrink-0 flex items-center gap-1.5 text-base font-bold text-violet-600 hover:text-violet-700 transition-colors">
             <span className="text-xl">✦</span>
             <span className="hidden sm:inline text-sm">{t.brand}</span>
           </Link>
@@ -387,7 +387,7 @@ function ToolContent({ mode, initialLang, i18n }: Props) {
 
         {/* CTA */}
         <section className="text-center py-4">
-          <h2 className="text- font-bold text-gray-800 mb-2">{t.ctaTitle}</h2>
+          <h2 className="text-xl font-bold text-gray-800 mb-2">{t.ctaTitle}</h2>
           <p className="text-sm text-gray-500">{t.ctaBody}</p>
         </section>
 
