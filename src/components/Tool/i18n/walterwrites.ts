@@ -34,6 +34,10 @@ export const walterwritesI18n: { zh: ToolI18n; en: ToolI18n } = {
     signalsLabel: '检测信号',
     explanationLabel: '分析说明',
     samplesTitle: '试试这些 Walter Writes 风格示例',
+    detectionTitle: 'Walter Writes 风格 > 为什么检测器老误判它',
+    detectionBody: 'Walter Writes AI 是一个被 AI 检测器(GPTZero、Originality.ai、ZeroGPT)最容易误判为人类写作的特定风格。它的核心特征:高 perplexity(选词出人意料,故意用冷僻词);高 burstiness(句长剧烈交替,3 字短句接 30 字长句);口语化转折(说实话、其实、说白了、耐心听我说);括号旁白(这是没人谈的部分;你猜怎么着);第二人称(你会发现、关键是);不完整句(这很重要。非常重要。);直接观点。普通 AI 写作两个信号都低, Walter Writes 两个都高——风格边界正好压在检测器最难判的区域。这套工具专门复刻这种风格,所有改写都按 Walter Writes 美学。',
+    principlesTitle: '改写原理 > 风格即算法',
+    principlesBody: '短段落(2-4 句最多,绝不超过 5 句);口语化开头(切入思考中或敏锐观察,不用"在当今时代");自然缩写到处用(it\'s、you\'re、we\'ve);括号旁白高频((这才是关键)、(没人这么说但));第二人称偶尔用("你会发现"、"关键是"、"听我说");不完整句作强调("这很重要。真的非常重要。");替换所有 AI 词汇(深入探讨→聊聊、利用→用、稳健→扎实、范式→方式);直接观点(我感觉、我觉得、我的看法是);完全避开学术腔。所有事实、数字、引用、专有名词精确保留。Walter Writes 风格的精髓是"读起来像咖啡馆里一个思路清晰的朋友在解释事情"。',
     featuresTitle: '什么是 Walter Writes 风格',
     whatTitle: '什么是 Walterwrites AI 改写器?',
     whatBody: 'Walterwrites AI 是一种自然、自信的写作风格,被 AI 检测器(GPTZero、Originality.ai、ZeroGPT)最容易误判为人类写作。我们的改写器专门把 AI 文本转成这种风格 —— 短段落、口语化、偶尔用括号旁白、第二人称、直接观点。读起来像咖啡馆里一个思路清晰的朋友在解释事情,不是 LinkedIn 公众号文章。',
@@ -68,7 +72,7 @@ export const walterwritesI18n: { zh: ToolI18n; en: ToolI18n } = {
     samples: [
       { label: '博客风格', text: 'In today\'s rapidly evolving digital landscape, artificial intelligence has fundamentally transformed the way businesses operate. By leveraging cutting-edge machine learning algorithms, organizations can unlock unprecedented value and drive meaningful innovation across diverse industry verticals. It is important to note that strategic implementation remains crucial for sustainable success.' },
       { label: '营销风格', text: 'Our revolutionary platform empowers enterprises to harness the power of AI-driven insights. Through robust integration capabilities and comprehensive analytics, we enable stakeholders to navigate complex challenges with confidence. Furthermore, our commitment to excellence ensures unparalleled outcomes for forward-thinking organizations.' },
-      { label: '邮件风格', content: 'I hope this message finds you well. I am writing to discuss the innovative opportunities that our cutting-edge solutions can provide for your organization. By leveraging state-of-the-art technology, we can facilitate transformative outcomes that drive sustainable growth and competitive advantage in today\'s dynamic marketplace.' },
+      { label: '邮件风格', text: 'I hope this message finds you well. I am writing to discuss the innovative opportunities that our cutting-edge solutions can provide for your organization. By leveraging state-of-the-art technology, we can facilitate transformative outcomes that drive sustainable growth and competitive advantage in today\'s dynamic marketplace.' },
     ],
     relatedTitle: '其他 AI 工具',
     related: [
@@ -111,6 +115,10 @@ export const walterwritesI18n: { zh: ToolI18n; en: ToolI18n } = {
     signalsLabel: 'Detection Signals',
     explanationLabel: 'Analysis',
     samplesTitle: 'Try these Walter Writes samples',
+    detectionTitle: "Walter Writes Aesthetic > Why Detectors Misclassify It",
+    detectionBody: "Walter Writes AI is a specific writing voice that AI detectors (GPTZero, Originality.ai, ZeroGPT) most often misclassify as human. Its core traits: high perplexity (unexpected word choices, deliberately uncommon phrasing); high burstiness (wild sentence-length swings, three-word fragment followed by thirty-word sentence); conversational transitions (\"here's the thing\", \"honestly\", \"bear with me\", \"real talk\"); parenthetical asides (\"(this is the part nobody talks about)\", \"(stay with me)\"); second-person address (\"you'll notice\", \"here's the thing\"); deliberate fragments (\"This matters. It really does.\"); direct opinions. Standard AI output has both signals low; Walter Writes pushes both high — and the style boundary sits exactly in the region detectors find hardest to call. This tool replicates that voice with surgical precision.",
+    principlesTitle: 'Rewrite Principles > Style as Algorithm',
+    principlesBody: 'Short paragraphs (two to four sentences, never five); conversational openers (mid-thought or sharp observation, never "in today\'s rapidly evolving landscape"); contractions everywhere ("it\'s", "you\'re", "we\'ve"); parenthetical asides frequent ("(this is the part nobody talks about)", "(stay with me)"); second person occasional ("you\'ll notice", "here\'s the thing", "bear with me"); deliberate fragments for rhythm ("This matters. Really matters."); replace every AI vocabulary tell ("delve"→"dig into", "leverage"→"use", "robust"→"solid", "paradigm"→"pattern"); direct opinions ("I think", "my take", "honestly"); completely avoid academic register. Facts, numbers, citations, and proper nouns preserved exactly. The Walter Writes essence reads like a sharp friend explaining something over coffee — never a press release.',
     featuresTitle: 'What is the Walter Writes style',
     whatTitle: 'What is the Walterwrites AI rewriter?',
     whatBody: 'Walterwrites AI is the natural, confident writing style that AI detectors (GPTZero, Originality.ai, ZeroGPT) most often misclassify as human. Our rewriter specifically transforms AI output into this voice: short paragraphs, conversational, occasional parenthetical asides, second person, direct opinions. It reads like a sharp friend explaining something over coffee — not a LinkedIn post or press release.',
@@ -145,7 +153,7 @@ export const walterwritesI18n: { zh: ToolI18n; en: ToolI18n } = {
     samples: [
       { label: 'Blog voice', text: 'In today\'s rapidly evolving digital landscape, artificial intelligence has fundamentally transformed the way businesses operate. By leveraging cutting-edge machine learning algorithms, organizations can unlock unprecedented value and drive meaningful innovation across diverse industry verticals. It is important to note that strategic implementation remains crucial for sustainable success.' },
       { label: 'Marketing voice', text: 'Our revolutionary platform empowers enterprises to harness the power of AI-driven insights. Through robust integration capabilities and comprehensive analytics, we enable stakeholders to navigate complex challenges with confidence. Furthermore, our commitment to excellence ensures unparalleled outcomes for forward-thinking organizations.' },
-      { label: 'Email voice', submission: 'I hope this message finds you well. I am writing to discuss the innovative opportunities that our cutting-edge solutions can provide for your organization. By leveraging state-of-the-art technology, we can facilitate transformative outcomes that drive sustainable growth and competitive advantage in today\'s dynamic marketplace.' },
+      { label: 'Email voice', text: 'I hope this message finds you well. I am writing to discuss the innovative opportunities that our cutting-edge solutions can provide for your organization. By leveraging state-of-the-art technology, we can facilitate transformative outcomes that drive sustainable growth and competitive advantage in today\'s dynamic marketplace.' },
     ],
     relatedTitle: 'Other AI tools',
     related: [

@@ -34,6 +34,10 @@ export const turnitinI18n: { zh: ToolI18n; en: ToolI18n } = {
     signalsLabel: '检测信号',
     explanationLabel: '分析说明',
     samplesTitle: '试试这些 Turnitin 论文示例',
+    detectionTitle: 'Turnitin 的 AI 视角 > 它到底看什么',
+    detectionBody: '在 bypass Turnitin 之前,先理解它跟其他检测器有什么不一样。Turnitin 的 AI 写作指标评估 6 个核心信号:句子级 perplexity(词的可预测程度)、burstiness(句长方差)、AI 词汇密度(深入探讨、利用、稳健、在现代社会中、贯穿历史、值得注意的是)、可预测段落过渡(而且、然而、此外、综上所述)、引言结论模板化、固定句式节奏。Turnitin 训练语料库覆盖 100M+ 学生论文,所以它知道真人学生怎么写——跳跃、错字、思考断片。AI 写作每段长度接近、每句用词都"刚好"。这套工具针对 6 个信号分别反向工程,7 套 prompt 每套针对一个信号优化。3000 字以内输入 bypass 率 85-93%,更长文本略降。中英双语覆盖,英文侧重 Turnitin/GPTZero/Originality.ai,中文侧重知网/维普。',
+    principlesTitle: '绕过 Turnitin 的核心策略',
+    principlesBody: '句长方差是 Turnitin 最严格的信号——真人学生段落 2 句、7 句、4 句、3 句随机分布,AI 倾向每段 5 句均匀。工具刻意制造句长跳跃(短句 8 字、长句 35 字交替);替换所有 AI 八股词(深入探讨→看看、利用→用、稳健→扎实、在现代社会中→现在);注入第一人称(我觉得、我们看到)和模糊词(大概、也许吧);保留所有引用、数据、年份、专有名词不动;偶尔自言自语(其实呢、我反复想了下);结尾留思考而非总结。Turnitin 检测不到的模式:括号旁白、口语化缓冲、故意的片段句。这些是 bypass 的关键。',
     featuresTitle: '为什么这个工具能过 Turnitin',
     whatTitle: '什么是 Turnitin AI Bypass?',
     whatBody: 'Turnitin AI Bypass 是专门针对 Turnitin AI 检测算法调优的改写器。Turnitin 用自己的检测算法(基于句子级 perplexity、burstiness、AI 词汇密度等),普通的 humanizer 经常过不了 —— 这个工具专门设计打破 Turnitin 识别的具体模式,保留论文的论点和引用,改写表述层。',
@@ -69,7 +73,7 @@ export const turnitinI18n: { zh: ToolI18n; en: ToolI18n } = {
     samples: [
       { label: '论证段落', text: 'Furthermore, the implementation of renewable energy sources is crucial for mitigating the effects of climate change. Moreover, governments must collaborate with private enterprises to facilitate the transition to sustainable practices. It is important to note that the success of these initiatives depends on public awareness and policy support.' },
       { label: '引言段落', text: 'In the modern era, the proliferation of artificial intelligence has fundamentally transformed various industries. Throughout history, technological innovations have consistently reshaped society, and AI represents the latest frontier in this ongoing evolution. It is imperative that we consider both the opportunities and challenges presented by these advances.' },
-      { label: '结论段落', content: 'In conclusion, the data presented in this study underscores the significance of adopting evidence-based practices in educational settings. It is important to note that further research is required to fully understand the long-term implications. Furthermore, collaboration among stakeholders will be essential for driving meaningful change.' },
+      { label: '结论段落', text: 'In conclusion, the data presented in this study underscores the significance of adopting evidence-based practices in educational settings. It is important to note that further research is required to fully understand the long-term implications. Furthermore, collaboration among stakeholders will be essential for driving meaningful change.' },
     ],
     relatedTitle: '其他 AI 工具',
     related: [
@@ -112,6 +116,10 @@ export const turnitinI18n: { zh: ToolI18n; en: ToolI18n } = {
     signalsLabel: 'Detection Signals',
     explanationLabel: 'Analysis',
     samplesTitle: 'Try these Turnitin essay samples',
+    detectionTitle: "Turnitin's AI Lens > What It Actually Reads",
+    detectionBody: 'Before bypassing Turnitin, you should understand what makes it different from other detectors. Turnitin\'s AI writing indicator evaluates six core signals: sentence-level perplexity (how predictable the word choice is), burstiness (variance in sentence length), AI vocabulary density ("delve", "leverage", "robust", "in the modern era", "throughout history", "it is important to note"), predictable paragraph transitions ("furthermore", "moreover", "in conclusion"), template-like intro-conclusion patterns, and uniform sentence rhythm. Turnitin\'s training corpus spans 100M+ student submissions, so it knows how real students actually write — with jumps, with typos, with thinking tangents. AI writing produces paragraphs of nearly identical length, sentences that all feel "just right". This tool reverse-engineers all six signals with seven distinct system prompts, each tuned against one specific quirk. Bypass rate averages 85-93 percent on 3,000-character inputs, falling slightly as length increases. Bilingual support covers English (Turnitin, GPTZero, Originality.ai) and Simplified Chinese (知网, 维普).',
+    principlesTitle: 'Bypass Logic > Sentence Variance, Not Vocabulary Swaps',
+    principlesBody: 'Sentence-length variance is Turnitin\'s strictest signal — real students distribute paragraphs at 2, 7, 4, 3 sentences per section with no pattern. AI tends toward uniform 5-sentence paragraphs. The tool deliberately manufactures length jumps (alternating 8-word fragments with 35-word constructions); replaces every AI vocabulary tell ("delve"→"look at", "leverage"→"use", "robust"→"solid", "in the modern era"→"now"); injects first-person voice ("I\'d argue", "we can see") and hedges ("sort of", "maybe", "I think"); preserves every citation, date, number, and proper noun exactly; occasionally thinks out loud ("honestly", "I keep coming back to"); ends paragraphs with a question or open thought rather than a summary. Patterns Turnitin misses: parenthetical asides, conversational hedges, deliberate fragments. These are the bypass leverage points.',
     featuresTitle: 'Why this beats Turnitin',
     whatTitle: 'What is Turnitin AI Bypass?',
     whatBody: 'Turnitin AI Bypass is a rewriter specifically engineered against Turnitin\'s AI detection algorithm. Turnitin uses sentence-level perplexity, burstiness, AI vocabulary density, and predictable paragraph transitions as its primary detection signals. Generic humanizers often fail — this tool is built to break each of Turnitin\'s specific patterns while preserving your thesis, citations, and facts.',
@@ -147,7 +155,7 @@ export const turnitinI18n: { zh: ToolI18n; en: ToolI18n } = {
     samples: [
       { label: 'Argument paragraph', text: 'Furthermore, the implementation of renewable energy sources is crucial for mitigating the effects of climate change. Moreover, governments must collaborate with private enterprises to facilitate the transition to sustainable practices. It is important to note that the success of these initiatives depends on public awareness and policy support.' },
       { label: 'Intro paragraph', text: 'In the modern era, the proliferation of artificial intelligence has fundamentally transformed various industries. Throughout history, technological innovations have consistently reshaped society, and AI represents the latest frontier in this ongoing evolution. It is imperative that we consider both the opportunities and challenges presented by these advances.' },
-      { label: 'Conclusion paragraph', submission: 'In conclusion, the data presented in this study underscores the significance of adopting evidence-based practices in educational settings. It is important to note that further research is required to fully understand the long-term implications. Furthermore, collaboration among stakeholders will be essential for driving meaningful change.' },
+      { label: 'Conclusion paragraph', text: 'In conclusion, the data presented in this study underscores the significance of adopting evidence-based practices in educational settings. It is important to note that further research is required to fully understand the long-term implications. Furthermore, collaboration among stakeholders will be essential for driving meaningful change.' },
     ],
     relatedTitle: 'Other AI tools',
     related: [
