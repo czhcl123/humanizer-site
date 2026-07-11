@@ -2,7 +2,7 @@
 
 import { Suspense, useEffect, useMemo, useRef, useState } from 'react'
 import Link from 'next/link'
-import { useSearchParams } from 'next/navigation'
+import { useSearchParams, usePathname } from 'next/navigation'
 import Footer from '../Footer'
 
 const MAX_CHARS = 3000
@@ -82,12 +82,18 @@ interface Props {
 }
 
 function ToolContent({ mode, initialLang, i18n }: Props) {
+  const pathname = usePathname()
   const searchParams = useSearchParams()
   const rawLang = searchParams.get('lang')
   const lang: 'zh' | 'en' = initialLang ?? (rawLang === 'zh' ? 'zh' : 'en')
   const t = i18n[lang]
   const isZh = lang === 'zh'
   const nextLang = isZh ? 'en' : 'zh'
+
+  // Build href with appropriate path: /zh/<slug> for zh, /<slug> for en
+  const inZhPrefix = pathname?.startsWith('/zh/') ?? false
+  const prefix = isZh ? '/zh' : ''
+  const locHref = isZh && !pathname?.startsWith('/zh') ? '/' : (pathname ?? '/')
 
   const [input, setInput] = useState('')
   const [output, setOutput] = useState('')
@@ -177,12 +183,12 @@ function ToolContent({ mode, initialLang, i18n }: Props) {
     <div className="min-h-screen bg-gray-50 flex flex-col">
       <header className="bg-white shadow-sm sticky top-0 z-10">
         <div className="max-w-3xl mx-auto px-4 py-3 flex items-center gap-3">
-          <Link href={`/?lang=${lang}`} className="flex-shrink-0 flex items-center gap-1.5 text-base font-bold text-violet-600 hover:text-violet-700 transition-colors">
+          <Link href={isZh ? '/zh' : '/'} className="flex-shrink-0 flex items-center gap-1.5 text-base font-bold text-violet-600 hover:text-violet-700 transition-colors">
             <span className="text-xl">✦</span>
             <span className="hidden sm:inline text-sm">{t.brand}</span>
           </Link>
           <div className="flex-1" />
-          <Link href={`/?lang=${nextLang}`} title={isZh ? 'Switch to English' : '切换到中文'} className="flex-shrink-0 flex items-center gap-1 text-xs px-3 py-1.5 border border-gray-200 rounded-full hover:bg-gray-50 hover:border-violet-300 transition-colors">
+          <Link href={isZh ? (pathname?.startsWith('/zh/') ? pathname.replace(/^\/zh/, '') || '/' : '/') : (pathname?.startsWith('/zh/') ? pathname : `/zh${pathname}`)} title={isZh ? 'Switch to English' : '切换到中文'} className="flex-shrink-0 flex items-center gap-1 text-xs px-3 py-1.5 border border-gray-200 rounded-full hover:bg-gray-50 hover:border-violet-300 transition-colors">
             <span>🌐</span>
             <span className="hidden sm:inline">{isZh ? 'EN' : '中文'}</span>
           </Link>
@@ -396,7 +402,7 @@ function ToolContent({ mode, initialLang, i18n }: Props) {
           <h2 className="text-xs text-gray-400 uppercase tracking-wide mb-3 font-medium">{t.relatedTitle}</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {t.related.map((r, i) => (
-              <Link key={i} href={`${r.href}?lang=${lang}`} className="block p-3 bg-white border border-gray-200 hover:border-violet-300 rounded-lg transition-colors">
+              <Link key={i} href={isZh ? `/zh${r.href === '/' ? '' : r.href}` : r.href} className="block p-3 bg-white border border-gray-200 hover:border-violet-300 rounded-lg transition-colors">
                 <div className="font-semibold text-violet-700 text-sm mb-1">{r.title} →</div>
                 <div className="text-xs text-gray-500 leading-relaxed">{r.desc}</div>
               </Link>
