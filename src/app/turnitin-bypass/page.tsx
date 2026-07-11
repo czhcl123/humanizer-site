@@ -33,7 +33,7 @@ export async function generateMetadata({ searchParams }: { searchParams: Promise
     description: descriptions[lang],
     openGraph: { title: titles[lang], description: descriptions[lang] },
     alternates: {
-      canonical: `https://humanizer-site-production.up.railway.app/turnitin-bypass${lang === 'zh' ? '?lang=zh' : '?lang=en'}`,
+      canonical: 'https://humanizer-site-production.up.railway.app/turnitin-bypass',
       languages: {
         'zh-CN': '/turnitin-bypass?lang=zh',
         'en-US': '/turnitin-bypass?lang=en',

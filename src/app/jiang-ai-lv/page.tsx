@@ -33,7 +33,7 @@ export async function generateMetadata({ searchParams }: { searchParams: Promise
     description: descriptions[lang],
     openGraph: { title: titles[lang], description: descriptions[lang] },
     alternates: {
-      canonical: `https://humanizer-site-production.up.railway.app/jiang-ai-lv${lang === 'zh' ? '?lang=zh' : '?lang=en'}`,
+      canonical: 'https://humanizer-site-production.up.railway.app/jiang-ai-lv',
       languages: {
         'zh-CN': '/jiang-ai-lv?lang=zh',
         'en-US': '/jiang-ai-lv?lang=en',
