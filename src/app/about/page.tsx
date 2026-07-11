@@ -22,7 +22,7 @@ export async function generateMetadata({
     title: titles[lang],
     description: descriptions[lang],
     alternates: {
-      canonical: 'https://humanizer-site-production.up.railway.app/about',
+      canonical: `https://humanizer-site-production.up.railway.app/about${lang === 'zh' ? '?lang=zh' : '?lang=en'}`,
       languages: {
         'zh-CN': '/about?lang=zh',
         'en-US': '/about?lang=en',

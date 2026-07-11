@@ -33,7 +33,7 @@ export async function generateMetadata({ searchParams }: { searchParams: Promise
     description: descriptions[lang],
     openGraph: { title: titles[lang], description: descriptions[lang] },
     alternates: {
-      canonical: 'https://humanizer-site-production.up.railway.app/essay-humanizer',
+      canonical: `https://humanizer-site-production.up.railway.app/essay-humanizer${lang === 'zh' ? '?lang=zh' : '?lang=en'}`,
       languages: {
         'zh-CN': '/essay-humanizer?lang=zh',
         'en-US': '/essay-humanizer?lang=en',
