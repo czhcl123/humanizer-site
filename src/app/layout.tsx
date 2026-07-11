@@ -185,6 +185,9 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+        <meta name="build-id" content="b6d2b9a" />
+        <meta name="build-time" content="2026-07-11T23:25:00Z" />
+        <meta name="site-version" content="v0.3.0" />
         <meta name="theme-color" content="#8b5cf6" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
@@ -195,6 +198,7 @@ export default function RootLayout({
         <link rel="alternate" type="application/rss+xml" title="AI Humanizer RSS Feed" href="/rss.xml" />
       </head>
       <body className="min-h-full flex flex-col antialiased bg-gray-50">
+        {/* AI Humanizer build b6d2b9a | 2026-07-11 | v0.3.0 | production */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
