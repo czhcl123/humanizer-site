@@ -47,7 +47,22 @@ const organizationSchema = {
     'https://www.wikidata.org/wiki/Q131436255',
     'https://www.linkedin.com/company/ai-humanizer-suite',
     'https://www.crunchbase.com/organization/ai-humanizer-suite',
+    'https://twitter.com/ai_humanizer',
+    'https://www.producthunt.com/products/ai-humanizer',
   ],
+  founder: {
+    '@type': 'Person',
+    name: 'czhcl123',
+    jobTitle: 'Founder',
+    sameAs: [
+      'https://github.com/czhcl123',
+    ],
+  },
+  employee: {
+    '@type': 'Person',
+    name: 'czhcl123',
+    jobTitle: 'Solo Founder',
+  },
   address: {
     '@type': 'PostalAddress',
     addressCountry: 'US',
