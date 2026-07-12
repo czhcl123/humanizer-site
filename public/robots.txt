@@ -1,0 +1,7 @@
+User-Agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+
+Sitemap: https://humanizer-site-production.up.railway.app/sitemap.xml
+Host: https://humanizer-site-production.up.railway.app
