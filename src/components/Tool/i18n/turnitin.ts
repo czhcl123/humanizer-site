@@ -138,6 +138,7 @@ export const turnitinI18n: { zh: ToolI18n; en: ToolI18n } = {
       { q: 'Does it support Chinese essays?', a: 'Yes. English and Simplified Chinese supported. Chinese mode is tuned for 知网 (CNKI), 维普, GPTZero Chinese, and ZeroGPT Chinese.' },
       { q: 'Do you store my essay?', a: 'No. Stateless API. Input discarded immediately after rewrite. We never train on user submissions.' },
       { q: 'Can you guarantee 100% pass rate?', a: 'No. Turnitin updates its algorithm; we update our prompts. Always verify the rewrite yourself with a free Turnitin draft check before final submission.' },
+      { q: 'Can I bypass Turnitin without changing my original meaning?', a: 'Yes. This tool specifically protects citations in (Author, Year) format, factual data, numerical references, and quoted material while rewriting the surrounding prose. This is the key differentiator from basic paraphrase tools that mangle citations or change numbers in your data tables. Specialized tools like HumanizeMyAI explicitly train on citation preservation; most generic humanizers (QuillBot, Wordtune) were built for marketing copy and strip academic markers as a side effect. Practical workflow: paste your AI draft with all citations and numbers intact, run heavy mode, then verify that (Smith, 2019) markers and any quoted material stayed unchanged. The rewrite only touches sentence structure, vocabulary, and connector words. Your thesis, arguments, evidence, and source attributions all stay exactly as you wrote them.' },
     ],
     refsTitle: 'References',
     refs: [
