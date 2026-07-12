@@ -7,3 +7,6 @@ dist/
 *.log
 .vercel/
 tools-site/
+
+tsconfig.tsbuildinfo
+

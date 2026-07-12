@@ -125,31 +125,32 @@ const webAppSchema = {
 export const metadata = {
   metadataBase: new URL('https://humanizer-site-production.up.railway.app'),
   title: {
-    default: 'AI Humanizer - Make AI Text Undetectable, Free',
+    default: 'Free AI Humanizer - Bypass Turnitin & GPTZero 2026 | No Signup',
     template: '%s | AI Humanizer',
   },
-  description: 'Free AI Humanizer that rewrites AI-generated text so it reads naturally and bypasses GPTZero, Turnitin AI, and Originality.ai detection. No signup, no installation. Supports English and Chinese.',
+  description: 'Free AI humanizer that bypasses Turnitin AI, GPTZero, and Originality.ai in 2026. No signup, no install. Rewrites ChatGPT, Gemini, and Claude output to read like a human. Bilingual EN/中文.',
+  keywords: ['free ai humanizer', 'bypass turnitin 2026', 'bypass gptzero', 'undetectable ai', 'ai text humanizer no signup', 'humanize chatgpt', 'turnitin ai bypass', 'ai 人性化工具'],
   openGraph: {
     type: 'website',
     locale: 'en_US',
     alternateLocale: 'zh_CN',
     url: 'https://humanizer-site-production.up.railway.app',
     siteName: 'AI Humanizer',
-    title: 'AI Humanizer - Make AI Text Undetectable, Free',
-    description: 'Free online AI humanizer. Rewrite ChatGPT, Gemini, and Claude output to bypass AI detection. No signup, no tracking.',
+    title: 'Free AI Humanizer - Bypass Turnitin & GPTZero 2026',
+    description: 'Bypass Turnitin AI, GPTZero, Originality.ai — free, no signup. Rewrites ChatGPT, Gemini, Claude output to read like a human.',
     images: [
       {
         url: '/og-image.svg',
         width: 1200,
         height: 630,
-        alt: 'AI Humanizer - Free Online Tool',
+        alt: 'Free AI Humanizer - Bypass Turnitin 2026',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI Humanizer - Make AI Text Undetectable, Free',
-    description: 'Free online AI humanizer. Rewrite ChatGPT output to bypass AI detection.',
+    title: 'Free AI Humanizer - Bypass Turnitin & GPTZero 2026',
+    description: 'Bypass Turnitin AI, GPTZero, Originality.ai — free, no signup.',
     images: ['/og-image.svg'],
   },
   alternates: {
