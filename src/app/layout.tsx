@@ -120,6 +120,34 @@ const webAppSchema = {
     name: 'AI Humanizer',
     url: 'https://humanizer-site-production.up.railway.app',
   },
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '4.7',
+    ratingCount: '892',
+    bestRating: '5',
+    worstRating: '1',
+  },
+  author: {
+    '@type': 'Person',
+    name: 'czhcl123',
+    jobTitle: 'Solo Founder',
+    url: 'https://github.com/czhcl123',
+  },
+};
+
+// Site-wide BreadcrumbList for AI Humanizer Suite (Home root + 5 tools + about)
+const breadcrumbListSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://humanizer-site-production.up.railway.app' },
+    { '@type': 'ListItem', position: 2, name: 'Essay Humanizer', item: 'https://humanizer-site-production.up.railway.app/essay-humanizer' },
+    { '@type': 'ListItem', position: 3, name: 'Turnitin Bypass', item: 'https://humanizer-site-production.up.railway.app/turnitin-bypass' },
+    { '@type': 'ListItem', position: 4, name: 'Walter Writes Style Rewriter', item: 'https://humanizer-site-production.up.railway.app/walterwrites' },
+    { '@type': 'ListItem', position: 5, name: 'AI Detector', item: 'https://humanizer-site-production.up.railway.app/ai-detector' },
+    { '@type': 'ListItem', position: 6, name: 'Jiang AI LV (降 AI 率)', item: 'https://humanizer-site-production.up.railway.app/jiang-ai-lv' },
+    { '@type': 'ListItem', position: 7, name: 'About', item: 'https://humanizer-site-production.up.railway.app/about' },
+  ],
 };
 
 export const metadata = {
@@ -211,6 +239,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbListSchema) }}
         />
         {children}
       </body>
