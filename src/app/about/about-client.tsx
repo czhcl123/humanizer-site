@@ -113,7 +113,7 @@ function AboutContent({ initialLang }: { initialLang?: Lang }) {
               </a>
             </div>
             <div>
-              <a href="https://humanizer-site-production.up.railway.app/llms.txt" className="text-violet-600 hover:underline">
+              <a href="https://gpt-undetectable.com/llms.txt" className="text-violet-600 hover:underline">
                 llms.txt →
               </a>
             </div>

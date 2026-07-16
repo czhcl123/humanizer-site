@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = 'https://humanizer-site-production.up.railway.app'
+  const base = 'https://gpt-undetectable.com'
   const today = new Date().toISOString().split('T')[0]
 
   return [

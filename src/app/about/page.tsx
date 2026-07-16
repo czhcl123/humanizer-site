@@ -22,10 +22,10 @@ export async function generateMetadata({
     title: titles[lang],
     description: descriptions[lang],
     alternates: {
-      canonical: 'https://humanizer-site-production.up.railway.app/about',
+      canonical: 'https://gpt-undetectable.com/about',
       languages: {
-        'zh-CN': '/about?lang=zh',
-        'en-US': '/about?lang=en',
+        'zh-CN': '/zh/about',
+        'en-US': '/about',
         'x-default': '/about',
       },
     },

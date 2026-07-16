@@ -32,7 +32,7 @@ export async function generateMetadata() {
     description: descriptions[lang],
     openGraph: { title: titles[lang], description: descriptions[lang] },
     alternates: {
-      canonical: 'https://humanizer-site-production.up.railway.app/zh/turnitin-bypass',
+      canonical: 'https://gpt-undetectable.com/zh/turnitin-bypass',
       languages: {
         'zh-CN': '/zh/turnitin-bypass',
         'en-US': '/turnitin-bypass',

@@ -5,14 +5,14 @@ const websiteSchema = {
   '@type': 'WebSite',
   name: 'AI Humanizer',
   alternateName: 'AI 人性化工具',
-  url: 'https://humanizer-site-production.up.railway.app',
+  url: 'https://gpt-undetectable.com',
   description: 'Free AI Humanizer that rewrites AI-generated text so it reads naturally and bypasses GPTZero, Turnitin AI, and Originality.ai detection. No signup, no installation. Supports English and Chinese.',
   inLanguage: ['en', 'zh'],
   potentialAction: {
     '@type': 'SearchAction',
     target: {
       '@type': 'EntryPoint',
-      urlTemplate: 'https://humanizer-site-production.up.railway.app/?q={search_term_string}',
+      urlTemplate: 'https://gpt-undetectable.com/?q={search_term_string}',
     },
     'query-input': 'required name=search_term_string',
   },
@@ -23,10 +23,10 @@ const organizationSchema = {
   '@type': 'Organization',
   name: 'AI Humanizer',
   alternateName: 'AI 人性化工具',
-  url: 'https://humanizer-site-production.up.railway.app',
+  url: 'https://gpt-undetectable.com',
   logo: {
     '@type': 'ImageObject',
-    url: 'https://humanizer-site-production.up.railway.app/favicon.svg',
+    url: 'https://gpt-undetectable.com/favicon.svg',
     width: 512,
     height: 512,
   },
@@ -42,7 +42,7 @@ const organizationSchema = {
   ],
   sameAs: [
     'https://github.com/czhcl123/humanizer-site',
-    'https://humanizer-site-production.up.railway.app/about',
+    'https://gpt-undetectable.com/about',
     'https://en.wikipedia.org/wiki/AI_humanizer',
     'https://www.wikidata.org/wiki/Q131436255',
     'https://www.linkedin.com/company/ai-humanizer-suite',
@@ -78,7 +78,7 @@ const organizationSchema = {
     '@type': 'ContactPoint',
     contactType: 'customer support',
     email: 'contact@humanizer-site-production.up.railway.app',
-    url: 'https://humanizer-site-production.up.railway.app/about',
+    url: 'https://gpt-undetectable.com/about',
     availableLanguage: ['English', 'Chinese'],
   },
 };
@@ -88,7 +88,7 @@ const webAppSchema = {
   '@type': 'WebApplication',
   name: 'AI Humanizer',
   alternateName: 'AI 人性化工具',
-  url: 'https://humanizer-site-production.up.railway.app',
+  url: 'https://gpt-undetectable.com',
   description: 'Free AI Humanizer that rewrites AI-generated text so it reads naturally and bypasses GPTZero, Turnitin AI, and Originality.ai detection. No signup, no installation. Supports English and Chinese.',
   applicationCategory: 'UtilitiesApplication',
   applicationSubCategory: 'Text Rewriting Tool',
@@ -118,7 +118,7 @@ const webAppSchema = {
   creator: {
     '@type': 'Organization',
     name: 'AI Humanizer',
-    url: 'https://humanizer-site-production.up.railway.app',
+    url: 'https://gpt-undetectable.com',
   },
   aggregateRating: {
     '@type': 'AggregateRating',
@@ -140,18 +140,18 @@ const breadcrumbListSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://humanizer-site-production.up.railway.app' },
-    { '@type': 'ListItem', position: 2, name: 'Essay Humanizer', item: 'https://humanizer-site-production.up.railway.app/essay-humanizer' },
-    { '@type': 'ListItem', position: 3, name: 'Turnitin Bypass', item: 'https://humanizer-site-production.up.railway.app/turnitin-bypass' },
-    { '@type': 'ListItem', position: 4, name: 'Walter Writes Style Rewriter', item: 'https://humanizer-site-production.up.railway.app/walterwrites' },
-    { '@type': 'ListItem', position: 5, name: 'AI Detector', item: 'https://humanizer-site-production.up.railway.app/ai-detector' },
-    { '@type': 'ListItem', position: 6, name: 'Jiang AI LV (降 AI 率)', item: 'https://humanizer-site-production.up.railway.app/jiang-ai-lv' },
-    { '@type': 'ListItem', position: 7, name: 'About', item: 'https://humanizer-site-production.up.railway.app/about' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://gpt-undetectable.com' },
+    { '@type': 'ListItem', position: 2, name: 'Essay Humanizer', item: 'https://gpt-undetectable.com/essay-humanizer' },
+    { '@type': 'ListItem', position: 3, name: 'Turnitin Bypass', item: 'https://gpt-undetectable.com/turnitin-bypass' },
+    { '@type': 'ListItem', position: 4, name: 'Walter Writes Style Rewriter', item: 'https://gpt-undetectable.com/walterwrites' },
+    { '@type': 'ListItem', position: 5, name: 'AI Detector', item: 'https://gpt-undetectable.com/ai-detector' },
+    { '@type': 'ListItem', position: 6, name: 'Jiang AI LV (降 AI 率)', item: 'https://gpt-undetectable.com/jiang-ai-lv' },
+    { '@type': 'ListItem', position: 7, name: 'About', item: 'https://gpt-undetectable.com/about' },
   ],
 };
 
 export const metadata = {
-  metadataBase: new URL('https://humanizer-site-production.up.railway.app'),
+  metadataBase: new URL('https://gpt-undetectable.com'),
   title: {
     default: 'Free AI Humanizer - Bypass Turnitin & GPTZero 2026 | No Signup',
     template: '%s | AI Humanizer',
@@ -162,7 +162,7 @@ export const metadata = {
     type: 'website',
     locale: 'en_US',
     alternateLocale: 'zh_CN',
-    url: 'https://humanizer-site-production.up.railway.app',
+    url: 'https://gpt-undetectable.com',
     siteName: 'AI Humanizer',
     title: 'Free AI Humanizer - Bypass Turnitin & GPTZero 2026',
     description: 'Bypass Turnitin AI, GPTZero, Originality.ai — free, no signup. Rewrites ChatGPT, Gemini, Claude output to read like a human.',
@@ -182,11 +182,11 @@ export const metadata = {
     images: ['/og-image.svg'],
   },
   alternates: {
-    canonical: 'https://humanizer-site-production.up.railway.app',
+    canonical: 'https://gpt-undetectable.com',
     languages: {
-      'en-US': 'https://humanizer-site-production.up.railway.app/?lang=en',
-      'zh-CN': 'https://humanizer-site-production.up.railway.app/?lang=zh',
-      'x-default': 'https://humanizer-site-production.up.railway.app',
+      'en-US': 'https://gpt-undetectable.com/?lang=en',
+      'zh-CN': 'https://gpt-undetectable.com/?lang=zh',
+      'x-default': 'https://gpt-undetectable.com',
     },
   },
   other: {

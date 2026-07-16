@@ -32,7 +32,7 @@ export async function generateMetadata() {
     description: descriptions[lang],
     openGraph: { title: titles[lang], description: descriptions[lang] },
     alternates: {
-      canonical: 'https://humanizer-site-production.up.railway.app/zh/ai-detector',
+      canonical: 'https://gpt-undetectable.com/zh/ai-detector',
       languages: {
         'zh-CN': '/zh/ai-detector',
         'en-US': '/ai-detector',

@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 
 export async function GET() {
-  const base = 'https://humanizer-site-production.up.railway.app'
+  const base = 'https://gpt-undetectable.com'
   const now = new Date().toUTCString()
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>

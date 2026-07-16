@@ -32,7 +32,7 @@ export async function generateMetadata() {
     description: descriptions[lang],
     openGraph: { title: titles[lang], description: descriptions[lang] },
     alternates: {
-      canonical: 'https://humanizer-site-production.up.railway.app/zh/jiang-ai-lv',
+      canonical: 'https://gpt-undetectable.com/zh/jiang-ai-lv',
       languages: {
         'zh-CN': '/zh/jiang-ai-lv',
         'en-US': '/jiang-ai-lv',

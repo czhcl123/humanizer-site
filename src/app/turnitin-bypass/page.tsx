@@ -34,10 +34,10 @@ export async function generateMetadata({ searchParams }: { searchParams: Promise
     description: descriptions[lang],
     openGraph: { title: titles[lang], description: descriptions[lang] },
     alternates: {
-      canonical: 'https://humanizer-site-production.up.railway.app/turnitin-bypass',
+      canonical: 'https://gpt-undetectable.com/turnitin-bypass',
       languages: {
-        'zh-CN': '/turnitin-bypass?lang=zh',
-        'en-US': '/turnitin-bypass?lang=en',
+        'zh-CN': '/zh/turnitin-bypass',
+        'en-US': '/turnitin-bypass',
         'x-default': '/turnitin-bypass',
       },
     },

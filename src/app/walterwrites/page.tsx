@@ -33,10 +33,10 @@ export async function generateMetadata({ searchParams }: { searchParams: Promise
     description: descriptions[lang],
     openGraph: { title: titles[lang], description: descriptions[lang] },
     alternates: {
-      canonical: 'https://humanizer-site-production.up.railway.app/walterwrites',
+      canonical: 'https://gpt-undetectable.com/walterwrites',
       languages: {
-        'zh-CN': '/walterwrites?lang=zh',
-        'en-US': '/walterwrites?lang=en',
+        'zh-CN': '/zh/walterwrites',
+        'en-US': '/walterwrites',
         'x-default': '/walterwrites',
       },
     },
