@@ -77,7 +77,7 @@ const organizationSchema = {
   contactPoint: {
     '@type': 'ContactPoint',
     contactType: 'customer support',
-    email: 'contact@humanizer-site-production.up.railway.app',
+    email: 'contact@gpt-undetectable.com',
     url: 'https://gpt-undetectable.com/about',
     availableLanguage: ['English', 'Chinese'],
   },
@@ -184,8 +184,8 @@ export const metadata = {
   alternates: {
     canonical: 'https://gpt-undetectable.com',
     languages: {
-      'en-US': 'https://gpt-undetectable.com/?lang=en',
-      'zh-CN': 'https://gpt-undetectable.com/?lang=zh',
+      'en-US': 'https://gpt-undetectable.com',
+      'zh-CN': 'https://gpt-undetectable.com/zh',
       'x-default': 'https://gpt-undetectable.com',
     },
   },

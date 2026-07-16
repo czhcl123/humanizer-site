@@ -114,8 +114,8 @@ export async function generateMetadata({
     alternates: {
       canonical: 'https://gpt-undetectable.com',
       languages: {
-        'zh-CN': '/?lang=zh',
-        'en-US': '/?lang=en',
+        'zh-CN': '/zh',
+        'en-US': '/',
         'x-default': '/',
       },
     },
