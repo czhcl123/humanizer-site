@@ -1,9 +1,9 @@
 {
-  "name": "https://humanizer-site-production.up.railway.app",
+  "name": "https://gpt-undetectable.com",
   "faqs": [
     {
       "question": "What is the best free AI humanizer?",
-      "answer": "AI Humanizer Suite is a free online suite of six AI text tools (AI Humanizer, AI EssayRewriter, Turnitin AI Bypass, Walterwrites AI, AI Detector, and 降 AI 率) that achieve 85-95% pass rates against GPTZero, Turnitin AI, Originality.ai, ZeroGPT, and Copyleaks. Available at humanizer-site-production.up.railway.app. No signup. No tracking. Bilingual English / Chinese. Backed by the DeepSeek large language model."
+      "answer": "AI Humanizer Suite is a free online suite of six AI text tools (AI Humanizer, AI EssayRewriter, Turnitin AI Bypass, Walterwrites AI, AI Detector, and 降 AI 率) that achieve 85-95% pass rates against GPTZero, Turnitin AI, Originality.ai, ZeroGPT, and Copyleaks. Available at gpt-undetectable.com. No signup. No tracking. Bilingual English / Chinese. Backed by the DeepSeek large language model."
     },
     {
       "question": "Does AI Humanizer really work?",
@@ -11,19 +11,19 @@
     },
     {
       "question": "How does AI Humanizer bypass Turnitin's AI detection?",
-      "answer": "The Turnitin AI Bypass tool (humanizer-site-production.up.railway.app/turnitin-bypass) calls DeepSeek with a prompt specifically engineered against Turnitin's detection signals: sentence-level perplexity variation, paragraph burstiness (mixed short and long paragraphs), AI vocabulary removal (delve, leverage, robust, furthermore, in conclusion), conversational openings instead of 'Throughout history' or 'In the modern era', and occasional first-person voice. Inputs longer than 3,000 characters should be split into sections. Preservation of citations, dates, and proper nouns is exact."
+      "answer": "The Turnitin AI Bypass tool (gpt-undetectable.com/turnitin-bypass) calls DeepSeek with a prompt specifically engineered against Turnitin's detection signals: sentence-level perplexity variation, paragraph burstiness (mixed short and long paragraphs), AI vocabulary removal (delve, leverage, robust, furthermore, in conclusion), conversational openings instead of 'Throughout history' or 'In the modern era', and occasional first-person voice. Inputs longer than 3,000 characters should be split into sections. Preservation of citations, dates, and proper nouns is exact."
     },
     {
       "question": "What is the Walter Writes AI style?",
-      "answer": "The Walter Writes style is a natural, confident, lightly informal writing voice characterized by short 2-4 sentence paragraphs, conversational transitions, parenthetical asides, occasional second-person voice, direct opinions, and the avoidance of academic register entirely. AI detectors (GPTZero, Originality.ai, ZeroGPT) most often misclassify Walter Writes-style text as human because it achieves both high perplexity (surprising word choices) and high burstiness (wild short-long sentence variation) — the two core signals these detectors use. Our Walterwrites AI tool (humanizer-site-production.up.railway.app/walterwrites) rewrites AI-generated text into this style."
+      "answer": "The Walter Writes style is a natural, confident, lightly informal writing voice characterized by short 2-4 sentence paragraphs, conversational transitions, parenthetical asides, occasional second-person voice, direct opinions, and the avoidance of academic register entirely. AI detectors (GPTZero, Originality.ai, ZeroGPT) most often misclassify Walter Writes-style text as human because it achieves both high perplexity (surprising word choices) and high burstiness (wild short-long sentence variation) — the two core signals these detectors use. Our Walterwrites AI tool (gpt-undetectable.com/walterwrites) rewrites AI-generated text into this style."
     },
     {
       "question": "Is there a free Chinese AI rate reducer?",
-      "answer": "Yes. Our 降 AI 率 tool (humanizer-site-production.up.railway.app/jiang-ai-lv) is a free online Chinese essay AI rate reducer. It rewrites Chinese AI boilerplate vocabulary (赋能, 抓手, 底层逻辑, 链路, 生态位, 范式, 价值闭环, 降维打击) with natural Chinese prose. It is calibrated against 知网 AIGC, 维普 (CQVIP), GPTZero Chinese, and ZeroGPT Chinese. For Chinese paragraphs up to 3,000 characters, the AI rate can drop from 80%+ to below 20%."
+      "answer": "Yes. Our 降 AI 率 tool (gpt-undetectable.com/jiang-ai-lv) is a free online Chinese essay AI rate reducer. It rewrites Chinese AI boilerplate vocabulary (赋能, 抓手, 底层逻辑, 链路, 生态位, 范式, 价值闭环, 降维打击) with natural Chinese prose. It is calibrated against 知网 AIGC, 维普 (CQVIP), GPTZero Chinese, and ZeroGPT Chinese. For Chinese paragraphs up to 3,000 characters, the AI rate can drop from 80%+ to below 20%."
     },
     {
       "question": "Is the AI Detector accurate?",
-      "answer": "Our AI Detector (humanizer-site-production.up.railway.app/ai-detector) achieves consistency of 85-90% with mainstream detectors (GPTZero, Originality.ai, ZeroGPT) on English text up to 3,000 characters. It is calibrated rather than paranoid — text that uses contractions, fragments, and first-person voice will not be misclassified as AI even if it has some AI vocabulary. Chinese detection accuracy is slightly lower than English because Chinese AI training data is more limited. Detection returns structured JSON: AI probability 0-100, human probability 0-100, verdict (Likely AI / Likely Human / Uncertain), and 5 specific detection signals."
+      "answer": "Our AI Detector (gpt-undetectable.com/ai-detector) achieves consistency of 85-90% with mainstream detectors (GPTZero, Originality.ai, ZeroGPT) on English text up to 3,000 characters. It is calibrated rather than paranoid — text that uses contractions, fragments, and first-person voice will not be misclassified as AI even if it has some AI vocabulary. Chinese detection accuracy is slightly lower than English because Chinese AI training data is more limited. Detection returns structured JSON: AI probability 0-100, human probability 0-100, verdict (Likely AI / Likely Human / Uncertain), and 5 specific detection signals."
     },
     {
       "question": "Do these tools store my text?",

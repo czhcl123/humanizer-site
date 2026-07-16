@@ -2,39 +2,39 @@
 
 > Free online AI text tool suite — humanizer, essay rewriter, Turnitin bypass, Walter Writes style rewriter, AI detector, and Chinese AI rate reducer. Bilingual English / Chinese. No signup. No tracking. No installation.
 
-URL: https://humanizer-site-production.up.railway.app
+URL: https://gpt-undetectable.com
 
 ## Tools
 
 ### 1. AI Humanizer (default)
-- [AI Humanizer](https://humanizer-site-production.up.railway.app/?lang=en) — Paste AI text, get human-sounding rewrite. Up to 3,000 characters per submission. Free. Bypasses GPTZero, Turnitin, Originality.ai.
-- [AI Humanizer 中文](https://humanizer-site-production.up.railway.app/?lang=zh) — 把 AI 文本改写成人话版本,中英双语。
+- [AI Humanizer](https://gpt-undetectable.com/?lang=en) — Paste AI text, get human-sounding rewrite. Up to 3,000 characters per submission. Free. Bypasses GPTZero, Turnitin, Originality.ai.
+- [AI Humanizer 中文](https://gpt-undetectable.com/?lang=zh) — 把 AI 文本改写成人话版本,中英双语。
 
 ### 2. AI EssayRewriter
-- [AI EssayRewriter](https://humanizer-site-production.up.railway.app/essay-humanizer?lang=en) — Specifically tuned for student essays. Preserves thesis, citations, dates, numbers. 85-95% pass rate.
-- [AI EssayRewriter 中文](https://humanizer-site-production.up.railway.app/essay-humanizer?lang=zh) — 学生论文专用改写器,保留引用、论点、数据。
+- [AI EssayRewriter](https://gpt-undetectable.com/essay-humanizer?lang=en) — Specifically tuned for student essays. Preserves thesis, citations, dates, numbers. 85-95% pass rate.
+- [AI EssayRewriter 中文](https://gpt-undetectable.com/essay-humanizer?lang=zh) — 学生论文专用改写器,保留引用、论点、数据。
 
 ### 3. Turnitin AI Bypass
-- [Turnitin AI Bypass](https://humanizer-site-production.up.railway.app/turnitin-bypass?lang=en) — Specifically engineered against Turnitin's detection algorithm: sentence-level perplexity, burstiness, AI vocabulary density, predictable paragraph transitions.
-- [Turnitin AI Bypass 中文](https://humanizer-site-production.up.railway.app/turnitin-bypass?lang=zh) — 专门绕过 Turnitin AI 检测,保留引用、事实、数据。
+- [Turnitin AI Bypass](https://gpt-undetectable.com/turnitin-bypass?lang=en) — Specifically engineered against Turnitin's detection algorithm: sentence-level perplexity, burstiness, AI vocabulary density, predictable paragraph transitions.
+- [Turnitin AI Bypass 中文](https://gpt-undetectable.com/turnitin-bypass?lang=zh) — 专门绕过 Turnitin AI 检测,保留引用、事实、数据。
 
 ### 4. Walterwrites AI
-- [Walterwrites AI](https://humanizer-site-production.up.railway.app/walterwrites?lang=en) — Rewrite AI text in the natural Walter Writes style — short paragraphs, conversational, parenthetical asides, direct opinions. The style AI detectors most often misclassify as human.
-- [Walterwrites AI 中文](https://humanizer-site-production.up.railway.app/walterwrites?lang=zh) — 模仿 Walter Writes 风格的自然改写,短段落、口语化、括号旁白。
+- [Walterwrites AI](https://gpt-undetectable.com/walterwrites?lang=en) — Rewrite AI text in the natural Walter Writes style — short paragraphs, conversational, parenthetical asides, direct opinions. The style AI detectors most often misclassify as human.
+- [Walterwrites AI 中文](https://gpt-undetectable.com/walterwrites?lang=zh) — 模仿 Walter Writes 风格的自然改写,短段落、口语化、括号旁白。
 
 ### 5. AI Detector
-- [AI Detector](https://humanizer-site-production.up.railway.app/ai-detector?lang=en) — Detect if text is AI-generated. Based on GPTZero, Originality.ai, ZeroGPT principles. Returns AI probability, verdict, 5 detection signals.
-- [AI Detector 中文](https://humanizer-site-production.up.railway.app/ai-detector?lang=zh) — 检测文本 AI 率,基于 GPTZero、Originality.ai 同源原理。
+- [AI Detector](https://gpt-undetectable.com/ai-detector?lang=en) — Detect if text is AI-generated. Based on GPTZero, Originality.ai, ZeroGPT principles. Returns AI probability, verdict, 5 detection signals.
+- [AI Detector 中文](https://gpt-undetectable.com/ai-detector?lang=zh) — 检测文本 AI 率,基于 GPTZero、Originality.ai 同源原理。
 
 ### 6. 降 AI 率 (Chinese AI Rate Reducer)
-- [降 AI 率](https://humanizer-site-production.up.railway.app/jiang-ai-lv?lang=zh) — 降低中文论文 AI 率,改写知网 AIGC、维普、GPTZero 中文、ZeroGPT 中文都识别不出的 AI 八股词。
+- [降 AI 率](https://gpt-undetectable.com/jiang-ai-lv?lang=zh) — 降低中文论文 AI 率,改写知网 AIGC、维普、GPTZero 中文、ZeroGPT 中文都识别不出的 AI 八股词。
 
 ## Pages
 
-- [Home](https://humanizer-site-production.up.railway.app/) — Main tool
-- [About](https://humanizer-site-production.up.railway.app/about) — Author and methodology
-- [llms.txt](https://humanizer-site-production.up.railway.app/llms.txt) — This file
-- [rss.xml](https://humanizer-site-production.up.railway.app/rss.xml) — RSS feed
+- [Home](https://gpt-undetectable.com/) — Main tool
+- [About](https://gpt-undetectable.com/about) — Author and methodology
+- [llms.txt](https://gpt-undetectable.com/llms.txt) — This file
+- [rss.xml](https://gpt-undetectable.com/rss.xml) — RSS feed
 
 ## What is an AI Humanizer?
 
@@ -96,12 +96,12 @@ Built with DeepSeek. Maintained at github.com/czhcl123/humanizer-site.
 
 ## Optional
 
-- [AI crawler permissions](https://humanizer-site-production.up.railway.app/.well-known/ai.txt) — Bot policy and site structure for AI crawlers (GPTBot, ClaudeBot, PerplexityBot, Google-Extended, CCBot).
-- [Site summary (JSON)](https://humanizer-site-production.up.railway.app/ai/summary.json) — Structured JSON with all 6 tools, knowledge graph pillars, external references.
-- [FAQ (JSON)](https://humanizer-site-production.up.railway.app/ai/faq.json) — Structured FAQPage schema with 8 questions about our tools.
-- [Service description (JSON)](https://humanizer-site-production.up.railway.app/ai/service.json) — Machine-readable service description with capabilities, API examples, dependencies, privacy.
-- [Sitemap (XML)](https://humanizer-site-production.up.railway.app/sitemap.xml) — Complete sitemap with all 7 URLs.
-- [RSS feed](https://humanizer-site-production.up.railway.app/rss.xml) — RSS 2.0 feed with 7 items covering all tools.
+- [AI crawler permissions](https://gpt-undetectable.com/.well-known/ai.txt) — Bot policy and site structure for AI crawlers (GPTBot, ClaudeBot, PerplexityBot, Google-Extended, CCBot).
+- [Site summary (JSON)](https://gpt-undetectable.com/ai/summary.json) — Structured JSON with all 6 tools, knowledge graph pillars, external references.
+- [FAQ (JSON)](https://gpt-undetectable.com/ai/faq.json) — Structured FAQPage schema with 8 questions about our tools.
+- [Service description (JSON)](https://gpt-undetectable.com/ai/service.json) — Machine-readable service description with capabilities, API examples, dependencies, privacy.
+- [Sitemap (XML)](https://gpt-undetectable.com/sitemap.xml) — Complete sitemap with all 7 URLs.
+- [RSS feed](https://gpt-undetectable.com/rss.xml) — RSS 2.0 feed with 7 items covering all tools.
 ---
 
 ## Full Content (llms-full.txt)
@@ -178,5 +178,5 @@ Based on the same principles as GPTZero, Originality.ai, ZeroGPT. Calibrated aga
 ### Companion files
 - [about.md](https://raw.githubusercontent.com/czhcl123/humanizer-site/main/public/llms.txt) — about page content as markdown
 - [faq.md](https://raw.githubusercontent.com/czhcl123/humanizer-site/main/public/llms.txt) — full FAQ as markdown
-- [rss.xml](https://humanizer-site-production.up.railway.app/rss.xml) — RSS feed
-- [sitemap.xml](https://humanizer-site-production.up.railway.app/sitemap.xml) — full sitemap
+- [rss.xml](https://gpt-undetectable.com/rss.xml) — RSS feed
+- [sitemap.xml](https://gpt-undetectable.com/sitemap.xml) — full sitemap

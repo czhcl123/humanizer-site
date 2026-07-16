@@ -3,5 +3,5 @@ Allow: /
 Disallow: /api/
 Disallow: /_next/
 
-Sitemap: https://humanizer-site-production.up.railway.app/sitemap.xml
-Host: https://humanizer-site-production.up.railway.app
+Sitemap: https://gpt-undetectable.com/sitemap.xml
+Host: https://gpt-undetectable.com

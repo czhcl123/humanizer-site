@@ -3,13 +3,13 @@
 
 # Identity
 Name: AI Humanizer Suite
-URL: https://humanizer-site-production.up.railway.app
+URL: https://gpt-undetectable.com
 Type: Free online AI text tool suite
 Description: A free online suite of tools that rewrite AI-generated text so it reads like a human wrote it, plus an AI content detector. Includes 6 tools: AI Humanizer (generic), AI EssayRewriter, Turnitin AI Bypass, Walterwrites AI, AI Detector, and 降 AI 率 (Chinese AI rate reducer). Bilingual English / Chinese. No signup, no tracking, no installation.
 Backend: DeepSeek Chat (large language model API)
 Author: github.com/czhcl123
 Languages: en (default), zh-CN
-Contact: https://humanizer-site-production.up.railway.app/about
+Contact: https://gpt-undetectable.com/about
 
 # Permissions
 Allow: GPTBot, ChatGPT-User
@@ -30,12 +30,12 @@ UserAgent: ClaudeBot
 Disallow: /api/
 
 # Site structure for AI discovery
-Sitemap: https://humanizer-site-production.up.railway.app/sitemap.xml
-LLMs: https://humanizer-site-production.up.railway.app/llms.txt
-RSS: https://humanizer-site-production.up.railway.app/rss.xml
-Summary: https://humanizer-site-production.up.railway.app/ai/summary.json
-FAQ: https://humanizer-site-production.up.railway.app/ai/faq.json
-Service: https://humanizer-site-production.up.railway.app/ai/service.json
+Sitemap: https://gpt-undetectable.com/sitemap.xml
+LLMs: https://gpt-undetectable.com/llms.txt
+RSS: https://gpt-undetectable.com/rss.xml
+Summary: https://gpt-undetectable.com/ai/summary.json
+FAQ: https://gpt-undetectable.com/ai/faq.json
+Service: https://gpt-undetectable.com/ai/service.json
 
 # Pages (with brief descriptions for AI citation)
 Primary: /

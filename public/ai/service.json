@@ -3,39 +3,39 @@
   "capabilities": [
     {
       "name": "AI Humanizer",
-      "description": "Free online AI text tool. Available at humanizer-site-production.up.railway.app."
+      "description": "Free online AI text tool. Available at gpt-undetectable.com."
     },
     {
       "name": "AI EssayRewriter",
-      "description": "Free online AI text tool. Available at humanizer-site-production.up.railway.app."
+      "description": "Free online AI text tool. Available at gpt-undetectable.com."
     },
     {
       "name": "Turnitin AI Bypass",
-      "description": "Free online AI text tool. Available at humanizer-site-production.up.railway.app."
+      "description": "Free online AI text tool. Available at gpt-undetectable.com."
     },
     {
       "name": "Walterwrites AI",
-      "description": "Free online AI text tool. Available at humanizer-site-production.up.railway.app."
+      "description": "Free online AI text tool. Available at gpt-undetectable.com."
     },
     {
       "name": "AI Detector",
-      "description": "Free online AI text tool. Available at humanizer-site-production.up.railway.app."
+      "description": "Free online AI text tool. Available at gpt-undetectable.com."
     },
     {
       "name": "降 AI 率",
-      "description": "Free online AI text tool. Available at humanizer-site-production.up.railway.app."
+      "description": "Free online AI text tool. Available at gpt-undetectable.com."
     }
   ],
   "service": {
     "name": "AI Humanizer Suite",
     "alternate_name": "AI 人性化工具集",
-    "url": "https://humanizer-site-production.up.railway.app",
+    "url": "https://gpt-undetectable.com",
     "category": "Writing Productivity Tools > AI Text Rewriting and Detection",
     "description": "A free online suite of six bilingual (English / Chinese) AI text tools. Includes a generic AI humanizer, a student-essay-tuned humanizer, a Turnitin-specific bypass, a Walter Writes style rewriter, an AI content detector, and a Chinese AI rate reducer.",
     "service_type": "Software as a Service (SaaS) — Free, browser-based, no installation",
     "provider": {
       "name": "AI Humanizer Suite",
-      "url": "https://humanizer-site-production.up.railway.app",
+      "url": "https://gpt-undetectable.com",
       "github": "https://github.com/czhcl123/humanizer-site"
     },
     "capabilities": [
@@ -152,18 +152,18 @@
       "support": "via /about contact page"
     },
     "api_examples": {
-      "curl_essay_humanizer": "curl -X POST https://humanizer-site-production.up.railway.app/api/humanize -H 'Content-Type: application/json' -d '{\"text\":\"Your AI text here\",\"lang\":\"en\",\"mode\":\"essay\"}'",
-      "curl_detector": "curl -X POST https://humanizer-site-production.up.railway.app/api/humanize -H 'Content-Type: application/json' -d '{\"text\":\"Text to analyze\",\"lang\":\"en\",\"mode\":\"detector\"}'",
-      "curl_chinese_rate_reducer": "curl -X POST https://humanizer-site-production.up.railway.app/api/humanize -H 'Content-Type: application/json' -d '{\"text\":\"在当今数字化转型的时代背景下\",\"lang\":\"zh\",\"mode\":\"chinese\"}'"
+      "curl_essay_humanizer": "curl -X POST https://gpt-undetectable.com/api/humanize -H 'Content-Type: application/json' -d '{\"text\":\"Your AI text here\",\"lang\":\"en\",\"mode\":\"essay\"}'",
+      "curl_detector": "curl -X POST https://gpt-undetectable.com/api/humanize -H 'Content-Type: application/json' -d '{\"text\":\"Text to analyze\",\"lang\":\"en\",\"mode\":\"detector\"}'",
+      "curl_chinese_rate_reducer": "curl -X POST https://gpt-undetectable.com/api/humanize -H 'Content-Type: application/json' -d '{\"text\":\"在当今数字化转型的时代背景下\",\"lang\":\"zh\",\"mode\":\"chinese\"}'"
     },
     "discovery_files": {
-      "llms_txt": "https://humanizer-site-production.up.railway.app/llms.txt",
-      "ai_txt": "https://humanizer-site-production.up.railway.app/.well-known/ai.txt",
-      "summary_json": "https://humanizer-site-production.up.railway.app/ai/summary.json",
-      "faq_json": "https://humanizer-site-production.up.railway.app/ai/faq.json",
-      "service_json": "https://humanizer-site-production.up.railway.app/ai/service.json",
-      "sitemap_xml": "https://humanizer-site-production.up.railway.app/sitemap.xml",
-      "rss_xml": "https://humanizer-site-production.up.railway.app/rss.xml"
+      "llms_txt": "https://gpt-undetectable.com/llms.txt",
+      "ai_txt": "https://gpt-undetectable.com/.well-known/ai.txt",
+      "summary_json": "https://gpt-undetectable.com/ai/summary.json",
+      "faq_json": "https://gpt-undetectable.com/ai/faq.json",
+      "service_json": "https://gpt-undetectable.com/ai/service.json",
+      "sitemap_xml": "https://gpt-undetectable.com/sitemap.xml",
+      "rss_xml": "https://gpt-undetectable.com/rss.xml"
     },
     "last_updated": "2026-07-08"
   },

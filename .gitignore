@@ -10,3 +10,10 @@ tools-site/
 
 tsconfig.tsbuildinfo
 
+# audit / fix scripts (utility, do not commit)
+audit.js
+verify-pages.js
+fix-domain.js
+fix-path.ps1
+replace-all-domains.js
+final-fix.js

@@ -4,13 +4,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const base = 'https://gpt-undetectable.com'
   const today = new Date().toISOString().split('T')[0]
 
-  return [
-    { url: base, lastModified: today, changeFrequency: 'weekly', priority: 1 },
-    { url: `${base}/essay-humanizer`, lastModified: today, changeFrequency: 'weekly', priority: 0.95 },
-    { url: `${base}/turnitin-bypass`, lastModified: today, changeFrequency: 'weekly', priority: 0.95 },
-    { url: `${base}/walterwrites`, lastModified: today, changeFrequency: 'weekly', priority: 0.9 },
-    { url: `${base}/ai-detector`, lastModified: today, changeFrequency: 'weekly', priority: 0.9 },
-    { url: `${base}/jiang-ai-lv`, lastModified: today, changeFrequency: 'weekly', priority: 0.9 },
-    { url: `${base}/about`, lastModified: today, changeFrequency: 'monthly', priority: 0.7 },
-  ]
+  const pages = ['', '/essay-humanizer', '/turnitin-bypass', '/walterwrites', '/ai-detector', '/jiang-ai-lv', '/about']
+  const priority = [1, 0.95, 0.95, 0.9, 0.9, 0.9, 0.7]
+  const entries: MetadataRoute.Sitemap = []
+
+  pages.forEach((slug, i) => {
+    entries.push({
+      url: `${base}${slug}`,
+      lastModified: today,
+      changeFrequency: slug === '/about' ? 'monthly' : 'weekly',
+      priority: priority[i],
+      alternates: {
+        languages: {
+          'en-US': `${base}${slug}`,
+          'zh-CN': `${base}/zh${slug === '' ? '' : slug}`,
+          'x-default': `${base}${slug}`,
+        },
+      },
+    })
+  })
+
+  return entries
 }
