@@ -30,7 +30,7 @@ export async function generateMetadata({ searchParams }: { searchParams: Promise
   }
   const descriptions = {
     zh: '免费 Essay rewriter,改写 AI 生成的论文,绕过 Turnitin、GPTZero、Originality.ai 检测,保留引用、事实、数据。',
-    en: 'Free AI Humanizer that rewrites AI-generated text to bypass GPTZero, Turnitin AI, and Originality.ai detection. Preserves citations, dates, and proper nouns. Bilingual.',
+    en: 'Free online essay rewriter: paste AI-generated essays, research papers, or assignments and get a natural-sounding rewrite that passes Turnitin AI and GPTZero detection. Preserves (Author, Year) citations, dates, and proper nouns. Up to 3,000 characters, free, no signup, bilingual.',
   }
   return {
     title: titles[lang],
