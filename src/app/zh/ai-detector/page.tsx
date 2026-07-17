@@ -20,11 +20,11 @@ const faqSchema = {
 export async function generateMetadata() {
   const lang = 'zh'
   const titles = {
-    zh: 'AI Detector - 免费 AI 内容检测工具',
+    zh: 'AI 内容检测器 - 免费检测 ChatGPT / Gemini / Claude 输出',
     en: 'AI Detector - Free AI Content Detection Tool',
   }
   const descriptions = {
-    zh: '免费 AI Humanizer,改写 ChatGPT / Gemini / Claude 输出,绕过 GPTZero、Turnitin、Originality.ai 检测,无需注册,中英双语。',
+    zh: '免费 AI 内容检测器,基于 GPTZero / Originality.ai / ZeroGPT 原理识别 ChatGPT / Gemini / Claude 输出,中英双语,无需注册。',
     en: 'Free AI Humanizer that rewrites AI-generated text to bypass GPTZero, Turnitin AI, and Originality.ai detection.',
   }
   return {

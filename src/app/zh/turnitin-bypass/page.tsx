@@ -20,12 +20,12 @@ const faqSchema = {
 export async function generateMetadata() {
   const lang = 'zh'
   const titles = {
-    zh: 'Turnitin AI Bypass - 免费绕过 Turnitin AI 检测',
-    en: 'Turnitin AI Bypass - Free Turnitin AI Detection Bypass',
+    zh: '绕 Turnitin AI - 免费避开 Turnitin 论文 AI 检测,保留引用',
+    en: 'Turnitin AI Detector Bypass - Free, Preserves Citations 2026',
   }
   const descriptions = {
-    zh: '免费在线绕过 Turnitin AI 检测。专门针对 Turnitin 算法调优,保留引用、事实、数据。85-95% 通过率。',
-    en: 'Free online Turnitin AI bypass. Specifically tuned against Turnitin\'s detection algorithm. Preserves citations, facts, data. 85-95% pass rate.',
+    zh: '免费在线绕过 Turnitin AI 检测。专门针对 Turnitin 算法调优,保留 (作者, 年份) 引用、事实、数据。85-95% 通过率。',
+    en: 'Free online Turnitin AI bypass: rewrite essays, research papers, and assignments to pass Turnitin AI detection. Specifically tuned against Turnitin sentence-perplexity and AI-vocabulary heuristics. Preserves (Author, Year) citations, factual data, and quoted material. 85-95% pass rate on English text up to 3,000 characters. No signup.',
   }
   return {
     title: titles[lang],

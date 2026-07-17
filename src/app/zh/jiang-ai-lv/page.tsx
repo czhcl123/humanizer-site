@@ -20,8 +20,8 @@ const faqSchema = {
 export async function generateMetadata() {
   const lang = 'zh'
   const titles = {
-    zh: '降 AI 率 - 免费中文论文 AI 率降低工具',
-    en: 'Reduce Chinese AI Rate - Free CNKI AIGC Bypass',
+    zh: '降 AI 率 - 中文论文免费降低知网 AIGC 检测率',
+    en: '降 AI 率 - Free CNKI AIGC Bypass for Chinese Papers',
   }
   const descriptions = {
     zh: '免费在线降低中文论文 AI 率。改写知网 AIGC、维普、GPTZero 中文、ZeroGPT 中文都识别不出的 AI 八股词,保留论点、引用、数据。',

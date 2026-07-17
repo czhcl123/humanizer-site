@@ -74,12 +74,12 @@ export async function generateMetadata({
   const lang = 'zh'
 
   const titles = {
-    zh: { default: '免费 AI 人性化工具 - 过 Turnitin 检测 2026 | 无需注册', template: '%s | AI Humanizer' },
-    en: { default: 'Free AI Humanizer - Bypass Turnitin & GPTZero 2026 | No Signup', template: '%s | AI Humanizer' },
+    zh: { default: '免费 AI 人性化工具 - 让 ChatGPT 文本通过 GPTZero 2026', template: '%s | AI Humanizer' },
+    en: { default: 'Free AI Humanizer - Humanize AI Text & Bypass GPTZero 2026', template: '%s | AI Humanizer' },
   }
   const descriptions = {
-    zh: '免费 AI 人性化工具,一键让 ChatGPT / Gemini / Claude 文本通过 Turnitin、GPTZero、Originality.ai 检测 2026。无需注册,中英双语支持,3000 字以内无限次使用。',
-    en: 'Free AI humanizer that bypasses Turnitin AI, GPTZero, and Originality.ai in 2026. No signup, no install. Rewrites ChatGPT, Gemini, and Claude output to read like a human. Bilingual EN/中文.',
+    zh: '免费 AI 人性化工具,一键让 ChatGPT / Gemini / Claude 文本变成像人写的,过 GPTZero、Turnitin、Originality.ai 检测 2026。无需注册,中英双语支持。',
+    en: 'Free AI humanizer that humanizes AI text from ChatGPT, Gemini, and Claude to bypass Turnitin AI, GPTZero, and Originality.ai in 2026. No signup, no install. Bilingual EN/中文.',
   }
   const keywords = {
     zh: ['AI 人性化工具', '过 Turnitin 检测', 'AI 去机器味', 'GPT 去痕迹', '免费 AI 改写', '过 GPTZero', 'AI 降 AI 率'],

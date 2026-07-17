@@ -22,11 +22,11 @@ export async function generateMetadata({ searchParams }: { searchParams: Promise
   const lang = sp.lang === 'zh' ? 'zh' : 'en'
   const titles = {
     zh: '降 AI 率 - 免费中文论文 AI 率降低工具',
-    en: 'Reduce Chinese AI Rate - Free CNKI AIGC Bypass',
+    en: '降 AI 率 - Free CNKI AIGC Bypass for Chinese Papers',
   }
   const descriptions = {
     zh: '免费在线降低中文论文 AI 率。改写知网 AIGC、维普、GPTZero 中文、ZeroGPT 中文都识别不出的 AI 八股词,保留论点、引用、数据。',
-    en: 'Free AI Humanizer that rewrites AI-generated text to bypass GPTZero, Turnitin AI, and Originality.ai detection.',
+    en: 'Reduce Chinese AI Rate: lower 知网 AIGC and 维普 detection scores for Chinese essays. Preserves 论点, 引用, and 数据 while rewriting surface structure. Up to 3,000 characters per pass, free, no signup.',
   }
   return {
     title: titles[lang],

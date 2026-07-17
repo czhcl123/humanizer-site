@@ -22,11 +22,11 @@ export async function generateMetadata({ searchParams }: { searchParams: Promise
   const lang = sp.lang === 'zh' ? 'zh' : 'en'
   const titles = {
     zh: 'AI Detector - 免费 AI 内容检测工具',
-    en: 'AI Detector - Free AI Content Detection Tool',
+    en: 'AI Detector - Free AI Content Detector, GPTZero Style Score',
   }
   const descriptions = {
-    zh: '免费 AI Humanizer,改写 ChatGPT / Gemini / Claude 输出,绕过 GPTZero、Turnitin、Originality.ai 检测,无需注册,中英双语。',
-    en: 'Free AI Humanizer that rewrites AI-generated text to bypass GPTZero, Turnitin AI, and Originality.ai detection.',
+    zh: '免费 AI 检测器,基于 GPTZero、Originality.ai、ZeroGPT 原理识别 ChatGPT / Gemini / Claude 输出,无需注册,中英双语。',
+    en: 'Free AI content detector: paste any text and get an AI-likelihood score in 1 second. Trained on GPTZero, Originality.ai, and ZeroGPT detection principles. Detects ChatGPT, Gemini, Claude, and Copilot output. No signup, no upload, up to 3,000 characters.',
   }
   return {
     title: titles[lang],

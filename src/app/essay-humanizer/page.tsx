@@ -26,10 +26,10 @@ export async function generateMetadata({ searchParams }: { searchParams: Promise
   const lang = sp.lang === 'zh' ? 'zh' : 'en'
   const titles = {
     zh: 'AI Essay Humanizer - 免费学生论文改写,绕过 Turnitin 检测',
-    en: 'AI EssayRewriter - Free text Rewriter, Bypass Turnitin',
+    en: 'Essay Rewriter - Free AI Essay Humanizer & Paraphraser 2026',
   }
   const descriptions = {
-    zh: '免费 AI Humanizer 改写 AI 生成的文本,绕过 GPTZero、Turnitin、Originality.ai 检测。保留引用、事实、数据。中英双语。',
+    zh: '免费 Essay rewriter,改写 AI 生成的论文,绕过 Turnitin、GPTZero、Originality.ai 检测,保留引用、事实、数据。',
     en: 'Free AI Humanizer that rewrites AI-generated text to bypass GPTZero, Turnitin AI, and Originality.ai detection. Preserves citations, dates, and proper nouns. Bilingual.',
   }
   return {
