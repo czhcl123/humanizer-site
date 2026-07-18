@@ -15,6 +15,7 @@ const footerText = {
     tools: '工具',
     paper: '论文改写',
     turnitin: 'Turnitin',
+    bypass: 'Bypass AI',
     walter: 'Walter',
     detector: '检测',
     chinese: '降 AI 率',
@@ -27,6 +28,7 @@ const footerText = {
     tools: 'Tools',
     paper: 'Paper',
     turnitin: 'Turnitin',
+    bypass: 'Bypass AI',
     walter: 'Walter',
     detector: 'Detector',
     chinese: '降 AI 率',
@@ -46,6 +48,8 @@ export default function Footer({ lang = 'en' }: FooterProps) {
           <Link href={`/essay-humanizer?lang=${lang}`} className="text-gray-400 hover:text-violet-500 transition-colors">{t.essay}</Link>
           <span className="text-gray-200">·</span>
           <Link href={`/turnitin-bypass?lang=${lang}`} className="text-gray-400 hover:text-violet-500 transition-colors">{t.turnitin}</Link>
+          <span className="text-gray-200">·</span>
+          <Link href={`/bypass-ai?lang=${lang}`} className="text-gray-400 hover:text-violet-500 transition-colors">{t.bypass}</Link>
           <span className="text-gray-200">·</span>
           <Link href={`/walterwrites?lang=${lang}`} className="text-gray-400 hover:text-violet-500 transition-colors">{t.walter}</Link>
           <span className="text-gray-200">·</span>
