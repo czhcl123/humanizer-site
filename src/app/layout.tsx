@@ -1,4 +1,5 @@
 import "./globals.css";
+import { headers } from 'next/headers';
 
 const websiteSchema = {
   '@context': 'https://schema.org',
@@ -205,13 +206,16 @@ export const metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const h = await headers();
+  const pathname = h.get('x-pathname') ?? '/';
+  const htmlLang = pathname.startsWith('/zh') ? 'zh-CN' : 'en';
   return (
-    <html lang="en">
+    <html lang={htmlLang}>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
         <meta name="build-id" content="b6d2b9a" />

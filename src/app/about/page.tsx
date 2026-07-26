@@ -21,6 +21,17 @@ export async function generateMetadata({
   return {
     title: titles[lang],
     description: descriptions[lang],
+    openGraph: {
+      title: titles[lang],
+      description: descriptions[lang],
+      images: [{ url: 'https://gpt-undetectable.com/og-image.svg', width: 1200, height: 630, alt: titles[lang] }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: titles[lang],
+      description: descriptions[lang],
+      images: ['https://gpt-undetectable.com/og-image.svg'],
+    },
     alternates: {
       canonical: 'https://gpt-undetectable.com/about',
       languages: {

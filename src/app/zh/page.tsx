@@ -93,6 +93,13 @@ export async function generateMetadata({
     openGraph: {
       title: titles[lang].default,
       description: descriptions[lang],
+      images: [{ url: 'https://gpt-undetectable.com/og-image.svg', width: 1200, height: 630, alt: titles[lang].default }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: titles[lang].default,
+      description: descriptions[lang],
+      images: ['https://gpt-undetectable.com/og-image.svg'],
     },
     alternates: {
       canonical: 'https://gpt-undetectable.com/zh',

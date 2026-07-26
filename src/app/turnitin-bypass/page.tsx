@@ -23,8 +23,8 @@ export async function generateMetadata({ searchParams }: { searchParams: Promise
   const sp = await searchParams
   const lang = sp.lang === 'zh' ? 'zh' : 'en'
   const titles = {
-    zh: 'Turnitin Bypass - 免费绕过 Turnitin AI 检测器 (85-95% 通过率)',
-    en: 'Turnitin Bypass - Free AI Detector Bypass Online (85-95% Pass Rate)',
+    zh: 'Turnitin Bypass - 绕过 Turnitin AI 检测 (85-95% 通过)',
+    en: 'Turnitin Bypass - Free AI Bypass Tool (85-95% Pass)',
   }
   const descriptions = {
     zh: '免费 Turnitin Bypass 工具:专门针对 Turnitin AI 检测器调优,保留引用、事实、数据。85-95% 通过率,无需注册。',
@@ -33,7 +33,17 @@ export async function generateMetadata({ searchParams }: { searchParams: Promise
   return {
     title: titles[lang],
     description: descriptions[lang],
-    openGraph: { title: titles[lang], description: descriptions[lang] },
+    openGraph: {
+      title: titles[lang],
+      description: descriptions[lang],
+      images: [{ url: 'https://gpt-undetectable.com/og-image.svg', width: 1200, height: 630, alt: titles[lang] }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: titles[lang],
+      description: descriptions[lang],
+      images: ['https://gpt-undetectable.com/og-image.svg'],
+    },
     alternates: {
       canonical: 'https://gpt-undetectable.com/turnitin-bypass',
       languages: {

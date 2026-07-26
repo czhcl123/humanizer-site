@@ -25,8 +25,8 @@ export async function generateMetadata({ searchParams }: { searchParams: Promise
   const sp = await searchParams
   const lang = sp.lang === 'zh' ? 'zh' : 'en'
   const titles = {
-    zh: 'AI Essay Humanizer - 免费学生论文改写,绕过 Turnitin 检测',
-    en: 'Essay Rewriter - Free AI Essay Humanizer & Paraphraser 2026',
+    zh: 'AI Essay Humanizer - 免费论文改写过 Turnitin',
+    en: 'Essay Humanizer - Free AI Essay Rewriter',
   }
   const descriptions = {
     zh: '免费 Essay rewriter,改写 AI 生成的论文,绕过 Turnitin、GPTZero、Originality.ai 检测,保留引用、事实、数据。',
@@ -35,7 +35,17 @@ export async function generateMetadata({ searchParams }: { searchParams: Promise
   return {
     title: titles[lang],
     description: descriptions[lang],
-    openGraph: { title: titles[lang], description: descriptions[lang] },
+    openGraph: {
+      title: titles[lang],
+      description: descriptions[lang],
+      images: [{ url: 'https://gpt-undetectable.com/og-image.svg', width: 1200, height: 630, alt: titles[lang] }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: titles[lang],
+      description: descriptions[lang],
+      images: ['https://gpt-undetectable.com/og-image.svg'],
+    },
     alternates: {
       canonical: 'https://gpt-undetectable.com/essay-humanizer',
       languages: {

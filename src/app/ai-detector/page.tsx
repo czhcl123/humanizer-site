@@ -21,8 +21,8 @@ export async function generateMetadata({ searchParams }: { searchParams: Promise
   const sp = await searchParams
   const lang = sp.lang === 'zh' ? 'zh' : 'en'
   const titles = {
-    zh: 'AI Detector - 免费 AI 内容检测工具',
-    en: 'AI Detector - Free AI Content Detector, GPTZero Style Score',
+    zh: 'AI Detector - 免费 AI 内容检测',
+    en: 'AI Detector - Free AI Content Detector',
   }
   const descriptions = {
     zh: '免费 AI 检测器,基于 GPTZero、Originality.ai、ZeroGPT 原理识别 ChatGPT / Gemini / Claude 输出,无需注册,中英双语。',
@@ -31,7 +31,17 @@ export async function generateMetadata({ searchParams }: { searchParams: Promise
   return {
     title: titles[lang],
     description: descriptions[lang],
-    openGraph: { title: titles[lang], description: descriptions[lang] },
+    openGraph: {
+      title: titles[lang],
+      description: descriptions[lang],
+      images: [{ url: 'https://gpt-undetectable.com/og-image.svg', width: 1200, height: 630, alt: titles[lang] }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: titles[lang],
+      description: descriptions[lang],
+      images: ['https://gpt-undetectable.com/og-image.svg'],
+    },
     alternates: {
       canonical: 'https://gpt-undetectable.com/ai-detector',
       languages: {
