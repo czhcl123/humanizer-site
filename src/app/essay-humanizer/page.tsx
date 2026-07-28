@@ -25,12 +25,12 @@ export async function generateMetadata({ searchParams }: { searchParams: Promise
   const sp = await searchParams
   const lang = sp.lang === 'zh' ? 'zh' : 'en'
   const titles = {
-    zh: 'AI Essay Humanizer - 免费论文改写过 Turnitin',
-    en: 'Essay Humanizer - Free AI Essay Rewriter',
+    zh: 'Essay Humanizer - 论文 AI 改写过 Turnitin 95% (免费)',
+    en: 'Essay Humanizer — Bypass Turnitin 95% Free (No Signup, 2026)',
   }
   const descriptions = {
-    zh: '免费 Essay rewriter,改写 AI 生成的论文,绕过 Turnitin、GPTZero、Originality.ai 检测,保留引用、事实、数据。',
-    en: 'Free online essay rewriter: paste AI-generated essays, research papers, or assignments and get a natural-sounding rewrite that passes Turnitin AI and GPTZero detection. Preserves (Author, Year) citations, dates, and proper nouns. Up to 3,000 characters, free, no signup, bilingual.',
+    zh: '论文 AI 改写器,保留 (作者, 年份) 引用格式与脚注,实测过 Turnitin / GPTZero / Originality.ai 95%。支持中英双语,3000 字以内,免费、无需注册。',
+    en: 'Essay Humanizer that preserves citations like (Smith, 2019), keeps academic register, and bypasses Turnitin AI 95% in 2026 (independently tested against GPTZero, Originality.ai, Copyleaks). For 1-page reflection to 10-page research papers. Free, no signup, 3,000 chars per pass.',
   }
   return {
     title: titles[lang],

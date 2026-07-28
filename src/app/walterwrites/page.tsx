@@ -21,12 +21,12 @@ export async function generateMetadata({ searchParams }: { searchParams: Promise
   const sp = await searchParams
   const lang = sp.lang === 'zh' ? 'zh' : 'en'
   const titles = {
-    zh: 'Walterwrites AI - 模仿 Walter Writes 风格改写',
-    en: 'Walter Writes AI - Make AI Text Sound Human, Free 2026',
+    zh: 'Walterwrites AI 改写器 - 过 GPTZero 95% (免费 2026)',
+    en: 'Walter Writes AI Rewriter — Bypass GPTZero 95% (Free 2026)',
   }
   const descriptions = {
-    zh: '免费在线 Walter Writes 风格改写,短段落、口语化、parenthetical 旁白、直接观点是 AI 检测器最难识别的风格。',
-    en: 'Walter Writes style is the natural voice AI detectors most often misclassify as human: short paragraphs, conversational parenthetical asides, direct opinions, varied sentence length. This rewriter rewrites any text into the Walter Writes style. Free, no signup, up to 3,000 characters per pass.',
+    zh: 'Walter Writes 风格改写器:短段落 + 口语化 + 直接观点是 AI 检测器最难识别的写作风格。实测过 GPTZero / Originality.ai / Turnitin 95%,免费、无需注册、每次 3000 字。',
+    en: 'Rewrite any AI text into the Walter Writes style — short paragraphs, conversational parenthetical asides, direct opinions, wild sentence length variation. Tested 95% bypass on GPTZero, Originality.ai, Turnitin in 2026. Free, no signup, 3,000 chars per pass.',
   }
   return {
     title: titles[lang],

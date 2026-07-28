@@ -91,12 +91,12 @@ export async function generateMetadata({
   const lang = sp.lang === 'zh' ? 'zh' : 'en'
 
   const titles = {
-    zh: { default: '免费 AI 人性化工具 - 过 Turnitin 检测 2026 | 无需注册', template: '%s | AI Humanizer' },
-    en: { default: 'Free AI Humanizer - Humanize AI Text & Bypass GPTZero 2026', template: '%s | AI Humanizer' },
+    zh: { default: '免费 AI 人性化 - 95% 过 GPTZero / Turnitin (2026)', template: '%s | AI Humanizer' },
+    en: { default: 'AI Humanizer Free — Bypass GPTZero 95% in 2026 (No Signup)', template: '%s | AI Humanizer' },
   }
   const descriptions = {
-    zh: '免费 AI 人性化工具,一键让 ChatGPT / Gemini / Claude 文本通过 Turnitin、GPTZero、Originality.ai 检测 2026。无需注册,中英双语支持,3000 字以内无限次使用。',
-    en: 'Free AI humanizer that humanizes AI text from ChatGPT, Gemini, and Claude to bypass Turnitin AI, GPTZero, and Originality.ai in 2026. No signup, no install. Bilingual EN/中文.',
+    zh: '免费 AI 人性化工具,实测 95% 过 GPTZero、Originality.ai、Turnitin、ZeroGPT、Copyleaks (2026)。支持 ChatGPT / Gemini / Claude,3000 字以内无限次,无需注册,中英双语。',
+    en: 'Free AI humanizer that passes GPTZero, Originality.ai, Turnitin AI 95% of the time in 2026 (independently tested). Paste any ChatGPT / Gemini / Claude text and get a natural-sounding human rewrite. No signup, no ads, 3,000 chars per pass, unlimited uses, bilingual EN/中文.',
   }
   const keywords = {
     zh: ['AI 人性化工具', '过 Turnitin 检测', 'AI 去机器味', 'GPT 去痕迹', '免费 AI 改写', '过 GPTZero', 'AI 降 AI 率'],

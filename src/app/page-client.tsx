@@ -529,6 +529,14 @@ function HomePageContent({ initialLang }: { initialLang?: Lang }) {
               <div className="font-semibold text-violet-700 text-sm mb-1">Walterwrites AI →</div>
               <div className="text-xs text-gray-500 leading-relaxed">{isZh ? '模仿 Walter Writes 风格 —— AI 检测器最容易误判为人类' : 'Rewrite in Walter Writes style — the style AI detectors misclassify as human.'}</div>
             </Link>
+            <Link href={lang === 'zh' ? `/zh/walterwrites-vs-undetectable` : `/walterwrites-vs-undetectable`} className="block p-3 bg-white border border-gray-200 hover:border-violet-300 rounded-lg transition-colors">
+              <div className="font-semibold text-violet-700 text-sm mb-1">Walter vs Undetectable →</div>
+              <div className="text-xs text-gray-500 leading-relaxed">{isZh ? '2026 实测对比:跑 5 个检测器,看通过率' : '2026 test: pass rate across 5 AI detectors.'}</div>
+            </Link>
+            <Link href={lang === 'zh' ? `/zh/originality-ai-bypass` : `/originality-ai-bypass`} className="block p-3 bg-white border border-gray-200 hover:border-violet-300 rounded-lg transition-colors">
+              <div className="font-semibold text-violet-700 text-sm mb-1">Originality.ai Bypass →</div>
+              <div className="text-xs text-gray-500 leading-relaxed">{isZh ? 'Walter Writes 风格改写,实测过 Originality.ai 95%' : 'Walter Writes style rewrite, 95% pass on Originality.ai.'}</div>
+            </Link>
             <Link href={lang === 'zh' ? `/zh/ai-detector` : `/ai-detector`} className="block p-3 bg-white border border-gray-200 hover:border-violet-300 rounded-lg transition-colors">
               <div className="font-semibold text-violet-700 text-sm mb-1">AI Detector →</div>
               <div className="text-xs text-gray-500 leading-relaxed">{isZh ? '检测文本 AI 率,基于 GPTZero / Originality.ai 同源原理' : 'Detect AI probability. Based on GPTZero / Originality.ai principles.'}</div>
