@@ -114,7 +114,7 @@ const webAppSchema = {
     'Free unlimited rewriting',
     'Bilingual English / Chinese',
   ],
-  dateModified: '2026-07-07',
+  dateModified: '2026-07-28',
   datePublished: '2026-07-07',
   creator: {
     '@type': 'Organization',
@@ -191,8 +191,8 @@ export const metadata = {
     },
   },
   other: {
-    'dateModified': '2026-07-07',
-    'article:modified_time': '2026-07-07',
+    'dateModified': '2026-07-28',
+    'article:modified_time': '2026-07-28',
   },
   robots: {
     index: true,

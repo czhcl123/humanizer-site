@@ -18,9 +18,9 @@ export async function generateMetadata({ searchParams }: { searchParams: Promise
     description: descriptions[lang],
     openGraph: { title: titles[lang], description: descriptions[lang] },
     alternates: {
-      canonical: `https://gpt-undetectable.com/originality-ai-bypass${lang === 'zh' ? '?lang=zh' : ''}`,
+      canonical: `https://gpt-undetectable.com/originality-ai-bypass`,
       languages: {
-        'zh-CN': 'https://gpt-undetectable.com/originality-ai-bypass?lang=zh',
+        'zh-CN': 'https://gpt-undetectable.com/zh/originality-ai-bypass',
         'en-US': 'https://gpt-undetectable.com/originality-ai-bypass',
         'x-default': 'https://gpt-undetectable.com/originality-ai-bypass',
       },

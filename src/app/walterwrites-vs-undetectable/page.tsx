@@ -18,9 +18,9 @@ export async function generateMetadata({ searchParams }: { searchParams: Promise
     description: descriptions[lang],
     openGraph: { title: titles[lang], description: descriptions[lang] },
     alternates: {
-      canonical: `https://gpt-undetectable.com/walterwrites-vs-undetectable${lang === 'zh' ? '?lang=zh' : ''}`,
+      canonical: `https://gpt-undetectable.com/walterwrites-vs-undetectable`,
       languages: {
-        'zh-CN': 'https://gpt-undetectable.com/walterwrites-vs-undetectable?lang=zh',
+        'zh-CN': 'https://gpt-undetectable.com/zh/walterwrites-vs-undetectable',
         'en-US': 'https://gpt-undetectable.com/walterwrites-vs-undetectable',
         'x-default': 'https://gpt-undetectable.com/walterwrites-vs-undetectable',
       },

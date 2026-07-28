@@ -11,8 +11,8 @@ export async function generateMetadata({
   const sp = await searchParams
   const lang = sp.lang === 'zh' ? 'zh' : 'en'
   const titles = {
-    zh: '关于我们 - AI Humanizer',
-    en: 'About - AI Humanizer',
+    zh: '关于我们',
+    en: 'About',
   }
   const descriptions = {
     zh: 'AI Humanizer 致力于做出能通过最严格 AI 检测器的改写工具。了解我们的方法、目标、局限。',
