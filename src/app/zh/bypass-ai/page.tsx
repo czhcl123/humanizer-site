@@ -26,13 +26,13 @@ export async function generateMetadata({ searchParams }: { searchParams: Promise
     openGraph: {
       title: 'Bypass AI - 免费绕过 Turnitin / GPTZero / Originality.ai 检测',
       description: '免费 Bypass AI 工具,85-95% 通过率,无需注册。',
-      images: [{ url: 'https://gpt-undetectable.com/og-image.svg', width: 1200, height: 630, alt: 'Bypass AI - 免费绕过 AI 检测' }],
+      images: [{ url: 'https://gpt-undetectable.com/og-image.png', width: 1200, height: 630, alt: 'Bypass AI - 免费绕过 AI 检测' }],
     },
     twitter: {
       card: 'summary_large_image',
       title: 'Bypass AI - 免费绕过 Turnitin / GPTZero / Originality.ai 检测',
       description: '免费 Bypass AI 工具,85-95% 通过率,无需注册。',
-      images: ['https://gpt-undetectable.com/og-image.svg'],
+      images: ['https://gpt-undetectable.com/og-image.png'],
     },
     alternates: {
       canonical: 'https://gpt-undetectable.com/zh/bypass-ai',

@@ -11,7 +11,7 @@ export async function generateMetadata(): Promise<Metadata> {
     openGraph: {
       title: 'Walter Writes AI vs Undetectable AI 2026 对比',
       description: '实测 5 个 AI 检测器,看 Walter Writes AI 和 Undetectable AI 谁更过检测。',
-      images: [{ url: 'https://gpt-undetectable.com/og-image.svg', width: 1200, height: 630 }],
+      images: [{ url: 'https://gpt-undetectable.com/og-image.png', width: 1200, height: 630 }],
     },
     alternates: {
       canonical: 'https://gpt-undetectable.com/zh/walterwrites-vs-undetectable',

@@ -11,7 +11,7 @@ export async function generateMetadata(): Promise<Metadata> {
     openGraph: {
       title: 'Originality AI Bypass - 95% 通过率',
       description: 'Walter Writes 风格改写,实测过 Originality.ai 95%。免费、无需注册。',
-      images: [{ url: 'https://gpt-undetectable.com/og-image.svg', width: 1200, height: 630 }],
+      images: [{ url: 'https://gpt-undetectable.com/og-image.png', width: 1200, height: 630 }],
     },
     alternates: {
       canonical: 'https://gpt-undetectable.com/zh/originality-ai-bypass',
