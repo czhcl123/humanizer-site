@@ -60,6 +60,8 @@ export default function Footer({ lang = 'en' }: FooterProps) {
           <Link href={`/about?lang=${lang}`} className="text-gray-400 hover:text-violet-500 transition-colors">{t.about}</Link>
           <span className="text-gray-200">·</span>
           <a href="/llms.txt" className="text-gray-400 hover:text-violet-500 transition-colors">llms.txt</a>
+          <span className="text-gray-200">·</span>
+          <a href="https://www.aixploria.com/en/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-violet-500 transition-colors">AI Tools</a>
         </nav>
         <p className="text-xs text-gray-400 text-center">
           {`${currentYear} ${t.copyright}`}
