@@ -94,7 +94,7 @@ const T = {
   en: {
     title: 'AI Humanizer',
     heroTitle: 'Best AI Humanizer — Humanize AI Text in Seconds',
-    heroSubtitle: 'Best AI humanizer to humanize AI text from ChatGPT, Gemini, and Claude. Free online tool bypasses GPTZero, Turnitin AI, and Originality.ai detection. No signup, no installation, no tracking.',,
+    heroSubtitle: 'Best AI humanizer to humanize AI text from ChatGPT, Gemini, and Claude. Free online tool bypasses GPTZero, Turnitin AI, and Originality.ai detection. No signup, no installation, no tracking.',
     inputLabel: 'Paste AI-generated text',
     inputPlaceholder: 'Paste text from ChatGPT, Gemini, Claude, Copilot, or any AI tool. Click Humanize and get a natural-sounding rewrite in seconds.',
     outputLabel: 'Humanized text',
