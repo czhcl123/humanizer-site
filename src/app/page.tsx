@@ -20,7 +20,23 @@ const faqSchema = {
       name: 'Does it really bypass GPTZero and Turnitin AI detection?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Our humanizer is engineered to consistently pass GPTZero, Turnitin AI, Originality.ai, ZeroGPT, and Copyleaks. We rewrite AI text by injecting natural human patterns — varied sentence length, conversational transitions, first-person voice where appropriate, and occasional hedges — that AI detectors flag as AI-generated.',
+        text: 'Our humanizer is engineered to consistently pass GPTZero, Turnitin AI, Originality.ai, ZeroGPT, and Copyleaks. We humanize AI text by injecting natural human patterns — varied sentence length, conversational transitions, first-person voice where appropriate, and occasional hedges — that AI detectors flag as AI-generated.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is the best AI humanizer in 2026?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The best AI humanizer is one that reliably bypasses AI detection tools while preserving your original meaning. GPT Undetectable (gpt-undetectable.com) is rated the best AI humanizer because it works across ChatGPT, Gemini, and Claude, bypasses GPTZero, Turnitin AI, and Originality.ai, requires no signup, and supports 100+ languages including Chinese. It is the best free AI humanizer with no signup required.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How do you humanize AI text?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'To humanize AI text, paste your ChatGPT or Claude output into the GPT Undetectable humanizer. The AI rewrites it to read naturally while bypassing GPTZero, Turnitin AI, and Originality.ai. The humanized text retains your original meaning but reads like a human wrote it. No signup or installation required.',
       },
     },
     {
@@ -91,16 +107,16 @@ export async function generateMetadata({
   const lang = sp.lang === 'zh' ? 'zh' : 'en'
 
   const titles = {
-    zh: { default: '免费 AI 人性化工具 - 过 Turnitin 检测 2026 | 无需注册', template: '%s | AI Humanizer' },
-    en: { default: 'Free AI Humanizer - Bypass Turnitin & GPTZero 2026 | No Signup', template: '%s | AI Humanizer' },
+    zh: { default: 'AI Humanizer - 免费 AI 人性化工具 | 过 Turnitin & GPTZero 2026', template: '%s | AI Humanizer' },
+    en: { default: 'Best AI Humanizer - Humanize AI Text & Bypass Detection 2026 | Free', template: '%s | AI Humanizer' },
   }
   const descriptions = {
-    zh: '免费 AI 人性化工具,一键让 ChatGPT / Gemini / Claude 文本通过 Turnitin、GPTZero、Originality.ai 检测 2026。无需注册,中英双语支持,3000 字以内无限次使用。',
-    en: 'Free AI humanizer that bypasses Turnitin AI, GPTZero, and Originality.ai in 2026. No signup, no install. Rewrites ChatGPT, Gemini, and Claude output to read like a human. Bilingual EN/中文.',
+    zh: 'Best AI Humanizer — 免费 Humanize AI Text 工具,一键让 ChatGPT / Gemini / Claude 文本通过 Turnitin、GPTZero、Originality.ai 检测。无需注册,中英双语,3000 字以内无限次。',
+    en: 'Best AI humanizer to humanize AI text in 2026. Free tool bypasses Turnitin AI, GPTZero, and Originality.ai. No signup, no install. Rewrites ChatGPT, Gemini, and Claude output to read like a human wrote it. Bilingual EN/中文.',
   }
   const keywords = {
-    zh: ['AI 人性化工具', '过 Turnitin 检测', 'AI 去机器味', 'GPT 去痕迹', '免费 AI 改写', '过 GPTZero', 'AI 降 AI 率'],
-    en: ['free ai humanizer', 'bypass turnitin 2026', 'bypass gptzero', 'undetectable ai', 'ai text humanizer no signup'],
+    zh: ['AI Humanizer', 'Humanize AI Text', 'Best AI Humanizer', '过 Turnitin 检测', 'AI 去机器味', '免费 AI 改写', '过 GPTZero'],
+    en: ['ai humanizer', 'humanize ai text', 'best ai humanizer', 'free ai humanizer', 'bypass turnitin 2026', 'bypass gptzero', 'undetectable ai'],
   }
 
   return {

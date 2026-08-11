@@ -10,8 +10,8 @@ const MAX_CHARS = 3000
 const T = {
   zh: {
     title: 'AI Humanizer',
-    heroTitle: '让 AI 文本读起来像人写的',
-    heroSubtitle: '免费 AI Humanizer,一键改写 ChatGPT / Gemini / Claude 输出,通过 GPTZero、Turnitin、Originality.ai 检测。无需注册,无需安装。',
+    heroTitle: 'AI Humanizer — 让 AI 文本读起来像人写的',
+    heroSubtitle: 'Best AI Humanizer 免费 Humanize AI Text 工具,一键改写 ChatGPT / Gemini / Claude 输出,通过 GPTZero、Turnitin、Originality.ai 检测。无需注册,无需安装。',
     inputLabel: '粘贴 AI 生成的文本',
     inputPlaceholder: '把 ChatGPT、Gemini、Claude、Copilot 或任何 AI 生成的文本粘贴到这里,点击「Humanize」即可。',
     outputLabel: 'Humanize 后的文本',
@@ -93,8 +93,8 @@ const T = {
   },
   en: {
     title: 'AI Humanizer',
-    heroTitle: 'Make AI text read like a human wrote it',
-    heroSubtitle: 'Free online AI humanizer that rewrites ChatGPT, Gemini, and Claude output to bypass GPTZero, Turnitin AI, and Originality.ai detection. No signup, no installation, no tracking.',
+    heroTitle: 'Best AI Humanizer — Humanize AI Text in Seconds',
+    heroSubtitle: 'Best AI humanizer to humanize AI text from ChatGPT, Gemini, and Claude. Free online tool bypasses GPTZero, Turnitin AI, and Originality.ai detection. No signup, no installation, no tracking.',,
     inputLabel: 'Paste AI-generated text',
     inputPlaceholder: 'Paste text from ChatGPT, Gemini, Claude, Copilot, or any AI tool. Click Humanize and get a natural-sounding rewrite in seconds.',
     outputLabel: 'Humanized text',
@@ -319,8 +319,8 @@ function HomePageContent({ initialLang }: { initialLang?: Lang }) {
         <section className="bg-gradient-to-br from-violet-50 via-white to-purple-50 rounded-2xl p-6 border border-violet-100 shadow-sm">
           <div className="text-center">
             <div className="text-3xl mb-2">✨</div>
-            <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-2">{t.heroTitle}</h1>
-            <p className="text-sm text-gray-600 mb-4 max-w-xl mx-auto leading-relaxed">{t.heroSubtitle}</p>
+            <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-2">{lang === 'en' ? 'Best AI Humanizer — Humanize AI Text in Seconds' : t.heroTitle}</h1>
+            <p className="text-sm text-gray-600 mb-4 max-w-xl mx-auto leading-relaxed">{lang === 'en' ? 'The best AI humanizer to humanize AI text from ChatGPT, Gemini, and Claude. Free online tool bypasses GPTZero, Turnitin AI, and Originality.ai detection. No signup, no installation.' : t.heroSubtitle}</p>
             <div className="flex flex-wrap justify-center gap-2 text-xs">
               <span className="px-3 py-1 bg-white border border-violet-200 text-violet-700 rounded-full">✓ {t.features.bypass}</span>
               <span className="px-3 py-1 bg-white border border-violet-200 text-violet-700 rounded-full">✓ {t.features.bilingual}</span>
