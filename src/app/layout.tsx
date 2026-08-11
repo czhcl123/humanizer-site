@@ -1,4 +1,5 @@
 import "./globals.css";
+import { headers } from 'next/headers';
 
 const websiteSchema = {
   '@context': 'https://schema.org',
@@ -113,7 +114,7 @@ const webAppSchema = {
     'Free unlimited rewriting',
     'Bilingual English / Chinese',
   ],
-  dateModified: '2026-07-07',
+  dateModified: '2026-07-28',
   datePublished: '2026-07-07',
   creator: {
     '@type': 'Organization',
@@ -168,7 +169,7 @@ export const metadata = {
     description: 'Bypass Turnitin AI, GPTZero, Originality.ai — free, no signup. Rewrites ChatGPT, Gemini, Claude output to read like a human.',
     images: [
       {
-        url: '/og-image.svg',
+        url: '/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Free AI Humanizer - Bypass Turnitin 2026',
@@ -179,7 +180,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Free AI Humanizer - Bypass Turnitin & GPTZero 2026',
     description: 'Bypass Turnitin AI, GPTZero, Originality.ai — free, no signup.',
-    images: ['/og-image.svg'],
+    images: ['/og-image.png'],
   },
   alternates: {
     canonical: 'https://gpt-undetectable.com',
@@ -190,8 +191,8 @@ export const metadata = {
     },
   },
   other: {
-    'dateModified': '2026-07-07',
-    'article:modified_time': '2026-07-07',
+    'dateModified': '2026-07-28',
+    'article:modified_time': '2026-07-28',
   },
   robots: {
     index: true,
@@ -205,13 +206,16 @@ export const metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const h = await headers();
+  const pathname = h.get('x-pathname') ?? '/';
+  const htmlLang = pathname.startsWith('/zh') ? 'zh-CN' : 'en';
   return (
-    <html lang="en">
+    <html lang={htmlLang}>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
         <meta name="build-id" content="b6d2b9a" />

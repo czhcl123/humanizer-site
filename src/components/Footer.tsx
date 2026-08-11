@@ -15,6 +15,7 @@ const footerText = {
     tools: '工具',
     paper: '论文改写',
     turnitin: 'Turnitin',
+    bypass: 'Bypass AI',
     walter: 'Walter',
     detector: '检测',
     chinese: '降 AI 率',
@@ -27,6 +28,7 @@ const footerText = {
     tools: 'Tools',
     paper: 'Paper',
     turnitin: 'Turnitin',
+    bypass: 'Bypass AI',
     walter: 'Walter',
     detector: 'Detector',
     chinese: '降 AI 率',
@@ -47,6 +49,8 @@ export default function Footer({ lang = 'en' }: FooterProps) {
           <span className="text-gray-200">·</span>
           <Link href={`/turnitin-bypass?lang=${lang}`} className="text-gray-400 hover:text-violet-500 transition-colors">{t.turnitin}</Link>
           <span className="text-gray-200">·</span>
+          <Link href={`/bypass-ai?lang=${lang}`} className="text-gray-400 hover:text-violet-500 transition-colors">{t.bypass}</Link>
+          <span className="text-gray-200">·</span>
           <Link href={`/walterwrites?lang=${lang}`} className="text-gray-400 hover:text-violet-500 transition-colors">{t.walter}</Link>
           <span className="text-gray-200">·</span>
           <Link href={`/ai-detector?lang=${lang}`} className="text-gray-400 hover:text-violet-500 transition-colors">{t.detector}</Link>
@@ -56,6 +60,8 @@ export default function Footer({ lang = 'en' }: FooterProps) {
           <Link href={`/about?lang=${lang}`} className="text-gray-400 hover:text-violet-500 transition-colors">{t.about}</Link>
           <span className="text-gray-200">·</span>
           <a href="/llms.txt" className="text-gray-400 hover:text-violet-500 transition-colors">llms.txt</a>
+          <span className="text-gray-200">·</span>
+          <a href="https://www.aixploria.com/en/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-violet-500 transition-colors">AI Tools</a>
         </nav>
         <p className="text-xs text-gray-400 text-center">
           {`${currentYear} ${t.copyright}`}

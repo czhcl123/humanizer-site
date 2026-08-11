@@ -20,8 +20,8 @@ const faqSchema = {
 export async function generateMetadata() {
   const lang = 'zh'
   const titles = {
-    zh: 'Walterwrites AI - 模仿 Walter Writes 风格改写',
-    en: 'Walterwrites AI - Rewrite in Walter Writes Style',
+    zh: 'Walter Writes AI - 让 AI 文本像人写的免费改写器',
+    en: 'Walter Writes AI - Make AI Text Sound Human, Free 2026',
   }
   const descriptions = {
     zh: '免费 AI Humanizer,改写 ChatGPT / Gemini / Claude 输出,绕过 GPTZero、Turnitin、Originality.ai 检测,无需注册,中英双语。',
@@ -30,7 +30,17 @@ export async function generateMetadata() {
   return {
     title: titles[lang],
     description: descriptions[lang],
-    openGraph: { title: titles[lang], description: descriptions[lang] },
+    openGraph: {
+      title: titles[lang],
+      description: descriptions[lang],
+      images: [{ url: 'https://gpt-undetectable.com/og-image.png', width: 1200, height: 630, alt: titles[lang] }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: titles[lang],
+      description: descriptions[lang],
+      images: ['https://gpt-undetectable.com/og-image.png'],
+    },
     alternates: {
       canonical: 'https://gpt-undetectable.com/zh/walterwrites',
       languages: {

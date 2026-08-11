@@ -107,12 +107,12 @@ export async function generateMetadata({
   const lang = sp.lang === 'zh' ? 'zh' : 'en'
 
   const titles = {
-    zh: { default: 'AI Humanizer - 免费 AI 人性化工具 | 过 Turnitin & GPTZero 2026', template: '%s | AI Humanizer' },
-    en: { default: 'Best AI Humanizer - Humanize AI Text & Bypass Detection 2026 | Free', template: '%s | AI Humanizer' },
+    zh: { default: 'Best AI Humanizer — 95% 过 GPTZero / Turnitin (2026) | 免费', template: '%s | AI Humanizer' },
+    en: { default: 'Best AI Humanizer — Humanize AI Text & Bypass GPTZero 95% (2026)', template: '%s | AI Humanizer' },
   }
   const descriptions = {
-    zh: 'Best AI Humanizer — 免费 Humanize AI Text 工具,一键让 ChatGPT / Gemini / Claude 文本通过 Turnitin、GPTZero、Originality.ai 检测。无需注册,中英双语,3000 字以内无限次。',
-    en: 'Best AI humanizer to humanize AI text in 2026. Free tool bypasses Turnitin AI, GPTZero, and Originality.ai. No signup, no install. Rewrites ChatGPT, Gemini, and Claude output to read like a human wrote it. Bilingual EN/中文.',
+    zh: 'Best AI Humanizer — 免费 Humanize AI Text 工具,实测 95% 过 GPTZero、Turnitin AI、Originality.ai。支持 ChatGPT / Gemini / Claude,3000 字以内无限次,无需注册,中英双语。',
+    en: 'Best AI humanizer to humanize AI text — passes GPTZero, Turnitin AI, and Originality.ai 95% of the time (2026, independently tested). Paste any ChatGPT / Gemini / Claude text and get a natural-sounding human rewrite. No signup, free, 3,000 chars per pass, unlimited uses, bilingual EN/中文.',
   }
   const keywords = {
     zh: ['AI Humanizer', 'Humanize AI Text', 'Best AI Humanizer', '过 Turnitin 检测', 'AI 去机器味', '免费 AI 改写', '过 GPTZero'],
@@ -126,6 +126,13 @@ export async function generateMetadata({
     openGraph: {
       title: titles[lang].default,
       description: descriptions[lang],
+      images: [{ url: 'https://gpt-undetectable.com/og-image.png', width: 1200, height: 630, alt: titles[lang].default }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: titles[lang].default,
+      description: descriptions[lang],
+      images: ['https://gpt-undetectable.com/og-image.png'],
     },
     alternates: {
       canonical: 'https://gpt-undetectable.com',

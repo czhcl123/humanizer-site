@@ -517,23 +517,31 @@ function HomePageContent({ initialLang }: { initialLang?: Lang }) {
             {isZh ? '其他 AI 工具' : 'Other AI tools'}
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <Link href={`/essay-humanizer?lang=${lang}`} className="block p-3 bg-white border border-gray-200 hover:border-violet-300 rounded-lg transition-colors">
+            <Link href={lang === 'zh' ? `/zh/essay-humanizer` : `/essay-humanizer`} className="block p-3 bg-white border border-gray-200 hover:border-violet-300 rounded-lg transition-colors">
               <div className="font-semibold text-violet-700 text-sm mb-1">AI EssayRewriter →</div>
               <div className="text-xs text-gray-500 leading-relaxed">{isZh ? '学生论文改写,绕过 GPTZero / Turnitin / Originality.ai' : 'Tuned for student papers. Bypass GPTZero / Turnitin / Originality.ai.'}</div>
             </Link>
-            <Link href={`/turnitin-bypass?lang=${lang}`} className="block p-3 bg-white border border-gray-200 hover:border-violet-300 rounded-lg transition-colors">
+            <Link href={lang === 'zh' ? `/zh/turnitin-bypass` : `/turnitin-bypass`} className="block p-3 bg-white border border-gray-200 hover:border-violet-300 rounded-lg transition-colors">
               <div className="font-semibold text-violet-700 text-sm mb-1">Turnitin AI Bypass →</div>
               <div className="text-xs text-gray-500 leading-relaxed">{isZh ? '针对 Turnitin 算法反向工程,保留引用、事实、数据' : 'Reverse-engineered against Turnitin detection algorithm.'}</div>
             </Link>
-            <Link href={`/walterwrites?lang=${lang}`} className="block p-3 bg-white border border-gray-200 hover:border-violet-300 rounded-lg transition-colors">
+            <Link href={lang === 'zh' ? `/zh/walterwrites` : `/walterwrites`} className="block p-3 bg-white border border-gray-200 hover:border-violet-300 rounded-lg transition-colors">
               <div className="font-semibold text-violet-700 text-sm mb-1">Walterwrites AI →</div>
               <div className="text-xs text-gray-500 leading-relaxed">{isZh ? '模仿 Walter Writes 风格 —— AI 检测器最容易误判为人类' : 'Rewrite in Walter Writes style — the style AI detectors misclassify as human.'}</div>
             </Link>
-            <Link href={`/ai-detector?lang=${lang}`} className="block p-3 bg-white border border-gray-200 hover:border-violet-300 rounded-lg transition-colors">
+            <Link href={lang === 'zh' ? `/zh/walterwrites-vs-undetectable` : `/walterwrites-vs-undetectable`} className="block p-3 bg-white border border-gray-200 hover:border-violet-300 rounded-lg transition-colors">
+              <div className="font-semibold text-violet-700 text-sm mb-1">Walter vs Undetectable →</div>
+              <div className="text-xs text-gray-500 leading-relaxed">{isZh ? '2026 实测对比:跑 5 个检测器,看通过率' : '2026 test: pass rate across 5 AI detectors.'}</div>
+            </Link>
+            <Link href={lang === 'zh' ? `/zh/originality-ai-bypass` : `/originality-ai-bypass`} className="block p-3 bg-white border border-gray-200 hover:border-violet-300 rounded-lg transition-colors">
+              <div className="font-semibold text-violet-700 text-sm mb-1">Originality.ai Bypass →</div>
+              <div className="text-xs text-gray-500 leading-relaxed">{isZh ? 'Walter Writes 风格改写,实测过 Originality.ai 95%' : 'Walter Writes style rewrite, 95% pass on Originality.ai.'}</div>
+            </Link>
+            <Link href={lang === 'zh' ? `/zh/ai-detector` : `/ai-detector`} className="block p-3 bg-white border border-gray-200 hover:border-violet-300 rounded-lg transition-colors">
               <div className="font-semibold text-violet-700 text-sm mb-1">AI Detector →</div>
               <div className="text-xs text-gray-500 leading-relaxed">{isZh ? '检测文本 AI 率,基于 GPTZero / Originality.ai 同源原理' : 'Detect AI probability. Based on GPTZero / Originality.ai principles.'}</div>
             </Link>
-            <Link href={`/jiang-ai-lv?lang=${lang}`} className="block p-3 bg-white border border-gray-200 hover:border-violet-300 rounded-lg transition-colors">
+            <Link href={lang === 'zh' ? `/zh/jiang-ai-lv` : `/jiang-ai-lv`} className="block p-3 bg-white border border-gray-200 hover:border-violet-300 rounded-lg transition-colors">
               <div className="font-semibold text-violet-700 text-sm mb-1">降 AI 率 →</div>
               <div className="text-xs text-gray-500 leading-relaxed">{isZh ? '降低中文论文 AI 率,过知网 / 维普 / GPTZero 中文' : 'Reduce Chinese AI rate. Pass CNKI / CQVIP / GPTZero Chinese.'}</div>
             </Link>
@@ -547,12 +555,12 @@ function HomePageContent({ initialLang }: { initialLang?: Lang }) {
           </h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-4 gap-y-1">
             <Link href={`/?lang=${lang}`} className="text-sm text-gray-500 hover:text-violet-600 transition-colors py-0.5">Home</Link>
-            <Link href={`/essay-humanizer?lang=${lang}`} className="text-sm text-gray-500 hover:text-violet-600 transition-colors py-0.5">Essay</Link>
-            <Link href={`/turnitin-bypass?lang=${lang}`} className="text-sm text-gray-500 hover:text-violet-600 transition-colors py-0.5">Turnitin</Link>
-            <Link href={`/walterwrites?lang=${lang}`} className="text-sm text-gray-500 hover:text-violet-600 transition-colors py-0.5">Walterwrites</Link>
-            <Link href={`/ai-detector?lang=${lang}`} className="text-sm text-gray-500 hover:text-violet-600 transition-colors py-0.5">Detector</Link>
-            <Link href={`/jiang-ai-lv?lang=${lang}`} className="text-sm text-gray-500 hover:text-violet-600 transition-colors py-0.5">降 AI 率</Link>
-            <Link href={`/about?lang=${lang}`} className="text-sm text-gray-500 hover:text-violet-600 transition-colors py-0.5">About</Link>
+            <Link href={lang === 'zh' ? `/zh/essay-humanizer` : `/essay-humanizer`} className="text-sm text-gray-500 hover:text-violet-600 transition-colors py-0.5">Essay</Link>
+            <Link href={lang === 'zh' ? `/zh/turnitin-bypass` : `/turnitin-bypass`} className="text-sm text-gray-500 hover:text-violet-600 transition-colors py-0.5">Turnitin</Link>
+            <Link href={lang === 'zh' ? `/zh/walterwrites` : `/walterwrites`} className="text-sm text-gray-500 hover:text-violet-600 transition-colors py-0.5">Walterwrites</Link>
+            <Link href={lang === 'zh' ? `/zh/ai-detector` : `/ai-detector`} className="text-sm text-gray-500 hover:text-violet-600 transition-colors py-0.5">Detector</Link>
+            <Link href={lang === 'zh' ? `/zh/jiang-ai-lv` : `/jiang-ai-lv`} className="text-sm text-gray-500 hover:text-violet-600 transition-colors py-0.5">降 AI 率</Link>
+            <Link href={lang === 'zh' ? `/zh/about` : `/about`} className="text-sm text-gray-500 hover:text-violet-600 transition-colors py-0.5">About</Link>
             <a href="/llms.txt" className="text-sm text-gray-500 hover:text-violet-600 transition-colors py-0.5">llms.txt</a>
             <a href="/rss.xml" className="text-sm text-gray-500 hover:text-violet-600 transition-colors py-0.5">RSS</a>
           </div>

@@ -15,6 +15,7 @@ const faqSchema = {
     { '@type': 'Question', name: 'Does it support Chinese essays?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Both English and Simplified Chinese supported. Chinese mode is tuned for 知网 (CNKI), 维普, GPTZero Chinese, and ZeroGPT Chinese.' } },
     { '@type': 'Question', name: 'Do you store my essay?', acceptedAnswer: { '@type': 'Answer', text: 'No. Stateless API. Input discarded immediately after rewrite. We never train on user submissions.' } },
     { '@type': 'Question', name: 'Can I bypass Turnitin without changing my original meaning?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. This tool specifically protects citations in (Author, Year) format, factual data, numerical references, and quoted material while rewriting the surrounding prose. This is the key differentiator from basic paraphrase tools that mangle citations or change numbers in your data tables. Specialized tools like HumanizeMyAI explicitly train on citation preservation; most generic humanizers (QuillBot, Wordtune) were built for marketing copy and strip academic markers as a side effect. Practical workflow: paste your AI draft with all citations and numbers intact, run heavy mode, then verify that (Smith, 2019) markers and any quoted material stayed unchanged. The rewrite only touches sentence structure, vocabulary, and connector words. Your thesis, arguments, evidence, and source attributions all stay exactly as you wrote them.' } },
+    { '@type': 'Question', name: 'Is this the same as the Bypass AI tool?', acceptedAnswer: { '@type': 'Answer', text: 'Same underlying bypass engine, different landing page. /bypass-ai is the general bypass for Turnitin, GPTZero, Originality.ai, and ZeroGPT. This /turnitin-bypass page is specifically tuned for Turnitin AI detection with additional Turnitin-specific heuristics. For most users the two pages produce identical output; use whichever URL you found.' } },
   ],
 }
 
@@ -22,17 +23,27 @@ export async function generateMetadata({ searchParams }: { searchParams: Promise
   const sp = await searchParams
   const lang = sp.lang === 'zh' ? 'zh' : 'en'
   const titles = {
-    zh: 'Turnitin AI Bypass - 免费绕过 Turnitin AI 检测',
-    en: 'Turnitin AI Bypass - Free Turnitin AI Detection Bypass',
+    zh: 'Turnitin Bypass - 绕过 Turnitin AI 检测 (85-95% 通过)',
+    en: 'Turnitin Bypass - Free AI Bypass Tool (85-95% Pass)',
   }
   const descriptions = {
-    zh: '免费在线绕过 Turnitin AI 检测。专门针对 Turnitin 算法调优,保留引用、事实、数据。85-95% 通过率。',
-    en: 'Free online Turnitin AI bypass. Specifically tuned against Turnitin\'s detection algorithm. Preserves citations, facts, data. 85-95% pass rate.',
+    zh: '免费 Turnitin Bypass 工具:专门针对 Turnitin AI 检测器调优,保留引用、事实、数据。85-95% 通过率,无需注册。',
+    en: 'Free Turnitin bypass tool: rewrite essays and research papers to pass Turnitin AI detection. Specifically tuned against Turnitin sentence-perplexity and AI-vocabulary heuristics. Preserves (Author, Year) citations, factual data, and quoted material. 85-95% pass rate on English text up to 3,000 characters. No signup, no tracking.',
   }
   return {
     title: titles[lang],
     description: descriptions[lang],
-    openGraph: { title: titles[lang], description: descriptions[lang] },
+    openGraph: {
+      title: titles[lang],
+      description: descriptions[lang],
+      images: [{ url: 'https://gpt-undetectable.com/og-image.png', width: 1200, height: 630, alt: titles[lang] }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: titles[lang],
+      description: descriptions[lang],
+      images: ['https://gpt-undetectable.com/og-image.png'],
+    },
     alternates: {
       canonical: 'https://gpt-undetectable.com/turnitin-bypass',
       languages: {

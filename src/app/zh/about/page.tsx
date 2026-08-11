@@ -10,8 +10,8 @@ export async function generateMetadata({
 }) {
   const lang = 'zh'
   const titles = {
-    zh: '关于我们 - AI Humanizer',
-    en: 'About - AI Humanizer',
+    zh: '关于我们 - AI Humanizer 方法与目标',
+    en: 'About - AI Humanizer Method & Goals',
   }
   const descriptions = {
     zh: 'AI Humanizer 致力于做出能通过最严格 AI 检测器的改写工具。了解我们的方法、目标、局限。',
@@ -20,6 +20,17 @@ export async function generateMetadata({
   return {
     title: titles[lang],
     description: descriptions[lang],
+    openGraph: {
+      title: titles[lang],
+      description: descriptions[lang],
+      images: [{ url: 'https://gpt-undetectable.com/og-image.png', width: 1200, height: 630, alt: titles[lang] }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: titles[lang],
+      description: descriptions[lang],
+      images: ['https://gpt-undetectable.com/og-image.png'],
+    },
     alternates: {
       canonical: 'https://gpt-undetectable.com/zh/about',
       languages: {

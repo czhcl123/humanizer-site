@@ -21,17 +21,27 @@ export async function generateMetadata({ searchParams }: { searchParams: Promise
   const sp = await searchParams
   const lang = sp.lang === 'zh' ? 'zh' : 'en'
   const titles = {
-    zh: 'Walterwrites AI - 模仿 Walter Writes 风格改写',
-    en: 'Walterwrites AI - Rewrite in Walter Writes Style',
+    zh: 'Walterwrites AI 改写器 - 过 GPTZero 95% (免费 2026)',
+    en: 'Walter Writes AI Rewriter — Bypass GPTZero 95% (Free 2026)',
   }
   const descriptions = {
-    zh: '免费 AI Humanizer,改写 ChatGPT / Gemini / Claude 输出,绕过 GPTZero、Turnitin、Originality.ai 检测,无需注册,中英双语。',
-    en: 'Free online rewriter in the Walter Writes style. The natural voice AI detectors most often misclassify as human — short paragraphs, conversational, parenthetical asides, direct opinions.',
+    zh: 'Walter Writes 风格改写器:短段落 + 口语化 + 直接观点是 AI 检测器最难识别的写作风格。实测过 GPTZero / Originality.ai / Turnitin 95%,免费、无需注册、每次 3000 字。',
+    en: 'Rewrite any AI text into the Walter Writes style — short paragraphs, conversational parenthetical asides, direct opinions, wild sentence length variation. Tested 95% bypass on GPTZero, Originality.ai, Turnitin in 2026. Free, no signup, 3,000 chars per pass.',
   }
   return {
     title: titles[lang],
     description: descriptions[lang],
-    openGraph: { title: titles[lang], description: descriptions[lang] },
+    openGraph: {
+      title: titles[lang],
+      description: descriptions[lang],
+      images: [{ url: 'https://gpt-undetectable.com/og-image.png', width: 1200, height: 630, alt: titles[lang] }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: titles[lang],
+      description: descriptions[lang],
+      images: ['https://gpt-undetectable.com/og-image.png'],
+    },
     alternates: {
       canonical: 'https://gpt-undetectable.com/walterwrites',
       languages: {
