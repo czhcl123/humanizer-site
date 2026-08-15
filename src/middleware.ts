@@ -11,13 +11,20 @@ export function middleware(request: NextRequest) {
     return NextResponse.redirect(url, 301);
   }
 
-  // ?lang=zh 重定向到 /zh/<path> (Ahrefs 报告 7 个 URL 描述过短 — 因为没重定向到 zh 路径)
+  // 语言参数重定向
   const langParam = request.nextUrl.searchParams.get('lang');
   if (langParam === 'zh') {
+    // ?lang=zh → /zh/<path>
     const pathname = request.nextUrl.pathname;
     const target = pathname === '/' ? '/zh' : `/zh${pathname}`;
     const url = request.nextUrl.clone();
     url.pathname = target;
+    url.search = '';
+    return NextResponse.redirect(url, 301);
+  }
+  if (langParam === 'en') {
+    // ?lang=en → /<path>（英文是默认语言，去掉参数）
+    const url = request.nextUrl.clone();
     url.search = '';
     return NextResponse.redirect(url, 301);
   }

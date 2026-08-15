@@ -52,7 +52,7 @@ const faqSchema = {
       name: 'Does it support Chinese?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. The interface and humanization work in both English and Simplified Chinese. Switch language with the ?lang=en or ?lang=zh query parameter. Chinese rewrites preserve idioms and natural speech patterns.',
+        text: 'Yes. The interface and humanization work in both English and Simplified Chinese. English is the default; visit /zh/ for the Chinese version. Chinese rewrites preserve idioms and natural speech patterns.',
       },
     },
     {
