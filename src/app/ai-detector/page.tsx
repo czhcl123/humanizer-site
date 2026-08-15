@@ -21,12 +21,12 @@ export async function generateMetadata({ searchParams }: { searchParams: Promise
   const sp = await searchParams
   const lang = sp.lang === 'zh' ? 'zh' : 'en'
   const titles = {
-    zh: 'AI Detector - 免费 AI 内容检测',
-    en: 'AI Detector - Free AI Content Detector',
+    zh: 'AI Detector — 免费 AI 内容检测工具',
+    en: 'AI Detector — Free AI Content Detection Tool',
   }
   const descriptions = {
-    zh: '免费 AI 检测器,基于 GPTZero、Originality.ai、ZeroGPT 原理识别 ChatGPT / Gemini / Claude 输出,无需注册,中英双语。',
-    en: 'Free AI content detector: paste any text and get an AI-likelihood score in 1 second. Trained on GPTZero, Originality.ai, and ZeroGPT detection principles. Detects ChatGPT, Gemini, Claude, and Copilot output. No signup, no upload, up to 3,000 characters.',
+    zh: '免费 AI 检测器:粘贴文本,1 秒出 AI 概率评分。基于 GPTZero / Originality.ai 原理,中英双语。',
+    en: 'Free AI content detector: paste text, get an AI-likelihood score in 1 second. Based on GPTZero, Originality.ai, and ZeroGPT detection principles. No signup, up to 3,000 characters.',
   }
   return {
     title: titles[lang],
