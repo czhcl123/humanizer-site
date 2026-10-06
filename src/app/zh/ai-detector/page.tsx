@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import ToolClient from '../../../components/Tool/ToolClient'
 import { detectorI18n } from '../../../components/Tool/i18n/detector'
 
@@ -74,6 +75,12 @@ export default async function DetectorPage() {
       <p className="text-xs text-gray-400 mb-0 pt-3 border-t border-gray-100">
         隐私:输入文本检测后立即丢弃(无状态 API)。我们从不基于用户提交训练。免费配额:每个 IP 每天 5 次,每次 3000 字。
       </p>
+      <h3 className="text-base font-semibold text-gray-800 mb-2 mt-4">文本被标为 AI?改写一下</h3>
+      <ul className="list-disc list-inside mb-3 space-y-1 pl-1">
+        <li><strong className="text-gray-800">学生论文</strong> — <Link href="/zh/essay-humanizer" className="text-violet-600 hover:underline">EssayRewriter</Link> 保留引用和学术语域。</li>
+        <li><strong className="text-gray-800">博客/营销文案</strong> — <Link href="/zh" className="text-violet-600 hover:underline">AI Humanizer</Link> 把通用 AI 文本改写成自然人话。</li>
+        <li><strong className="text-gray-800">Walter Writes 风格</strong> — <Link href="/zh/walterwrites" className="text-violet-600 hover:underline">Walterwrites AI</Link> 模仿检测器最易误判为人类的声音。</li>
+      </ul>
     </section>
   )
   return (

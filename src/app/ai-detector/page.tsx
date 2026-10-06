@@ -22,11 +22,11 @@ export async function generateMetadata({ searchParams }: { searchParams: Promise
   const lang = sp.lang === 'zh' ? 'zh' : 'en'
   const titles = {
     zh: 'AI Detector — 免费 AI 内容检测工具',
-    en: 'AI Detector — Free AI Content Detection Tool',
+    en: 'Free AI Detector — Check ChatGPT, Claude & Gemini Text',
   }
   const descriptions = {
     zh: '免费 AI 检测器:粘贴文本,1 秒出 AI 概率评分。基于 GPTZero / Originality.ai 原理,中英双语。',
-    en: 'Free AI content detector: paste text, get an AI-likelihood score in 1 second. Based on GPTZero, Originality.ai, and ZeroGPT detection principles. No signup, up to 3,000 characters.',
+    en: 'Free AI detector: paste text, get an AI score in 1 second. Based on GPTZero & Originality.ai principles. No signup, no watermark.',
   }
   return {
     title: titles[lang],
@@ -78,6 +78,12 @@ export default async function DetectorPage({ searchParams }: { searchParams: Pro
       <p className="text-xs text-gray-400 mb-0 pt-3 border-t border-gray-100">
         Privacy: input text is discarded immediately after detection (stateless API). We never train on user submissions. Free quota is 5 submissions per IP per day, 3,000 characters each.
       </p>
+      <h3 className="text-base font-semibold text-gray-800 mb-2 mt-4">Text flagged as AI? Rewrite it</h3>
+      <ul className="list-disc list-inside mb-3 space-y-1 pl-1">
+        <li><strong className="text-gray-800">Student essays</strong> — <Link href="/essay-humanizer" className="text-violet-600 hover:underline">EssayRewriter</Link> keeps citations and academic register intact.</li>
+        <li><strong className="text-gray-800">Blog & marketing copy</strong> — <Link href="/" className="text-violet-600 hover:underline">AI Humanizer</Link> rewrites general AI text into natural prose.</li>
+        <li><strong className="text-gray-800">Walter Writes style</strong> — <Link href="/walterwrites" className="text-violet-600 hover:underline">Walterwrites AI</Link> mimics the voice detectors misclassify as human.</li>
+      </ul>
     </section>
   )
 
