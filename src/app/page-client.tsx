@@ -60,7 +60,7 @@ const T = {
     },
     faqList: [
       { q: 'AI Humanizer 真的免费吗?', a: '真的免费。无隐藏收费、无水印、无注册。每日每个 IP 5 次,每次 3000 字。' },
-      { q: '真的能过 GPTZero 和 Turnitin AI 吗?', a: '针对 GPTZero、Turnitin AI、Originality.ai、ZeroGPT、Copyleaks 专门调优。3000 字以内的文本,通过率 85-95%。更长文本建议分段。' },
+      { q: '真的能过 GPTZero 和 Turnitin AI 吗?', a: '针对 GPTZero、Turnitin AI、Originality.ai、ZeroGPT、Copyleaks 专门调优。3000 字以内的文本,通过率 85-95%。更长文本建议分段。测试方法与月度结果见 /bypass-test-methodology。' },
       { q: '支持哪些 AI 源?', a: 'ChatGPT / GPT-4 / o1 / Gemini / Claude / Copilot / Jasper / Copy.ai / Perplexity / 任何 LLM。改写针对的是这些模型的共同统计特征。' },
       { q: '你存我的文本吗?', a: '不存。无状态 API,处理完即丢。我们从不用用户提交来训练模型。' },
       { q: '能用于学校论文吗?', a: '能,但请遵守你学校的学术诚信政策。工具不帮你抄袭,只帮你重写你有权限使用的文本。' },
@@ -143,7 +143,7 @@ const T = {
     },
     faqList: [
       { q: 'Is AI Humanizer really free?', a: 'Yes. No hidden fees, no watermarks, no signup. Free tier: 5 submissions per IP per day, 3,000 characters per submission.' },
-      { q: 'Does it really bypass GPTZero and Turnitin AI?', a: 'Yes. Engineered specifically against GPTZero, Turnitin AI, Originality.ai, ZeroGPT, and Copyleaks. On text under 3,000 characters, bypass rate is 85-95%.' },
+      { q: 'Does it really bypass GPTZero and Turnitin AI?', a: 'Yes. Engineered specifically against GPTZero, Turnitin AI, Originality.ai, ZeroGPT, and Copyleaks. On text under 3,000 characters, bypass rate is 85-95%. Test protocol and monthly results: see /bypass-test-methodology.' },
       { q: 'Which AI sources are supported?', a: 'ChatGPT / GPT-4 / o1 / Gemini / Claude / Copilot / Jasper / Copy.ai / Perplexity / any LLM. We target the common statistical patterns shared across these models.' },
       { q: 'Do you store my text?', a: 'No. Stateless API. We discard the input immediately after returning the rewrite. We never train a model on user submissions.' },
       { q: 'Can I use it for school essays?', a: 'Yes, but follow your school academic integrity policy. The tool helps you rewrite text you have permission to use — it does not help with plagiarism.' },

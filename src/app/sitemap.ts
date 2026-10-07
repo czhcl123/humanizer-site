@@ -4,8 +4,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const base = 'https://gpt-undetectable.com'
   const today = new Date().toISOString().split('T')[0]
 
-  const pages = ['', '/essay-humanizer', '/turnitin-bypass', '/bypass-ai', '/walterwrites', '/walterwrites-vs-undetectable', '/originality-ai-bypass', '/ai-detector', '/jiang-ai-lv', '/essay-writer-bypass-turnitin', '/gptzero-bypass', '/humanize-ai-text', '/quillbot-bypass', '/about']
-  const priority = [1, 0.95, 0.95, 0.95, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.7]
+  const pages = ['', '/essay-humanizer', '/turnitin-bypass', '/bypass-ai', '/walterwrites', '/walterwrites-vs-undetectable', '/originality-ai-bypass', '/ai-detector', '/jiang-ai-lv', '/essay-writer-bypass-turnitin', '/gptzero-bypass', '/humanize-ai-text', '/quillbot-bypass', '/bypass-test-methodology', '/about']
+  const priority = [1, 0.95, 0.95, 0.95, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.7, 0.7]
   const entries: MetadataRoute.Sitemap = []
 
   pages.forEach((slug, i) => {

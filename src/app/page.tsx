@@ -76,7 +76,7 @@ const faqSchema = {
       name: 'How accurate is the humanization?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'On average, our rewrites score 85-95% human on GPTZero, ZeroGPT, and Originality.ai for text up to 3,000 characters. Longer inputs may need to be split into multiple passes. The tool is calibrated to preserve factual content and meaning while rewriting the surface structure.',
+        text: 'On average, our rewrites score 85-95% human on GPTZero, ZeroGPT, and Originality.ai for text up to 3,000 characters. Longer inputs may need to be split into multiple passes. The tool is calibrated to preserve factual content and meaning while rewriting the surface structure. The full test protocol and monthly results are documented at https://gpt-undetectable.com/bypass-test-methodology.',
       },
     },
     {
