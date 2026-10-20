@@ -80,6 +80,7 @@ export const essayI18n: { zh: ToolI18n; en: ToolI18n } = {
       { href: '/turnitin-bypass', title: 'Turnitin Bypass', desc: '专门绕过 Turnitin AI 论文检测' },
       { href: '/ai-detector', title: 'AI Detector', desc: '检测文本是否是 AI 生成' },
       { href: '/walterwrites', title: 'Walter Writes AI 替代', desc: '模仿 Walter Writes 风格,自然口语' },
+      { href: '/walterwrites-vs-undetectable', title: 'Walter vs Undetectable 对比', desc: '同篇论文跑 5 个检测器的通过率' },
     ],
   },
   en: {
@@ -165,6 +166,7 @@ export const essayI18n: { zh: ToolI18n; en: ToolI18n } = {
       { href: '/turnitin-bypass', title: 'Turnitin Bypass', desc: 'Specifically tuned to bypass Turnitin AI paper detection' },
       { href: '/ai-detector', title: 'AI Detector', desc: 'Detect if a text is AI-generated' },
       { href: '/walterwrites', title: 'Walter Writes AI alternative', desc: 'Mimic the natural Walter Writes style' },
+      { href: '/walterwrites-vs-undetectable', title: 'Walter Writes vs Undetectable AI (2026 test)', desc: 'Same essay, 5 detectors, side-by-side pass rates' },
     ],
   },
 }

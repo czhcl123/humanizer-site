@@ -82,6 +82,7 @@ export const turnitinI18n: { zh: ToolI18n; en: ToolI18n } = {
       { href: '/ai-detector', title: 'AI Detector', desc: '检测文本是否是 AI 生成' },
       { href: '/jiang-ai-lv', title: '降 AI 率', desc: '中文论文 AI 率降低' },
       { href: '/walterwrites', title: 'Walter Writes AI 替代', desc: '更口语化的改写风格' },
+      { href: '/walterwrites-vs-undetectable', title: 'Walter vs Undetectable 对比', desc: '同篇论文跑 5 个检测器的通过率' },
     ],
   },
   en: {
@@ -166,6 +167,7 @@ export const turnitinI18n: { zh: ToolI18n; en: ToolI18n } = {
       { href: '/ai-detector', title: 'AI Detector', desc: 'Detect if a text is AI-generated' },
       { href: '/jiang-ai-lv', title: '降 AI 率', desc: 'Reduce Chinese AI rate in essays' },
       { href: '/walterwrites', title: 'Walter Writes AI alternative', desc: 'More conversational rewrite style' },
+      { href: '/walterwrites-vs-undetectable', title: 'Walter Writes vs Undetectable AI (2026 test)', desc: 'Same essay, 5 detectors, side-by-side pass rates' },
     ],
   },
 }

@@ -80,6 +80,7 @@ export const walterwritesI18n: { zh: ToolI18n; en: ToolI18n } = {
       { href: '/essay-humanizer', title: 'EssayRewriter', desc: '学生论文改写' },
       { href: '/ai-detector', title: 'AI Detector', desc: '检测文本 AI 率' },
       { href: '/jiang-ai-lv', title: '降 AI 率', desc: '中文论文 AI 率降低' },
+      { href: '/walterwrites-vs-undetectable', title: 'Walter vs Undetectable 对比', desc: '同篇论文跑 5 个检测器的对比数据' },
     ],
   },
   en: {
@@ -161,6 +162,7 @@ export const walterwritesI18n: { zh: ToolI18n; en: ToolI18n } = {
       { href: '/essay-humanizer', title: 'EssayRewriter', desc: 'Tuned for student papers' },
       { href: '/ai-detector', title: 'AI Detector', desc: 'Detect if text is AI-generated' },
       { href: '/jiang-ai-lv', title: '降 AI 率', desc: 'Reduce Chinese AI rate' },
+      { href: '/walterwrites-vs-undetectable', title: 'Walter Writes vs Undetectable AI (2026 test)', desc: 'Same essay, 5 detectors, side-by-side pass rates' },
     ],
   },
 }
