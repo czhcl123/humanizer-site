@@ -43,5 +43,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })
   }
 
+  // English-only utility page (no zh mirror).
+  entries.push({
+    url: `${base}/embed`,
+    lastModified: today,
+    changeFrequency: 'monthly',
+    priority: 0.5,
+  })
+
   return entries
 }
