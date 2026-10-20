@@ -85,6 +85,13 @@ export default async function DetectorPage({ searchParams }: { searchParams: Pro
         <li><strong className="text-gray-800">Blog & marketing copy</strong> — <Link href="/" className="text-violet-600 hover:underline">AI Humanizer</Link> rewrites general AI text into natural prose.</li>
         <li><strong className="text-gray-800">Walter Writes style</strong> — <Link href="/walterwrites" className="text-violet-600 hover:underline">Walter Writes AI alternative</Link> mimics the voice detectors misclassify as human.</li>
       </ul>
+      <p className="mt-3 text-sm">
+        Want this detector on your own site?{' '}
+        <Link href="/embed" className="text-violet-600 underline underline-offset-2">
+          Embed the free AI detector
+        </Link>{' '}
+        with one iframe — no signup, no API key, no tracking.
+      </p>
     </section>
   )
 
@@ -106,6 +113,13 @@ export default async function DetectorPage({ searchParams }: { searchParams: Pro
       </ul>
       <p className="text-xs text-gray-400 mb-0 pt-3 border-t border-gray-100">
         隐私:输入文本检测后立即丢弃(无状态 API)。我们从不基于用户提交训练。免费配额:每个 IP 每天 5 次,每次 3000 字。
+      </p>
+      <p className="mt-3 text-sm">
+        想把检测器放到自己的站点?
+        <Link href="/embed" className="text-violet-600 underline underline-offset-2">
+          免费嵌入 AI 检测器
+        </Link>
+        —— 一段 iframe,无需注册、无需 API key。
       </p>
     </section>
   )
