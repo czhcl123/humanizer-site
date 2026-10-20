@@ -1,32 +1,19 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
 import ToolClient from '../../../components/Tool/ToolClient'
 import { walterwritesI18n } from '../../../components/Tool/i18n/walterwrites'
+import WalterSeoZh, { walterFaqSchemaZh } from '../../../components/Tool/WalterSeoZh'
 
 export const dynamic = 'force-dynamic'
 
-const faqSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [
-    { '@type': 'Question', name: 'What is Walter Writes?', acceptedAnswer: { '@type': 'Answer', text: 'Walter Writes AI is the natural writing style that AI detectors most often misclassify as human — short paragraphs, conversational, occasional asides, direct opinions.' } },
-    { '@type': 'Question', name: 'Why does Walter Writes style pass AI detection?', acceptedAnswer: { '@type': 'Answer', text: 'AI detectors core signals are perplexity and burstiness. AI writing has both low. Walter Writes style has both high — surprising word choices, wild short-long variation, asides that spike perplexity further.' } },
-    { '@type': 'Question', name: 'What scenarios is this best for?', acceptedAnswer: { '@type': 'Answer', text: 'Blog posts, product copy, marketing content, emails, social media posts. Anything you want to read like "a real friend wrote it". Not for academic essays.' } },
-    { '@type': 'Question', name: 'Are my facts and data preserved?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. All facts, numbers, citations, and proper nouns are kept exactly. Only the surface expression is rewritten.' } },
-    { '@type': 'Question', name: 'Does it support Chinese?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Both English and Simplified Chinese supported in the Walter Writes style.' } },
-    { '@type': 'Question', name: 'Do you store my text?', acceptedAnswer: { '@type': 'Answer', text: 'No. Stateless API. Input discarded immediately after rewrite. We never train on user submissions.' } },
-  ],
-}
-
-export async function generateMetadata() {
+export async function generateMetadata(): Promise<Metadata> {
   const lang = 'zh'
   const titles = {
-    zh: 'Walter Writes AI - 让 AI 文本像人写的免费改写器',
-    en: 'Walter Writes AI - Make AI Text Sound Human, Free 2026',
+    zh: 'Walter Writes AI 价格、免费替代与实测',
+    en: 'Walter Writes AI: Free Alternative & Pricing',
   }
   const descriptions = {
-    zh: '免费 AI Humanizer,改写 ChatGPT / Gemini / Claude 输出,绕过 GPTZero、Turnitin、Originality.ai 检测,无需注册,中英双语。',
-    en: 'Free online rewriter in the Walter Writes style. The natural voice AI detectors most often misclassify as human — short paragraphs, conversational, parenthetical asides, direct opinions.',
+    zh: 'Walter Writes AI 实测:月付 $8 起、免费 300 词试用、内置检测器;附免费免注册的同风格替代方案与逐项对比。',
+    en: 'Walter Writes AI, tested: $8/mo Starter, free 300-word trial, built-in detector — plus a free, no-signup alternative that writes in the same style.',
   }
   return {
     title: titles[lang],
@@ -54,39 +41,11 @@ export async function generateMetadata() {
 }
 
 export default async function WalterPage() {
-  const lang = 'zh'
-  // 2026-10-06 rank-push block (EN page GSC: 697 imp / rank 41; brand queries dominate)
-  const seoBlockZh = (
-    <section className="max-w-3xl mx-auto px-4 pt-8 pb-2 text-sm text-gray-600 leading-relaxed">
-      <h2 className="text-xl font-bold text-gray-800 mb-3">什么是 Walter Writes AI?</h2>
-      <p className="mb-3">
-        Walter Writes AI 是一种写作风格,也是一个付费改写工具,核心理念只有一个:文本应该读起来像一个思路清晰的人在说话,而不是语言模型在生成。这种风格的特征:短段落、大量自然缩写、括号旁白、第二人称、句子长度剧烈变化。AI 检测器(GPTZero、Originality.ai、Turnitin)判定机器文本的部分依据是“过于均匀”,而 Walter Writes 风格恰恰是均匀的反面。
-      </p>
-      <p className="mb-3">
-        “Walter Writes AI 免费”“Walter Writes AI 替代”这类搜索存在,因为官方工具是订阅制。本页面是一个独立的 Walter Writes 风格改写器:免费、无需注册、每 IP 每天 5 次、每次 3000 字、支持中英文。与 Walter Writes AI 官方无关联。
-      </p>
-      <h3 className="text-base font-semibold text-gray-800 mb-2 mt-4">Walter Writes AI 的免费替代</h3>
-      <ul className="list-disc list-inside mb-3 space-y-1 pl-1">
-        <li><strong className="text-gray-800">同种美学</strong> — 短段落、自然缩写、括号旁白、直接观点、替换 AI 词汇。</li>
-        <li><strong className="text-gray-800">无需订阅</strong> — 粘贴、改写、复制。每 IP 每天 5 次免费。</li>
-        <li><strong className="text-gray-800">看详细对比</strong> — <Link href="/zh/walterwrites-vs-undetectable" className="text-violet-600 hover:underline">Walter Writes vs Undetectable AI 逐项对比</Link>。</li>
-      </ul>
-      <h3 className="text-base font-semibold text-gray-800 mb-2 mt-4">你的文本该用哪个工具?</h3>
-      <ul className="list-disc list-inside mb-3 space-y-1 pl-1">
-        <li><strong className="text-gray-800">博客、邮件、营销文案</strong> — 本 Walter Writes 改写器,或 <Link href="/zh" className="text-violet-600 hover:underline">AI Humanizer</Link>。</li>
-        <li><strong className="text-gray-800">学生论文</strong> — <Link href="/zh/essay-humanizer" className="text-violet-600 hover:underline">EssayRewriter</Link> 保持学术语域;被 Turnitin 标记的看 <Link href="/zh/turnitin-bypass" className="text-violet-600 hover:underline">Turnitin Bypass</Link>。</li>
-        <li><strong className="text-gray-800">不确定能不能过?</strong> — 先用 <Link href="/zh/ai-detector" className="text-violet-600 hover:underline">免费 AI 检测器</Link> 查一遍。</li>
-      </ul>
-      <p className="text-xs text-gray-400 mb-0 pt-3 border-t border-gray-100">
-        隐私:输入文本改写后立即丢弃(无状态 API)。我们从不用用户提交训练模型。
-      </p>
-    </section>
-  )
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      {seoBlockZh}
-      <ToolClient mode="walterwrites" initialLang={lang} i18n={walterwritesI18n} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(walterFaqSchemaZh) }} />
+      <ToolClient mode="walterwrites" initialLang="zh" i18n={walterwritesI18n} />
+      <WalterSeoZh />
     </>
   )
 }

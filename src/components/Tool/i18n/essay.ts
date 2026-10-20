@@ -79,7 +79,7 @@ export const essayI18n: { zh: ToolI18n; en: ToolI18n } = {
       { href: '/', title: 'AI Humanizer', desc: '通用 AI 文本改写,绕过 GPTZero、Turnitin 检测' },
       { href: '/turnitin-bypass', title: 'Turnitin Bypass', desc: '专门绕过 Turnitin AI 论文检测' },
       { href: '/ai-detector', title: 'AI Detector', desc: '检测文本是否是 AI 生成' },
-      { href: '/walterwrites', title: 'Walterwrites AI', desc: '模仿 Walter Writes 风格,自然口语' },
+      { href: '/walterwrites', title: 'Walter Writes AI 替代', desc: '模仿 Walter Writes 风格,自然口语' },
     ],
   },
   en: {
@@ -164,7 +164,7 @@ export const essayI18n: { zh: ToolI18n; en: ToolI18n } = {
       { href: '/', title: 'AI Humanizer', desc: 'Generic AI material rewriter, bypass GPTZero + Turnitin' },
       { href: '/turnitin-bypass', title: 'Turnitin Bypass', desc: 'Specifically tuned to bypass Turnitin AI paper detection' },
       { href: '/ai-detector', title: 'AI Detector', desc: 'Detect if a text is AI-generated' },
-      { href: '/walterwrites', title: 'Walterwrites AI', desc: 'Mimic the natural Walter Writes style' },
+      { href: '/walterwrites', title: 'Walter Writes AI alternative', desc: 'Mimic the natural Walter Writes style' },
     ],
   },
 }

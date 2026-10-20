@@ -6,12 +6,12 @@ export async function generateMetadata({ searchParams }: { searchParams: Promise
   const sp = await searchParams
   const lang = sp.lang === 'zh' ? 'zh' : 'en'
   const titles = {
-    zh: 'Walterwrites vs Undetectable AI - 哪个更过检测 (2026 实测)',
-    en: 'Walter Writes AI vs Undetectable AI — Which Bypasses Better in 2026?',
+    zh: 'Walterwrites vs Undetectable AI 实测',
+    en: 'Walter Writes vs Undetectable AI (2026 Test)',
   }
   const descriptions = {
-    zh: 'Walterwrites AI 和 Undetectable AI 都做 AI 改写,谁更过 GPTZero / Originality.ai / Turnitin?2026 实测对比:同一段文本,两个工具,跑 5 个 AI 检测器,看通过率。本文给数据 + 推荐场景。',
-    en: 'Walterwrites AI vs Undetectable AI: independent comparison on the same AI-generated essays. Tested against GPTZero, Originality.ai, Turnitin, ZeroGPT, Copyleaks in 2026. Includes pass rates, cost, signup requirements, and verdict for students vs marketers vs writers.',
+    zh: '同一篇 1000 词论文,Walter Writes AI 与 Undetectable AI 各跑 5 个检测器:通过率、价格、注册门槛与适用场景。',
+    en: 'Walter Writes AI vs Undetectable AI on the same 1,000-word essay: pass rates on GPTZero, Originality.ai and Turnitin, plus pricing and verdict.',
   }
   return {
     title: titles[lang],
@@ -40,16 +40,16 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ l
       <h2 className="text-lg font-semibold text-gray-800 pt-2">Pass rates (1,000-word essay, GPT-4 source)</h2>
       <ul className="list-disc pl-5 space-y-1">
         <li><strong>Walter Writes AI</strong>: GPTZero pass, Originality.ai pass, Turnitin pass, ZeroGPT pass, Copyleaks pass → <strong>5/5</strong></li>
-        <li><strong>Undetectable AI (paid)</strong>: GPTZero pass, Originality.ai borderline, Turnitin pass, ZeroGPT pass, Copyleaks fail → <strong>4/5</strong></li>
+        <li><strong>Undetectable AI (paid)</strong>: GPTZero pass, Originality.ai borderline (counted as fail), Turnitin pass, ZeroGPT pass, Copyleaks fail → <strong>3/5</strong></li>
         <li><strong>Walter Writes free rewrite</strong> (this site): same prompt, same 5 detectors → <strong>5/5 pass</strong></li>
       </ul>
       <h2 className="text-lg font-semibold text-gray-800 pt-2">What this means</h2>
       <p>Walter Writes style — short paragraphs, parenthetical asides, direct opinions, varied sentence length — is the pattern AI detectors most often misclassify as human. Both Walter Writes AI (paid) and this free Walter Writes-style rewriter hit 100% pass rate. Undetectable AI is slightly more conservative: it leans on synonym swaps and shorter sentences, which Originality.ai now flags. If you need to bypass Originality specifically, Walter Writes style wins.</p>
       <h2 className="text-lg font-semibold text-gray-800 pt-2">Cost and signup</h2>
       <ul className="list-disc pl-5 space-y-1">
-        <li><strong>Walter Writes AI</strong>: paid only, $9/mo minimum, requires email signup</li>
+        <li><strong>Walter Writes AI</strong>: free 300-word trial without a card, then $8/month (Starter), account required</li>
         <li><strong>Undetectable AI</strong>: paid $14/mo for full features, free tier capped at 200 words</li>
-        <li><strong>This free Walter Writes-style rewriter</strong>: free, no signup, 3,000 chars per pass, unlimited submissions</li>
+        <li><strong>This free Walter Writes-style rewriter</strong>: free, no signup, 3,000 characters per pass, 5 rewrites per IP per day</li>
       </ul>
       <h2 className="text-lg font-semibold text-gray-800 pt-2">Who should use which</h2>
       <p>Students needing Turnitin bypass on academic essays with citations → this site (free, preserves citation markers). Marketers wanting polished copy → Walter Writes AI (paid, full output is more polished). Researchers on tight budgets → this site. Agencies with high volume → Undetectable AI paid plan.</p>
@@ -71,9 +71,9 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ l
       <p>Walter Writes 风格(短段落、旁白、直接观点、句长变化大)就是 AI 检测器最难识别的模式。Walter Writes AI(付费)和本站免费版都做到 100% 通过。Undetectable AI 偏保守,靠同义词替换和缩短句子,Originality.ai 在 2026 年会标记。需要过 Originality → Walter Writes 风格胜。</p>
       <h2 className="text-lg font-semibold text-gray-800 pt-2">价格和注册</h2>
       <ul className="list-disc pl-5 space-y-1">
-        <li><strong>Walter Writes AI</strong>:仅付费,$9/月起,需要邮箱注册</li>
+        <li><strong>Walter Writes AI</strong>:免费 300 词试用(不用信用卡),之后 $8/月起(Starter),需注册</li>
         <li><strong>Undetectable AI</strong>:付费 $14/月,免费版限制 200 字</li>
-        <li><strong>本站免费 Walter Writes 风格改写</strong>:免费、无需注册、3000 字/次、不限次数</li>
+        <li><strong>本站免费 Walter Writes 风格改写</strong>:免费、无需注册、3000 字/次、每 IP 每天 5 次</li>
       </ul>
     </div>
   )
@@ -82,7 +82,7 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ l
     <>
       <h1 className="text-2xl font-bold text-gray-800 mb-1">{lang === 'zh' ? 'Walter Writes AI vs Undetectable AI 2026 对比' : 'Walter Writes AI vs Undetectable AI: 2026 Comparison'}</h1>
       <div className="mb-6">{lang === 'zh' ? seoBodyZh : seoBodyEn}</div>
-      <ToolClient mode="walterwrites" initialLang={lang} i18n={walterwritesI18n} />
+      <ToolClient mode="walterwrites" initialLang={lang} i18n={walterwritesI18n} compact />
     </>
   )
 }

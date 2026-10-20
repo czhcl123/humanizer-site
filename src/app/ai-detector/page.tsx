@@ -83,7 +83,7 @@ export default async function DetectorPage({ searchParams }: { searchParams: Pro
       <ul className="list-disc list-inside mb-3 space-y-1 pl-1">
         <li><strong className="text-gray-800">Student essays</strong> — <Link href="/essay-humanizer" className="text-violet-600 hover:underline">EssayRewriter</Link> keeps citations and academic register intact.</li>
         <li><strong className="text-gray-800">Blog & marketing copy</strong> — <Link href="/" className="text-violet-600 hover:underline">AI Humanizer</Link> rewrites general AI text into natural prose.</li>
-        <li><strong className="text-gray-800">Walter Writes style</strong> — <Link href="/walterwrites" className="text-violet-600 hover:underline">Walterwrites AI</Link> mimics the voice detectors misclassify as human.</li>
+        <li><strong className="text-gray-800">Walter Writes style</strong> — <Link href="/walterwrites" className="text-violet-600 hover:underline">Walter Writes AI alternative</Link> mimics the voice detectors misclassify as human.</li>
       </ul>
     </section>
   )

@@ -79,9 +79,11 @@ interface Props {
   mode: ToolMode
   initialLang?: 'zh' | 'en'
   i18n: { zh: ToolI18n; en: ToolI18n }
+  /** Hide hero + SEO prose sections (used when the page supplies its own H1/content). */
+  compact?: boolean
 }
 
-function ToolContent({ mode, initialLang, i18n }: Props) {
+function ToolContent({ mode, initialLang, i18n, compact }: Props) {
   const pathname = usePathname()
   const searchParams = useSearchParams()
   const rawLang = searchParams.get('lang')
@@ -197,19 +199,21 @@ function ToolContent({ mode, initialLang, i18n }: Props) {
 
       <main className="flex-1 max-w-3xl mx-auto w-full px-4 py-6 space-y-6">
         {/* Hero */}
-        <section className="bg-gradient-to-br from-violet-50 via-white to-purple-50 rounded-2xl p-6 border border-violet-100 shadow-sm">
-          <div className="text-center">
-            <div className="text-3xl mb-2">{t.heroBadge}</div>
-            <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-2">{t.heroTitle}</h1>
-            <p className="text-sm text-gray-600 mb-4 max-w-xl mx-auto leading-relaxed">{t.heroSubtitle}</p>
-            <div className="flex flex-wrap justify-center gap-2 text-xs">
-              <span className="px-3 py-1 bg-white border border-violet-200 text-violet-700 rounded-full">{t.heroTag1}</span>
-              <span className="px-3 py-1 bg-white border border-violet-200 text-violet-700 rounded-full">{t.heroTag2}</span>
-              <span className="px-3 py-1 bg-white border border-violet-200 text-violet-700 rounded-full">{t.heroTag3}</span>
-              <span className="px-3 py-1 bg-white border border-violet-200 text-violet-700 rounded-full">{t.heroTag4}</span>
+        {!compact && (
+          <section className="bg-gradient-to-br from-violet-50 via-white to-purple-50 rounded-2xl p-6 border border-violet-100 shadow-sm">
+            <div className="text-center">
+              <div className="text-3xl mb-2">{t.heroBadge}</div>
+              <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-2">{t.heroTitle}</h1>
+              <p className="text-sm text-gray-600 mb-4 max-w-xl mx-auto leading-relaxed">{t.heroSubtitle}</p>
+              <div className="flex flex-wrap justify-center gap-2 text-xs">
+                <span className="px-3 py-1 bg-white border border-violet-200 text-violet-700 rounded-full">{t.heroTag1}</span>
+                <span className="px-3 py-1 bg-white border border-violet-200 text-violet-700 rounded-full">{t.heroTag2}</span>
+                <span className="px-3 py-1 bg-white border border-violet-200 text-violet-700 rounded-full">{t.heroTag3}</span>
+                <span className="px-3 py-1 bg-white border border-violet-200 text-violet-700 rounded-full">{t.heroTag4}</span>
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        )}
 
         {/* Tool */}
         <section className="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm">
@@ -303,6 +307,8 @@ function ToolContent({ mode, initialLang, i18n }: Props) {
           </div>
         </section>
 
+        {!compact && (
+          <>
         {/* Samples */}
         <section className="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm">
           <h2 className="text-base font-bold text-gray-800 mb-3">{t.samplesTitle}</h2>
@@ -396,6 +402,8 @@ function ToolContent({ mode, initialLang, i18n }: Props) {
           <h2 className="text-xl font-bold text-gray-800 mb-2">{t.ctaTitle}</h2>
           <p className="text-sm text-gray-500">{t.ctaBody}</p>
         </section>
+          </>
+        )}
 
         {/* Related tools */}
         <section className="border-t border-gray-200 pt-6">

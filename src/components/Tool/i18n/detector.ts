@@ -160,7 +160,7 @@ export const detectorI18n: { zh: ToolI18n; en: ToolI18n } = {
       { href: '/', title: 'AI Humanizer', desc: 'Generic AI content rewriter' },
       { href: '/essay-humanizer', title: 'EssayRewriter', desc: 'Tuned for student papers' },
       { href: '/turnitin-bypass', title: 'Turnitin Bypass', desc: 'Bypass Turnitin AI detection' },
-      { href: '/walterwrites', title: 'Walterwrites AI', desc: 'Rewrite in Walter Writes style' },
+      { href: '/walterwrites', title: 'Walter Writes AI alternative', desc: 'Rewrite in Walter Writes style' },
     ],
   },
 }

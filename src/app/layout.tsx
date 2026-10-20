@@ -121,13 +121,6 @@ const webAppSchema = {
     name: 'AI Humanizer',
     url: 'https://gpt-undetectable.com',
   },
-  aggregateRating: {
-    '@type': 'AggregateRating',
-    ratingValue: '4.7',
-    ratingCount: '892',
-    bestRating: '5',
-    worstRating: '1',
-  },
   author: {
     '@type': 'Person',
     name: 'czhcl123',
