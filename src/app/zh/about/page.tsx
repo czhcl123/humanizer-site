@@ -3,11 +3,7 @@ import AboutClient from '../../about/about-client'
 
 export const dynamic = 'force-dynamic'
 
-export async function generateMetadata({
-  searchParams,
-}: {
-  
-}) {
+export async function generateMetadata() {
   const lang = 'zh'
   const titles = {
     zh: '关于我们 - AI Humanizer 方法与目标',
@@ -42,11 +38,7 @@ export async function generateMetadata({
   }
 }
 
-export default async function AboutPage({
-  searchParams,
-}: {
-  
-}) {
+export default async function AboutPage() {
   const lang = 'zh'
   return <AboutClient initialLang={lang} />
 }

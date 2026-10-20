@@ -66,11 +66,7 @@ const faqSchema = {
   ],
 }
 
-export async function generateMetadata({
-  searchParams,
-}: {
-  
-}) {
+export async function generateMetadata() {
   const lang = 'zh'
 
   const titles = {
@@ -112,11 +108,7 @@ export async function generateMetadata({
   }
 }
 
-export default async function HomePage({
-  searchParams,
-}: {
-  
-}) {
+export default async function HomePage() {
   const lang = 'zh'
   return (
     <>

@@ -19,6 +19,10 @@ const footerText = {
     walter: 'Walter',
     detector: '检测',
     chinese: '降 AI 率',
+    quillbot: 'QuillBot 绕过',
+    essayTurnitin: '论文过 Turnitin',
+    methodology: '测试方法',
+    more: '更多',
   },
   en: {
     copyright: 'AI Humanizer Suite · Free Online AI Tools',
@@ -32,6 +36,10 @@ const footerText = {
     walter: 'Walter',
     detector: 'Detector',
     chinese: '降 AI 率',
+    quillbot: 'QuillBot bypass',
+    essayTurnitin: 'Essay writer + Turnitin',
+    methodology: 'How we test',
+    more: 'More',
   },
 }
 
@@ -45,7 +53,7 @@ export default function Footer({ lang = 'en' }: FooterProps) {
         <nav className="flex flex-wrap justify-center items-center gap-x-4 gap-y-2 mb-3 text-xs">
           <Link href={`/?lang=${lang}`} className="text-gray-400 hover:text-violet-500 transition-colors">{t.home}</Link>
           <span className="text-gray-200">·</span>
-          <Link href={`/essay-humanizer?lang=${lang}`} className="text-gray-400 hover:text-violet-500 transition-colors">{t.essay}</Link>
+          <Link href={`/essay-humanizer?lang=${lang}`} className="text-gray-400 hover:text-violet-500 transition-colors">{t.paper}</Link>
           <span className="text-gray-200">·</span>
           <Link href={`/turnitin-bypass?lang=${lang}`} className="text-gray-400 hover:text-violet-500 transition-colors">{t.turnitin}</Link>
           <span className="text-gray-200">·</span>
@@ -62,6 +70,14 @@ export default function Footer({ lang = 'en' }: FooterProps) {
           <a href="/llms.txt" className="text-gray-400 hover:text-violet-500 transition-colors">llms.txt</a>
           <span className="text-gray-200">·</span>
           <a href="https://www.aixploria.com/en/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-violet-500 transition-colors">AI Tools</a>
+        </nav>
+        <nav className="flex flex-wrap justify-center items-center gap-x-3 gap-y-2 mb-3 text-xs text-gray-400">
+          <span className="text-gray-300">{t.more}:</span>
+          <Link href={`/quillbot-bypass?lang=${lang}`} className="hover:text-violet-500 transition-colors">{t.quillbot}</Link>
+          <span className="text-gray-200">·</span>
+          <Link href={`/essay-writer-bypass-turnitin?lang=${lang}`} className="hover:text-violet-500 transition-colors">{t.essayTurnitin}</Link>
+          <span className="text-gray-200">·</span>
+          <Link href={`/bypass-test-methodology?lang=${lang}`} className="hover:text-violet-500 transition-colors">{t.methodology}</Link>
         </nav>
         <p className="text-xs text-gray-400 text-center">
           {`${currentYear} ${t.copyright}`}

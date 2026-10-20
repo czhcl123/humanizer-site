@@ -169,7 +169,7 @@ function ToolContent({ mode, initialLang, i18n }: Props) {
   const handlePaste = async () => {
     try {
       const content = await navigator.clipboard.readText()
-      if (text) setInput(text)
+      if (content) setInput(content)
     } catch {}
   }
 
