@@ -76,16 +76,15 @@ export default function EmbedDetector() {
 
   return (
     <div ref={boxRef} className="w-full bg-white text-gray-800">
-      <div className="flex items-baseline justify-between gap-2 mb-1">
+      <div className="flex items-baseline justify-between gap-2 mb-1.5">
         <h1 className="text-sm font-semibold">AI detector</h1>
         <span className="text-[11px] text-gray-400">free · no signup</span>
       </div>
-      <p className="text-[11px] text-gray-500 mb-2">Paste text to estimate how likely it is to be AI-generated.</p>
 
       <textarea
         value={text}
         onChange={(e) => setText(e.target.value)}
-        rows={4}
+        rows={3}
         placeholder="Paste a paragraph or essay excerpt…"
         className="w-full resize-y rounded-lg border border-gray-300 p-2 text-xs leading-relaxed focus:border-violet-400 focus:outline-none focus:ring-2 focus:ring-violet-100"
         aria-label="Text to analyze"
@@ -118,8 +117,12 @@ export default function EmbedDetector() {
           </div>
           {!!result.signals?.length && (
             <ul className="mt-1.5 space-y-0.5">
-              {result.signals.slice(0, 3).map((s, i) => (
-                <li key={i} className="text-[11px] leading-snug text-gray-600">
+              {result.signals.slice(0, 2).map((s, i) => (
+                <li
+                  key={i}
+                  className="text-[11px] leading-snug text-gray-600"
+                  style={{ display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}
+                >
                   · {s}
                 </li>
               ))}
@@ -128,7 +131,7 @@ export default function EmbedDetector() {
         </div>
       )}
 
-      <p className="mt-2 text-[11px] text-gray-400">
+      <p className="mt-2 text-[10px] text-gray-400">
         <a
           href="https://gpt-undetectable.com/ai-detector?utm_source=embed&utm_medium=widget"
           target="_blank"
@@ -137,7 +140,7 @@ export default function EmbedDetector() {
         >
           Powered by AI Humanizer
         </a>{' '}
-        — free AI detector &amp; humanizer, no signup.
+        — free AI detector, no signup.
       </p>
     </div>
   )
