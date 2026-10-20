@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 const FIXED_SNIPPET = `<iframe
   src="https://gpt-undetectable.com/embed/detector"
   title="Free AI detector"
-  style="width:100%;max-width:520px;height:470px;border:1px solid #e5e7eb;border-radius:12px"
+  style="width:100%;max-width:520px;height:330px;border:1px solid #e5e7eb;border-radius:12px"
   loading="lazy"
 ></iframe>`
 
@@ -20,7 +20,7 @@ const AUTO_SNIPPET = `<iframe
   id="ai-detector-widget"
   src="https://gpt-undetectable.com/embed/detector"
   title="Free AI detector"
-  style="width:100%;max-width:520px;height:470px;border:0"
+  style="width:100%;max-width:520px;height:330px;border:0"
   loading="lazy"
 ></iframe>
 <script>
@@ -54,7 +54,7 @@ export default function EmbedPage() {
         <iframe
           src="/embed/detector"
           title="Free AI detector preview"
-          style={{ width: '100%', maxWidth: 520, height: 470, border: '1px solid #e5e7eb', borderRadius: 12 }}
+          style={{ width: '100%', maxWidth: 520, height: 330, border: '1px solid #e5e7eb', borderRadius: 12 }}
         />
       </div>
 
