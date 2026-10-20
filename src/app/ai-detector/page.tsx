@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import ToolClient from '../../components/Tool/ToolClient'
 import { detectorI18n } from '../../components/Tool/i18n/detector'
 
