@@ -81,6 +81,13 @@ export default async function DetectorPage() {
         <li><strong className="text-gray-800">博客/营销文案</strong> — <Link href="/zh" className="text-violet-600 hover:underline">AI Humanizer</Link> 把通用 AI 文本改写成自然人话。</li>
         <li><strong className="text-gray-800">Walter Writes 风格</strong> — <Link href="/zh/walterwrites" className="text-violet-600 hover:underline">Walterwrites AI</Link> 模仿检测器最易误判为人类的声音。</li>
       </ul>
+      <p className="mt-3 text-sm">
+        想把检测器放到自己的站点?
+        <Link href="/embed" className="text-violet-600 underline underline-offset-2">
+          免费嵌入 AI 检测器
+        </Link>
+        —— 一段 iframe,无需注册、无需 API key。
+      </p>
     </section>
   )
   return (
