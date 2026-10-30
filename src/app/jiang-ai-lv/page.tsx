@@ -59,6 +59,13 @@ export default async function ChinesePage({ searchParams }: { searchParams: Prom
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-100 mb-6 text-gray-700 leading-relaxed space-y-3 max-w-3xl mx-auto">
+        <p><strong>江 AI 率</strong> 是中文论文 AI 检测的核心指标：知网 AIGC、维普、GPTZero 中文模型、ZeroGPT 中文都会给出 0-100% 的 AI 生成概率。AI 率高意味着内容被判定为机器写作，学术审核会打回重写。本工具针对中文语境优化，保留所有引用、数据、专有名词，只改写表述层。</p>
+        <h2 className="text-lg font-semibold text-gray-800 pt-2">为什么中文 AI 率特别高？</h2>
+        <p>中文 AI 输出有典型特征："赋能"、"抓手"、"底层逻辑"、"生态位"、"范式"、"价值闭环" 等八股词高频出现；句式过于整齐；缺乏个人观点和具体例子。检测器通过词频和句型模式识别，这些模式在 3000 字内就能被准确打分。</p>
+        <h2 className="text-lg font-semibold text-gray-800 pt-2">改写方法</h2>
+        <ul className="list-disc pl-5 space-y-1"><li>替换八股词为口语化表达</li><li>打断句式均匀性，混合短句和长句</li><li>加入真实观点和具体示例</li><li>保留引用、数字、年份、专有名词</li></ul>
+      </div>
       <ToolClient mode="chinese" initialLang={lang} i18n={chineseI18n} />
     </>
   )

@@ -57,6 +57,11 @@ export default async function essayPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-100 mb-6 text-gray-700 leading-relaxed space-y-3 max-w-3xl mx-auto">
+        <p><strong>Essay Rewriter</strong> 专为学术写作设计：将 AI 生成的论文草稿改写成自然人类风格，绕过 Turnitin AI、GPTZero、Originality.ai 的检测，同时完整保留引用格式（如 Smith, 2019）、数据、年份和专有名词。适用于 1 页反思文章到 10 页研究论文。</p>
+        <h2 className="text-lg font-semibold text-gray-800 pt-2">为什么需要改写</h2>
+        <p>AI 生成的论文有明显特征：句式过于整齐、过渡词重复（"furthermore", "moreover", "therefore"）、缺乏个人观点。检测器通过统计模式识别这些特征，而不是理解内容。本工具重构句式结构、替换模板词汇、增加真实观点表达，让内容通过检测的同时保持学术严谨。</p>
+      </div>
       <ToolClient mode="essay" initialLang={lang} i18n={essayI18n} />
     </>
   )

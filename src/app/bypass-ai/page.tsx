@@ -28,7 +28,7 @@ export async function generateMetadata({ searchParams }: { searchParams: Promise
   }
   const descriptions = {
     zh: '免费 Bypass AI 工具:绕过 Turnitin AI、GPTZero、Originality.ai、ZeroGPT 检测。85-95% 通过率,保留引用/数据/公式,无需注册,本地处理。',
-    en: 'Free bypass AI tool: rewrite AI text to pass Turnitin AI, GPTZero, Originality.ai, ZeroGPT detection. 85-95% pass rate. Preserves citations, data, formulas. No signup, no tracking, 3-8 second turnaround.',
+    en: 'Bypass AI detection: rewrite text to pass Turnitin, GPTZero, Originality.ai. Preserves citations, data, formulas. Free, no signup, 3-8 seconds.',
   }
   return {
     title: titles[lang],
