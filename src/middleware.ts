@@ -11,7 +11,7 @@ export function middleware(request: NextRequest) {
     return NextResponse.redirect(url, 301);
   }
 
-  // 语言参数重定向
+  // 语言参数重定向：只处理 zh；en 默认无需重定向（修 11 页 Coverage 自动重定向）
   const langParam = request.nextUrl.searchParams.get('lang');
   if (langParam === 'zh') {
     // ?lang=zh → /zh/<path>
@@ -22,12 +22,7 @@ export function middleware(request: NextRequest) {
     url.search = '';
     return NextResponse.redirect(url, 301);
   }
-  if (langParam === 'en') {
-    // ?lang=en → /<path>（英文是默认语言，去掉参数）
-    const url = request.nextUrl.clone();
-    url.search = '';
-    return NextResponse.redirect(url, 301);
-  }
+  // en 默认无需重定向（已在上方处理）
 
   const response = NextResponse.next();
   const pathname = request.nextUrl.pathname;
