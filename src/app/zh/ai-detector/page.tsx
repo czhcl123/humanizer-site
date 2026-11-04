@@ -72,7 +72,7 @@ export default async function DetectorPage() {
         <li><strong className="text-gray-800">作者自查</strong> — 看自己稿件中哪些段落读起来像 AI。</li>
         <li><strong className="text-gray-800">招聘筛查</strong> — 校验求职信是否 AI 生成。</li>
       </ul>
-      <p className="text-xs text-gray-400 mb-0 pt-3 border-t border-gray-100">
+      <p className="text-xs text-gray-500 mb-0 pt-3 border-t border-gray-100">
         隐私:输入文本检测后立即丢弃(无状态 API)。我们从不基于用户提交训练。免费配额:每个 IP 每天 5 次,每次 3000 字。
       </p>
       <h3 className="text-base font-semibold text-gray-800 mb-2 mt-4">文本被标为 AI?改写一下</h3>

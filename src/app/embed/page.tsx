@@ -76,7 +76,7 @@ export default function EmbedPage() {
         <li>Scores are estimates from a language model, not a verdict. Do not use them as the sole basis for academic misconduct findings.</li>
       </ul>
 
-      <p className="text-xs text-gray-400 mt-8 border-t border-gray-200 pt-3">
+      <p className="text-xs text-gray-500 mt-8 border-t border-gray-200 pt-3">
         Questions or a different embed size? <Link href="/about" className="underline underline-offset-2">Contact</Link>.
       </p>
     </main>

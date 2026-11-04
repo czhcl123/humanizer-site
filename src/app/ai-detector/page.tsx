@@ -76,7 +76,7 @@ export default async function DetectorPage({ searchParams }: { searchParams: Pro
         <li><strong className="text-gray-800">Self-audit</strong> — see which paragraphs of your draft read as AI.</li>
         <li><strong className="text-gray-800">Recruiter screening</strong> — sanity-check cover letters for AI generation.</li>
       </ul>
-      <p className="text-xs text-gray-400 mb-0 pt-3 border-t border-gray-100">
+      <p className="text-xs text-gray-500 mb-0 pt-3 border-t border-gray-100">
         Privacy: input text is discarded immediately after detection (stateless API). We never train on user submissions. Free quota is 5 submissions per IP per day, 3,000 characters each.
       </p>
       <h3 className="text-base font-semibold text-gray-800 mb-2 mt-4">Text flagged as AI? Rewrite it</h3>
@@ -111,7 +111,7 @@ export default async function DetectorPage({ searchParams }: { searchParams: Pro
         <li><strong className="text-gray-800">作者自查</strong> — 看自己稿件中哪些段落读起来像 AI。</li>
         <li><strong className="text-gray-800">招聘筛查</strong> — 校验求职信是否 AI 生成。</li>
       </ul>
-      <p className="text-xs text-gray-400 mb-0 pt-3 border-t border-gray-100">
+      <p className="text-xs text-gray-500 mb-0 pt-3 border-t border-gray-100">
         隐私:输入文本检测后立即丢弃(无状态 API)。我们从不基于用户提交训练。免费配额:每个 IP 每天 5 次,每次 3000 字。
       </p>
       <p className="mt-3 text-sm">

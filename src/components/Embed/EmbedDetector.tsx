@@ -78,7 +78,7 @@ export default function EmbedDetector() {
     <div ref={boxRef} className="w-full bg-white text-gray-800">
       <div className="flex items-baseline justify-between gap-2 mb-1.5">
         <h1 className="text-sm font-semibold">AI detector</h1>
-        <span className="text-[11px] text-gray-400">free · no signup</span>
+        <span className="text-[11px] text-gray-500">free · no signup</span>
       </div>
 
       <textarea
@@ -86,11 +86,11 @@ export default function EmbedDetector() {
         onChange={(e) => setText(e.target.value)}
         rows={3}
         placeholder="Paste a paragraph or essay excerpt…"
-        className="w-full resize-y rounded-lg border border-gray-300 p-2 text-xs leading-relaxed focus:border-violet-400 focus:outline-none focus:ring-2 focus:ring-violet-100"
+        className="w-full resize-y rounded-lg border border-gray-500 p-2 text-xs leading-relaxed focus:border-violet-400 focus:outline-none focus:ring-2 focus:ring-violet-100"
         aria-label="Text to analyze"
       />
 
-      <div className="mt-1 flex items-center justify-between gap-2 text-[11px] text-gray-400">
+      <div className="mt-1 flex items-center justify-between gap-2 text-[11px] text-gray-500">
         <span>
           {text.length.toLocaleString()} / {MAX_CHARS.toLocaleString()}
         </span>
@@ -131,7 +131,7 @@ export default function EmbedDetector() {
         </div>
       )}
 
-      <p className="mt-2 text-[10px] text-gray-400">
+      <p className="mt-2 text-[10px] text-gray-500">
         <a
           href="https://gpt-undetectable.com/ai-detector?utm_source=embed&utm_medium=widget"
           target="_blank"

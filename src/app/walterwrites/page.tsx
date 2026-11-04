@@ -96,7 +96,7 @@ export default async function WalterPage({ searchParams }: { searchParams: Promi
   // 'walter writes ai login', 'walterwrites ai detector', 'walter writes ai alternative'
   const seoBlockEn = (
     <section className="max-w-3xl mx-auto px-4 pt-8 pb-2 text-sm text-gray-600 leading-relaxed">
-      <p className="text-xs text-gray-400 mb-4">
+      <p className="text-xs text-gray-500 mb-4">
         Last updated 20 October 2026 · Written by czhcl123, who builds and tests AI-detection tools.
       </p>
 
@@ -178,7 +178,7 @@ export default async function WalterPage({ searchParams }: { searchParams: Promi
         ))}
       </div>
 
-      <p className="text-xs text-gray-400 mb-0 pt-3 border-t border-gray-100">
+      <p className="text-xs text-gray-500 mb-0 pt-3 border-t border-gray-100">
         Privacy: input text is discarded immediately after rewriting (stateless API). We never train on user submissions.
       </p>
     </section>

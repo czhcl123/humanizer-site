@@ -25,7 +25,7 @@ export const walterFaqSchemaZh = {
 export default function WalterSeoZh() {
   return (
     <section className="max-w-3xl mx-auto px-4 pt-8 pb-2 text-sm text-gray-600 leading-relaxed">
-      <p className="text-xs text-gray-400 mb-4">2026 年 10 月 20 日更新 · 作者 czhcl123,AI 检测工具开发者。</p>
+      <p className="text-xs text-gray-500 mb-4">2026 年 10 月 20 日更新 · 作者 czhcl123,AI 检测工具开发者。</p>
 
       <h2 className="text-xl font-bold text-gray-800 mb-3">什么是 Walter Writes AI?</h2>
       <p className="mb-3">
@@ -103,7 +103,7 @@ export default function WalterSeoZh() {
         ))}
       </div>
 
-      <p className="text-xs text-gray-400 mb-0 pt-3 border-t border-gray-100">
+      <p className="text-xs text-gray-500 mb-0 pt-3 border-t border-gray-100">
         隐私:输入文本改写后立即丢弃(无状态 API)。我们从不用用户提交训练模型。
       </p>
     </section>

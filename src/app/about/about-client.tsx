@@ -121,7 +121,7 @@ function AboutContent({ initialLang }: { initialLang?: Lang }) {
         </section>
 
         <section className="border-t border-gray-200 pt-6">
-          <h2 className="text-xs text-gray-400 uppercase tracking-wide mb-3 font-medium">{t.sections}</h2>
+          <h2 className="text-xs text-gray-500 uppercase tracking-wide mb-3 font-medium">{t.sections}</h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-4 gap-y-1">
             <Link href={`/?lang=${lang}`} className="text-sm text-gray-500 hover:text-violet-600 transition-colors py-0.5">
               ✨ {t.homeLink}

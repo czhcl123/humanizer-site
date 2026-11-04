@@ -345,17 +345,17 @@ function HomePageContent({ initialLang }: { initialLang?: Lang }) {
                 onChange={(e) => setInput(e.target.value)}
                 placeholder={t.inputPlaceholder}
                 rows={8}
-                className="w-full p-3 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-400 focus:border-violet-300 resize-y"
+                className="w-full p-3 text-sm border border-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-400 focus:border-violet-300 resize-y"
               />
               <div className="flex items-center justify-between mt-2 text-xs">
-                <span className={tooLong ? 'text-red-500' : 'text-gray-400'}>
+                <span className={tooLong ? 'text-red-500' : 'text-gray-500'}>
                   {input.length} / {MAX_CHARS} {t.charCount}
                 </span>
                 <div className="flex gap-2">
                   <button onClick={handlePaste} className="text-violet-600 hover:text-violet-700 hover:underline">
                     {t.paste}
                   </button>
-                  <button onClick={handleClear} className="text-gray-400 hover:text-gray-600">
+                  <button onClick={handleClear} className="text-gray-500 hover:text-gray-600">
                     {t.clear}
                   </button>
                 </div>
@@ -366,7 +366,7 @@ function HomePageContent({ initialLang }: { initialLang?: Lang }) {
             <button
               onClick={handleHumanize}
               disabled={!canSubmit}
-              className="w-full bg-violet-600 hover:bg-violet-700 disabled:bg-gray-300 disabled:cursor-not-allowed text-white font-semibold py-3 rounded-lg transition-colors text-sm"
+              className="w-full bg-violet-600 hover:bg-violet-700 disabled:bg-gray-200 disabled:text-gray-600 disabled:cursor-not-allowed text-white font-semibold py-3 rounded-lg transition-colors text-sm"
             >
               {loading ? t.humanizing : t.humanize}
             </button>
@@ -513,7 +513,7 @@ function HomePageContent({ initialLang }: { initialLang?: Lang }) {
 
         {/* Related tools */}
         <section className="border-t border-gray-200 pt-6">
-          <h2 className="text-xs text-gray-400 uppercase tracking-wide mb-3 font-medium">
+          <h2 className="text-xs text-gray-500 uppercase tracking-wide mb-3 font-medium">
             {isZh ? '其他 AI 工具' : 'Other AI tools'}
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -550,7 +550,7 @@ function HomePageContent({ initialLang }: { initialLang?: Lang }) {
 
         {/* Sitemap */}
         <section className="border-t border-gray-200 pt-6">
-          <h2 className="text-xs text-gray-400 uppercase tracking-wide mb-3 font-medium">
+          <h2 className="text-xs text-gray-500 uppercase tracking-wide mb-3 font-medium">
             {isZh ? '网站地图' : 'Sitemap'}
           </h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-4 gap-y-1">
