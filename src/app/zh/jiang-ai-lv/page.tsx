@@ -62,7 +62,9 @@ export default async function ChinesePage() {
         <h2 className="text-lg font-semibold text-gray-800 pt-2">为什么中文 AI 率特别高？</h2>
         <p>中文 AI 输出有典型特征："赋能"、"抓手"、"底层逻辑"、"生态位"、"范式"、"价值闭环" 等八股词高频出现；句式过于整齐；缺乏个人观点和具体例子。检测器通过词频和句型模式识别，这些模式在 3000 字内就能被准确打分。</p>
       </div>
-      <ToolClient mode="chinese" initialLang={lang} i18n={chineseI18n} />
+      <ToolClient mode="chinese" initialLang={lang} i18n={chineseI18n}
+      heroTitle={{ zh: '降低中文论文 AI 率 — 免费知网 AIGC 绕过工具' }} heroSubtitle={{ zh: '改写知网 AIGC、维普、GPTZero 中文、ZeroGPT 中文都识别不出的 AI 八股词,保留论点、引用、数据。免费,无需注册,3000 字以内。' }}
+    />
     </>
   )
 }

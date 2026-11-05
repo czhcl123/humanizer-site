@@ -44,7 +44,9 @@ export default async function WalterPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(walterFaqSchemaZh) }} />
-      <ToolClient mode="walterwrites" initialLang="zh" i18n={walterwritesI18n} />
+      <ToolClient mode="walterwrites" initialLang="zh" i18n={walterwritesI18n}
+      heroTitle={{ zh: 'Walter Writes AI 价格、免费替代与实测' }} heroSubtitle={{ zh: '我们实测了 Walter Writes AI:月付 $8 起的 Starter 套餐、免费 300 词试用、内置检测器。下面是同风格的免费免注册替代方案,逐项对比。' }}
+    />
       <WalterSeoZh />
     </>
   )

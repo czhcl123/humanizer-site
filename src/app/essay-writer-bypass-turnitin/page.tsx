@@ -107,7 +107,9 @@ export default async function EssayWriterBypassPage({ searchParams }: { searchPa
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       {lang === 'zh' ? seoBodyZh : seoBodyEn}
-      <ToolClient mode="essay" initialLang={lang} i18n={essayI18n} />
+      <ToolClient mode="essay" initialLang={lang} i18n={essayI18n}
+      heroTitle={{ zh: '绕过 Turnitin 的论文写作工具 — 免费 AI Essay Writer', en: 'Essay Writer That Bypasses Turnitin — Free AI Tool' }} heroSubtitle={{ zh: '写论文、改论文,让句子结构的变化幅度足够大,通过 Turnitin AI 检测。引用、数据和论点都保持不变,无需注册。', en: 'Draft and rewrite academic essays so the sentence structure varies enough to pass Turnitin AI detection. Citations, data, and your argument stay intact. No signup.' }}
+    />
     </>
   )
 }

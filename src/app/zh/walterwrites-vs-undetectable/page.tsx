@@ -51,7 +51,7 @@ export default async function Page() {
     <>
       <h1 className="text-2xl font-bold text-gray-800 mb-1">Walter Writes AI vs Undetectable AI 2026 对比</h1>
       <div className="mb-6">{seoBody}</div>
-      <ToolClient mode="walterwrites" initialLang="zh" i18n={walterwritesI18n} />
+      <ToolClient mode="walterwrites" initialLang="zh" i18n={walterwritesI18n} compact />
     </>
   )
 }

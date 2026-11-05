@@ -66,7 +66,9 @@ export default async function ChinesePage({ searchParams }: { searchParams: Prom
         <h2 className="text-lg font-semibold text-gray-800 pt-2">改写方法</h2>
         <ul className="list-disc pl-5 space-y-1"><li>替换八股词为口语化表达</li><li>打断句式均匀性，混合短句和长句</li><li>加入真实观点和具体示例</li><li>保留引用、数字、年份、专有名词</li></ul>
       </div>
-      <ToolClient mode="chinese" initialLang={lang} i18n={chineseI18n} />
+      <ToolClient mode="chinese" initialLang={lang} i18n={chineseI18n}
+      heroTitle={{ zh: '降低中文论文 AI 率 — 免费知网 AIGC 绕过工具', en: 'Reduce AI Rate in Chinese Papers — Free CNKI AIGC Bypass' }} heroSubtitle={{ zh: '改写知网 AIGC、维普、GPTZero 中文、ZeroGPT 中文都识别不出的 AI 八股词,保留论点、引用、数据。免费,无需注册,3000 字以内。', en: 'Rewrites the AI clichés that 知网 AIGC, 维普, GPTZero and ZeroGPT flag in Chinese essays, while keeping your 论点, 引用 and 数据. Free, no signup, 3,000 characters.' }}
+    />
     </>
   )
 }

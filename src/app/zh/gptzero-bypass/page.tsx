@@ -66,7 +66,9 @@ export default async function GptZeroBypassPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       {seoBody}
-      <ToolClient mode="turnitin" initialLang={lang} i18n={turnitinI18n} />
+      <ToolClient mode="turnitin" initialLang={lang} i18n={turnitinI18n}
+      heroTitle={{ zh: 'GPTZero Bypass — 免费绕过 GPTZero AI 检测' }} heroSubtitle={{ zh: '重写文本,打乱句长和用词的可预测性 —— 这正是 GPTZero 打分的两个信号。引用和数据保持不变,无需注册。' }}
+    />
     </>
   )
 }

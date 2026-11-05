@@ -63,7 +63,9 @@ export default async function essayPage({ searchParams }: { searchParams: Promis
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <ToolClient mode="essay" initialLang={lang} i18n={essayI18n} />
+      <ToolClient mode="essay" initialLang={lang} i18n={essayI18n}
+      heroTitle={{ zh: 'Essay Humanizer — 让 AI 论文通过 Turnitin 检测', en: 'Essay Humanizer — Make AI Papers Pass Turnitin 95% Free' }} heroSubtitle={{ zh: '改写 AI 论文,让句子结构变化足够大,通过 Turnitin、GPTZero、Originality.ai,同时保留引用、事实和学术语气。免费,无需注册,3000 字以内。', en: 'Rewrite AI papers so the structure varies enough to pass Turnitin, GPTZero and Originality.ai, while keeping your citations, facts and academic tone. Free, no signup, 3,000 characters.' }}
+    />
     </>
   )
 }

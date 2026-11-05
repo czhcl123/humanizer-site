@@ -101,7 +101,9 @@ export default async function BypassTestMethodologyZhPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       {seoBody}
-      <ToolClient mode="turnitin" initialLang={lang} i18n={turnitinI18n} />
+      <ToolClient mode="turnitin" initialLang={lang} i18n={turnitinI18n}
+      heroTitle={{ zh: '过检测试方法论 — 检测器、样本与通过标准' }} heroSubtitle={{ zh: '我们如何测过检率:测哪些检测器、用什么文本类别、每轮多少样本、什么算通过、多久重跑一次全量回归。' }}
+    />
     </>
   )
 }

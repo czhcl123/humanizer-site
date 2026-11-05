@@ -64,7 +64,9 @@ export default async function HumanizeAiTextPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       {seoBody}
-      <ToolClient mode="walterwrites" initialLang={lang} i18n={walterwritesI18n} />
+      <ToolClient mode="walterwrites" initialLang={lang} i18n={walterwritesI18n}
+      heroTitle={{ zh: '如何把 AI 文本改写成真人风格 — 真正有效的方法' }} heroSubtitle={{ zh: '只换同义词没用:检测器读的是句子结构和可预测性,不是词汇。这里讲真正管用的改法,以及怎么验证结果。' }}
+    />
     </>
   )
 }

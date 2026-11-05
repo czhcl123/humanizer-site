@@ -102,7 +102,9 @@ export default async function QuillbotBypassPage({ searchParams }: { searchParam
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       {lang === 'zh' ? seoBodyZh : seoBodyEn}
-      <ToolClient mode="essay" initialLang={lang} i18n={essayI18n} />
+      <ToolClient mode="essay" initialLang={lang} i18n={essayI18n}
+      heroTitle={{ zh: 'QuillBot Bypass — 为什么改写后还是被检测标记', en: 'QuillBot Bypass — Why Paraphrasing Still Gets Flagged' }} heroSubtitle={{ zh: '换同义词不改变 perplexity 和 burstiness,所以检测器照样标记。真正管用的是重建句子结构。免费工具,无需注册。', en: 'Synonym swapping does not change perplexity or burstiness, so detectors keep flagging the result. Structure rebuilding does. Free tool, no signup.' }}
+    />
     </>
   )
 }

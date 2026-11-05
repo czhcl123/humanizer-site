@@ -104,7 +104,9 @@ export default async function HumanizeAiTextPage({ searchParams }: { searchParam
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       {lang === 'zh' ? seoBodyZh : seoBodyEn}
-      <ToolClient mode="walterwrites" initialLang={lang} i18n={walterwritesI18n} />
+      <ToolClient mode="walterwrites" initialLang={lang} i18n={walterwritesI18n}
+      heroTitle={{ zh: '如何把 AI 文本改写成真人风格 — 真正有效的方法', en: 'How to Humanize AI Text — Methods That Actually Work' }} heroSubtitle={{ zh: '只换同义词没用:检测器读的是句子结构和可预测性,不是词汇。这里讲真正管用的改法,以及怎么验证结果。', en: 'Swap synonyms and nothing changes: detectors read sentence structure and predictability, not vocabulary. Here is what does change them, and how to check the result.' }}
+    />
     </>
   )
 }

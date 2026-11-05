@@ -63,7 +63,9 @@ export default async function QuillbotBypassPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       {seoBody}
-      <ToolClient mode="essay" initialLang={lang} i18n={essayI18n} />
+      <ToolClient mode="essay" initialLang={lang} i18n={essayI18n}
+      heroTitle={{ zh: 'QuillBot Bypass — 为什么改写后还是被检测标记' }} heroSubtitle={{ zh: '换同义词不改变 perplexity 和 burstiness,所以检测器照样标记。真正管用的是重建句子结构。免费工具,无需注册。' }}
+    />
     </>
   )
 }

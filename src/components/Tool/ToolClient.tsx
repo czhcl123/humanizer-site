@@ -81,9 +81,22 @@ interface Props {
   i18n: { zh: ToolI18n; en: ToolI18n }
   /** Hide hero + SEO prose sections (used when the page supplies its own H1/content). */
   compact?: boolean
+  /**
+   * Per-page hero copy override.
+   *
+   * The five shared i18n bundles (chinese / detector / essay / turnitin /
+   * walterwrites) each carry a single heroTitle, and several pages reuse the
+   * same bundle — which meant /gptzero-bypass shipped the H1 "Bypass Turnitin
+   * AI detection" and /quillbot-bypass shipped "Make AI papers read like you
+   * wrote them". An H1 that contradicts the search query costs CTR, so pages
+   * pass their own copy here. Leaving it undefined keeps the shared i18n
+   * behaviour, so no existing page changes unless it opts in.
+   */
+  heroTitle?: { zh?: string; en?: string }
+  heroSubtitle?: { zh?: string; en?: string }
 }
 
-function ToolContent({ mode, initialLang, i18n, compact }: Props) {
+function ToolContent({ mode, initialLang, i18n, compact, heroTitle, heroSubtitle }: Props) {
   const pathname = usePathname()
   const searchParams = useSearchParams()
   const rawLang = searchParams.get('lang')
@@ -203,8 +216,8 @@ function ToolContent({ mode, initialLang, i18n, compact }: Props) {
           <section className="bg-gradient-to-br from-violet-50 via-white to-purple-50 rounded-2xl p-6 border border-violet-100 shadow-sm">
             <div className="text-center">
               <div className="text-3xl mb-2">{t.heroBadge}</div>
-              <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-2">{t.heroTitle}</h1>
-              <p className="text-sm text-gray-600 mb-4 max-w-xl mx-auto leading-relaxed">{t.heroSubtitle}</p>
+              <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-2">{(heroTitle && heroTitle[lang]) || t.heroTitle}</h1>
+              <p className="text-sm text-gray-600 mb-4 max-w-xl mx-auto leading-relaxed">{(heroSubtitle && heroSubtitle[lang]) || t.heroSubtitle}</p>
               <div className="flex flex-wrap justify-center gap-2 text-xs">
                 <span className="px-3 py-1 bg-white border border-violet-200 text-violet-700 rounded-full">{t.heroTag1}</span>
                 <span className="px-3 py-1 bg-white border border-violet-200 text-violet-700 rounded-full">{t.heroTag2}</span>

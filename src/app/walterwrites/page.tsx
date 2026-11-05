@@ -187,7 +187,9 @@ export default async function WalterPage({ searchParams }: { searchParams: Promi
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <ToolClient mode="walterwrites" initialLang={lang} i18n={walterwritesI18n} />
+      <ToolClient mode="walterwrites" initialLang={lang} i18n={walterwritesI18n}
+      heroTitle={{ zh: 'Walter Writes AI 价格、免费替代与实测', en: 'Walter Writes AI — Pricing, Free Alternative & Test Results' }} heroSubtitle={{ zh: '我们实测了 Walter Writes AI:月付 $8 起的 Starter 套餐、免费 300 词试用、内置检测器。下面是同风格的免费免注册替代方案,逐项对比。', en: 'We tested Walter Writes AI: $8/mo Starter plan, a free 300-word trial and a built-in detector. Here is the free, no-signup alternative that writes in the same style, item by item.' }}
+    />
       {lang === 'zh' ? <WalterSeoZh /> : seoBlockEn}
     </>
   )

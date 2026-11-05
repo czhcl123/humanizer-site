@@ -176,7 +176,9 @@ export default async function BypassTestMethodologyPage({ searchParams }: { sear
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       {lang === 'zh' ? seoBodyZh : seoBodyEn}
-      <ToolClient mode="turnitin" initialLang={lang} i18n={turnitinI18n} />
+      <ToolClient mode="turnitin" initialLang={lang} i18n={turnitinI18n}
+      heroTitle={{ zh: '过检测试方法论 — 检测器、样本与通过标准', en: 'Bypass Test Methodology — Detectors, Samples, Pass Rate' }} heroSubtitle={{ zh: '我们如何测过检率:测哪些检测器、用什么文本类别、每轮多少样本、什么算通过、多久重跑一次全量回归。', en: 'How we measure a bypass rate: which detectors we test against, what text categories we use, how many samples per run, what counts as a pass, and how often we re-run the whole suite.' }}
+    />
     </>
   )
 }

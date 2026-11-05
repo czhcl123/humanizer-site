@@ -49,7 +49,9 @@ export default async function BypassAiZhPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <ToolClient mode="turnitin" initialLang="zh" i18n={turnitinI18n} />
+      <ToolClient mode="turnitin" initialLang="zh" i18n={turnitinI18n}
+      heroTitle={{ zh: 'Bypass AI 检测 — Turnitin / GPTZero / Originality.ai' }} heroSubtitle={{ zh: '重写 AI 文本,让结构变化幅度足够大,通过 Turnitin、GPTZero、Originality.ai、ZeroGPT 检测。引用、数据、公式保持不变。免费,无需注册,3-8 秒。' }}
+    />
     </>
   )
 }

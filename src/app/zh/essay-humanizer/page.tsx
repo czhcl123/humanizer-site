@@ -62,7 +62,9 @@ export default async function essayPage() {
         <h2 className="text-lg font-semibold text-gray-800 pt-2">为什么需要改写</h2>
         <p>AI 生成的论文有明显特征：句式过于整齐、过渡词重复（"furthermore", "moreover", "therefore"）、缺乏个人观点。检测器通过统计模式识别这些特征，而不是理解内容。本工具重构句式结构、替换模板词汇、增加真实观点表达，让内容通过检测的同时保持学术严谨。</p>
       </div>
-      <ToolClient mode="essay" initialLang={lang} i18n={essayI18n} />
+      <ToolClient mode="essay" initialLang={lang} i18n={essayI18n}
+      heroTitle={{ zh: 'Essay Humanizer — 让 AI 论文通过 Turnitin 检测' }} heroSubtitle={{ zh: '改写 AI 论文,让句子结构变化足够大,通过 Turnitin、GPTZero、Originality.ai,同时保留引用、事实和学术语气。免费,无需注册,3000 字以内。' }}
+    />
     </>
   )
 }
