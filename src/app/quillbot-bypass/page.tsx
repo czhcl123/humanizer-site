@@ -21,7 +21,7 @@ export async function generateMetadata({ searchParams }: { searchParams: Promise
   const lang = sp.lang === 'zh' ? 'zh' : 'en'
   const titles = {
     zh: 'QuillBot Bypass — 为什么 QuillBot 过不了检测',
-    en: 'QuillBot Bypass: Why Paraphrasing Fails AI Detection',
+    en: 'QuillBot Bypass: Why Paraphrasing Fails',
   }
   const descriptions = {
     zh: 'QuillBot 改写为什么还是被 GPTZero/Turnitin 标记?同义词替换 vs 结构重建的区别,以及真正能过检测的免费工具。',

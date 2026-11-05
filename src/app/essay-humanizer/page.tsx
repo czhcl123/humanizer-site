@@ -26,7 +26,7 @@ export async function generateMetadata({ searchParams }: { searchParams: Promise
   const lang = sp.lang === 'zh' ? 'zh' : 'en'
   const titles = {
     zh: 'Essay Humanizer - 论文 AI 改写过 Turnitin 95% (免费)',
-    en: 'Essay Humanizer — Bypass Turnitin 95% Free (No Signup, 2026)',
+    en: 'Essay Humanizer — Bypass Turnitin 95%',
   }
   const descriptions = {
     zh: '论文 AI 改写器,保留 (作者, 年份) 引用格式与脚注,实测过 Turnitin / GPTZero / Originality.ai 95%。支持中英双语,3000 字以内,免费、无需注册。',

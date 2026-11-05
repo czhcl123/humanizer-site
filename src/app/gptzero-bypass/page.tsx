@@ -21,7 +21,7 @@ export async function generateMetadata({ searchParams }: { searchParams: Promise
   const lang = sp.lang === 'zh' ? 'zh' : 'en'
   const titles = {
     zh: 'GPTZero Bypass — 免费绕过 GPTZero AI 检测',
-    en: 'GPTZero Bypass — Free Tool to Pass AI Detection',
+    en: 'GPTZero Bypass — Free AI Detection Tool',
   }
   const descriptions = {
     zh: '免费 GPTZero Bypass 工具:重写 AI 文本,打乱句长和词频,过 GPTZero 检测。保留引用和数据,无需注册。',

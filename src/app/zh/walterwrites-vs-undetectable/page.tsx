@@ -6,7 +6,7 @@ export const dynamic = 'force-dynamic'
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'Walter Writes AI vs Undetectable AI 2026 对比 - 哪个更过检测',
+    title: 'Walter Writes AI vs Undetectable AI 对比',
     description: 'Walter Writes AI 和 Undetectable AI 都做 AI 改写,谁更过 GPTZero / Originality.ai / Turnitin?2026 实测对比:同一段文本,两个工具,跑 5 个 AI 检测器,看通过率。本文给数据 + 推荐场景。',
     openGraph: {
       title: 'Walter Writes AI vs Undetectable AI 2026 对比',

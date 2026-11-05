@@ -21,11 +21,11 @@ export async function generateMetadata({ searchParams }: { searchParams: Promise
   const lang = sp.lang === 'zh' ? 'zh' : 'en'
   const titles = {
     zh: '如何把 AI 文本改写成真人风格 — 免费方法',
-    en: 'How to Humanize AI Text: Free Methods That Work',
+    en: 'How to Humanize AI Text: Free Methods',
   }
   const descriptions = {
     zh: '教你把 ChatGPT/Claude 输出改写成真人风格:3 步去除 AI 痕迹,免费工具 + 实操方法,保留事实和引用。',
-    en: 'Three steps to turn ChatGPT and Claude output into natural human writing: strip AI vocabulary, break sentence uniformity, add your voice. Free tool included.',
+    en: 'Three steps to turn ChatGPT and Claude output into natural human writing: strip AI vocabulary, break sentence uniformity, add your voice. Free tool.',
   }
   return {
     title: titles[lang],

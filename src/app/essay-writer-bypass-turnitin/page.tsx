@@ -22,11 +22,11 @@ export async function generateMetadata({ searchParams }: { searchParams: Promise
   const lang = sp.lang === 'zh' ? 'zh' : 'en'
   const titles = {
     zh: '绕过 Turnitin 的论文写作工具 — 免费 AI 改写',
-    en: 'Essay Writer That Bypasses Turnitin — Free AI Tool',
+    en: 'Essay Writer That Bypasses Turnitin — Free',
   }
   const descriptions = {
     zh: '免费 AI 论文改写工具:专门绕过 Turnitin AI 检测。保留引用和数据,85-95% 通过率,无需注册。含写作技巧和检测原理。',
-    en: 'Free AI essay writer that bypasses Turnitin AI detection. Preserves citations and data, 85-95% pass rate, no signup. Includes the four writing moves that beat Turnitin\'s perplexity and burstiness checks.',
+    en: 'Free AI essay writer and generator that bypasses Turnitin AI detection. Keeps citations and data intact, plus four writing moves that beat Turnitin.',
   }
   return {
     title: titles[lang],

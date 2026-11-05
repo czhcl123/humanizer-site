@@ -21,7 +21,7 @@ export async function generateMetadata({ searchParams }: { searchParams: Promise
   const lang = sp.lang === 'zh' ? 'zh' : 'en'
   const titles = {
     zh: '过检测试方法论 — 检测器、样本与通过标准',
-    en: 'Bypass Test Methodology — Detectors, Samples, Pass Rate',
+    en: 'Bypass Test Methodology — Pass Rate',
   }
   const descriptions = {
     zh: 'AI 改写过检率的完整测试方法:检测器清单、文本类别、样本量、通过标准、每月回归测试节奏。透明可复现。',

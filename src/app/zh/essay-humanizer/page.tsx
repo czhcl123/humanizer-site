@@ -20,7 +20,7 @@ const faqSchema = {
 export async function generateMetadata() {
   const lang = 'zh'
   const titles = {
-    zh: 'Essay Rewriter - 免费 AI 论文改写,过 Turnitin 与 GPTZero',
+    zh: 'Essay Rewriter - 免费论文改写,过 Turnitin',
     en: 'Essay Rewriter - Free AI Essay Humanizer & Paraphraser 2026',
   }
   const descriptions = {

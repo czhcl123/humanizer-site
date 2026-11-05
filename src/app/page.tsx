@@ -112,7 +112,7 @@ export async function generateMetadata({
   }
   const descriptions = {
     zh: '免费 AI 文本改写器,过 GPTZero / Turnitin AI / Originality.ai 95%。支持 ChatGPT / Gemini / Claude,3000 字/次,无需注册,中英双语。',
-    en: 'Free AI humanizer: paste ChatGPT / Gemini / Claude text, get a natural rewrite that passes GPTZero, Turnitin AI, and Originality.ai 95% of the time. No signup, 3,000 chars per pass.',
+    en: 'Free AI humanizer: paste ChatGPT, Gemini or Claude text and get a rewrite that passes GPTZero, Turnitin AI and Originality.ai 95%. Free, no signup.',
   }
   const keywords = {
     zh: ['AI Humanizer', 'Humanize AI Text', 'Best AI Humanizer', '过 Turnitin 检测', 'AI 去机器味', '免费 AI 改写', '过 GPTZero'],

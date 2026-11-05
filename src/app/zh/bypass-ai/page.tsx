@@ -21,7 +21,7 @@ const faqSchema = {
 export async function generateMetadata({ searchParams }: { searchParams: Promise<{ lang?: string }> }) {
   const lang = 'zh'
   return {
-    title: 'Bypass AI - 免费绕过 Turnitin / GPTZero / Originality.ai 检测 (85-95% 通过)',
+    title: 'Bypass AI - 免费绕过 Turnitin / GPTZero 检测',
     description: '免费 Bypass AI 工具:绕过 Turnitin AI、GPTZero、Originality.ai、ZeroGPT 检测。85-95% 通过率,保留引用/数据/公式,无需注册,本地处理。',
     openGraph: {
       title: 'Bypass AI - 免费绕过 Turnitin / GPTZero / Originality.ai 检测',
@@ -50,7 +50,7 @@ export default async function BypassAiZhPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <ToolClient mode="turnitin" initialLang="zh" i18n={turnitinI18n}
-      heroTitle={{ zh: 'Bypass AI 检测 — Turnitin / GPTZero / Originality.ai' }} heroSubtitle={{ zh: '重写 AI 文本,让结构变化幅度足够大,通过 Turnitin、GPTZero、Originality.ai、ZeroGPT 检测。引用、数据、公式保持不变。免费,无需注册,3-8 秒。' }}
+      heroTitle={{ zh: 'Bypass AI - 免费绕过 AI 检测' }} heroSubtitle={{ zh: '重写 AI 文本,让结构变化幅度足够大,通过 Turnitin、GPTZero、Originality.ai、ZeroGPT 检测。引用、数据、公式保持不变。免费,无需注册,3-8 秒。' }}
     />
     </>
   )

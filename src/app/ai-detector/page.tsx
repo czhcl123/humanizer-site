@@ -23,7 +23,7 @@ export async function generateMetadata({ searchParams }: { searchParams: Promise
   const lang = sp.lang === 'zh' ? 'zh' : 'en'
   const titles = {
     zh: 'AI Detector — 免费 AI 内容检测工具',
-    en: 'Free AI Detector — Check ChatGPT, Claude & Gemini Text',
+    en: 'Free AI Detector — ChatGPT, Claude & Gemini',
   }
   const descriptions = {
     zh: '免费 AI 检测器:粘贴文本,1 秒出 AI 概率评分。基于 GPTZero / Originality.ai 原理,中英双语。',

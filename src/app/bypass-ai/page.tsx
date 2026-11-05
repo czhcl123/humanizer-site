@@ -24,7 +24,7 @@ export async function generateMetadata({ searchParams }: { searchParams: Promise
   const lang = sp.lang === 'zh' ? 'zh' : 'en'
   const titles = {
     zh: 'Bypass AI - 绕过 Turnitin / GPTZero 检测 (85-95% 通过)',
-    en: 'Bypass AI - Free Turnitin / GPTZero Detection Bypass',
+    en: 'Bypass AI — Free Turnitin & GPTZero Tool',
   }
   const descriptions = {
     zh: '免费 Bypass AI 工具:绕过 Turnitin AI、GPTZero、Originality.ai、ZeroGPT 检测。85-95% 通过率,保留引用/数据/公式,无需注册,本地处理。',

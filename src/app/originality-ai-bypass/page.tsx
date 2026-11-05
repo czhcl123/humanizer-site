@@ -7,11 +7,11 @@ export async function generateMetadata({ searchParams }: { searchParams: Promise
   const lang = sp.lang === 'zh' ? 'zh' : 'en'
   const titles = {
     zh: 'Originality AI Bypass - 95% 通过率 (免费,2026)',
-    en: 'Originality AI Bypass — 95% Pass Rate, Free (2026)',
+    en: 'Originality AI Bypass — 95% Pass Rate',
   }
   const descriptions = {
     zh: '免费 Originality AI bypass:用 Walter Writes 风格改写 AI 文本,实测过 Originality.ai 95% (2026)。无需注册,3000 字以内无限次,中英双语支持。',
-    en: 'Bypass Originality.ai AI detection with the Walter Writes style rewrite — short paragraphs, parenthetical asides, direct opinions, varied sentence length. Tested 95% pass rate on Originality.ai in 2026. Free, no signup, 3,000 chars per pass, bilingual.',
+    en: 'Bypass Originality.ai AI detection with the Walter Writes style rewrite — short paragraphs, parenthetical asides, direct opinions. 95% pass rate, free.',
   }
   return {
     title: titles[lang],

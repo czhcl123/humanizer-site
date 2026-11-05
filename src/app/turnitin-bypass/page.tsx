@@ -24,11 +24,11 @@ export async function generateMetadata({ searchParams }: { searchParams: Promise
   const lang = sp.lang === 'zh' ? 'zh' : 'en'
   const titles = {
     zh: 'Turnitin Bypass - 绕过 Turnitin AI 检测 (85-95% 通过)',
-    en: 'Turnitin Bypass - Free AI Bypass Tool (85-95% Pass)',
+    en: 'Turnitin Bypass - Free Tool (85-95% Pass)',
   }
   const descriptions = {
     zh: '免费 Turnitin Bypass 工具:专门针对 Turnitin AI 检测器调优,保留引用、事实、数据。85-95% 通过率,无需注册。',
-    en: 'Free Turnitin bypass tool: rewrite essays and research papers to pass Turnitin AI detection. Specifically tuned against Turnitin sentence-perplexity and AI-vocabulary heuristics. Preserves (Author, Year) citations, factual data, and quoted material. 85-95% pass rate on English text up to 3,000 characters. No signup, no tracking.',
+    en: 'Turnitin bypass tool: rewrite essays and papers to pass Turnitin AI detection. Keeps citations and factual data intact. 85-95% pass rate, free, no signup.',
   }
   return {
     title: titles[lang],
