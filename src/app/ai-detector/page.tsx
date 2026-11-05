@@ -84,7 +84,12 @@ export default async function DetectorPage({ searchParams }: { searchParams: Pro
         <li><strong className="text-gray-800">Student essays</strong> — <Link href="/essay-humanizer" className="text-violet-600 hover:underline">EssayRewriter</Link> keeps citations and academic register intact.</li>
         <li><strong className="text-gray-800">Blog & marketing copy</strong> — <Link href="/" className="text-violet-600 hover:underline">AI Humanizer</Link> rewrites general AI text into natural prose.</li>
         <li><strong className="text-gray-800">Walter Writes style</strong> — <Link href="/walterwrites" className="text-violet-600 hover:underline">Walter Writes AI alternative</Link> mimics the voice detectors misclassify as human.</li>
+        <li><strong className="text-gray-800">Chinese papers</strong> — <Link href="/jiang-ai-lv" className="text-violet-600 hover:underline">降 AI 率 for Chinese essays</Link> lowers 知网 AIGC and 维普 scores while keeping 论点 and 引用 intact.</li>
       </ul>
+      <h3 className="text-base font-semibold text-gray-800 mb-2 mt-4">Which detector flagged it?</h3>
+      <p className="mb-3">
+        The fix depends on the engine, and a rewrite that satisfies one can leave the others failing. If you do not know which detector you are facing, the <Link href="/bypass-ai" className="text-violet-600 hover:underline">bypass AI tool</Link> rebuilds sentence structure for all of them at once — Turnitin, GPTZero, Originality.ai and ZeroGPT. For the engine-specific version, see <Link href="/turnitin-bypass" className="text-violet-600 hover:underline">Turnitin bypass</Link>, <Link href="/gptzero-bypass" className="text-violet-600 hover:underline">GPTZero bypass</Link> and <Link href="/originality-ai-bypass" className="text-violet-600 hover:underline">Originality.ai bypass</Link>.
+      </p>
       <p className="mt-3 text-sm">
         Want this detector on your own site?{' '}
         <Link href="/embed" className="text-violet-600 underline underline-offset-2">

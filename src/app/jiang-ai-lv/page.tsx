@@ -65,6 +65,11 @@ export default async function ChinesePage({ searchParams }: { searchParams: Prom
         <p>中文 AI 输出有典型特征："赋能"、"抓手"、"底层逻辑"、"生态位"、"范式"、"价值闭环" 等八股词高频出现；句式过于整齐；缺乏个人观点和具体例子。检测器通过词频和句型模式识别，这些模式在 3000 字内就能被准确打分。</p>
         <h2 className="text-lg font-semibold text-gray-800 pt-2">改写方法</h2>
         <ul className="list-disc pl-5 space-y-1"><li>替换八股词为口语化表达</li><li>打断句式均匀性，混合短句和长句</li><li>加入真实观点和具体示例</li><li>保留引用、数字、年份、专有名词</li></ul>
+      <h3 className="text-base font-semibold text-gray-800 pt-1">先确认是哪一关在判你</h3>
+      <p>中文论文往往不只被一个平台查:知网 AIGC、维普、GPTZero 中文模型、ZeroGPT 中文各有一套打分口径。用我们的<a href="/ai-detector" className="text-violet-600 hover:underline">免费 AI 检测器</a>跑一遍,就能看到具体是哪一项分数高,而不是凭感觉反复重写。如果你面对的是英文论文的检测,走的是<a href="/essay-writer-bypass-turnitin" className="text-violet-600 hover:underline">绕过 Turnitin 的论文写作工具</a>那条路线。</p>
+
+      <h3 className="text-base font-semibold text-gray-800 pt-1">改完之后怎么验证</h3>
+      <p>中文改写同样要过一遍检测。如果不确定判分标准,<a href="/bypass-test-methodology" className="text-violet-600 hover:underline">过检测试方法论</a>那页写了我们每月用的检测器、样本量和通过标准;英文文本的通用改写则见<a href="/essay-humanizer" className="text-violet-600 hover:underline">Essay Humanizer</a>。</p>
       </div>
       <ToolClient mode="chinese" initialLang={lang} i18n={chineseI18n}
       heroTitle={{ zh: '降低中文论文 AI 率 — 免费知网 AIGC 绕过工具', en: 'Reduce AI Rate in Chinese Papers — Free CNKI AIGC Bypass' }} heroSubtitle={{ zh: '改写知网 AIGC、维普、GPTZero 中文、ZeroGPT 中文都识别不出的 AI 八股词,保留论点、引用、数据。免费,无需注册,3000 字以内。', en: 'Rewrites the AI clichés that 知网 AIGC, 维普, GPTZero and ZeroGPT flag in Chinese essays, while keeping your 论点, 引用 and 数据. Free, no signup, 3,000 characters.' }}

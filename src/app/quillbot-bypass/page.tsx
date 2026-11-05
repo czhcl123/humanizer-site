@@ -73,7 +73,7 @@ export default async function QuillbotBypassPage({ searchParams }: { searchParam
       <p>Take the QuillBot output — or skip QuillBot entirely — and run it through a tool that rebuilds sentence skeletons. Our humanizer varies sentence length aggressively, strips AI vocabulary ("delve", "leverage", "robust", "furthermore"), and adds human rhythm, while holding citations, numbers, and proper nouns exactly where they were.</p>
 
       <h2 className="text-lg font-semibold text-gray-800 pt-2">Verify before you submit</h2>
-      <p>Check the result with the <a href="/ai-detector" className="text-violet-600 hover:underline">free AI detector</a> — it scores the same signals detectors use. If you are working around Turnitin specifically, the <a href="/turnitin-bypass" className="text-violet-600 hover:underline">Turnitin Bypass</a> tool tunes the rewrite against Turnitin's extra heuristics.</p>
+      <p>Check the result with the <a href="/ai-detector" className="text-violet-600 hover:underline">free AI detector</a> — it scores the same signals detectors use. If you are working around Turnitin specifically, the <a href="/turnitin-bypass" className="text-violet-600 hover:underline">Turnitin Bypass</a> tool tunes the rewrite against Turnitin's extra heuristics. If you have not picked a detector yet, the <a href="/bypass-ai" className="text-violet-600 hover:underline">bypass AI tool</a> covers Turnitin, GPTZero, Originality.ai and ZeroGPT in a single rewrite.</p>
     </div>
   )
 
