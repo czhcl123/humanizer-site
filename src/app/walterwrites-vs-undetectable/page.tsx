@@ -82,7 +82,7 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ l
     <>
       <h1 className="text-2xl font-bold text-gray-800 mb-1">{lang === 'zh' ? 'Walter Writes AI vs Undetectable AI 2026 对比' : 'Walter Writes AI vs Undetectable AI: 2026 Comparison'}</h1>
       <div className="mb-6">{lang === 'zh' ? seoBodyZh : seoBodyEn}</div>
-      <ToolClient mode="walterwrites" initialLang={lang} i18n={walterwritesI18n} compact />
+      <ToolClient mode="walterwrites" initialLang={lang} i18n={walterwritesI18n} hideHeroTitle />
     </>
   )
 }

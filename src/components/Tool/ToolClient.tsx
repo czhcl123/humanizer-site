@@ -94,9 +94,15 @@ interface Props {
    */
   heroTitle?: { zh?: string; en?: string }
   heroSubtitle?: { zh?: string; en?: string }
+  /**
+   * Hide the hero <h1> only, for pages that render their own H1 in the SEO
+   * body. `compact` is too blunt — it also drops the samples, features, FAQ
+   * and related-tools sections, which cost ~1000 words of body copy.
+   */
+  hideHeroTitle?: boolean
 }
 
-function ToolContent({ mode, initialLang, i18n, compact, heroTitle, heroSubtitle }: Props) {
+function ToolContent({ mode, initialLang, i18n, compact, heroTitle, heroSubtitle, hideHeroTitle }: Props) {
   const pathname = usePathname()
   const searchParams = useSearchParams()
   const rawLang = searchParams.get('lang')
@@ -216,7 +222,9 @@ function ToolContent({ mode, initialLang, i18n, compact, heroTitle, heroSubtitle
           <section className="bg-gradient-to-br from-violet-50 via-white to-purple-50 rounded-2xl p-6 border border-violet-100 shadow-sm">
             <div className="text-center">
               <div className="text-3xl mb-2">{t.heroBadge}</div>
-              <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-2">{(heroTitle && heroTitle[lang]) || t.heroTitle}</h1>
+              {!hideHeroTitle && (
+                <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-2">{(heroTitle && heroTitle[lang]) || t.heroTitle}</h1>
+              )}
               <p className="text-sm text-gray-600 mb-4 max-w-xl mx-auto leading-relaxed">{(heroSubtitle && heroSubtitle[lang]) || t.heroSubtitle}</p>
               <div className="flex flex-wrap justify-center gap-2 text-xs">
                 <span className="px-3 py-1 bg-white border border-violet-200 text-violet-700 rounded-full">{t.heroTag1}</span>
