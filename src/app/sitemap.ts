@@ -18,6 +18,8 @@ const PAGES: { slug: string; priority: number }[] = [
   { slug: '/quillbot-bypass', priority: 0.9 },
   { slug: '/bypass-test-methodology', priority: 0.7 },
   { slug: '/about', priority: 0.7 },
+  { slug: '/pricing', priority: 0.85 },
+  { slug: '/cost-comparison', priority: 0.85 },
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {

@@ -7,7 +7,7 @@ const websiteSchema = {
   name: 'AI Humanizer',
   alternateName: 'AI 人性化工具',
   url: 'https://gpt-undetectable.com',
-  description: 'Free AI Humanizer that rewrites AI-generated text so it reads naturally and bypasses GPTZero, Turnitin AI, and Originality.ai detection. No signup, no installation. Supports English and Chinese.',
+  description: 'Free AI Humanizer that rewrites AI-generated text so it reads naturally and bypasses GPTZero, Turnitin AI, and Originality.ai detection. Free tier (5/day) + Pro $0.99/word via Stripe.',
   inLanguage: ['en', 'zh'],
   potentialAction: {
     '@type': 'SearchAction',
@@ -90,18 +90,28 @@ const webAppSchema = {
   name: 'AI Humanizer',
   alternateName: 'AI 人性化工具',
   url: 'https://gpt-undetectable.com',
-  description: 'Free AI Humanizer that rewrites AI-generated text so it reads naturally and bypasses GPTZero, Turnitin AI, and Originality.ai detection. No signup, no installation. Supports English and Chinese.',
+  description: 'Free AI Humanizer that rewrites AI-generated text so it reads naturally and bypasses GPTZero, Turnitin AI, and Originality.ai detection. Free tier (5/day) + Pro $0.99/word via Stripe. Supports English and Chinese.',
   applicationCategory: 'UtilitiesApplication',
   applicationSubCategory: 'Text Rewriting Tool',
   operatingSystem: 'Any (web browser with JavaScript)',
   browserRequirements: 'Requires JavaScript. Requires HTML5.',
   inLanguage: ['en', 'zh'],
   isAccessibleForFree: true,
-  offers: {
-    '@type': 'Offer',
-    price: '0',
-    priceCurrency: 'USD',
-  },
+  offers: [
+    {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'USD',
+      availability: 'https://schema.org/InStock',
+    },
+    {
+      '@type': 'Offer',
+      price: '0.99',
+      priceCurrency: 'USD',
+      availability: 'https://schema.org/InStock',
+      description: 'Pro tier: $0.99 per word, unlimited submissions via Stripe.',
+    },
+  ],
   featureList: [
     'AI text humanization',
     'AI content detection bypass',
