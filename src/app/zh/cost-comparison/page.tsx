@@ -11,7 +11,7 @@ export async function generateMetadata(): Promise<Metadata> {
   }
 }
 
-export default function CostComparisonPage({ searchParams }: { searchParams: Promise<{ lang?: string }> }) {
+export default async function CostComparisonPage({ searchParams }: { searchParams: Promise<{ lang?: string }> }) {
   const sp = await searchParams
   const lang = sp?.lang === 'zh' ? 'zh' : 'en'
 

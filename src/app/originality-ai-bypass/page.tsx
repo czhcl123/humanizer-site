@@ -1,6 +1,12 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { originalityI18n } from '../../components/Tool/i18n/originality'
+
+const originalityI18n = {
+  en: {
+    title: 'Bypass Originality AI — GPT-Undetectable',
+    description: 'Originality.ai bypass tool. Free + Pro $0.99/word. Tested against original.ai\'s API.',
+  },
+}
 
 export const dynamic = 'force-dynamic'
 
