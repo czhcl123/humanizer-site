@@ -43,7 +43,7 @@ export async function generateMetadata(): Promise<Metadata> {
   }
 }
 
-export default async function PricingPage({ searchParams }) {
+export default async function PricingPage({ searchParams }: { searchParams: Promise<{ lang?: string }> }) {
   const sp = await searchParams
   const lang = sp?.lang === 'zh' ? 'zh' : 'en'
   const config = PricingConfig[lang]
