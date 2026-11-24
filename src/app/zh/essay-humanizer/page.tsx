@@ -1,8 +1,11 @@
 import type { Metadata } from 'next'
+import { languageAlternates, pageUrl } from '@/lib/site'
+import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd'
 import ToolClient from '../../../components/Tool/ToolClient'
 import { essayI18n } from '../../../components/Tool/i18n/essay'
 
-export const dynamic = 'force-dynamic'
+/** This route tree is Chinese; the language is a compile-time constant. */
+const lang = 'zh' as const
 
 const faqSchema = {
   '@context': 'https://schema.org',
@@ -18,8 +21,7 @@ const faqSchema = {
 }
 
 export async function generateMetadata() {
-  const lang = 'zh'
-  const titles = {
+    const titles = {
     zh: 'Essay Rewriter - 免费论文改写,过 Turnitin',
     en: 'Essay Rewriter - Free AI Essay Humanizer & Paraphraser 2026',
   }
@@ -41,28 +43,21 @@ export async function generateMetadata() {
       description: descriptions[lang],
       images: ['https://gpt-undetectable.com/og-image.png'],
     },
-    alternates: {
-      canonical: 'https://gpt-undetectable.com/zh/essay-humanizer',
-      languages: {
-        'zh-CN': '/zh/essay-humanizer',
-        'en-US': '/essay-humanizer',
-        'x-default': '/essay-humanizer',
-      },
-    },
+    alternates: { canonical: pageUrl('/essay-humanizer', 'zh'), languages: languageAlternates('/essay-humanizer') },
   }
 }
 
 export default async function essayPage() {
-  const lang = 'zh'
-  return (
+    return (
     <>
+      <BreadcrumbJsonLd slug="/essay-humanizer" lang="zh" />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-100 mb-6 text-gray-700 leading-relaxed space-y-3 max-w-3xl mx-auto">
         <p><strong>Essay Rewriter</strong> 专为学术写作设计：将 AI 生成的论文草稿改写成自然人类风格，绕过 Turnitin AI、GPTZero、Originality.ai 的检测，同时完整保留引用格式（如 Smith, 2019）、数据、年份和专有名词。适用于 1 页反思文章到 10 页研究论文。</p>
         <h2 className="text-lg font-semibold text-gray-800 pt-2">为什么需要改写</h2>
         <p>AI 生成的论文有明显特征：句式过于整齐、过渡词重复（"furthermore", "moreover", "therefore"）、缺乏个人观点。检测器通过统计模式识别这些特征，而不是理解内容。本工具重构句式结构、替换模板词汇、增加真实观点表达，让内容通过检测的同时保持学术严谨。</p>
       </div>
-      <ToolClient mode="essay" initialLang={lang} i18n={essayI18n}
+      <ToolClient mode="essay" lang={lang} i18n={essayI18n}
       heroTitle={{ zh: 'Essay Humanizer — 让 AI 论文通过 Turnitin 检测' }} heroSubtitle={{ zh: '改写 AI 论文,让句子结构变化足够大,通过 Turnitin、GPTZero、Originality.ai,同时保留引用、事实和学术语气。免费,无需注册,3000 字以内。' }}
     />
     </>

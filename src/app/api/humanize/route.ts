@@ -1,6 +1,55 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { checkRateLimit, clientKey } from '@/lib/rate-limit'
+
+export const runtime = 'nodejs'
 
 const MAX_CHARS = 3000
+
+/**
+ * Upstream call budget. Without an abort signal a stalled DeepSeek request
+ * holds the invocation open until the platform kills it, and the client sits
+ * on a spinner the whole time.
+ */
+const UPSTREAM_TIMEOUT_MS = Number(process.env.HUMANIZE_TIMEOUT_MS ?? 55_000)
+
+/**
+ * Short-lived response cache. Repeats (users re-clicking, the demo samples,
+ * link-preview fetchers) are common and every hit is a paid LLM call saved.
+ * Bounded so a burst of unique text cannot grow it without limit.
+ */
+const CACHE_TTL_MS = 10 * 60 * 1000
+const CACHE_MAX_ENTRIES = 500
+const responseCache = new Map<string, { expires: number; payload: unknown }>()
+
+function cacheKey(mode: string, lang: string, text: string): string {
+  // FNV-1a over the text. The key also carries mode, lang and length, so a
+  // collision would need two inputs of identical length and hash.
+  let hash = 0x811c9dc5
+  for (let i = 0; i < text.length; i++) {
+    hash ^= text.charCodeAt(i)
+    hash = Math.imul(hash, 0x01000193) >>> 0
+  }
+  return mode + ':' + lang + ':' + text.length + ':' + hash.toString(36)
+}
+
+function readCache(key: string): unknown | undefined {
+  const hit = responseCache.get(key)
+  if (!hit) return undefined
+  if (hit.expires <= Date.now()) {
+    responseCache.delete(key)
+    return undefined
+  }
+  return hit.payload
+}
+
+function writeCache(key: string, payload: unknown) {
+  if (responseCache.size >= CACHE_MAX_ENTRIES) {
+    // Map preserves insertion order: drop the oldest entry.
+    const oldest = responseCache.keys().next().value
+    if (oldest !== undefined) responseCache.delete(oldest)
+  }
+  responseCache.set(key, { expires: Date.now() + CACHE_TTL_MS, payload })
+}
 
 // ============ System prompts per mode ============
 const SYSTEM_PROMPTS: Record<string, { en: string; zh: string }> = {
@@ -331,6 +380,44 @@ export async function POST(req: NextRequest) {
   const systemPrompt = prompts[lang]
   const isDetector = mode === 'detector'
 
+  // Rate limit is enforced here, server-side. The client counter in
+  // localStorage is only a UX hint: clearing storage or calling this endpoint
+  // directly used to give unlimited access to a paid LLM API.
+  const limit = await checkRateLimit(clientKey(req))
+  const limitHeaders = {
+    'X-RateLimit-Limit': String(limit.limit),
+    'X-RateLimit-Remaining': String(limit.remaining),
+    'X-RateLimit-Reset': String(limit.reset),
+  }
+  if (!limit.allowed) {
+    return NextResponse.json(
+      {
+        error:
+          'Daily limit reached (' +
+          limit.limit +
+          ' per day). Try again after ' +
+          new Date(limit.reset * 1000).toISOString() +
+          '.',
+        code: 'rate_limited',
+        remaining: 0,
+        reset: limit.reset,
+      },
+      {
+        status: 429,
+        headers: {
+          ...limitHeaders,
+          'Retry-After': String(Math.max(1, limit.reset - Math.floor(Date.now() / 1000))),
+        },
+      }
+    )
+  }
+
+  const key = cacheKey(mode, lang, text)
+  const cached = readCache(key)
+  if (cached !== undefined) {
+    return NextResponse.json(cached, { headers: { ...limitHeaders, 'X-Cache': 'HIT' } })
+  }
+
   const userMsg = isDetector
     ? (lang === 'zh'
         ? `请分析以下文本的 AI 生成概率,只输出 JSON 对象:\n\n${text}`
@@ -355,6 +442,8 @@ export async function POST(req: NextRequest) {
         temperature: isDetector ? 0.3 : 1.3,
         max_tokens: isDetector ? 1024 : 4096,
       }),
+      signal: AbortSignal.timeout(UPSTREAM_TIMEOUT_MS),
+      cache: 'no-store',
     })
 
     if (!res.ok) {
@@ -370,18 +459,39 @@ export async function POST(req: NextRequest) {
 
     if (isDetector) {
       // Try to parse JSON; fall back to plain text
+      let payload: unknown
       try {
         // Strip markdown code fences if present
         const cleaned = output.replace(/^```(?:json)?\s*/i, '').replace(/```\s*$/, '').trim()
         const parsed = JSON.parse(cleaned)
-        return NextResponse.json({ output: parsed })
+        payload = { output: parsed }
       } catch {
-        return NextResponse.json({ output: { raw: output, verdict: 'Uncertain', ai_probability: 50, human_probability: 50, signals: [], explanation: output.slice(0, 200) } })
+        payload = {
+          output: {
+            raw: output,
+            verdict: 'Uncertain',
+            ai_probability: 50,
+            human_probability: 50,
+            signals: [],
+            explanation: output.slice(0, 200),
+          },
+        }
       }
+      writeCache(key, payload)
+      return NextResponse.json(payload, { headers: { ...limitHeaders, 'X-Cache': 'MISS' } })
     }
 
-    return NextResponse.json({ output })
+    const payload = { output }
+    writeCache(key, payload)
+    return NextResponse.json(payload, { headers: { ...limitHeaders, 'X-Cache': 'MISS' } })
   } catch (e: any) {
+    if (e?.name === 'TimeoutError' || e?.name === 'AbortError') {
+      console.error('DeepSeek request timed out after', UPSTREAM_TIMEOUT_MS, 'ms')
+      return NextResponse.json(
+        { error: 'Rewrite timed out. Please try a shorter passage or retry.', code: 'upstream_timeout' },
+        { status: 504 }
+      )
+    }
     console.error('DeepSeek request error:', e?.message || e)
     return NextResponse.json({ error: 'Rewrite service error' }, { status: 502 })
   }
@@ -396,5 +506,8 @@ export async function GET() {
     max_chars: MAX_CHARS,
     languages: ['en', 'zh'],
     requires_api_key: !process.env.DEEPSEEK_API_KEY,
+    rate_limit: { limit: Number(process.env.HUMANIZE_DAILY_LIMIT ?? 5), window_seconds: 86400 },
+    cache_ttl_seconds: CACHE_TTL_MS / 1000,
+    upstream_timeout_ms: UPSTREAM_TIMEOUT_MS,
   })
 }

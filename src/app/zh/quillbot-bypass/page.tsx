@@ -1,8 +1,11 @@
 import type { Metadata } from 'next'
+import { languageAlternates, pageUrl } from '@/lib/site'
+import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd'
 import ToolClient from '../../../components/Tool/ToolClient'
 import { essayI18n } from '../../../components/Tool/i18n/essay'
 
-export const dynamic = 'force-dynamic'
+/** This route tree is Chinese; the language is a compile-time constant. */
+const lang = 'zh' as const
 
 const faqSchema = {
   '@context': 'https://schema.org',
@@ -24,20 +27,12 @@ export async function generateMetadata(): Promise<Metadata> {
       description: 'QuillBot 改写为什么还是被 GPTZero/Turnitin 标记?同义词替换 vs 结构重建的区别,以及真正能过检测的免费工具。',
       images: [{ url: 'https://gpt-undetectable.com/og-image.png', width: 1200, height: 630 }],
     },
-    alternates: {
-      canonical: 'https://gpt-undetectable.com/zh/quillbot-bypass',
-      languages: {
-        'zh-CN': '/zh/quillbot-bypass',
-        'en-US': '/quillbot-bypass',
-        'x-default': '/quillbot-bypass',
-      },
-    },
+    alternates: { canonical: pageUrl('/quillbot-bypass', 'zh'), languages: languageAlternates('/quillbot-bypass') },
   }
 }
 
 export default async function QuillbotBypassPage() {
-  const lang = 'zh'
-
+  
   const seoBody = (
     <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-100 mb-6 text-gray-700 leading-relaxed space-y-3">
       <p>绕 AI 检测最常见的失败操作是:把 AI 文本贴进 <strong>QuillBot</strong>,复制改写结果,提交——然后还是被标记。这不是 bug。QuillBot 和检测器测的是两回事,同义词替换永远碰不到检测器真正在打分的东西。</p>
@@ -61,9 +56,10 @@ export default async function QuillbotBypassPage() {
 
   return (
     <>
+      <BreadcrumbJsonLd slug="/quillbot-bypass" lang="zh" />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       {seoBody}
-      <ToolClient mode="essay" initialLang={lang} i18n={essayI18n}
+      <ToolClient mode="essay" lang={lang} i18n={essayI18n}
       heroTitle={{ zh: 'QuillBot Bypass — 为什么改写后还是被检测标记' }} heroSubtitle={{ zh: '换同义词不改变 perplexity 和 burstiness,所以检测器照样标记。真正管用的是重建句子结构。免费工具,无需注册。' }}
     />
     </>

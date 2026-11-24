@@ -1,8 +1,11 @@
 import type { Metadata } from 'next'
+import { languageAlternates, pageUrl } from '@/lib/site'
+import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd'
 import ToolClient from '../../../components/Tool/ToolClient'
 import { walterwritesI18n } from '../../../components/Tool/i18n/walterwrites'
 
-export const dynamic = 'force-dynamic'
+/** This route tree is Chinese; the language is a compile-time constant. */
+const lang = 'zh' as const
 
 const faqSchema = {
   '@context': 'https://schema.org',
@@ -24,20 +27,12 @@ export async function generateMetadata(): Promise<Metadata> {
       description: '教你把 ChatGPT/Claude 输出改写成真人风格:3 步去除 AI 痕迹,免费工具 + 实操方法,保留事实和引用。',
       images: [{ url: 'https://gpt-undetectable.com/og-image.png', width: 1200, height: 630 }],
     },
-    alternates: {
-      canonical: 'https://gpt-undetectable.com/zh/humanize-ai-text',
-      languages: {
-        'zh-CN': '/zh/humanize-ai-text',
-        'en-US': '/humanize-ai-text',
-        'x-default': '/humanize-ai-text',
-      },
-    },
+    alternates: { canonical: pageUrl('/humanize-ai-text', 'zh'), languages: languageAlternates('/humanize-ai-text') },
   }
 }
 
 export default async function HumanizeAiTextPage() {
-  const lang = 'zh'
-
+  
   const seoBody = (
     <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-100 mb-6 text-gray-700 leading-relaxed space-y-3">
       <p>"<strong>把 AI 文本改写成真人风格</strong>"已经成了写作流程的标准一步:先用 ChatGPT 或 Claude 打草稿,再把输出改写成读起来像人写的东西。原因可能是 AI 检测器、编辑标准,或者单纯是读者看得出来——方法是一样的,五分钟能学会。</p>
@@ -62,9 +57,10 @@ export default async function HumanizeAiTextPage() {
 
   return (
     <>
+      <BreadcrumbJsonLd slug="/humanize-ai-text" lang="zh" />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       {seoBody}
-      <ToolClient mode="walterwrites" initialLang={lang} i18n={walterwritesI18n}
+      <ToolClient mode="walterwrites" lang={lang} i18n={walterwritesI18n}
       heroTitle={{ zh: '如何把 AI 文本改写成真人风格 — 真正有效的方法' }} heroSubtitle={{ zh: '只换同义词没用:检测器读的是句子结构和可预测性,不是词汇。这里讲真正管用的改法,以及怎么验证结果。' }}
     />
     </>

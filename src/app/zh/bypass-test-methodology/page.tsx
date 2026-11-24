@@ -1,8 +1,11 @@
 import type { Metadata } from 'next'
+import { languageAlternates, pageUrl } from '@/lib/site'
+import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd'
 import ToolClient from '../../../components/Tool/ToolClient'
 import { turnitinI18n } from '../../../components/Tool/i18n/turnitin'
 
-export const dynamic = 'force-dynamic'
+/** This route tree is Chinese; the language is a compile-time constant. */
+const lang = 'zh' as const
 
 const faqSchema = {
   '@context': 'https://schema.org',
@@ -25,20 +28,12 @@ export async function generateMetadata(): Promise<Metadata> {
       description: 'AI 改写过检率的完整测试方法:检测器清单、文本类别、样本量、通过标准、每月回归测试节奏。透明可复现。',
       images: [{ url: 'https://gpt-undetectable.com/og-image.png', width: 1200, height: 630 }],
     },
-    alternates: {
-      canonical: 'https://gpt-undetectable.com/zh/bypass-test-methodology',
-      languages: {
-        'zh-CN': '/zh/bypass-test-methodology',
-        'en-US': '/bypass-test-methodology',
-        'x-default': '/bypass-test-methodology',
-      },
-    },
+    alternates: { canonical: pageUrl('/bypass-test-methodology', 'zh'), languages: languageAlternates('/bypass-test-methodology') },
   }
 }
 
 export default async function BypassTestMethodologyZhPage() {
-  const lang = 'zh'
-
+  
   const seoBody = (
     <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-100 mb-6 text-gray-700 leading-relaxed space-y-3">
       <p>本站的说法是:3000 字以内的文本,改写后以 <strong>85-95%</strong> 的概率通过 AI 检测。这个数字只有在测试方法公开时才有意义。这一页就是那套方法:测什么、怎么算通过、多久重测一次,以及你自己如何复现。</p>
@@ -99,9 +94,10 @@ export default async function BypassTestMethodologyZhPage() {
 
   return (
     <>
+      <BreadcrumbJsonLd slug="/bypass-test-methodology" lang="zh" />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       {seoBody}
-      <ToolClient mode="turnitin" initialLang={lang} i18n={turnitinI18n}
+      <ToolClient mode="turnitin" lang={lang} i18n={turnitinI18n}
       heroTitle={{ zh: '过检测试方法论 — 检测器、样本与通过标准' }} heroSubtitle={{ zh: '我们如何测过检率:测哪些检测器、用什么文本类别、每轮多少样本、什么算通过、多久重跑一次全量回归。' }}
     />
     </>

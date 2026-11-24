@@ -1,8 +1,11 @@
 import type { Metadata } from 'next'
+import { languageAlternates, pageUrl } from '@/lib/site'
+import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd'
 import ToolClient from '../../../components/Tool/ToolClient'
 import { turnitinI18n } from '../../../components/Tool/i18n/turnitin'
 
-export const dynamic = 'force-dynamic'
+/** This route tree is Chinese; the language is a compile-time constant. */
+const lang = 'zh' as const
 
 const faqSchema = {
   '@context': 'https://schema.org',
@@ -18,8 +21,7 @@ const faqSchema = {
 }
 
 export async function generateMetadata() {
-  const lang = 'zh'
-  const titles = {
+    const titles = {
     zh: '绕 Turnitin AI - 免费避开 Turnitin 论文 AI 检测,保留引用',
     en: 'Turnitin AI Detector Bypass - Free, Preserves Citations 2026',
   }
@@ -41,23 +43,16 @@ export async function generateMetadata() {
       description: descriptions[lang],
       images: ['https://gpt-undetectable.com/og-image.png'],
     },
-    alternates: {
-      canonical: 'https://gpt-undetectable.com/zh/turnitin-bypass',
-      languages: {
-        'zh-CN': '/zh/turnitin-bypass',
-        'en-US': '/turnitin-bypass',
-        'x-default': '/turnitin-bypass',
-      },
-    },
+    alternates: { canonical: pageUrl('/turnitin-bypass', 'zh'), languages: languageAlternates('/turnitin-bypass') },
   }
 }
 
 export default async function TurnitinPage() {
-  const lang = 'zh'
-  return (
+    return (
     <>
+      <BreadcrumbJsonLd slug="/turnitin-bypass" lang="zh" />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <ToolClient mode="turnitin" initialLang={lang} i18n={turnitinI18n} />
+      <ToolClient mode="turnitin" lang={lang} i18n={turnitinI18n} />
     </>
   )
 }

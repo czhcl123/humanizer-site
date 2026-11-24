@@ -1,9 +1,12 @@
 import type { Metadata } from 'next'
+import { languageAlternates, pageUrl } from '@/lib/site'
+import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd'
 import Link from 'next/link'
 import ToolClient from '../../../components/Tool/ToolClient'
 import { detectorI18n } from '../../../components/Tool/i18n/detector'
 
-export const dynamic = 'force-dynamic'
+/** This route tree is Chinese; the language is a compile-time constant. */
+const lang = 'zh' as const
 
 const faqSchema = {
   '@context': 'https://schema.org',
@@ -19,8 +22,7 @@ const faqSchema = {
 }
 
 export async function generateMetadata() {
-  const lang = 'zh'
-  const titles = {
+    const titles = {
     zh: 'AI 内容检测器 - 免费检测 ChatGPT / Gemini / Claude 输出',
     en: 'AI Detector - Free AI Content Detection Tool',
   }
@@ -42,20 +44,12 @@ export async function generateMetadata() {
       description: descriptions[lang],
       images: ['https://gpt-undetectable.com/og-image.png'],
     },
-    alternates: {
-      canonical: 'https://gpt-undetectable.com/zh/ai-detector',
-      languages: {
-        'zh-CN': '/zh/ai-detector',
-        'en-US': '/ai-detector',
-        'x-default': '/ai-detector',
-      },
-    },
+    alternates: { canonical: pageUrl('/ai-detector', 'zh'), languages: languageAlternates('/ai-detector') },
   }
 }
 
 export default async function DetectorPage() {
-  const lang = 'zh'
-  // 2026-07-25 P0 zh /ai-detector SEO content block (zh 中文语言检测场景)
+    // 2026-07-25 P0 zh /ai-detector SEO content block (zh 中文语言检测场景)
   const seoBlockZh = (
     <section className="max-w-3xl mx-auto px-4 pt-8 pb-2 text-sm text-gray-600 leading-relaxed">
       <h2 className="text-xl font-bold text-gray-800 mb-3">关于这款免费 AI 内容检测器</h2>
@@ -92,9 +86,10 @@ export default async function DetectorPage() {
   )
   return (
     <>
+      <BreadcrumbJsonLd slug="/ai-detector" lang="zh" />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       {seoBlockZh}
-      <ToolClient mode="detector" initialLang={lang} i18n={detectorI18n} />
+      <ToolClient mode="detector" lang={lang} i18n={detectorI18n} />
     </>
   )
 }

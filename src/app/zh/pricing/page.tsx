@@ -1,8 +1,11 @@
 import type { Metadata } from 'next'
+import { languageAlternates, pageUrl } from '@/lib/site'
+import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd'
 import Link from 'next/link'
-import { PricingConfig } from '../../pricing/pricing-data'
+import { PricingConfig } from '@/app/(en)/pricing/pricing-data'
 
-export const dynamic = 'force-dynamic'
+/** This route tree is Chinese; the language is a compile-time constant. */
+const lang = 'zh' as const
 
 const pricingSchema = {
   '@context': 'https://schema.org',
@@ -39,17 +42,16 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: '定价 - AI Humanizer',
     description: '免费版每天 5 次 + Pro 版 $0.99/词,支持 Stripe 安全支付。',
-    alternates: { canonical: 'https://gpt-undetectable.com/zh/pricing' },
+    alternates: { canonical: pageUrl('/pricing', 'zh'), languages: languageAlternates('/pricing') },
   }
 }
 
-export default async function PricingPage({ searchParams }: { searchParams: Promise<{ lang?: string }> }) {
-  const sp = await searchParams
-  const lang = sp?.lang === 'zh' ? 'zh' : 'en'
-  const config = PricingConfig[lang]
+export default async function PricingPage() {
+    const config = PricingConfig[lang]
 
   return (
     <>
+      <BreadcrumbJsonLd slug="/pricing" lang="zh" />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pricingSchema) }} />
       <main className="mx-auto w-full max-w-4xl px-4 py-8">
         {/* Hero */}

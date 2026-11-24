@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
+import { languageAlternates, pageUrl } from '@/lib/site'
+import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd'
 import ToolClient from '../../../components/Tool/ToolClient'
 import { turnitinI18n } from '../../../components/Tool/i18n/turnitin'
-
-export const dynamic = 'force-dynamic'
 
 const faqSchema = {
   '@context': 'https://schema.org',
@@ -18,9 +18,8 @@ const faqSchema = {
   ],
 }
 
-export async function generateMetadata({ searchParams }: { searchParams: Promise<{ lang?: string }> }) {
-  const lang = 'zh'
-  return {
+export async function generateMetadata() {
+    return {
     title: 'Bypass AI - 免费绕过 Turnitin / GPTZero 检测',
     description: '免费 Bypass AI 工具:绕过 Turnitin AI、GPTZero、Originality.ai、ZeroGPT 检测。85-95% 通过率,保留引用/数据/公式,无需注册,本地处理。',
     openGraph: {
@@ -34,22 +33,16 @@ export async function generateMetadata({ searchParams }: { searchParams: Promise
       description: '免费 Bypass AI 工具,85-95% 通过率,无需注册。',
       images: ['https://gpt-undetectable.com/og-image.png'],
     },
-    alternates: {
-      canonical: 'https://gpt-undetectable.com/zh/bypass-ai',
-      languages: {
-        'zh-CN': '/zh/bypass-ai',
-        'en-US': '/bypass-ai',
-        'x-default': '/bypass-ai',
-      },
-    },
+    alternates: { canonical: pageUrl('/bypass-ai', 'zh'), languages: languageAlternates('/bypass-ai') },
   }
 }
 
 export default async function BypassAiZhPage() {
   return (
     <>
+      <BreadcrumbJsonLd slug="/bypass-ai" lang="zh" />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <ToolClient mode="turnitin" initialLang="zh" i18n={turnitinI18n}
+      <ToolClient mode="turnitin" lang="zh" i18n={turnitinI18n}
       heroTitle={{ zh: 'Bypass AI - 免费绕过 AI 检测' }} heroSubtitle={{ zh: '重写 AI 文本,让结构变化幅度足够大,通过 Turnitin、GPTZero、Originality.ai、ZeroGPT 检测。引用、数据、公式保持不变。免费,无需注册,3-8 秒。' }}
     />
     </>

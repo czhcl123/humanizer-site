@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
+import { languageAlternates, pageUrl } from '@/lib/site'
+import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd'
 import ToolClient from '../../../components/Tool/ToolClient'
 import { walterwritesI18n } from '../../../components/Tool/i18n/walterwrites'
-
-export const dynamic = 'force-dynamic'
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
@@ -13,14 +13,7 @@ export async function generateMetadata(): Promise<Metadata> {
       description: '实测 5 个 AI 检测器,看 Walter Writes AI 和 Undetectable AI 谁更过检测。',
       images: [{ url: 'https://gpt-undetectable.com/og-image.png', width: 1200, height: 630 }],
     },
-    alternates: {
-      canonical: 'https://gpt-undetectable.com/zh/walterwrites-vs-undetectable',
-      languages: {
-        'zh-CN': '/zh/walterwrites-vs-undetectable',
-        'en-US': '/walterwrites-vs-undetectable',
-        'x-default': '/walterwrites-vs-undetectable',
-      },
-    },
+    alternates: { canonical: pageUrl('/walterwrites-vs-undetectable', 'zh'), languages: languageAlternates('/walterwrites-vs-undetectable') },
   }
 }
 
@@ -49,9 +42,10 @@ export default async function Page() {
 
   return (
     <>
+      <BreadcrumbJsonLd slug="/walterwrites-vs-undetectable" lang="zh" />
       <h1 className="text-2xl font-bold text-gray-800 mb-1">Walter Writes AI vs Undetectable AI 2026 对比</h1>
       <div className="mb-6">{seoBody}</div>
-      <ToolClient mode="walterwrites" initialLang="zh" i18n={walterwritesI18n} hideHeroTitle />
+      <ToolClient mode="walterwrites" lang="zh" i18n={walterwritesI18n} hideHeroTitle />
     </>
   )
 }

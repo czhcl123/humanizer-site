@@ -1,8 +1,11 @@
 import type { Metadata } from 'next'
+import { languageAlternates, pageUrl } from '@/lib/site'
+import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd'
 import ToolClient from '../../../components/Tool/ToolClient'
 import { turnitinI18n } from '../../../components/Tool/i18n/turnitin'
 
-export const dynamic = 'force-dynamic'
+/** This route tree is Chinese; the language is a compile-time constant. */
+const lang = 'zh' as const
 
 const faqSchema = {
   '@context': 'https://schema.org',
@@ -25,20 +28,12 @@ export async function generateMetadata(): Promise<Metadata> {
       description: '免费 GPTZero Bypass 工具:重写 AI 文本,打乱句长和词频,过 GPTZero 检测。保留引用和数据,无需注册。',
       images: [{ url: 'https://gpt-undetectable.com/og-image.png', width: 1200, height: 630 }],
     },
-    alternates: {
-      canonical: 'https://gpt-undetectable.com/zh/gptzero-bypass',
-      languages: {
-        'zh-CN': '/zh/gptzero-bypass',
-        'en-US': '/gptzero-bypass',
-        'x-default': '/gptzero-bypass',
-      },
-    },
+    alternates: { canonical: pageUrl('/gptzero-bypass', 'zh'), languages: languageAlternates('/gptzero-bypass') },
   }
 }
 
 export default async function GptZeroBypassPage() {
-  const lang = 'zh'
-
+  
   const seoBody = (
     <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-100 mb-6 text-gray-700 leading-relaxed space-y-3">
       <p><strong>GPTZero</strong> 是使用最广的 AI 检测器之一——学校、出版方、招聘团队在接受投稿前都会先跑一遍。如果你的稿子被标记了,解法不是骗过检测器,而是去掉 GPTZero 真正在测的统计特征。</p>
@@ -64,9 +59,10 @@ export default async function GptZeroBypassPage() {
 
   return (
     <>
+      <BreadcrumbJsonLd slug="/gptzero-bypass" lang="zh" />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       {seoBody}
-      <ToolClient mode="turnitin" initialLang={lang} i18n={turnitinI18n}
+      <ToolClient mode="turnitin" lang={lang} i18n={turnitinI18n}
       heroTitle={{ zh: 'GPTZero Bypass — 免费绕过 GPTZero AI 检测' }} heroSubtitle={{ zh: '重写文本,打乱句长和用词的可预测性 —— 这正是 GPTZero 打分的两个信号。引用和数据保持不变,无需注册。' }}
     />
     </>

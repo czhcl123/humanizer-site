@@ -1,13 +1,15 @@
 import type { Metadata } from 'next'
+import { languageAlternates, pageUrl } from '@/lib/site'
+import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd'
 import ToolClient from '../../../components/Tool/ToolClient'
 import { walterwritesI18n } from '../../../components/Tool/i18n/walterwrites'
 import WalterSeoZh, { walterFaqSchemaZh } from '../../../components/Tool/WalterSeoZh'
 
-export const dynamic = 'force-dynamic'
+/** This route tree is Chinese; the language is a compile-time constant. */
+const lang = 'zh' as const
 
 export async function generateMetadata(): Promise<Metadata> {
-  const lang = 'zh'
-  const titles = {
+    const titles = {
     zh: 'Walter Writes AI 价格、免费替代与实测',
     en: 'Walter Writes AI: Free Alternative & Pricing',
   }
@@ -29,22 +31,16 @@ export async function generateMetadata(): Promise<Metadata> {
       description: descriptions[lang],
       images: ['https://gpt-undetectable.com/og-image.png'],
     },
-    alternates: {
-      canonical: 'https://gpt-undetectable.com/zh/walterwrites',
-      languages: {
-        'zh-CN': '/zh/walterwrites',
-        'en-US': '/walterwrites',
-        'x-default': '/walterwrites',
-      },
-    },
+    alternates: { canonical: pageUrl('/walterwrites', 'zh'), languages: languageAlternates('/walterwrites') },
   }
 }
 
 export default async function WalterPage() {
   return (
     <>
+      <BreadcrumbJsonLd slug="/walterwrites" lang="zh" />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(walterFaqSchemaZh) }} />
-      <ToolClient mode="walterwrites" initialLang="zh" i18n={walterwritesI18n}
+      <ToolClient mode="walterwrites" lang="zh" i18n={walterwritesI18n}
       heroTitle={{ zh: 'Walter Writes AI 价格、免费替代与实测' }} heroSubtitle={{ zh: '我们实测了 Walter Writes AI:月付 $8 起的 Starter 套餐、免费 300 词试用、内置检测器。下面是同风格的免费免注册替代方案,逐项对比。' }}
     />
       <WalterSeoZh />

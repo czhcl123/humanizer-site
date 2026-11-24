@@ -1,23 +1,20 @@
 import type { Metadata } from 'next'
+import { languageAlternates, pageUrl } from '@/lib/site'
+import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd'
 import Link from 'next/link'
-
-export const dynamic = 'force-dynamic'
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
     title: '绕过原创性检测 — AI 人性化工具',
     description: '免费工具，支持 Pro 版 $0.99/词。测试通过原创性 AI 检测。',
-    alternates: { canonical: 'https://gpt-undetectable.com/zh/originality-ai-bypass' },
+    alternates: { canonical: pageUrl('/originality-ai-bypass', 'zh'), languages: languageAlternates('/originality-ai-bypass') },
   }
 }
 
-export default async function OriginalityAIBypassPage({ searchParams }: { searchParams: Promise<{ lang?: string }> }) {
-  const sp = await searchParams
-  const lang = sp?.lang === 'zh' ? 'zh' : 'en'
-
-  if (lang === 'zh') {
-    return (
+export default async function OriginalityAIBypassPage() {
+      return (
       <>
+        <BreadcrumbJsonLd slug="/originality-ai-bypass" lang="zh" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ldJsonSchema) }} />
         <main className="mx-auto w-full max-w-4xl px-4 py-8">
           <div className="text-center mb-6">
@@ -93,11 +90,8 @@ export default async function OriginalityAIBypassPage({ searchParams }: { search
             </Link>
           </div>
         </main>
-      </>
-    )
-  }
-
-  return null
+    </>
+  )
 }
 
 const ldJsonSchema = {

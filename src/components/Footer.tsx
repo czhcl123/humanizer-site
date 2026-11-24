@@ -46,26 +46,28 @@ const footerText = {
 export default function Footer({ lang = 'en' }: FooterProps) {
   const t = footerText[lang]
   const currentYear = new Date().getFullYear()
+  // Real paths, not ?lang= variants: those 301 and duplicate every page.
+  const p = (slug: string) => (lang === 'zh' ? `/zh${slug}` : slug)
 
   return (
     <footer className="bg-white border-t border-gray-100 mt-auto">
       <div className="max-w-3xl mx-auto px-4 py-6">
         <nav className="flex flex-wrap justify-center items-center gap-x-4 gap-y-2 mb-3 text-xs">
-          <Link href={`/?lang=${lang}`} className="text-gray-500 hover:text-violet-700 transition-colors">{t.home}</Link>
+          <Link href={p('')} className="text-gray-500 hover:text-violet-700 transition-colors">{t.home}</Link>
           <span className="text-gray-200">·</span>
-          <Link href={`/essay-humanizer?lang=${lang}`} className="text-gray-500 hover:text-violet-700 transition-colors">{t.paper}</Link>
+          <Link href={p('/essay-humanizer')} className="text-gray-500 hover:text-violet-700 transition-colors">{t.paper}</Link>
           <span className="text-gray-200">·</span>
-          <Link href={`/turnitin-bypass?lang=${lang}`} className="text-gray-500 hover:text-violet-700 transition-colors">{t.turnitin}</Link>
+          <Link href={p('/turnitin-bypass')} className="text-gray-500 hover:text-violet-700 transition-colors">{t.turnitin}</Link>
           <span className="text-gray-200">·</span>
-          <Link href={`/bypass-ai?lang=${lang}`} className="text-gray-500 hover:text-violet-700 transition-colors">{t.bypass}</Link>
+          <Link href={p('/bypass-ai')} className="text-gray-500 hover:text-violet-700 transition-colors">{t.bypass}</Link>
           <span className="text-gray-200">·</span>
-          <Link href={`/walterwrites?lang=${lang}`} className="text-gray-500 hover:text-violet-700 transition-colors">{t.walter}</Link>
+          <Link href={p('/walterwrites')} className="text-gray-500 hover:text-violet-700 transition-colors">{t.walter}</Link>
           <span className="text-gray-200">·</span>
-          <Link href={`/ai-detector?lang=${lang}`} className="text-gray-500 hover:text-violet-700 transition-colors">{t.detector}</Link>
+          <Link href={p('/ai-detector')} className="text-gray-500 hover:text-violet-700 transition-colors">{t.detector}</Link>
           <span className="text-gray-200">·</span>
-          <Link href={`/jiang-ai-lv?lang=${lang}`} className="text-gray-500 hover:text-violet-700 transition-colors">{t.chinese}</Link>
+          <Link href={p('/jiang-ai-lv')} className="text-gray-500 hover:text-violet-700 transition-colors">{t.chinese}</Link>
           <span className="text-gray-200">·</span>
-          <Link href={`/about?lang=${lang}`} className="text-gray-500 hover:text-violet-700 transition-colors">{t.about}</Link>
+          <Link href={p('/about')} className="text-gray-500 hover:text-violet-700 transition-colors">{t.about}</Link>
           <span className="text-gray-200">·</span>
           <a href="/llms.txt" className="text-gray-500 hover:text-violet-700 transition-colors">llms.txt</a>
           <span className="text-gray-200">·</span>
@@ -73,11 +75,11 @@ export default function Footer({ lang = 'en' }: FooterProps) {
         </nav>
         <nav className="flex flex-wrap justify-center items-center gap-x-3 gap-y-2 mb-3 text-xs text-gray-500">
           <span className="text-gray-600">{t.more}:</span>
-          <Link href={`/quillbot-bypass?lang=${lang}`} className="hover:text-violet-700 transition-colors">{t.quillbot}</Link>
+          <Link href={p('/quillbot-bypass')} className="hover:text-violet-700 transition-colors">{t.quillbot}</Link>
           <span className="text-gray-200">·</span>
-          <Link href={`/essay-writer-bypass-turnitin?lang=${lang}`} className="hover:text-violet-700 transition-colors">{t.essayTurnitin}</Link>
+          <Link href={p('/essay-writer-bypass-turnitin')} className="hover:text-violet-700 transition-colors">{t.essayTurnitin}</Link>
           <span className="text-gray-200">·</span>
-          <Link href={`/bypass-test-methodology?lang=${lang}`} className="hover:text-violet-700 transition-colors">{t.methodology}</Link>
+          <Link href={p('/bypass-test-methodology')} className="hover:text-violet-700 transition-colors">{t.methodology}</Link>
         </nav>
         <p className="text-xs text-gray-500 text-center">
           {`${currentYear} ${t.copyright}`}

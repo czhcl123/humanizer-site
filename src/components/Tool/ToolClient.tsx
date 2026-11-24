@@ -1,8 +1,7 @@
 'use client'
 
-import { Suspense, useEffect, useMemo, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import Link from 'next/link'
-import { useSearchParams, usePathname } from 'next/navigation'
 import Footer from '../Footer'
 
 const MAX_CHARS = 3000
@@ -77,7 +76,8 @@ export interface ToolI18n {
 
 interface Props {
   mode: ToolMode
-  initialLang?: 'zh' | 'en'
+  /** Supplied by the page from its route tree (/ vs /zh) — never from ?lang=. */
+  lang: 'zh' | 'en'
   i18n: { zh: ToolI18n; en: ToolI18n }
   /** Hide hero + SEO prose sections (used when the page supplies its own H1/content). */
   compact?: boolean
@@ -102,19 +102,16 @@ interface Props {
   hideHeroTitle?: boolean
 }
 
-function ToolContent({ mode, initialLang, i18n, compact, heroTitle, heroSubtitle, hideHeroTitle }: Props) {
-  const pathname = usePathname()
-  const searchParams = useSearchParams()
-  const rawLang = searchParams.get('lang')
-  const lang: 'zh' | 'en' = initialLang ?? (rawLang === 'zh' ? 'zh' : 'en')
+function ToolContent({ mode, lang, i18n, compact, heroTitle, heroSubtitle, hideHeroTitle }: Props) {
   const t = i18n[lang]
   const isZh = lang === 'zh'
-  const nextLang = isZh ? 'en' : 'zh'
+  const otherLang = isZh ? 'en' : 'zh'
 
-  // Build href with appropriate path: /zh/<slug> for zh, /<slug> for en
-  const inZhPrefix = pathname?.startsWith('/zh/') ?? false
-  const prefix = isZh ? '/zh' : ''
-  const locHref = isZh && !pathname?.startsWith('/zh') ? '/' : (pathname ?? '/')
+  // The language toggle swaps the /zh prefix, keeping the reader on this tool.
+  // The old version round-tripped through ?lang=, which cost a 301 and created
+  // a duplicate-content URL for every page.
+  const otherPath = isZh ? '/' : '/zh'
+  const toolPath = (slug: string) => (isZh ? `/zh${slug}` : slug)
 
   const [input, setInput] = useState('')
   const [output, setOutput] = useState('')
@@ -209,7 +206,7 @@ function ToolContent({ mode, initialLang, i18n, compact, heroTitle, heroSubtitle
             <span className="hidden sm:inline text-sm">{t.brand}</span>
           </Link>
           <div className="flex-1" />
-          <Link href={isZh ? (pathname?.startsWith('/zh/') ? pathname.replace(/^\/zh/, '') || '/' : '/') : (pathname?.startsWith('/zh/') ? pathname : `/zh${pathname}`)} title={isZh ? 'Switch to English' : '切换到中文'} className="flex-shrink-0 flex items-center gap-1 text-xs px-3 py-1.5 border border-gray-200 rounded-full hover:bg-gray-50 hover:border-violet-300 transition-colors">
+          <Link href={otherPath} hrefLang={otherLang === 'zh' ? 'zh-CN' : 'en'} title={isZh ? 'Switch to English' : '切换到中文'} className="flex-shrink-0 flex items-center gap-1 text-xs px-3 py-1.5 border border-gray-200 rounded-full hover:bg-gray-50 hover:border-violet-300 transition-colors">
             <span>🌐</span>
             <span className="hidden sm:inline">{isZh ? 'EN' : '中文'}</span>
           </Link>
@@ -431,7 +428,7 @@ function ToolContent({ mode, initialLang, i18n, compact, heroTitle, heroSubtitle
           <h2 className="text-xs text-gray-500 uppercase tracking-wide mb-3 font-medium">{t.relatedTitle}</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {t.related.map((r, i) => (
-              <Link key={i} href={isZh ? `/zh${r.href === '/' ? '' : r.href}` : r.href} className="block p-3 bg-white border border-gray-200 hover:border-violet-300 rounded-lg transition-colors">
+              <Link key={i} href={toolPath(r.href === '/' ? '' : r.href)} className="block p-3 bg-white border border-gray-200 hover:border-violet-300 rounded-lg transition-colors">
                 <div className="font-semibold text-violet-700 text-sm mb-1">{r.title} →</div>
                 <div className="text-xs text-gray-500 leading-relaxed">{r.desc}</div>
               </Link>
@@ -445,10 +442,10 @@ function ToolContent({ mode, initialLang, i18n, compact, heroTitle, heroSubtitle
   )
 }
 
+/**
+ * No Suspense boundary: this component no longer reads `useSearchParams`, so
+ * there is nothing to suspend on and its markup is part of the static HTML.
+ */
 export default function ToolClient(props: Props) {
-  return (
-    <Suspense fallback={<div className="min-h-screen bg-gray-50" />}>
-      <ToolContent {...props} />
-    </Suspense>
-  )
+  return <ToolContent {...props} />
 }

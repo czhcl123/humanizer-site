@@ -1,23 +1,20 @@
 import type { Metadata } from 'next'
+import { languageAlternates, pageUrl } from '@/lib/site'
+import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd'
 import Link from 'next/link'
-
-export const dynamic = 'force-dynamic'
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
     title: '价格对比 — Walter Writes vs GPT-Undetectable',
     description: 'Walter Writes 每月$14.99 vs 我们 Pro 版 $0.99/词。免费版可零注册使用。',
-    alternates: { canonical: 'https://gpt-undetectable.com/zh/cost-comparison' },
+    alternates: { canonical: pageUrl('/cost-comparison', 'zh'), languages: languageAlternates('/cost-comparison') },
   }
 }
 
-export default async function CostComparisonPage({ searchParams }: { searchParams: Promise<{ lang?: string }> }) {
-  const sp = await searchParams
-  const lang = sp?.lang === 'zh' ? 'zh' : 'en'
-
-  if (lang === 'zh') {
-    return (
+export default async function CostComparisonPage() {
+      return (
       <>
+        <BreadcrumbJsonLd slug="/cost-comparison" lang="zh" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ldJsonSchema) }} />
         <main className="mx-auto w-full max-w-4xl px-4 py-8">
           <div className="text-center mb-6">
@@ -121,11 +118,8 @@ export default async function CostComparisonPage({ searchParams }: { searchParam
             <p className="text-xs text-gray-400">500字：Walter Writes 约 $1.25/月 vs 我们 $0.99/词同样值，但 ≥10K字时更划算。按词计费模式更适合长文档。</p>
           </section>
         </main>
-      </>
-    )
-  }
-
-  return null
+    </>
+  )
 }
 
 const ldJsonSchema = {

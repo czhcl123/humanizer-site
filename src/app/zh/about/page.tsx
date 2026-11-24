@@ -1,11 +1,13 @@
 import type { Metadata } from 'next'
-import AboutClient from '../../about/about-client'
+import { languageAlternates, pageUrl } from '@/lib/site'
+import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd'
+import AboutClient from '@/components/AboutClient'
 
-export const dynamic = 'force-dynamic'
+/** This route tree is Chinese; the language is a compile-time constant. */
+const lang = 'zh' as const
 
 export async function generateMetadata() {
-  const lang = 'zh'
-  const titles = {
+    const titles = {
     zh: '关于我们 - AI Humanizer 方法与目标',
     en: 'About - AI Humanizer Method & Goals',
   }
@@ -27,18 +29,15 @@ export async function generateMetadata() {
       description: descriptions[lang],
       images: ['https://gpt-undetectable.com/og-image.png'],
     },
-    alternates: {
-      canonical: 'https://gpt-undetectable.com/zh/about',
-      languages: {
-        'zh-CN': '/zh/about',
-        'en-US': '/about',
-        'x-default': '/about',
-      },
-    },
+    alternates: { canonical: pageUrl('/about', 'zh'), languages: languageAlternates('/about') },
   }
 }
 
 export default async function AboutPage() {
-  const lang = 'zh'
-  return <AboutClient initialLang={lang} />
+  return (
+    <>
+      <BreadcrumbJsonLd slug="/about" lang="zh" />
+      <AboutClient lang={lang} />
+    </>
+  )
 }

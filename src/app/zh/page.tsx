@@ -1,7 +1,10 @@
 import type { Metadata } from 'next'
-import HomePageClient from '../page-client'
+import { languageAlternates, pageUrl } from '@/lib/site'
+import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd'
+import HomeClient from '@/components/HomeClient'
 
-export const dynamic = 'force-dynamic'
+/** This route tree is Chinese; the language is a compile-time constant. */
+const lang = 'zh' as const
 
 const faqSchema = {
   '@context': 'https://schema.org',
@@ -67,8 +70,7 @@ const faqSchema = {
 }
 
 export async function generateMetadata() {
-  const lang = 'zh'
-
+  
   const titles = {
     zh: { default: '免费 AI 人性化工具 - 让 ChatGPT 文本通过 GPTZero 2026', template: '%s | AI Humanizer' },
     en: { default: 'Free AI Humanizer - Humanize AI Text & Bypass GPTZero 2026', template: '%s | AI Humanizer' },
@@ -97,26 +99,19 @@ export async function generateMetadata() {
       description: descriptions[lang],
       images: ['https://gpt-undetectable.com/og-image.png'],
     },
-    alternates: {
-      canonical: 'https://gpt-undetectable.com/zh',
-      languages: {
-        'zh-CN': '/zh',
-        'en-US': '/',
-        'x-default': '/',
-      },
-    },
+    alternates: { canonical: pageUrl('', 'zh'), languages: languageAlternates('') },
   }
 }
 
 export default async function HomePage() {
-  const lang = 'zh'
-  return (
+    return (
     <>
+      <BreadcrumbJsonLd slug="" lang="zh" />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <HomePageClient initialLang={lang} />
+      <HomeClient lang={lang} />
     </>
   )
 }
