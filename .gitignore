@@ -17,3 +17,6 @@ fix-domain.js
 fix-path.ps1
 replace-all-domains.js
 final-fix.js
+
+# sandbox build scratch (cannot unlink via mount)
+.next-fresh-test/

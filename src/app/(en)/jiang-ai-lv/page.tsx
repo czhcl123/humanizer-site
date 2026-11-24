@@ -11,23 +11,23 @@ const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   mainEntity: [
-    { '@type': 'Question', name: '什么是 AI 率?', acceptedAnswer: { '@type': 'Answer', text: 'AI 率 是中文论文场景的指标 —— 知网、维普等中文检测器对论文 AI 生成概率的评分。AI 率高 = 像 AI 写的;AI 率低 = 像人写的。' } },
-    { '@type': 'Question', name: '能过知网 AIGC 检测吗?', acceptedAnswer: { '@type': 'Answer', text: '针对知网 AIGC、维普、GPTZero 中文模型、ZeroGPT 中文专门调优。3000 字以内的中文段落,AI 率可从 80%+ 降到 20% 以下。' } },
-    { '@type': 'Question', name: '保留引用和数据吗?', acceptedAnswer: { '@type': 'Answer', text: '保留。所有引用、专有名词、数字、年份、术语都不动。只改写表述层。' } },
-    { '@type': 'Question', name: '支持英文论文吗?', acceptedAnswer: { '@type': 'Answer', text: '工具专注中文场景。英文论文请用我们的 AI Humanizer 或 Essay Humanizer。' } },
-    { '@type': 'Question', name: '替换哪些 AI 八股词?', acceptedAnswer: { '@type': 'Answer', text: '"赋能"→"帮助/推动";"抓手"→"方法/路径";"底层逻辑"→"核心思路";"链路"→"环节";"生态位"→"位置";"范式"→"模式";"价值闭环"→"完整流程";"降维打击"→"突破"。' } },
-    { '@type': 'Question', name: '你存我的论文吗?', acceptedAnswer: { '@type': 'Answer', text: '不存。无状态 API,处理完即丢。我们从不用用户提交训练模型。' } },
+    { '@type': 'Question', name: 'What is an AI rate?', acceptedAnswer: { '@type': 'Answer', text: 'An AI rate is a score that some Chinese text-checking services assign to estimate how likely a passage was written by AI. It is often expressed as 0–100%: a high score means the text is more likely to be treated as machine-written, while a low score means it reads more like human writing. Scoring scales and thresholds vary by service, and no score is definitive.' } },
+    { '@type': 'Question', name: 'Can you guarantee a passing detector score?', acceptedAnswer: { '@type': 'Answer', text: 'No. This tool does not connect directly to any third-party detector. We do not audit pass rates, we publish no test log, and we make no guarantee about any detector outcome. Treat every score as an estimate, not a result we can promise.' } },
+    { '@type': 'Question', name: 'Are citations and data preserved?', acceptedAnswer: { '@type': 'Answer', text: 'The rewrite prompt asks the model to keep citations, proper nouns, numbers, years and technical terms unchanged and to edit only the wording around them. Model output can still drift, so you should check every citation and figure by hand before submitting.' } },
+    { '@type': 'Question', name: 'Which languages are supported?', acceptedAnswer: { '@type': 'Answer', text: 'Only English (en) and Simplified Chinese (zh-CN) are supported. This tool is designed for Chinese-language text scenarios, such as Chinese academic and professional writing.' } },
+    { '@type': 'Question', name: 'Which Chinese AI clichés does it replace?', acceptedAnswer: { '@type': 'Answer', text: 'The Chinese-language prompt targets stock phrasing such as 赋能 ("empower" → "help" or "drive"), 抓手 ("handle" → "method"), 底层逻辑 ("underlying logic" → "core idea"), 链路 ("chain" → "stage"), 生态位 ("niche" → "position"), 范式 ("paradigm" → "model"), 价值闭环 ("value loop" → "end-to-end process") and 降维打击 ("dimension-reduction strike" → "breakthrough"). Review each edit to make sure your original meaning is intact.' } },
+    { '@type': 'Question', name: 'Do you store my paper?', acceptedAnswer: { '@type': 'Answer', text: 'We do not persistently store submissions. A short-lived in-memory cache may keep a hash of the input and the output for up to 10 minutes. We use no analytics cookies or tracking pixels and never use submitted text to train models. See /privacy for details.' } },
   ],
 }
 
 export async function generateMetadata() {
   const titles = {
-    zh: '降 AI 率 - 免费中文论文 AI 率降低工具',
-    en: '降 AI 率 - Free CNKI AIGC Bypass',
+    zh: '中文写作改进 — 免费中文文本润色工具',
+    en: 'Chinese Writing Improvement — Free Rewrite Tool',
   }
   const descriptions = {
-    zh: '免费在线降低中文论文 AI 率。改写知网 AIGC、维普、GPTZero 中文、ZeroGPT 中文都识别不出的 AI 八股词,保留论点、引用、数据。',
-    en: 'Reduce Chinese AI Rate: lower 知网 AIGC and 维普 detection scores for Chinese essays. Preserves 论点, 引用, and 数据 while rewriting surface structure.',
+    zh: '免费在线中文写作改进工具：把模板化的 AI 八股词改得更自然清晰，提示词要求保留论点、引用、数据，请自行核对。检测结果不作保证。',
+    en: 'Free online rewriting for Chinese text. Replaces common AI boilerplate. Detector outcomes not guaranteed.',
   }
   return {
     title: titles[lang],
@@ -53,19 +53,20 @@ export default async function ChinesePage() {
       <BreadcrumbJsonLd slug="/jiang-ai-lv" lang="en" />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-100 mb-6 text-gray-700 leading-relaxed space-y-3 max-w-3xl mx-auto">
-        <p><strong>江 AI 率</strong> 是中文论文 AI 检测的核心指标：知网 AIGC、维普、GPTZero 中文模型、ZeroGPT 中文都会给出 0-100% 的 AI 生成概率。AI 率高意味着内容被判定为机器写作，学术审核会打回重写。本工具针对中文语境优化，保留所有引用、数据、专有名词，只改写表述层。</p>
-        <h2 className="text-lg font-semibold text-gray-800 pt-2">为什么中文 AI 率特别高？</h2>
-        <p>中文 AI 输出有典型特征："赋能"、"抓手"、"底层逻辑"、"生态位"、"范式"、"价值闭环" 等八股词高频出现；句式过于整齐；缺乏个人观点和具体例子。检测器通过词频和句型模式识别，这些模式在 3000 字内就能被准确打分。</p>
-        <h2 className="text-lg font-semibold text-gray-800 pt-2">改写方法</h2>
-        <ul className="list-disc pl-5 space-y-1"><li>替换八股词为口语化表达</li><li>打断句式均匀性，混合短句和长句</li><li>加入真实观点和具体示例</li><li>保留引用、数字、年份、专有名词</li></ul>
-      <h3 className="text-base font-semibold text-gray-800 pt-1">先确认是哪一关在判你</h3>
-      <p>中文论文往往不只被一个平台查:知网 AIGC、维普、GPTZero 中文模型、ZeroGPT 中文各有一套打分口径。用我们的<a href="/ai-detector" className="text-violet-600 hover:underline">免费 AI 检测器</a>跑一遍,就能看到具体是哪一项分数高,而不是凭感觉反复重写。如果你面对的是英文论文的检测,走的是<a href="/essay-writer-bypass-turnitin" className="text-violet-600 hover:underline">绕过 Turnitin 的论文写作工具</a>那条路线。</p>
+        <p><strong>AI rate</strong> is a score used by some Chinese text-checking services to estimate how likely a passage was generated by AI. It is often shown as 0–100%; services such as CNKI AIGC and VIP use their own scales, and English-language detectors applied to Chinese text can return a score too. A high score means the text is more likely to be treated as machine-written; a low score means it reads more like human writing. This tool is designed for Chinese-language writing: it keeps citations, data and proper nouns and rewrites only the surface wording.</p>
+        <h2 className="text-lg font-semibold text-gray-800 pt-2">Why do Chinese texts score high for AI generation?</h2>
+        <p>Chinese AI writing tends to use stock phrases such as 赋能 ("empower"), 抓手 ("handle"), 底层逻辑 ("underlying logic"), 生态位 ("niche"), 范式 ("paradigm") and 价值闭环 ("value loop"). Sentences are often overly uniform and short on personal views or concrete examples. Detectors look at word frequencies and sentence patterns, so those patterns can be scored quickly even in a 3,000-character text.</p>
+        <h2 className="text-lg font-semibold text-gray-800 pt-2">How the rewrite works</h2>
+        <ul className="list-disc pl-5 space-y-1"><li>Replace stock AI phrasing with more natural wording</li><li>Vary sentence length instead of keeping every sentence uniform</li><li>Add genuine viewpoints and concrete examples</li><li>Keep citations, numbers, years and proper nouns unchanged</li></ul>
+      <h3 className="text-base font-semibold text-gray-800 pt-1">Check which score you are actually dealing with</h3>
+      <p>Chinese text is not judged by a single service: CNKI AIGC, VIP and English-language detectors applied to Chinese text can each produce a different score. Run your text through our <a href="/ai-detector" className="text-violet-600 hover:underline">free heuristic AI detector</a> to see which score is high instead of rewriting blindly. If your work is an English-language paper, the <a href="/essay-writer-bypass-turnitin" className="text-violet-600 hover:underline">essay writing tool for Turnitin-related workflows</a> is the relevant page.</p>
 
-      <h3 className="text-base font-semibold text-gray-800 pt-1">改完之后怎么验证</h3>
-      <p>中文改写同样要过一遍检测。如果不确定判分标准,<a href="/bypass-test-methodology" className="text-violet-600 hover:underline">过检测试方法论</a>那页写了我们每月用的检测器、样本量和通过标准;英文文本的通用改写则见<a href="/essay-humanizer" className="text-violet-600 hover:underline">Essay Humanizer</a>。</p>
+      <h3 className="text-base font-semibold text-gray-800 pt-1">How to verify the result</h3>
+      <p>Rewritten Chinese text should still be checked before submission. Our <a href="/bypass-test-methodology" className="text-violet-600 hover:underline">detection test methodology</a> page explains that no public test results have been published yet — only the protocol is described. For general rewriting of English text, see the <a href="/essay-humanizer" className="text-violet-600 hover:underline">Essay Humanizer</a>.</p>
       </div>
+      <p className="text-xs text-gray-400 mt-4">Last reviewed: 2026-11-24</p>
       <ToolClient mode="chinese" lang={lang} i18n={chineseI18n}
-      heroTitle={{ zh: '降低中文论文 AI 率 — 免费知网 AIGC 绕过工具', en: 'Reduce AI Rate in Chinese Papers — Free CNKI AIGC Bypass' }} heroSubtitle={{ zh: '改写知网 AIGC、维普、GPTZero 中文、ZeroGPT 中文都识别不出的 AI 八股词,保留论点、引用、数据。免费,无需注册,3000 字以内。', en: 'Rewrites the AI clichés that 知网 AIGC, 维普, GPTZero and ZeroGPT flag in Chinese essays, while keeping your 论点, 引用 and 数据. Free, no signup, 3,000 characters.' }}
+      heroTitle={{ zh: '中文写作改进 — 免费中文文本润色工具', en: 'Chinese Writing Improvement — Free Rewrite Tool' }} heroSubtitle={{ zh: '把模板化的 AI 八股词改得更自然清晰，提示词要求保留论点、引用、数据，请自行核对。检测结果不作保证，免费、无需注册。', en: 'Free online rewriting for Chinese text. Replaces common AI boilerplate while keeping arguments, citations and data. Detector outcomes are not guaranteed. Free, no signup, 3,000 characters.' }}
     />
     </>
   )

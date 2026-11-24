@@ -10,12 +10,12 @@ const lang = 'zh' as const
 
 export async function generateMetadata(): Promise<Metadata> {
     const titles = {
-    zh: 'Walter Writes AI 价格、免费替代与实测',
+    zh: 'Walter Writes AI 免费替代方案',
     en: 'Walter Writes AI: Free Alternative & Pricing',
   }
   const descriptions = {
-    zh: 'Walter Writes AI 实测:月付 $8 起、免费 300 词试用、内置检测器;附免费免注册的同风格替代方案与逐项对比。',
-    en: 'Walter Writes AI, tested: $8/mo Starter, free 300-word trial, built-in detector — plus a free, no-signup alternative that writes in the same style.',
+    zh: 'Walter Writes AI 是订阅制商业产品，价格以官网为准；本站提供免费免注册的同风格替代方案，逐项说明差异。',
+    en: 'Walter Writes AI is a paid commercial product; check its official site for pricing. AI Humanizer offers a free, no-signup alternative in a similar style.'
   }
   return {
     title: titles[lang],
@@ -41,9 +41,10 @@ export default async function WalterPage() {
       <BreadcrumbJsonLd slug="/walterwrites" lang="zh" />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(walterFaqSchemaZh) }} />
       <ToolClient mode="walterwrites" lang="zh" i18n={walterwritesI18n}
-      heroTitle={{ zh: 'Walter Writes AI 价格、免费替代与实测' }} heroSubtitle={{ zh: '我们实测了 Walter Writes AI:月付 $8 起的 Starter 套餐、免费 300 词试用、内置检测器。下面是同风格的免费免注册替代方案,逐项对比。' }}
+      heroTitle={{ zh: 'Walter Writes AI 免费替代方案' }} heroSubtitle={{ zh: 'Walter Writes AI 是订阅制产品，价格以官网为准。本站 AI Humanizer 100% 免费、无需注册，仅支持英文和简体中文，改写由 DeepSeek 云端处理，结果非保证。' }}
     />
       <WalterSeoZh />
+      <p className="text-xs text-gray-400 mt-4">最近核校：2026-11-24</p>
     </>
   )
 }

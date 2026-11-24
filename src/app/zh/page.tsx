@@ -12,58 +12,58 @@ const faqSchema = {
   mainEntity: [
     {
       '@type': 'Question',
-      name: 'Is AI Humanizer really free?',
+      name: 'AI Humanizer 真的免费吗？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. AI Humanizer is 100% free with no premium tier, no signup, and no installation. Paste your text, click Humanize, and copy the rewritten result. Up to 3,000 characters per submission, unlimited submissions.',
+        text: '是。AI Humanizer 100% 免费，没有付费档、无需注册、无需安装。粘贴文本，点击改写，复制结果即可。每个 IP 每滚动 24 小时 5 次，每次最多 3000 字符。',
       },
     },
     {
       '@type': 'Question',
-      name: 'Does it really bypass GPTZero and Turnitin AI detection?',
+      name: '能帮助改善检测分数吗？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Our humanizer is engineered to consistently pass GPTZero, Turnitin AI, Originality.ai, ZeroGPT, and Copyleaks. We rewrite AI text by injecting natural human patterns — varied sentence length, conversational transitions, first-person voice where appropriate, and occasional hedges — that AI detectors flag as AI-generated.',
+        text: '不能。本站是写作改进工具，不是操纵检测器的手段。检测器的判定并不可靠、也存在争议。作为局限证据：早前未记录条件的 85–95% 内部印象已撤回，2026-11-24 的公开自洽性试点用本站检测器只测得 13.3%（4/30）；第三方抽查未完成，这些都不是产品效果承诺。',
       },
     },
     {
       '@type': 'Question',
-      name: 'What AI sources does it work with?',
+      name: '支持哪些 AI 工具生成的文本？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'AI Humanizer works on text from any source: ChatGPT (GPT-4, GPT-4o, o1), Google Gemini, Claude, Microsoft Copilot, Jasper, Copy.ai, Perplexity, and any other LLM. The detector bypass targets the statistical patterns that all of these models share.',
+        text: 'AI Humanizer 可处理任何来源的草稿，例如 ChatGPT（GPT-4、GPT-4o、o1）、Google Gemini、Claude、Microsoft Copilot、Jasper、Copy.ai、Perplexity 及其他大模型的输出。改写由 DeepSeek Chat 在云端完成，改进文字本身，不针对检测器的统计特征。',
       },
     },
     {
       '@type': 'Question',
-      name: 'Do you store the text I submit?',
+      name: '你们会保存我提交的文本吗？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'No. We do not log, store, or analyze the text you submit. The rewrite happens through a stateless API call and your input is discarded immediately after the response is returned. We never train a model on user submissions.',
+        text: '无持久存储。有上限的内存缓存保留输入哈希与输出，最长 10 分钟、最多 500 条；无分析 cookie 与追踪像素。限流计数按 IP 头在内存中维护。详见 /zh/privacy。',
       },
     },
     {
       '@type': 'Question',
-      name: 'Can I use it for school essays?',
+      name: '可以用于学校论文吗？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. Many students use AI Humanizer to rewrite drafts, fix awkward phrasing, or add personal voice to first drafts. You are responsible for following your school academic integrity policy. The tool does not help with plagiarism; it helps you rewrite text you have permission to use.',
+        text: '可以。本站帮助你改写有权使用的文本、调整表达，不协助抄袭。请遵守所在学校的学术诚信规定，并自行核对结果。',
       },
     },
     {
       '@type': 'Question',
-      name: 'Does it support Chinese?',
+      name: '支持中文吗？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. The interface and humanization work in both English and Simplified Chinese. English is the default; visit /zh/ for the Chinese version. Chinese rewrites preserve idioms and natural speech patterns.',
+        text: '仅支持英文（en）和简体中文（zh-CN），不支持繁体中文。中文版请访问 /zh/。',
       },
     },
     {
       '@type': 'Question',
-      name: 'How accurate is the humanization?',
+      name: '公开的测试数据说明了什么？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'On average, our rewrites score 85-95% human on GPTZero, ZeroGPT, and Originality.ai for text up to 3,000 characters. Longer inputs may need to be split into multiple passes. The tool is calibrated to preserve factual content and meaning while rewriting the surface structure.',
+        text: '它们说明检测分数不可靠：早前未记录条件的 85–95% 印象已撤回，2026-11-24 自洽性试点用本站检测器只测得 13.3%（4/30）；第三方抽查未完成、曾出现 100% AI 的观察。这些是检测证据的局限，不是产品效果。超过 3000 字符请分段提交，详见 /zh/limitations 与 /zh/bypass-test-methodology。',
       },
     },
   ],
@@ -72,16 +72,16 @@ const faqSchema = {
 export async function generateMetadata() {
   
   const titles = {
-    zh: { default: '免费 AI 人性化工具 - 让 ChatGPT 文本通过 GPTZero 2026', template: '%s | AI Humanizer' },
-    en: { default: 'Free AI Humanizer - Humanize AI Text & Bypass GPTZero 2026', template: '%s | AI Humanizer' },
+    zh: { default: 'AI Humanizer — 免费写作改进工具', template: '%s | AI Humanizer' },
+    en: { default: 'AI Humanizer — Free Writing Improvement Tool', template: '%s | AI Humanizer' },
   }
   const descriptions = {
-    zh: '免费 AI 人性化工具,一键让 ChatGPT / Gemini / Claude 文本变成像人写的,过 GPTZero、Turnitin、Originality.ai 检测 2026。无需注册,中英双语支持。',
-    en: 'Free AI humanizer that humanizes AI text from ChatGPT, Gemini, and Claude to bypass Turnitin AI, GPTZero, and Originality.ai in 2026. No signup, no install. Bilingual EN/中文.',
+    zh: '免费在线写作改进工具：把生硬的 AI 辅助草稿改得更自然、清晰、更贴合你自己的表达。支持中英双语，无需注册。',
+    en: 'Free online writing tool that makes rough AI-assisted drafts clearer, more natural, and easier to make your own. English and Simplified Chinese. No signup.',
   }
   const keywords = {
-    zh: ['AI 人性化工具', '过 Turnitin 检测', 'AI 去机器味', 'GPT 去痕迹', '免费 AI 改写', '过 GPTZero', 'AI 降 AI 率'],
-    en: ['free ai humanizer', 'bypass turnitin 2026', 'bypass gptzero', 'undetectable ai', 'ai text humanizer no signup'],
+    zh: ['AI Humanizer', '免费 AI Humanizer', 'AI 文本改写', '写作改进工具', 'AI 辅助草稿改写', '论文写作改进', '中文写作改进', '中文写作润色', '免费写作工具 无需注册'],
+    en: ['AI Humanizer', 'writing improvement tool', 'improve AI-assisted drafts', 'writing clarity tool', 'natural rewrite', 'free writing tool', 'English and Chinese writing'],
   }
 
   return {
@@ -112,6 +112,7 @@ export default async function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <HomeClient lang={lang} />
+      <p className="text-xs text-gray-400 mt-4">最近核校：2026-11-24</p>
     </>
   )
 }

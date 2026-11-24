@@ -12,12 +12,12 @@ const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   mainEntity: [
-    { '@type': 'Question', name: 'Is the AI Detector really free?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. No hidden fees, no watermark, no signup. 5 submissions per IP per day, 3,000 characters each.' } },
-    { '@type': 'Question', name: 'What is the detection principle?', acceptedAnswer: { '@type': 'Answer', text: 'Based on GPTZero, Originality.ai, ZeroGPT core principles: sentence length uniformity, AI vocabulary density, perplexity, burstiness, list-like structure, predictable paragraph transitions. Each signal analyzed individually, then combined.' } },
-    { '@type': 'Question', name: 'How accurate is it?', acceptedAnswer: { '@type': 'Answer', text: 'For English text up to 3,000 characters, consistency with mainstream detectors is 85-90%. Chinese detection accuracy is slightly lower because Chinese AI training data is more limited.' } },
-    { '@type': 'Question', name: 'Can it misclassify?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. A human author writing in a very uniform, "AI-flavored" style may be misclassified as AI. AI text with contractions, fragments, and first-person voice may be misclassified as human. Calibration is based on real data, but it is not 100%.' } },
-    { '@type': 'Question', name: 'Do you store my text?', acceptedAnswer: { '@type': 'Answer', text: 'No. Stateless API. Input discarded immediately after detection. We never train on user submissions.' } },
-    { '@type': 'Question', name: 'Does it support Chinese?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Both English and Simplified Chinese supported. Chinese mode is tuned for AI boilerplate vocabulary, symmetric four-character structures, and conversational transitions.' } },
+    { '@type': 'Question', name: '本站 AI 检测器真的免费吗？', acceptedAnswer: { '@type': 'Answer', text: '是。没有隐藏费用、无水印、无需注册。每个 IP 每滚动 24 小时 5 次，每次最多 3000 字符。' } },
+    { '@type': 'Question', name: '检测原理是什么？', acceptedAnswer: { '@type': 'Answer', text: '由 DeepSeek Chat（deepseek-chat）进行提示词驱动的启发式分析：模型描述 5 项文本信号（句长均匀性、AI 词汇密度、困惑度、句长变化、列表式结构），并输出 ai_probability、human_probability、verdict、signals 和解释。不直连 GPTZero、Turnitin 或任何第三方检测 API，不独立计算信号，也不依据真实检测器反馈校准。' } },
+    { '@type': 'Question', name: '检测准确率如何？', acceptedAnswer: { '@type': 'Answer', text: '早前未记录条件的内部印象约为 85–95%，但首个公开自洽性试点（2026-11-24）用本站检测器只测得 13.3%（4/30）；两者不可比，也没有任何第三方检测器的实测数据。分数是模型的意见，不是检测器的官方判定。' } },
+    { '@type': 'Question', name: '会不会误判？', acceptedAnswer: { '@type': 'Answer', text: '会。风格均匀的人工写作可能被判为 AI，带缩写和第一人称的 AI 文本也可能被判为人写。5 项信号由模型生成而非独立计算；若 JSON 解析失败，结果会回退为 signals: [] 和固定的 50/50 分数。' } },
+    { '@type': 'Question', name: '你们会保存我的文本吗？', acceptedAnswer: { '@type': 'Answer', text: '无持久存储。有上限的内存缓存保留输入哈希与输出，最长 10 分钟；限流计数按 IP 头记录。无分析 cookie 与追踪像素。详见 /zh/privacy。' } },
+    { '@type': 'Question', name: '支持中文吗？', acceptedAnswer: { '@type': 'Answer', text: '仅支持英文（en）和简体中文（zh-CN），不支持繁体中文。' } },
   ],
 }
 
@@ -27,8 +27,8 @@ export async function generateMetadata() {
     en: 'AI Detector - Free AI Content Detection Tool',
   }
   const descriptions = {
-    zh: '免费 AI 内容检测器,基于 GPTZero / Originality.ai / ZeroGPT 原理识别 ChatGPT / Gemini / Claude 输出,中英双语,无需注册。',
-    en: 'Free AI Humanizer that rewrites AI-generated text to bypass GPTZero, Turnitin AI, and Originality.ai detection.',
+    zh: '免费 AI 内容检测器：DeepSeek 提示词驱动的启发式分析，支持英文和简体中文，无需注册，非第三方检测器官方判定。',
+    en: 'Free AI content detector using prompt-driven heuristic analysis via DeepSeek Chat. English and Simplified Chinese, no signup.',
   }
   return {
     title: titles[lang],
@@ -49,39 +49,42 @@ export async function generateMetadata() {
 }
 
 export default async function DetectorPage() {
-    // 2026-07-25 P0 zh /ai-detector SEO content block (zh 中文语言检测场景)
   const seoBlockZh = (
     <section className="max-w-3xl mx-auto px-4 pt-8 pb-2 text-sm text-gray-600 leading-relaxed">
-      <h2 className="text-xl font-bold text-gray-800 mb-3">关于这款免费 AI 内容检测器</h2>
+      <h2 className="text-xl font-bold text-gray-800 mb-3">AI 文本自查 — 启发式参考，非判定</h2>
       <p className="mb-3">
-        本免费 AI 内容检测器可在 1 秒内分析你粘贴的任何文本并返回 AI 生成概率评分——无需注册、无需上传、无水印。可检测 ChatGPT (GPT-4 / GPT-4o)、Google Gemini、Anthropic Claude、Microsoft Copilot 及大多数主流大模型的输出。检测原理与 GPTZero、Originality.ai、ZeroGPT 同源,基于 5 个核心信号:<strong className="text-gray-800">perplexity</strong>(词的可预测性)、<strong className="text-gray-800">burstiness</strong>(句长方差)、<strong className="text-gray-800">AI 词汇密度</strong>(“深入探讨”“总而言之”等模板词)、<strong className="text-gray-800">列表式结构</strong>、<strong className="text-gray-800">可预测段落过渡</strong>。
+        这里提供的是提示词驱动的启发式文本自查：把草稿粘贴进来，DeepSeek Chat（deepseek-chat）会被要求评论<strong className="text-gray-800">句长是否均匀</strong>、<strong className="text-gray-800">模板词密度</strong>（如“深入探讨”“总而言之”）、<strong className="text-gray-800">列表式结构</strong>和<strong className="text-gray-800">可预测的段落过渡</strong>。这些是写作信号，不是作者身份的证据。本站<strong>不直连 GPTZero、Turnitin、ZeroGPT 或任何第三方检测器</strong>，不实现它们的算法，也无法验证作者身份或保证任何检测器的判定。若 JSON 解析失败，返回空 signals 与固定 50/50。
       </p>
       <p className="mb-3">
-        对 3000 字以内的英文文本,与主流付费检测器的一致率为 85–90%;对简体中文文本,一致率为 70–80%(中文 AI 训练数据较少)。每次检测不仅返回总分,还返回 5 个信号的明细,帮助你<em>理解</em>为何文本被判为 AI——这在你是老师复查学生被误判论文、编辑核查作者投稿、或作者自查文稿时尤其有用。
+        检测器判定不可靠且存在争议，本站不是操纵分数的工具。作为局限证据：早前未记录条件的 85–95% 内部印象已撤回，2026-11-24 自洽性试点用本站检测器只测得 13.3%（4/30）；第三方抽查未完成，改写样本曾反复得到 100% AI 的结论。这些都不是产品效果承诺，数据与限定见<a href="/zh/bypass-test-methodology" className="text-violet-600 hover:underline">测试方法页</a>。若 JSON 解析失败，接口返回空 signals 和固定 50/50 分，不保证每次都有完整明细。
       </p>
-      <h3 className="text-base font-semibold text-gray-800 mb-2 mt-4">常见使用场景</h3>
+      <h3 className="text-base font-semibold text-gray-800 mb-2 mt-4">适合做什么</h3>
       <ul className="list-disc list-inside mb-3 space-y-1 pl-1">
-        <li><strong className="text-gray-800">学生论文复查</strong> — 在向 Turnitin AI 提交申诉前验证被标记论文。</li>
-        <li><strong className="text-gray-800">编辑审核</strong> — 发布前识别 AI 辅助稿件。</li>
-        <li><strong className="text-gray-800">作者自查</strong> — 看自己稿件中哪些段落读起来像 AI。</li>
-        <li><strong className="text-gray-800">招聘筛查</strong> — 校验求职信是否 AI 生成。</li>
+        <li><strong className="text-gray-800">草稿自查</strong> — 找出生硬、模板化的段落并自己改写。</li>
+        <li><strong className="text-gray-800">编辑审阅</strong> — 发布前发现泛泛的套话。</li>
+        <li><strong className="text-gray-800">写作改进</strong> — 把这些信号当作让文字更自然清晰的提示。</li>
+        <li><strong className="text-gray-800">不适合</strong> — 证明或否定作者身份、处理学校/职场的判定争议，或预测某个检测器的结论。</li>
       </ul>
       <p className="text-xs text-gray-500 mb-0 pt-3 border-t border-gray-100">
-        隐私:输入文本检测后立即丢弃(无状态 API)。我们从不基于用户提交训练。免费配额:每个 IP 每天 5 次,每次 3000 字。
+        隐私：无持久存储；短期内存缓存最多保留输入哈希与输出 10 分钟，另有基于 IP 头的限流计数；无分析 cookie 与追踪像素，详见 <a href="/zh/privacy" className="text-violet-600 hover:underline">隐私政策</a>。免费配额：每个 IP 每滚动 24 小时 5 次，每次最多 3000 字符，无需注册。
       </p>
-      <h3 className="text-base font-semibold text-gray-800 mb-2 mt-4">文本被标为 AI?改写一下</h3>
+      <h3 className="text-base font-semibold text-gray-800 mb-2 mt-4">把注意力放在写作本身</h3>
       <ul className="list-disc list-inside mb-3 space-y-1 pl-1">
-        <li><strong className="text-gray-800">学生论文</strong> — <Link href="/zh/essay-humanizer" className="text-violet-600 hover:underline">EssayRewriter</Link> 保留引用和学术语域。</li>
-        <li><strong className="text-gray-800">博客/营销文案</strong> — <Link href="/zh" className="text-violet-600 hover:underline">AI Humanizer</Link> 把通用 AI 文本改写成自然人话。</li>
-        <li><strong className="text-gray-800">Walter Writes 风格</strong> — <Link href="/zh/walterwrites" className="text-violet-600 hover:underline">Walterwrites AI</Link> 模仿检测器最易误判为人类的声音。</li>
+        <li><strong className="text-gray-800">学生论文</strong> — <Link href="/zh/essay-humanizer" className="text-violet-600 hover:underline">EssayRewriter</Link> 的提示词要求保留引用和学术语域，请自行核对。</li>
+        <li><strong className="text-gray-800">博客/营销文案</strong> — <Link href="/zh" className="text-violet-600 hover:underline">AI Humanizer</Link> 把生硬的草稿改得更自然清晰。</li>
+        <li><strong className="text-gray-800">个人风格</strong> — <Link href="/zh/walterwrites" className="text-violet-600 hover:underline">Walter Writes 风格</Link> 改写为更口语化的语气。</li>
       </ul>
+      <p className="mb-3">
+        检测器为何不可靠？不同引擎、版本和文体的表现不同，误判和漏判都会发生。可读<a href="/zh/glossary" className="text-violet-600 hover:underline">术语表</a>了解这些分数背后的概念，并参见<a href="/zh/limitations" className="text-violet-600 hover:underline">已知限制</a>。任何分数都不是作者身份或检测通过的证明。
+      </p>
       <p className="mt-3 text-sm">
-        想把检测器放到自己的站点?
+        想把这项启发式自查放到自己的站点?
         <Link href="/embed" className="text-violet-600 underline underline-offset-2">
-          免费嵌入 AI 检测器
+          免费嵌入该工具
         </Link>
         —— 一段 iframe,无需注册、无需 API key。
       </p>
+    <p className="text-xs text-gray-400 mt-4">最近核校：2026-11-24</p>
     </section>
   )
   return (

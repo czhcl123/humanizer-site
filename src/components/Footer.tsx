@@ -8,37 +8,45 @@ interface FooterProps {
 
 const footerText = {
   zh: {
-    copyright: 'AI Humanizer Suite · 免费在线 AI 工具集',
+    copyright: 'AI Humanizer · 免费在线写作改进工具',
     about: '关于',
     privacy: '隐私',
     home: '首页',
     tools: '工具',
     paper: '论文改写',
     turnitin: 'Turnitin',
-    bypass: 'Bypass AI',
+    bypass: 'AI 写作改进',
     walter: 'Walter Writes AI',
-    detector: '检测',
-    chinese: '降 AI 率',
-    quillbot: 'QuillBot 绕过',
-    essayTurnitin: '论文过 Turnitin',
+    detector: '文本自查',
+    chinese: '中文写作改进',
+    quillbot: 'QuillBot 写作建议',
+    essayTurnitin: '论文写作与检测说明',
     methodology: '测试方法',
+    glossary: '术语表',
+    limitations: '限制说明',
+    citation: '引用说明',
+    changelog: '更新记录',
     more: '更多',
   },
   en: {
-    copyright: 'AI Humanizer Suite · Free Online AI Tools',
+    copyright: 'AI Humanizer · Free Online Writing Tools',
     about: 'About',
     privacy: 'Privacy',
     home: 'Home',
     tools: 'Tools',
     paper: 'Paper',
     turnitin: 'Turnitin',
-    bypass: 'Bypass AI',
+    bypass: 'Writing Improvement',
     walter: 'Walter Writes AI',
-    detector: 'Detector',
-    chinese: '降 AI 率',
-    quillbot: 'QuillBot bypass',
-    essayTurnitin: 'Essay writer + Turnitin',
+    detector: 'Self-review',
+    chinese: 'Chinese writing improvement',
+    quillbot: 'QuillBot writing guidance',
+    essayTurnitin: 'Essay writing + detector notes',
     methodology: 'How we test',
+    glossary: 'Glossary',
+    limitations: 'Limitations',
+    citation: 'Citation policy',
+    changelog: 'Changelog',
     more: 'More',
   },
 }
@@ -69,9 +77,12 @@ export default function Footer({ lang = 'en' }: FooterProps) {
           <span className="text-gray-200">·</span>
           <Link href={p('/about')} className="text-gray-500 hover:text-violet-700 transition-colors">{t.about}</Link>
           <span className="text-gray-200">·</span>
+          <Link href={p('/privacy')} className="text-gray-500 hover:text-violet-700 transition-colors">{t.privacy}</Link>
+          <span className="text-gray-200">·</span>
+          <Link href={p('/glossary')} className="text-gray-500 hover:text-violet-700 transition-colors">{t.glossary}</Link>
+          <span className="text-gray-200">·</span>
           <a href="/llms.txt" className="text-gray-500 hover:text-violet-700 transition-colors">llms.txt</a>
           <span className="text-gray-200">·</span>
-          <a href="https://www.aixploria.com/en/" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-violet-700 transition-colors">AI Tools</a>
         </nav>
         <nav className="flex flex-wrap justify-center items-center gap-x-3 gap-y-2 mb-3 text-xs text-gray-500">
           <span className="text-gray-600">{t.more}:</span>
@@ -80,6 +91,12 @@ export default function Footer({ lang = 'en' }: FooterProps) {
           <Link href={p('/essay-writer-bypass-turnitin')} className="hover:text-violet-700 transition-colors">{t.essayTurnitin}</Link>
           <span className="text-gray-200">·</span>
           <Link href={p('/bypass-test-methodology')} className="hover:text-violet-700 transition-colors">{t.methodology}</Link>
+          <span className="text-gray-200">·</span>
+          <Link href={p('/limitations')} className="hover:text-violet-700 transition-colors">{t.limitations}</Link>
+          <span className="text-gray-200">·</span>
+          <Link href={p('/citation-policy')} className="hover:text-violet-700 transition-colors">{t.citation}</Link>
+          <span className="text-gray-200">·</span>
+          <Link href={p('/changelog')} className="hover:text-violet-700 transition-colors">{t.changelog}</Link>
         </nav>
         <p className="text-xs text-gray-500 text-center">
           {`${currentYear} ${t.copyright}`}

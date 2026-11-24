@@ -1,29 +1,25 @@
 import { SITE_URL, SITE_NAME } from '@/lib/site'
 
 /**
- * Site-wide structured data.
- *
- * `sameAs` used to list a Wikipedia article, a Wikidata item, a LinkedIn page,
- * a Crunchbase profile, a Twitter account, and a Product Hunt listing that do
- * not exist. Google treats unverifiable `sameAs` entries as a spam signal on
- * Organization markup, so only profiles we actually control are listed here.
+ * Site-wide structured data. Only verifiable identities are listed in
+ * `sameAs` — invented profiles are treated as a spam signal.
  */
 const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
   name: SITE_NAME,
-  alternateName: 'AI 人性化工具',
+  alternateName: 'AI 写作改进工具',
   url: SITE_URL,
   description:
-    'Free AI Humanizer that rewrites AI-generated text so it reads naturally and bypasses GPTZero, Turnitin AI, and Originality.ai detection. Free tier (5/day) + Pro $0.99/word via Stripe.',
-  inLanguage: ['en', 'zh'],
+    'Free online writing tool that makes rough AI-assisted drafts clearer, more natural, and easier to make your own. English and Simplified Chinese. No signup, 100% free, 5 submissions per IP per 24 hours, 3,000 characters per submission.',
+  inLanguage: ['en', 'zh-CN'],
 }
 
 const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: SITE_NAME,
-  alternateName: 'AI 人性化工具',
+  alternateName: 'AI 写作改进工具',
   url: SITE_URL,
   logo: {
     '@type': 'ImageObject',
@@ -32,21 +28,19 @@ const organizationSchema = {
     height: 630,
   },
   description:
-    'Free AI Humanizer that rewrites AI-generated text so it reads naturally and bypasses GPTZero, Turnitin AI, and Originality.ai detection. No signup, no installation. Supports English and Chinese.',
-  foundingDate: '2026',
+    'Free online writing-improvement tools for AI-assisted drafts. All processing is performed in the cloud via DeepSeek Chat (deepseek-chat). Supports English and Simplified Chinese.',
+  foundingDate: '2026-07',
   knowsAbout: [
-    'AI text humanization',
-    'AI content detection bypass',
-    'GPTZero bypass',
-    'Turnitin AI bypass',
-    'Originality.ai bypass',
-    'ChatGPT rewriting',
+    'Writing improvement tools',
+    'Clarity and tone editing',
+    'AI-assisted draft rewriting',
+    'English and Simplified Chinese writing',
   ],
   sameAs: ['https://github.com/czhcl123/humanizer-site'],
   founder: {
     '@type': 'Person',
     name: 'czhcl123',
-    jobTitle: 'Founder',
+    jobTitle: 'Solo Founder',
     url: 'https://github.com/czhcl123',
   },
   contactPoint: {
@@ -60,45 +54,33 @@ const organizationSchema = {
 
 const webAppSchema = {
   '@context': 'https://schema.org',
-  '@type': 'WebApplication',
+  '@type': ['WebApplication', 'SoftwareApplication'],
   name: SITE_NAME,
-  alternateName: 'AI 人性化工具',
+  alternateName: 'AI 写作改进工具',
   url: SITE_URL,
   description:
-    'Free AI Humanizer that rewrites AI-generated text so it reads naturally and bypasses GPTZero, Turnitin AI, and Originality.ai detection. Free tier (5/day) + Pro $0.99/word via Stripe. Supports English and Chinese.',
+    'Free online writing tool that makes rough AI-assisted drafts clearer, more natural, and easier to make your own. Cloud-processed via DeepSeek Chat. English and Simplified Chinese. No signup, 5 submissions per IP per 24 hours, 3,000 characters per submission. No detector-score claims.',
   applicationCategory: 'UtilitiesApplication',
-  applicationSubCategory: 'Text Rewriting Tool',
+  applicationSubCategory: 'Writing Improvement Tool',
   operatingSystem: 'Any (web browser with JavaScript)',
   browserRequirements: 'Requires JavaScript. Requires HTML5.',
-  inLanguage: ['en', 'zh'],
+  inLanguage: ['en', 'zh-CN'],
   isAccessibleForFree: true,
-  offers: [
-    {
-      '@type': 'Offer',
-      price: '0',
-      priceCurrency: 'USD',
-      availability: 'https://schema.org/InStock',
-    },
-    {
-      '@type': 'Offer',
-      price: '0.99',
-      priceCurrency: 'USD',
-      availability: 'https://schema.org/InStock',
-      description: 'Pro tier: $0.99 per word, unlimited submissions via Stripe.',
-    },
-  ],
+  offers: {
+    '@type': 'Offer',
+    price: '0',
+    priceCurrency: 'USD',
+    availability: 'https://schema.org/InStock',
+    description: '100% free. No premium tier. 5 submissions per IP per 24 hours, 3,000 characters each.',
+  },
   featureList: [
-    'AI text humanization',
-    'AI content detection bypass',
-    'GPTZero bypass',
-    'Turnitin AI bypass',
-    'Originality.ai bypass',
-    'ChatGPT text rewriting',
-    'Gemini text rewriting',
-    'Claude text rewriting',
-    'Bilingual English / Chinese',
+    'Rewriting rough AI-assisted drafts for clarity and natural tone',
+    'Essay writing improvement with a citation-preservation request that users verify manually',
+    'Conversational style rewriting',
+    'English and Simplified Chinese writing support',
+    'Heuristic text self-review, not a detector verdict',
   ],
-  dateModified: '2026-11-09',
+  dateModified: '2026-11-24',
   datePublished: '2026-07-07',
   creator: {
     '@type': 'Organization',

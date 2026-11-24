@@ -11,21 +11,22 @@ const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   mainEntity: [
-    { '@type': 'Question', name: 'Can an essay writer bypass Turnitin AI detection?', acceptedAnswer: { '@type': 'Answer', text: 'Yes — if it rewrites sentence-level structure, not just synonyms. Turnitin flags AI text by perplexity and burstiness. A tool that varies both can pass 85-95% of the time on English essays up to 3,000 characters.' } },
-    { '@type': 'Question', name: 'How do I write an essay that Turnitin will not flag as AI?', acceptedAnswer: { '@type': 'Answer', text: 'Break uniform sentence rhythm, replace AI vocabulary ("delve", "leverage", "robust", "furthermore"), add personal voice and opinions, and avoid list-heavy paragraph structure. Our tool applies all four automatically.' } },
-    { '@type': 'Question', name: 'Is using an essay writer to bypass Turnitin cheating?', acceptedAnswer: { '@type': 'Answer', text: 'That depends on your institution\'s policy. Rewriting your own AI-assisted draft into your natural voice is different from submitting fabricated work. Check your school\'s academic integrity policy before submitting.' } },
-    { '@type': 'Question', name: 'What is the success rate against Turnitin?', acceptedAnswer: { '@type': 'Answer', text: 'Our engine passes Turnitin AI 85-95% of the time on English essays up to 3,000 characters. Always run your rewritten essay through an AI detector before submitting.' } },
-    { '@type': 'Question', name: 'Does this preserve citations and references?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. (Author, Year) citations, quoted material, numerical data, and proper nouns are kept exactly. Only the surrounding prose is rewritten.' } },
+    { '@type': 'Question', name: '学术写作辅助是做什么的？', acceptedAnswer: { '@type': 'Answer', text: '帮你把论证表达得更清楚、结构更好读，并检查引用是否支撑论点。它不是改变检测器判定的手段，任何工具都无法证明作者身份。' } },
+    { '@type': 'Question', name: '怎么写好一个学术段落？', acceptedAnswer: { '@type': 'Answer', text: '开头给出主张，接着用你理解的证据支撑，说明证据与主张的关系，注明局限。把没有信息量的模板话换成你真正要说的意思。' } },
+    { '@type': 'Question', name: '引文和参考文献会保留吗？', acceptedAnswer: { '@type': 'Answer', text: '提示词要求模型在改写正文时保留 (作者, 年份) 引用、引文、数字、日期和专有名词。输出不做后处理：请逐条对照来源核对标记与引文。见 /zh/citation-policy。' } },
+    { '@type': 'Question', name: 'Turnitin 的 AI 分数为什么不可靠？', acceptedAnswer: { '@type': 'Answer', text: '其方法未公开，困惑度与句长变化只是一般启发式而非已验证的内部信号。本站数据仅说明局限：早前约 85–95% 的内部印象已因无法复现而撤回；2026-11-24 本站自测 13.3%（4/30）；不完整的第三方抽查对改写文本给出 100% AI。这些不是产品卖点。' } },
+    { '@type': 'Question', name: '学校允许用写作辅助工具吗？', acceptedAnswer: { '@type': 'Answer', text: '各校规定不同。改写自己写的草稿与提交他人生成的作品是两回事。提交前请查清本校学术诚信政策，并按要求标注使用的工具。' } },
+    { '@type': 'Question', name: '收费吗？会保存我的论文吗？', acceptedAnswer: { '@type': 'Answer', text: '100% 免费、无需注册：每 IP 每滚动 24 小时 5 次，每次最多 3000 字符，支持中英双语。无持久存储；短期内存缓存最多保留输入哈希与输出 10 分钟。见 /zh/privacy。' } },
   ],
 }
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: '绕过 Turnitin 的论文写作工具 - 免费 AI 改写',
-    description: '免费 AI 论文改写工具:专门绕过 Turnitin AI 检测。保留引用和数据,85-95% 通过率,无需注册。含写作技巧和检测原理。',
+    title: '学术写作辅助：清晰表达 + 引用保留（人工核对）',
+    description: '免费在线写作改进工具：把生硬的 AI 辅助草稿改得更自然、清晰、更贴合你自己的表达。支持中英双语，无需注册。本页讲学术写作的清晰表达与引用人工核对。',
     openGraph: {
-      title: '绕过 Turnitin 的论文写作工具 - 免费 AI 改写',
-      description: '免费 AI 论文改写工具:专门绕过 Turnitin AI 检测。保留引用和数据,85-95% 通过率,无需注册。',
+      title: '学术写作辅助：清晰表达 + 引用保留（人工核对）',
+      description: '免费在线写作改进工具：把生硬的 AI 辅助草稿改得更自然、清晰、更贴合你自己的表达。无需注册。',
       images: [{ url: 'https://gpt-undetectable.com/og-image.png', width: 1200, height: 630 }],
     },
     alternates: { canonical: pageUrl('/essay-writer-bypass-turnitin', 'zh'), languages: languageAlternates('/essay-writer-bypass-turnitin') },
@@ -33,27 +34,30 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function EssayWriterBypassPage() {
-  
+
   const seoBody = (
     <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-100 mb-6 text-gray-700 leading-relaxed space-y-3">
-      <p>搜「<strong>绕过 Turnitin 的论文写作工具</strong>」的人,处境基本一样:用 ChatGPT 或 Claude 写了初稿,Turnitin 标记为 AI 生成,现在需要改写——不是同义词替换,而是句子层面的重写——同时保留引用、数据和论点。</p>
+      <section className="bg-gradient-to-br from-violet-50 to-purple-50 rounded-2xl p-6 border border-violet-100 mb-2">
+        <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-2">学术写作辅助：清晰表达 + 引用保留（人工核对）</h1>
+        <p className="text-sm text-gray-600 leading-relaxed">保留原网址，内容改为学术写作辅助：表述更清晰、结构更好读、引用由你亲自核对。AI Humanizer 不承诺任何检测结果。</p>
+      </section>
 
-      <h2 className="text-lg font-semibold text-gray-800 pt-2">Turnitin 为什么能标记 AI 论文</h2>
-      <p>Turnitin 的 AI 检测基于两个统计信号:<strong>perplexity</strong>(词的可预测性)和 <strong>burstiness</strong>(句长变化幅度)。AI 写作两项都低——每句长度挤在窄区间里,每个词都是概率最高的那个。分类器抓的就是这种均匀性,不是什么水印。</p>
+      <h2 className="text-lg font-semibold text-gray-800 pt-2">为什么分数不是好的修改指南</h2>
+      <p>Turnitin 的 AI 检测方法未公开；困惑度和突发性只是公开讨论的一般启发式，不是已验证的内部信号。检测器判定存在争议，也可能彼此矛盾。本站公布的数据只用于说明局限，不是效果证明：早前约 85–95% 的内部印象已因无法复现而撤回；2026-11-24 自测为 13.3%（4/30），用的是本站检测器；不完整的第三方抽查对改写文本给出 100% AI。详见<a href="/zh/bypass-test-methodology" className="text-violet-600 hover:underline">测试方法</a>与<a href="/zh/limitations" className="text-violet-600 hover:underline">局限说明</a>。</p>
 
-      <h2 className="text-lg font-semibold text-gray-800 pt-2">过 Turnitin 的四个动作</h2>
+      <h2 className="text-lg font-semibold text-gray-800 pt-2">清晰表达清单</h2>
       <ul className="list-disc pl-5 space-y-1">
-        <li><strong>打破节奏</strong> — 三词碎片句和三十词长句混用。句长均匀是 AI 第一大破绽。</li>
-        <li><strong>清除 AI 词汇</strong> — "深入探讨""赋能""稳健""此外""综上所述"。全部换成自然表达。</li>
-        <li><strong>加入人声</strong> — 第一人称、直接观点、括号旁白。AI 爱对冲,人敢下判断。</li>
-        <li><strong>打平结构</strong> — AI 爱列表和对称段落。真人写作会跑题。</li>
+        <li><strong>一段一个主张</strong>——先说清楚，再给证据，然后解释两者的联系。</li>
+        <li><strong>具体细节</strong>——用你真正理解的研究、数据或观察替换笼统断言。</li>
+        <li><strong>自己的推理</strong>——说明证据为何说服你，论证还有哪些局限。</li>
+        <li><strong>平实的语言</strong>——删掉没有意义的过渡语与对冲词，句长随内容需要。</li>
       </ul>
 
-      <h2 className="text-lg font-semibold text-gray-800 pt-2">和普通改写工具的区别</h2>
-      <p>通用改写工具(QuillBot 之类)只在原句骨架里换同义词,perplexity 曲线几乎不动,Turnitin 一眼看穿。本工具从句子结构层面重建:主动变被动、从句顺序重排、连接词替换。(Author, Year) 格式引用、引文、数字数据保持原样,只改周围的表述。</p>
+      <h2 className="text-lg font-semibold text-gray-800 pt-2">引用保留是请求，不是保证</h2>
+      <p>对话式提示词要求 DeepSeek Chat 在改写正文时保留 (作者, 年份) 标记、引文、数字、日期与专有名词。模型输出不做后处理，请打开来源逐条核对标记是否还在、是否真的支持论点。<a href="/zh/citation-policy" className="text-violet-600 hover:underline">引用政策</a>说明了如何标注写作辅助；通用工具见<a href="/zh/bypass-ai" className="text-violet-600 hover:underline">写作改进</a>。</p>
 
       <h2 className="text-lg font-semibold text-gray-800 pt-2">提交前</h2>
-      <p>先用 <a href="/zh/ai-detector" className="text-violet-600 hover:underline">免费 AI 检测器</a> 查一遍。如果还有高分段落,把标记部分单独再跑一次——长论文按 3000 字分段。另外确认你学校的学术诚信政策:改写自己的草稿和提交编造的内容是两回事。</p>
+      <p>朗读草稿，确认每条引用与数字，长论文按 3000 字符分段使用工具，并查清本校的学术诚信规定。改写自己写的草稿与提交编造内容是两回事。AI Humanizer 100% 免费、无需注册，不承诺任何检测结果。</p>
     </div>
   )
 
@@ -62,8 +66,9 @@ export default async function EssayWriterBypassPage() {
       <BreadcrumbJsonLd slug="/essay-writer-bypass-turnitin" lang="zh" />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       {seoBody}
+      <p className="text-xs text-gray-400 mt-4">最近核校：2026-11-24</p>
       <ToolClient mode="essay" lang={lang} i18n={essayI18n}
-      heroTitle={{ zh: '绕过 Turnitin 的论文写作工具 — 免费 AI Essay Writer' }} heroSubtitle={{ zh: '写论文、改论文,让句子结构的变化幅度足够大,通过 Turnitin AI 检测。引用、数据和论点都保持不变,无需注册。' }}
+      heroTitle={{ zh: '学术写作辅助：清晰表达 + 引用保留（人工核对）' }} heroSubtitle={{ zh: '每段一个主张，具体证据加上自己的判断。提示词要求保留引用与数字，请人工核对；本站免费、无需注册，不承诺任何检测结果。' }}
     />
     </>
   )

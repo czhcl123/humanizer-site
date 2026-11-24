@@ -1,7 +1,7 @@
 {
   "name": "AI Humanizer",
   "short_name": "AI Humanizer",
-  "description": "Free online AI text humanizer. Rewrite AI text to bypass GPTZero, Turnitin AI, and Originality.ai detection.",
+  "description": "Free online AI text rewriting and heuristic detection tools. Cloud-processed via DeepSeek. English and Simplified Chinese. No signup.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#8b5cf6",

@@ -14,6 +14,7 @@ export default function EmbedDetectorPage() {
       <BreadcrumbJsonLd slug="/embed/detector" lang="en" />
       <main className="mx-auto w-full max-w-xl p-3">
       <EmbedDetector />
+      <p className="text-xs text-gray-400 mt-4">Last reviewed: 2026-11-24</p>
     </main>
     </>
   )

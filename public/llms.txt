@@ -1,171 +1,87 @@
-# AI Humanizer Suite
+# AI Humanizer
 
-> Free online AI text tool suite — humanizer, essay rewriter, Turnitin bypass, Walter Writes style rewriter, AI detector, and Chinese AI rate reducer. Bilingual English / Chinese. No signup. No tracking. No installation.
+> Free online writing tool that makes rough AI-assisted drafts clearer, more natural, and easier to make your own. English and Simplified Chinese. No signup. Six prompt modes, all powered by DeepSeek Chat (`deepseek-chat`) in the cloud. 100% free, no signup, no paid tier. Only English (en) and Simplified Chinese (zh-CN) are supported. No detector-score claims.
 
 URL: https://gpt-undetectable.com
+Last verified: 2026-11-24
 
-## Tools
+## Tool modes
 
-### 1. AI Humanizer (default)
-- [AI Humanizer](https://gpt-undetectable.com/?lang=en) — Paste AI text, get human-sounding rewrite. Up to 3,000 characters per submission. Free. Bypasses GPTZero, Turnitin, Originality.ai.
-- [AI Humanizer 中文](https://gpt-undetectable.com/?lang=zh) — 把 AI 文本改写成人话版本,中英双语。
+Each tool is a prompt mode of the same free service; text is sent to DeepSeek for processing (it is not processed locally).
 
-### 2. AI EssayRewriter
-- [AI EssayRewriter](https://gpt-undetectable.com/essay-humanizer?lang=en) — Specifically tuned for student essays. Preserves thesis, citations, dates, numbers. 85-95% pass rate.
-- [AI EssayRewriter 中文](https://gpt-undetectable.com/essay-humanizer?lang=zh) — 学生论文专用改写器,保留引用、论点、数据。
+- [AI Humanizer (default)](https://gpt-undetectable.com/) — General-purpose rewrite into more natural-sounding prose.
+- [AI Humanizer 中文](https://gpt-undetectable.com/zh) — 通用中文改写，输出更自然的中文表达。
+- [Essay Humanizer](https://gpt-undetectable.com/essay-humanizer) — Essay rewrite mode; the prompt asks the model to keep the thesis, citations and factual details.
+- [论文改写器](https://gpt-undetectable.com/zh/essay-humanizer) — 论文改写模式。
+- [Turnitin writing guidance](https://gpt-undetectable.com/turnitin-bypass) — Essay writing-improvement mode with a conversational prompt; no detector tuning and no connection to Turnitin.
+- [Turnitin 写作说明](https://gpt-undetectable.com/zh/turnitin-bypass) — 对话化论文写作改进模式，不针对检测器调优，不直连 Turnitin。
+- [Why AI detectors are unreliable](https://gpt-undetectable.com/bypass-ai) — Explainer on detector limitations and writing in your own voice.
+- [AI 检测器为什么不可靠](https://gpt-undetectable.com/zh/bypass-ai) — 检测局限与写出自己声音的说明。
+- [Walter Writes Style Rewriter](https://gpt-undetectable.com/walterwrites) — Conversational, short-paragraph style rewrite prompt.
+- [Walter Writes 风格改写](https://gpt-undetectable.com/zh/walterwrites) — 自然、口语化、短段落风格改写。
+- [Walter Writes style comparison](https://gpt-undetectable.com/walterwrites-vs-undetectable) — Writing-style comparison and detector-limitations notes.
+- [Walter Writes 风格对比说明](https://gpt-undetectable.com/zh/walterwrites-vs-undetectable) — 写作风格对比与检测局限说明。
+- [Originality.ai detector reliability](https://gpt-undetectable.com/originality-ai-bypass) — Detector-limitations explainer and writing guidance; no connection to Originality.ai.
+- [Originality.ai 检测说明](https://gpt-undetectable.com/zh/originality-ai-bypass) — 检测局限说明与写作建议，不直连 Originality.ai。
+- [AI text self-review](https://gpt-undetectable.com/ai-detector) — Heuristic self-review; asks DeepSeek to return a JSON assessment, not a detector verdict.
+- [AI 文本自查](https://gpt-undetectable.com/zh/ai-detector) — 启发式自查，由 DeepSeek 输出 JSON 评估结果，不是检测判定。
+- [Chinese writing improvement](https://gpt-undetectable.com/jiang-ai-lv) — Simplified Chinese rewrite mode replacing stock phrasing with plainer prose.
+- [中文写作改进](https://gpt-undetectable.com/zh/jiang-ai-lv) — 中文八股词汇改写模式，提示词要求保留原意，请自行核对。
+- [Essay writing and detector notes](https://gpt-undetectable.com/essay-writer-bypass-turnitin) — Essay writing guidance and detector-limitations notes.
+- [论文写作与检测说明](https://gpt-undetectable.com/zh/essay-writer-bypass-turnitin) — 论文写作建议与检测局限说明。
+- [GPTZero detector reliability](https://gpt-undetectable.com/gptzero-bypass) — Detector-limitations explainer; no connection to GPTZero.
+- [GPTZero 检测说明](https://gpt-undetectable.com/zh/gptzero-bypass) — 检测局限说明，不直连 GPTZero。
+- [Improve AI-assisted text](https://gpt-undetectable.com/humanize-ai-text) — General writing-improvement page.
+- [AI 辅助文本改进](https://gpt-undetectable.com/zh/humanize-ai-text) — 通用写作改进页面。
+- [QuillBot writing guidance](https://gpt-undetectable.com/quillbot-bypass) — Writing guidance; no connection to QuillBot.
+- [QuillBot 写作建议](https://gpt-undetectable.com/zh/quillbot-bypass) — 写作建议，不直连 QuillBot。
 
-### 3. Turnitin AI Bypass
-- [Turnitin AI Bypass](https://gpt-undetectable.com/turnitin-bypass?lang=en) — Specifically engineered against Turnitin's detection algorithm: sentence-level perplexity, burstiness, AI vocabulary density, predictable paragraph transitions.
-- [Turnitin AI Bypass 中文](https://gpt-undetectable.com/turnitin-bypass?lang=zh) — 专门绕过 Turnitin AI 检测,保留引用、事实、数据。
+## Other pages
 
-### 4. Walterwrites AI
-- [Walterwrites AI](https://gpt-undetectable.com/walterwrites?lang=en) — Rewrite AI text in the natural Walter Writes style — short paragraphs, conversational, parenthetical asides, direct opinions. The style AI detectors most often misclassify as human.
-- [Walterwrites AI 中文](https://gpt-undetectable.com/walterwrites?lang=zh) — 模仿 Walter Writes 风格的自然改写,短段落、口语化、括号旁白。
+- [Pricing](https://gpt-undetectable.com/pricing) and [定价](https://gpt-undetectable.com/zh/pricing) — The service is 100% free; no paid plan or upgrade exists.
+- [Cost Comparison](https://gpt-undetectable.com/cost-comparison) and [价格对比](https://gpt-undetectable.com/zh/cost-comparison) — Comparison information.
+- [Detector test methodology](https://gpt-undetectable.com/bypass-test-methodology) and [测试方法](https://gpt-undetectable.com/zh/bypass-test-methodology) — How the published self-check pilot was run. These tests are published to explain why we make no detector claims.
+- [About](https://gpt-undetectable.com/about) and [关于](https://gpt-undetectable.com/zh/about) — Author and site information.
+- [Privacy Policy](https://gpt-undetectable.com/privacy) and [隐私政策](https://gpt-undetectable.com/zh/privacy) — Data handling and retention details.
+- [AI Detection Glossary](https://gpt-undetectable.com/glossary) and [AI 检测术语表](https://gpt-undetectable.com/zh/glossary) — Definitions of detector concepts; these explain why detectors are unreliable, not as guidance for manipulating detectors.
+- [Limitations](https://gpt-undetectable.com/limitations) and [限制说明](https://gpt-undetectable.com/zh/limitations) — Known limits, failure cases and what the tools do not do.
+- [Citation Policy](https://gpt-undetectable.com/citation-policy) and [引用说明](https://gpt-undetectable.com/zh/citation-policy) — Recommended citation format; the 85–95% impression is withdrawn and may not be cited as a current pass rate.
+- [Changelog](https://gpt-undetectable.com/changelog) and [更新记录](https://gpt-undetectable.com/zh/changelog) — Dated changes to the site and its factual claims.
+- [Embed the self-review tool](https://gpt-undetectable.com/embed) — English only; no Chinese mirror. The embed backlink uses UTM parameters.
 
-### 5. AI Detector
-- [AI Detector](https://gpt-undetectable.com/ai-detector?lang=en) — Detect if text is AI-generated. Based on GPTZero, Originality.ai, ZeroGPT principles. Returns AI probability, verdict, 5 detection signals.
-- [AI Detector 中文](https://gpt-undetectable.com/ai-detector?lang=zh) — 检测文本 AI 率,基于 GPTZero、Originality.ai 同源原理。
+## Detector output
 
-### 6. 降 AI 率 (Chinese AI Rate Reducer)
-- [降 AI 率](https://gpt-undetectable.com/jiang-ai-lv?lang=zh) — 降低中文论文 AI 率,改写知网 AIGC、维普、GPTZero 中文、ZeroGPT 中文都识别不出的 AI 八股词。
+Self-review mode asks DeepSeek Chat to return JSON with `ai_probability`, `human_probability`, `verdict`, five `signals` items and an `explanation`. The values come from the model's prompt-based assessment: no third-party detector API is called, signals are not independently computed, weighted, or calibrated against detector feedback, and the result cannot validate authorship.
 
-## Pages
+## Detection observations (evidence of limits)
 
-- [Home](https://gpt-undetectable.com/) — Main tool
-- [About](https://gpt-undetectable.com/about) — Author and methodology
-- [llms.txt](https://gpt-undetectable.com/llms.txt) — This file
-- [rss.xml](https://gpt-undetectable.com/rss.xml) — RSS feed
+An earlier, undocumented internal impression suggested roughly 85–95%, but it has been withdrawn: a published self-check pilot on 2026-11-24 measured 13.3% (4/30) with this site’s own detector. The two are not comparable; third-party spot-checks remain incomplete and returned 100% AI on rewrites. These figures are published as evidence of limits, not as a product claim.
 
-## What is an AI Humanizer?
+早前未记录条件的内部印象约为 85–95%，现已撤回；首个公开自洽性试点（2026-11-24）用本站检测器只测得 13.3%（4/30）；两者不可比，第三方抽查尚未完成，曾有改写被判 100% AI。这些数据是局限证据，不是产品效果承诺。
 
-An AI humanizer is an online tool that rewrites AI-generated text (from ChatGPT, Gemini, Claude, Copilot, etc.) so it reads like a human wrote it. AI detectors like GPTZero, Turnitin AI, and Originality.ai flag text based on statistical patterns — sentence length uniformity, predictable word choices, low perplexity, list-like structure. Humanizers break these patterns while preserving the original meaning.
+## Limits and access
 
-## Who uses this tool suite
-
-- **Students** — Rewriting AI-assisted essay drafts to match their own voice. EssayRewriter and Turnitin Bypass are tuned specifically for academic contexts.
-- **Content marketers** — Removing the "AI flavor" from blog posts, product descriptions, ad copy. Walter Writes style works especially well for marketing content.
-- **Authors** — Polishing mechanical first drafts into natural prose.
-- **Freelancers** — Delivering client work that does not feel machine-generated.
-- **Chinese essay writers** — Reducing AI rate on 知网 AIGC, 维普, GPTZero Chinese, ZeroGPT Chinese.
-
-## Methodology
-
-Our tools call the DeepSeek large language model with custom system prompts engineered to break the specific statistical patterns AI detectors flag:
-
-- **Generic mode** — Varied sentence length, conversational transitions, occasional first-person voice, reduced list-like structure, avoidance of "AI vocabulary" (delve, leverage, robust, comprehensive, furthermore, in conclusion).
-- **Essay mode** — Student voice, concrete hooks, citation preservation, "the counter-argument here is" patterns, varied paragraph length.
-- **Turnitin mode** — Specifically calibrated against Turnitin's signals: paragraph length variation, contractions, hedges, no AI vocabulary, occasional thinking-out-loud.
-- **Walterwrites mode** — Confident conversational, short paragraphs, parenthetical asides, second person, direct opinions, no academic register.
-- **Chinese mode** — Chinese AI boilerplate removal (赋能 → 帮助, 抓手 → 方法, 底层逻辑 → 核心思路), varied sentence length, conversational transitions.
-- **Detector mode** — JSON-only output with AI probability, verdict, and 5 specific detection signals.
-
-Input is processed in a stateless API call and immediately discarded. We never train on user submissions.
-
-## Bypass rate
-
-On English text up to 3,000 characters:
-- GPTZero: 85-95%
-- Turnitin AI: 85-95%
-- Originality.ai: 80-90%
-- ZeroGPT: 85-95%
-- Copyleaks: 80-90%
-
-On Chinese text up to 3,000 characters:
-- 知网 AIGC (CNKI): 70-85% (AI rate drops from 80%+ to below 20%)
-- 维普 (CQVIP): 70-85%
-- GPTZero Chinese: 80-90%
-- ZeroGPT Chinese: 80-90%
+- Maximum 3,000 characters per submission; no file uploads.
+- 5 submissions per IP per rolling 24-hour window.
+- No registration, no account, no payment.
+- Supported languages: English (en) and Simplified Chinese (zh-CN) only. No Traditional Chinese.
 
 ## Privacy
 
-- No signup, no login
-- No cookies, no tracking
-- No storage of user submissions
-- No model training on user data
-- Stateless API: input discarded immediately after response
+No persistent storage of submissions, no analytics cookies and no tracking pixels. The server keeps a bounded in-memory response cache (10 minutes, up to 500 entries) and in-memory, IP-header-based rate-limit counters; Redis is not enabled by default. See the [privacy page](https://gpt-undetectable.com/privacy) for details.
 
-## Limitations
+## Publisher
 
-- Longer text should be split into sections under 3,000 characters each.
-- Detection algorithms evolve; we update prompts weekly but cannot guarantee 100% pass rate.
-- The tool helps you rewrite text you have permission to use. Users are responsible for following their institution's academic integrity policy.
-
-## Author
-
-Built with DeepSeek. Maintained at github.com/czhcl123/humanizer-site.
-
-## Optional
-
-
-
-## Detailed Specifications
-
-### Input constraints
-- Maximum characters per submission: 3,000
-- Rate limit: 5 submissions per IP per day
-- Supported languages: English (default), Simplified Chinese (zh-CN)
-- Input is discarded immediately after response (stateless API)
-- No file uploads; paste text only
-- No account creation; no cookies; no tracking
-
-### Output constraints
-- Generic mode output: natural-sounding rewritten English or Chinese text
-- Essay mode output: student-voice rewrite with preserved thesis, citations, dates, numbers
-- Turnitin mode output: rewrite engineered against Turnitin's specific detection signals
-- Walterwrites mode output: conversational short-paragraph rewrite in Walter Writes voice
-- Chinese mode output: Chinese prose with AI boilerplate vocabulary replaced
-- Detector mode output: structured JSON object with ai_probability, human_probability, verdict, signals array (5 items), and explanation string
-
-### Backend infrastructure
-- LLM: DeepSeek Chat (https://platform.deepseek.com)
-- Model: deepseek-chat
-- Temperature: 1.3 for rewriting modes (higher variability), 0.3 for detector mode (lower noise)
-- Max tokens: 4,096 for rewriting modes, 1,024 for detector mode
-- Deployment: Railway (Docker + Node 20-slim)
-- Framework: Next.js 16.2.9 + React 19 + TypeScript 5
-- Hosting: gpt-undetectable.com (Railway)
-
-### Bypass rates (as of 2026-07-08)
-- GPTZero (English): 85-95% pass rate
-- Turnitin AI (English): 85-95% pass rate
-- Originality.ai (English): 80-90% pass rate
-- ZeroGPT (English): 85-95% pass rate
-- Copyleaks (English): 80-90% pass rate
-- 知网 AIGC (Chinese): 70-85% pass rate
-- 维普 (Chinese): 70-85% pass rate
-- GPTZero Chinese: 80-90% pass rate
-- ZeroGPT Chinese: 80-90% pass rate
-
-### Privacy and data handling
-- No cookies, no tracking, no analytics
-- No account creation or login
-- No storage of user submissions
-- No model training on user data
-- No third-party data sharing
-- All processing happens in a stateless API call
-- Input is discarded immediately after the response is returned
-
-### Limitations
-- Text longer than 3,000 characters should be split into multiple submissions
-- Detection algorithms evolve over time; prompt iterations happen weekly but cannot guarantee 100% bypass
-- The tool helps you rewrite text you have permission to use; users are responsible for following their institution's academic integrity policy
-- The Chinese mode is tuned for Simplified Chinese (zh-CN); Traditional Chinese (zh-TW) and other Chinese variants are not specifically optimized
-- The detector mode is calibrated against mainstream detectors; niche or proprietary detectors may use different signals
-- Free tier has no premium upgrade path; the tool is intentionally free for everyone
+Founded in July 2026 by czhcl123. Contact: contact@gpt-undetectable.com. Source: https://github.com/czhcl123/humanizer-site. Domain: gpt-undetectable.com.
 
 ## Companion files
 
-- [llms-full.txt](https://gpt-undetectable.com/llms-full.txt) — full llms.txt with detailed tool descriptions (llmstxt.org v2 spec)
-- [ai.txt](https://gpt-undetectable.com/.well-known/ai.txt.md) — bot policy and crawler permissions
-- [about.md](https://github.com/czhcl123/humanizer-site/blob/main/public/llms.txt.md) — about page content
-- [faq.md](https://github.com/czhcl123/humanizer-site/blob/main/public/llms.txt.md) — full FAQ as markdown
-- [rss.xml](https://gpt-undetectable.com/rss.xml) — RSS 2.0 feed
-- [sitemap.xml](https://gpt-undetectable.com/sitemap.xml) — XML sitemap
-
-
-- [AI crawler permissions](https://gpt-undetectable.com/.well-known/ai.txt) — Bot policy and site structure for AI crawlers (GPTBot, ClaudeBot, PerplexityBot, Google-Extended, CCBot).
-- [Site summary (JSON)](https://gpt-undetectable.com/ai/summary.json) — Structured JSON with all 6 tools, knowledge graph pillars, external references.
-- [FAQ (JSON)](https://gpt-undetectable.com/ai/faq.json) — Structured FAQPage schema with 8 questions about our tools.
-- [Service description (JSON)](https://gpt-undetectable.com/ai/service.json) — Machine-readable service description with capabilities, API examples, dependencies, privacy.
-- [Sitemap (XML)](https://gpt-undetectable.com/sitemap.xml) — Complete sitemap with all 7 URLs.
-- [RSS feed](https://gpt-undetectable.com/rss.xml) — RSS 2.0 feed with 7 items covering all tools.
+- [Full specification](https://gpt-undetectable.com/llms-full.txt)
+- [Crawler policy](https://gpt-undetectable.com/.well-known/ai.txt)
+- [Site summary (JSON)](https://gpt-undetectable.com/ai/summary.json)
+- [FAQ (JSON)](https://gpt-undetectable.com/ai/faq.json)
+- [Service description (JSON)](https://gpt-undetectable.com/ai/service.json)
+- [Privacy](https://gpt-undetectable.com/privacy)
+- [Test log template (CSV)](https://gpt-undetectable.com/test-logs/template.csv)
+- [Sitemap (45 URLs)](https://gpt-undetectable.com/sitemap.xml)
+- [RSS feed](https://gpt-undetectable.com/rss.xml)

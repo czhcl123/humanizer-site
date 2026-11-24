@@ -53,10 +53,10 @@ export default function EmbedDetector() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ text: value, lang: 'en', mode: 'detector' }),
       })
-      if (!res.ok) throw new Error('The detector is busy right now. Please try again in a moment.')
+      if (!res.ok) throw new Error('The self-review tool is busy right now. Please try again in a moment.')
       const data = await res.json()
       const parsed = typeof data.output === 'string' ? JSON.parse(data.output) : data.output
-      if (!parsed || typeof parsed !== 'object') throw new Error('Unexpected response from the detector.')
+      if (!parsed || typeof parsed !== 'object') throw new Error('Unexpected response from the self-review tool.')
       setResult(parsed as DetectorResult)
     } catch (e) {
       setError(e instanceof Error ? e.message : 'Something went wrong. Please try again.')
@@ -77,7 +77,7 @@ export default function EmbedDetector() {
   return (
     <div ref={boxRef} className="w-full bg-white text-gray-800">
       <div className="flex items-baseline justify-between gap-2 mb-1.5">
-        <h1 className="text-sm font-semibold">AI detector</h1>
+        <h1 className="text-sm font-semibold">AI text self-review</h1>
         <span className="text-[11px] text-gray-500">free · no signup</span>
       </div>
 
@@ -100,7 +100,7 @@ export default function EmbedDetector() {
           disabled={loading}
           className="rounded-lg bg-violet-600 px-3 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-violet-700 disabled:cursor-not-allowed disabled:opacity-60"
         >
-          {loading ? 'Checking…' : 'Check AI score'}
+          {loading ? 'Checking…' : 'Review text'}
         </button>
       </div>
 
@@ -132,6 +132,9 @@ export default function EmbedDetector() {
       )}
 
       <p className="mt-2 text-[10px] text-gray-500">
+        Heuristic self-review only — not connected to GPTZero or Turnitin, and not an authorship verdict.
+      </p>
+      <p className="mt-1 text-[10px] text-gray-500">
         <a
           href="https://gpt-undetectable.com/ai-detector?utm_source=embed&utm_medium=widget"
           target="_blank"
@@ -140,7 +143,7 @@ export default function EmbedDetector() {
         >
           Powered by AI Humanizer
         </a>{' '}
-        — free AI detector, no signup.
+        — free writing self-review, no signup.
       </p>
     </div>
   )

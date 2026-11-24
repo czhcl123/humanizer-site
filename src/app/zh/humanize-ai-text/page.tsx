@@ -11,10 +11,10 @@ const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   mainEntity: [
-    { '@type': 'Question', name: 'What does it mean to humanize AI text?', acceptedAnswer: { '@type': 'Answer', text: 'Rewriting AI-generated content so it reads like a person wrote it — varied sentence length, natural transitions, opinions, and none of the template vocabulary AI models default to.' } },
-    { '@type': 'Question', name: 'How do you humanize AI text for free?', acceptedAnswer: { '@type': 'Answer', text: 'Three steps: strip AI vocabulary ("delve", "leverage", "robust", "furthermore"), break sentence uniformity by mixing fragments and long sentences, and add your own voice — opinions, examples, asides. Our free tool automates all three, no signup.' } },
-    { '@type': 'Question', name: 'Why does AI text sound robotic?', acceptedAnswer: { '@type': 'Answer', text: 'Language models produce the most statistically probable next word, which yields fluent but uniform text: same sentence rhythm, safe vocabulary, balanced structure. Humans vary — we ramble, we commit to opinions, we break our own patterns.' } },
-    { '@type': 'Question', name: 'Does humanizing AI text remove the facts?', acceptedAnswer: { '@type': 'Answer', text: 'No. A proper humanizer preserves facts, numbers, citations, and proper nouns exactly. Only the surface expression changes.' } },
+    { '@type': 'Question', name: '把 AI 文本人性化是什么意思？', acceptedAnswer: { '@type': 'Answer', text: '把 AI 生成的内容改写得像人写的：句长有变化、过渡自然、带有观点，并去除 AI 模型惯用的模板词汇。改写由 DeepSeek Chat 在云端完成。' } },
+    { '@type': 'Question', name: '如何免费把 AI 文本改写得像人写？', acceptedAnswer: { '@type': 'Answer', text: '三步：清除模板词汇、变化句长、加入自己的声音。本站免费工具通过云端 DeepSeek Chat 自动完成这些步骤，无需注册，每个 IP 每滚动 24 小时 5 次，每次最多 3000 字符。' } },
+    { '@type': 'Question', name: 'AI 文本为什么读起来像机器？', acceptedAnswer: { '@type': 'Answer', text: '语言模型倾向输出统计上最可能的下一个词，因此文本流畅但均匀：句子节奏相似、用词保守、结构平衡。人的写作会有变化：会跑题、会下判断、会打破自己的模式。' } },
+    { '@type': 'Question', name: '人性化改写会丢失事实吗？', acceptedAnswer: { '@type': 'Answer', text: '改写会尽量保留事实、数字、引用和专有名词。请自行核对结果；本站不保证任何检测通过率。' } },
   ],
 }
 
@@ -38,7 +38,7 @@ export default async function HumanizeAiTextPage() {
       <p>"<strong>把 AI 文本改写成真人风格</strong>"已经成了写作流程的标准一步:先用 ChatGPT 或 Claude 打草稿,再把输出改写成读起来像人写的东西。原因可能是 AI 检测器、编辑标准,或者单纯是读者看得出来——方法是一样的,五分钟能学会。</p>
 
       <h2 className="text-lg font-semibold text-gray-800 pt-2">AI 文本为什么读起来像机器</h2>
-      <p>语言模型优化的是统计上概率最高的下一个词。结果流畅但均匀:句子挤在同一长度带,每个连接词都选最安全的,词汇停在分布中段。这正是检测器在测的——低 perplexity、低 burstiness——也正是读者说不清但感觉得到的东西。</p>
+      <p>语言模型倾向输出流畅但均匀的文本：句子长度接近、连接词保守、词汇常见。公开讨论常以 perplexity、burstiness 等统计弱信号描述这类特征；本站检测器是 DeepSeek 提示词驱动的启发式分析，不是官方检测判定。</p>
 
       <h2 className="text-lg font-semibold text-gray-800 pt-2">三步法</h2>
       <ul className="list-disc pl-5 space-y-1">
@@ -51,7 +51,8 @@ export default async function HumanizeAiTextPage() {
       <p>事实、数字、引用、引文、专有名词原样保留。人性化改的是表达,不是内容——改写把数据改了,比不改还糟。</p>
 
       <h2 className="text-lg font-semibold text-gray-800 pt-2">自动完成</h2>
-      <p>把 AI 草稿粘贴到下面,工具一轮完成三步:句子结构重建、AI 词汇清除、人类节奏恢复——事实和引用保持不动。发布或提交前,先用 <a href="/zh/ai-detector" className="text-violet-600 hover:underline">免费 AI 检测器</a> 检查结果。</p>
+      <p>把 AI 草稿粘贴到下面，改写由 DeepSeek Chat（deepseek-chat）在云端处理，尝试重建句式、清除模板词、恢复自然节奏，并尽量保持事实和引用不动。100% 免费，每 IP 每 24 小时 5 次。发布或提交前可用 <a href="/zh/ai-detector" className="text-violet-600 hover:underline">免费 AI 检测器</a>自查；它不是官方判定，非保证。</p>
+    <p className="text-xs text-gray-400 mt-4">最近核校：2026-11-24</p>
     </div>
   )
 
@@ -61,7 +62,7 @@ export default async function HumanizeAiTextPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       {seoBody}
       <ToolClient mode="walterwrites" lang={lang} i18n={walterwritesI18n}
-      heroTitle={{ zh: '如何把 AI 文本改写成真人风格 — 真正有效的方法' }} heroSubtitle={{ zh: '只换同义词没用:检测器读的是句子结构和可预测性,不是词汇。这里讲真正管用的改法,以及怎么验证结果。' }}
+      heroTitle={{ zh: '如何把 AI 文本改写成真人风格 — 免费方法' }} heroSubtitle={{ zh: '变化句长、清除模板词、加入个人声音。本站由 DeepSeek 云端改写，100% 免费，无需注册；结果非保证。' }}
     />
     </>
   )

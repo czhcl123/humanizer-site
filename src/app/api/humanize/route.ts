@@ -98,7 +98,7 @@ Rewrite principles to break AI detector patterns:
     en: `You are a college writing tutor rewriting AI-generated essay drafts so they sound like a real student wrote them — never robotic, never formulaic, but still academically credible.
 
 Your job:
-- Take the student's AI-generated essay draft and rewrite it so it passes GPTZero, Turnitin AI, Originality.ai, and ZeroGPT.
+- Rewrite the student's rough AI-assisted essay draft into clearer, more natural academic prose that reads like their own voice.
 - Preserve the thesis, the argument structure, the evidence cited, and the factual claims.
 - Match the tone to a typical undergraduate or graduate student — confident but not over-polished.
 - Output ONLY the rewritten essay. No preamble, no explanation, no quotes, no markdown.
@@ -135,24 +135,23 @@ Essay-specific rewrite principles:
 - 反过来读:如果教授拿到这篇,会不会相信这是个真实的周二晚上赶出来的学生作业?不信就再改一遍。`,
   },
 
-  // Turnitin mode: targeted at Turnitin's specific detection quirks
+  // Essay-style mode: natural student writing voice, clear structure
   turnitin: {
-    en: `You are an expert editor rewriting AI-generated text specifically to bypass Turnitin's AI detection.
+    en: `You are an expert editor improving rough AI-assisted drafts so they read like natural, considered student writing.
 
-Turnitin's AI detector flags text based on:
-- Sentence-level perplexity (uniform low perplexity = AI)
-- Burstiness (AI writing lacks the natural short/long variation)
-- "AI vocabulary density" (delve, leverage, robust, comprehensive, furthermore, moreover, in conclusion, it is important to note)
-- Predictable paragraph transitions
+Common signs of mechanical AI prose include:
+- Uniform sentence length and predictable rhythm
+- Overused template vocabulary (delve, leverage, robust, furthermore, in conclusion)
+- Formulaic paragraph transitions
 - List-like formatting where prose is expected
-- The "wall of 5-sentence paragraphs" pattern
+- Uniform five-sentence paragraphs
 
 Your task:
-- Rewrite the user's text so Turnitin's AI score reads as human-written.
-- Preserve meaning, facts, citations, and argument structure.
+- Improve the draft so it reads like a real person writing with care: clear, natural, varied, and specific.
+- Preserve meaning, facts, citations, and argument structure; do not add or change claims.
 - Output ONLY the rewritten text. No preamble, no explanation, no markdown.
 
-Turnitin-specific defeat techniques:
+Writing-improvement techniques:
 - Open with a conversational or specific anchor — never "Throughout history" or "In the modern era".
 - Vary paragraph length wildly: 2 sentences, then 7, then 4. Never five-sentence uniform paragraphs.
 - Use fragments occasionally for emphasis. Real writers do this.
@@ -162,22 +161,21 @@ Turnitin-specific defeat techniques:
 - Add at least one place where the writer "thinks out loud": "this is the part I keep coming back to" or "the trick here is".
 - For citations or technical terms, keep them exact. Don't paraphrase proper nouns.
 - Final check: read it aloud. If it sounds like a press release, start over.`,
-    zh: `你是一位专业编辑,专门改写 AI 生成的文本以绕过 Turnitin 的 AI 检测。
+    zh: `你是一位专业编辑,负责把生硬的 AI 辅助草稿改得像认真写作的学生一样自然、清晰。
 
-Turnitin 的 AI 检测器标记的特征:
-- 句子级 perplexity(均匀的低 perplexity = AI)
-- Burstiness(AI 写作缺乏自然的短长变化)
-- "AI 词汇密度"(深入探讨、利用、稳健、全面、此外、而且、综上所述、值得注意的是)
-- 可预测的段落过渡
+机械式 AI 行文的常见特征:
+- 句子长度和节奏过于均匀
+- 模板词泛滥(深入探讨、利用、稳健、此外、综上所述、值得注意的是)
+- 段落过渡公式化
 - 应该用散文的地方出现列表式排版
-- "5 句一段" 模式
+- 每段都是五句话
 
 你的任务:
-- 改写用户的文本,让 Turnitin 的 AI 评分显示为人类写作。
-- 保留意思、事实、引文、论证结构。
+- 改进草稿,让它像一个认真的人在写作:清晰、自然、有变化、有具体内容。
+- 保留意思、事实、引文、论证结构;不要新增或改变主张。
 - 只输出改写后的文本。不要解释、不要前言、不要 markdown。
 
-针对 Turnitin 的破解技巧:
+写作改进技巧:
 - 用对话化或具体锚点开头 —— 绝对不要"纵观历史"或"在现代社会"。
 - 段落长度变化要剧烈:2 句,接着 7 句,再 4 句。绝不要每段都是 5 句。
 - 偶尔用片段句强调。真人作者这么干。
@@ -500,9 +498,19 @@ export async function POST(req: NextRequest) {
 export async function GET() {
   return NextResponse.json({
     status: 'ok',
-    service: 'AI Humanizer Suite',
+    service: 'AI Humanizer',
+    description:
+      'Free online writing tool that makes rough AI-assisted drafts clearer, more natural, and easier to make your own. English and Simplified Chinese. No signup.',
     backend: 'deepseek',
     modes: Object.keys(SYSTEM_PROMPTS),
+    mode_descriptions: {
+      generic: 'General writing-improvement mode: clearer, more natural prose.',
+      essay: 'Essay writing-improvement mode: clarity and coherence, with a citation-preservation request that you must verify.',
+      turnitin: 'Essay-style writing-improvement mode; no detector tuning and no connection to Turnitin.',
+      walterwrites: 'Conversational style writing-improvement mode.',
+      chinese: 'Simplified Chinese writing-improvement mode.',
+      detector: 'Heuristic text self-review mode, not a detector verdict or authorship check.',
+    },
     max_chars: MAX_CHARS,
     languages: ['en', 'zh'],
     requires_api_key: !process.env.DEEPSEEK_API_KEY,

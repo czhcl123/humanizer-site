@@ -15,7 +15,7 @@ const faqSchema = {
     { '@type': 'Question', name: 'How do you humanize AI text for free?', acceptedAnswer: { '@type': 'Answer', text: 'Three steps: (1) strip AI vocabulary — "delve", "leverage", "robust", "furthermore", "in conclusion"; (2) break sentence uniformity — mix fragments and long sentences; (3) add your own voice — opinions, examples, asides. Our free tool automates all three, up to 3,000 characters per pass, no signup.' } },
     { '@type': 'Question', name: 'Why does AI text sound robotic?', acceptedAnswer: { '@type': 'Answer', text: 'Language models are trained to produce the most statistically probable next word, which produces fluent but uniform text: same sentence rhythm, safe vocabulary, balanced structure. Humans vary — we ramble, we commit to opinions, we break our own patterns.' } },
     { '@type': 'Question', name: 'Does humanizing AI text remove the facts?', acceptedAnswer: { '@type': 'Answer', text: 'No — a proper humanizer preserves facts, numbers, citations, and proper nouns exactly. Only the surface expression changes: sentence structure, word choice, transitions, and voice.' } },
-    { '@type': 'Question', name: 'Is AI text humanizing detectable?', acceptedAnswer: { '@type': 'Answer', text: 'Detectors score statistical patterns, not tool usage. Text rewritten to have genuine variation in sentence length and word predictability has no machine signature left to detect.' } },
+    { '@type': 'Question', name: 'Is AI text humanizing detectable?', acceptedAnswer: { '@type': 'Answer', text: 'Detectors may score statistical patterns, but their methods are not public and no result is guaranteed. An earlier, undocumented internal impression suggested roughly 85–95%, but it has not been reproduced: a published self-check pilot on 2026-11-24 measured 13.3% (4/30) with this site’s own detector. The two are not comparable, and no third-party detector result has been measured.' } },
   ],
 }
 
@@ -97,6 +97,7 @@ export default async function HumanizeAiTextPage() {
       <BreadcrumbJsonLd slug="/humanize-ai-text" lang="en" />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       {seoBodyEn}
+      <p className="text-xs text-gray-400 mt-4">Last reviewed: 2026-11-24</p>
       <ToolClient mode="walterwrites" lang={lang} i18n={walterwritesI18n}
       heroTitle={{ zh: '如何把 AI 文本改写成真人风格 — 真正有效的方法', en: 'How to Humanize AI Text — Methods That Actually Work' }} heroSubtitle={{ zh: '只换同义词没用:检测器读的是句子结构和可预测性,不是词汇。这里讲真正管用的改法,以及怎么验证结果。', en: 'Swap synonyms and nothing changes: detectors read sentence structure and predictability, not vocabulary. Here is what does change them, and how to check the result.' }}
     />

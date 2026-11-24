@@ -86,9 +86,8 @@ interface Props {
    *
    * The five shared i18n bundles (chinese / detector / essay / turnitin /
    * walterwrites) each carry a single heroTitle, and several pages reuse the
-   * same bundle — which meant /gptzero-bypass shipped the H1 "Bypass Turnitin
-   * AI detection" and /quillbot-bypass shipped "Make AI papers read like you
-   * wrote them". An H1 that contradicts the search query costs CTR, so pages
+   * same bundle — which meant pages could ship an H1 that contradicted their
+   * own topic. An H1 that contradicts the search query costs CTR, so pages
    * pass their own copy here. Leaving it undefined keeps the shared i18n
    * behaviour, so no existing page changes unless it opts in.
    */
@@ -203,7 +202,7 @@ function ToolContent({ mode, lang, i18n, compact, heroTitle, heroSubtitle, hideH
         <div className="max-w-3xl mx-auto px-4 py-3 flex items-center gap-3">
           <Link href={isZh ? '/zh' : '/'} className="flex-shrink-0 flex items-center gap-1.5 text-base font-bold text-violet-600 hover:text-violet-700 transition-colors">
             <span className="text-xl">✦</span>
-            <span className="hidden sm:inline text-sm">{t.brand}</span>
+            <span className="hidden sm:inline text-sm">AI Humanizer</span>
           </Link>
           <div className="flex-1" />
           <Link href={otherPath} hrefLang={otherLang === 'zh' ? 'zh-CN' : 'en'} title={isZh ? 'Switch to English' : '切换到中文'} className="flex-shrink-0 flex items-center gap-1 text-xs px-3 py-1.5 border border-gray-200 rounded-full hover:bg-gray-50 hover:border-violet-300 transition-colors">

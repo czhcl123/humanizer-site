@@ -12,8 +12,8 @@ export async function generateMetadata() {
     en: 'About',
   }
   const descriptions = {
-    zh: 'AI Humanizer 致力于做出能通过最严格 AI 检测器的改写工具。了解我们的方法、目标、局限。',
-    en: 'AI Humanizer builds the most reliable AI text humanizer. Learn about our methodology, goals, and limitations.',
+    zh: 'AI Humanizer 帮助把生硬的 AI 辅助草稿改得更自然、清晰。了解我们的方法、目标与局限。',
+    en: 'AI Humanizer helps make rough AI-assisted drafts clearer and more natural. Learn about our mission, goals, and limitations.',
   }
   return {
     title: titles[lang],
@@ -33,45 +33,6 @@ export async function generateMetadata() {
   }
 }
 
-const faqSchemaZh = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'AI Humanizer 是什么?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'AI Humanizer 是一套在线 AI 文本改写工具,涵盖主改写器、论⽂改写器、Turnitin 绕过器、Walter Writes 风格改写器、AI 检测器、中文降 AI 率工具 6 个页面。所有数据本地处理 + API 调用,免费、无需注册、无追踪。',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: '为什么你的工具有 6 个不同页面?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: '不同场景需要不同的改写策略:论⽂要保留引用,Turnitin 要打破句子级别 perplexity,Walter Writes 要改写口语风格,中文降 AI 率要绕过 AIGC 检测。每个工具调用不同 system prompt 提示词,优化特定检测器。',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: '你们能通过所有 AI 检测器吗?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: '不能保证 100% 通过所有检测器。GPTZero / Turnitin / Originality.ai 都在不断更新算法。本工具以 85-95% 的人类改写质量为设计目标,不代表学生可以拿去作为 100% 可提交代写。学术诚信是用户的责任。',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'AI Humanizer 是免费的吗?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: '免费、无需注册、无水印、无追踪。唯一的限制是每次提交 3,000 字符上限。点击首页输入框即可使用。',
-      },
-    },
-  ],
-}
-
 const faqSchemaEn = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
@@ -81,7 +42,7 @@ const faqSchemaEn = {
       name: 'What is AI Humanizer?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'AI Humanizer is a free online suite of six AI text rewriting tools: main humanizer, essay rewriter, Turnitin bypass, Walter Writes style rewriter, AI detector, and Chinese AIGC reducer. All tools are free, no signup, no tracking, browser-only.',
+        text: 'AI Humanizer is a free online writing improvement tool: a draft rewriter, essay rewriter, style rewriter, Chinese text editor and a heuristic self-review tool. Everything is 100% free with no signup. Rewrites and self-review are processed in the cloud via the DeepSeek Chat (deepseek-chat) API, not locally.',
       },
     },
     {
@@ -89,15 +50,15 @@ const faqSchemaEn = {
       name: 'Why six different tools instead of one?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Each scenario needs a different rewriting strategy: essays preserve citations, Turnitin bypass breaks sentence-level perplexity, Walter Writes mimics conversational style, Chinese AIGC reducer evades CNKI AIGC detection. Each tool calls a different custom-engineered system prompt.',
+        text: 'Each scenario uses a different prompt: essays ask the model to keep citations, style rewriters adjust tone and rhythm, and the Chinese tool works on Chinese academic prose. All are prompt-driven rewrites through DeepSeek Chat; there is no direct connection to any third-party detector API. Always check the output yourself.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Can you guarantee passing every AI detector?',
+      name: 'Do you promise detector outcomes?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'No tool can guarantee 100% pass rates. GPTZero, Turnitin, and Originality.ai continuously update their algorithms. Our tools target 85-95% pass rates on tested samples, not 100%. Academic integrity remains the user\'s responsibility.',
+        text: 'No. Detector verdicts are unreliable and contested, and this site is not a way to manipulate them. An early unverified impression (85–95%) was withdrawn after a published self-check measured 13.3% (4/30) on 2026-11-24; third-party spot-checks are incomplete. These are limitations, not a product claim. Academic integrity remains the user\'s responsibility.',
       },
     },
     {
@@ -105,7 +66,7 @@ const faqSchemaEn = {
       name: 'Is AI Humanizer free?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes — free, no signup, no watermark, no tracking. The only limit is a 3,000-character cap per submission. Use any tool from the homepage without an account.',
+        text: 'Yes — 100% free, no signup, no watermark, no analytics tracking. The limits are 5 submissions per IP per rolling 24 hours and up to 3,000 characters per submission. Use any tool from the homepage without an account.',
       },
     },
   ],
@@ -117,7 +78,21 @@ export default async function AboutPage() {
     <>
       <BreadcrumbJsonLd slug="/about" lang="en" />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <section className="max-w-3xl mx-auto px-4 pb-2 text-sm text-gray-600 leading-relaxed">
+        <h2 className="text-lg font-bold text-gray-800 mb-2">Founder &amp; contact</h2>
+        <p>AI Humanizer is built and maintained by <strong className="text-gray-800">czhcl123</strong> (Solo Founder). Questions and feedback: <a href="mailto:contact@gpt-undetectable.com" className="text-violet-600 hover:underline">contact@gpt-undetectable.com</a>. Source code: <a href="https://github.com/czhcl123/humanizer-site" target="_blank" rel="noopener noreferrer" className="text-violet-600 hover:underline">github.com/czhcl123/humanizer-site</a>.</p>
+      </section>
+      <section className="max-w-3xl mx-auto px-4 pb-2 text-sm text-gray-600 leading-relaxed space-y-2">
+        <h2 className="text-lg font-bold text-gray-800">What changed on 2026-11-24</h2>
+        <p>
+          Published tests showed that detector scores are unreliable: our early 85–95% impression
+          was not reproduced, and third-party spot-checks are incomplete. We therefore repositioned
+          AI Humanizer around writing quality — making rough drafts clearer, more natural and easier
+          to make your own — instead of making claims about detectors.
+        </p>
+      </section>
       <AboutClient lang={lang} />
+      <p className="text-xs text-gray-400 mt-4">Last reviewed: 2026-11-24</p>
     </>
   )
 }

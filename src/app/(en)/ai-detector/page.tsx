@@ -12,23 +12,23 @@ const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   mainEntity: [
-    { '@type': 'Question', name: 'Is the AI Detector really free?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. No hidden fees, no watermark, no signup. 5 submissions per IP per day, 3,000 characters each.' } },
-    { '@type': 'Question', name: 'What is the detection principle?', acceptedAnswer: { '@type': 'Answer', text: 'Based on GPTZero, Originality.ai, ZeroGPT core principles: sentence length uniformity, AI vocabulary density, perplexity, burstiness, list-like structure, predictable paragraph transitions. Each signal analyzed individually, then combined.' } },
-    { '@type': 'Question', name: 'How accurate is it?', acceptedAnswer: { '@type': 'Answer', text: 'For English text up to 3,000 characters, consistency with mainstream detectors is 85-90%. Chinese detection accuracy is slightly lower because Chinese AI training data is more limited.' } },
-    { '@type': 'Question', name: 'Can it misclassify?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. A human author writing in a very uniform, "AI-flavored" style may be misclassified as AI. AI text with contractions, fragments, and first-person voice may be misclassified as human. Calibration is based on real data, but it is not 100%.' } },
-    { '@type': 'Question', name: 'Do you store my text?', acceptedAnswer: { '@type': 'Answer', text: 'No. Stateless API. Input discarded immediately after detection. We never train on user submissions.' } },
-    { '@type': 'Question', name: 'Does it support Chinese?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Both English and Simplified Chinese supported. Chinese mode is tuned for AI boilerplate vocabulary, symmetric four-character structures, and conversational transitions.' } },
+    { '@type': 'Question', name: 'Is AI text self-review really free?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. No hidden fees, no watermark, no signup. 5 submissions per IP per rolling 24 hours, 3,000 characters each.' } },
+    { '@type': 'Question', name: 'How does this self-review work?', acceptedAnswer: { '@type': 'Answer', text: 'This is a prompt-driven heuristic: DeepSeek Chat is asked to comment on textual patterns such as sentence-length uniformity, stock phrasing and predictable transitions, and to return ai_probability, human_probability, verdict, signals and explanation. It does not call GPTZero, Turnitin, ZeroGPT or any other detector API, does not validate authorship, and the signals are not independently computed.' } },
+    { '@type': 'Question', name: 'What do the published tests show?', acceptedAnswer: { '@type': 'Answer', text: 'They show the limits of detector evidence: an undocumented early impression of 85–95% was withdrawn after a 2026-11-24 self-check measured 13.3% (4/30) with this site’s own detector; third-party spot-checks are incomplete and rewritten samples repeatedly returned 100% AI. These are limitations, not product claims. If JSON parsing fails, the API returns signals: [] with a fixed 50/50 score.' } },
+    { '@type': 'Question', name: 'Can it verify who wrote a text?', acceptedAnswer: { '@type': 'Answer', text: 'No. It is not connected to GPTZero, Turnitin or any third-party detector and cannot validate authorship. A human author writing in a uniform style may be misclassified as AI, and AI text with contractions or first-person voice may be misclassified as human. There is no calibrated dataset based on real detector feedback; treat every result as an estimate, not a verdict.' } },
+    { '@type': 'Question', name: 'Do you store my text?', acceptedAnswer: { '@type': 'Answer', text: 'No persistent storage; a short-lived in-memory cache may retain a hash of the input and the output for up to 10 minutes. See the privacy page at /privacy for details.' } },
+    { '@type': 'Question', name: 'Does it support Chinese?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Only English and Simplified Chinese (zh-CN) are supported; no other languages or traditional-Chinese optimization are offered.' } },
   ],
 }
 
 export async function generateMetadata() {
   const titles = {
-    zh: 'AI Detector — 免费 AI 内容检测工具',
-    en: 'Free AI Detector — ChatGPT, Claude & Gemini',
+    zh: 'AI 文本自查 — 启发式参考，非判定',
+    en: 'AI Text Self-Review — Heuristic, Not a Verdict',
   }
   const descriptions = {
-    zh: '免费 AI 检测器:粘贴文本,1 秒出 AI 概率评分。基于 GPTZero / Originality.ai 原理,中英双语。',
-    en: 'Free AI detector: paste text, get an AI score in 1 second. Based on GPTZero & Originality.ai principles. No signup, no watermark.',
+    zh: '启发式 AI 文本自查：不直连第三方检测器，不能验证作者身份；检测分数不可靠，仅作写作自查参考。支持中英双语，无需注册。',
+    en: 'Heuristic AI text self-review, not a detector verdict or authorship check. Free, no signup, in English and Simplified Chinese.',
   }
   return {
     title: titles[lang],
@@ -54,38 +54,38 @@ export default async function DetectorPage() {
   // Target: 'ai detector', 'free ai detector', 'gptzero alternative', 'turnitin ai check', 'chatgpt detector', 'claude detector', 'gemini detector'
   const seoBlockEn = (
     <section className="max-w-3xl mx-auto px-4 pt-8 pb-2 text-sm text-gray-600 leading-relaxed">
-      <h2 className="text-xl font-bold text-gray-800 mb-3">About This Free AI Content Detector</h2>
+      <h2 className="text-xl font-bold text-gray-800 mb-3">AI Text Self-Review — Heuristic, Not a Verdict</h2>
       <p className="mb-3">
-        This free AI content detector analyzes any text you paste and returns an AI-likelihood score in under 1 second — no signup, no upload, no watermark. It detects output from ChatGPT (GPT-4 / GPT-4o), Google Gemini, Anthropic Claude, Microsoft Copilot and most other large-language-model outputs. Detection is based on the same five core principles used by GPTZero, Originality.ai and ZeroGPT: <strong className="text-gray-800">perplexity</strong> (how predictable each word is), <strong className="text-gray-800">burstiness</strong> (sentence-length variance), <strong className="text-gray-800">AI vocabulary density</strong> (boilerplate phrases like “delve into”, “in conclusion”), <strong className="text-gray-800">list-like structure</strong>, and <strong className="text-gray-800">predictable paragraph transitions</strong>.
+        This page offers a prompt-driven heuristic self-review of text you paste — no signup, no upload, no watermark. DeepSeek Chat (deepseek-chat) is asked to comment on <strong className="text-gray-800">sentence-length uniformity</strong>, <strong className="text-gray-800">stock phrasing</strong> (e.g. “delve into”, “in conclusion”), <strong className="text-gray-800">list-like structure</strong> and <strong className="text-gray-800">predictable transitions</strong>. These are writing signals, not evidence about who wrote the text. This tool is <strong>not connected to GPTZero, Turnitin, ZeroGPT or any third-party detector</strong>, does not implement their algorithms, and cannot validate authorship or guarantee any detector outcome.
       </p>
       <p className="mb-3">
-        For English text up to 3,000 characters, agreement with mainstream paid detectors is 85–90%. For Simplified Chinese, agreement is 70–80% because Chinese AI training data is more limited. Each detection returns not just a percentage, but a breakdown of all five signals so you can see <em>why</em> the text was flagged — useful if you’re a teacher reviewing a flagged student essay, an editor verifying a freelancer’s work, or a writer auditing your own draft before submission.
+        Detector verdicts are unreliable and contested; AI Humanizer is not a way to manipulate them. As evidence of those limits: an undocumented early impression of 85–95% was withdrawn after a 2026-11-24 self-check pilot measured 13.3% (4/30) with this site’s own detector; third-party spot-checks returned 100% AI on rewrites and are explicitly incomplete. None of these figures is a product claim. Full data and caveats are published at <Link href="/bypass-test-methodology" className="text-violet-600 hover:underline">/bypass-test-methodology</Link>. If JSON parsing fails, the API returns <code>signals: []</code> with a fixed 50/50 score, so a full breakdown is not guaranteed.
       </p>
-      <h3 className="text-base font-semibold text-gray-800 mb-2 mt-4">Common use cases</h3>
+      <h3 className="text-base font-semibold text-gray-800 mb-2 mt-4">What this is useful for</h3>
       <ul className="list-disc list-inside mb-3 space-y-1 pl-1">
-        <li><strong className="text-gray-800">Student essay check</strong> — verify a flagged essay before submitting an appeal to Turnitin AI.</li>
-        <li><strong className="text-gray-800">Editor review</strong> — spot AI-assisted copy before publication.</li>
-        <li><strong className="text-gray-800">Self-audit</strong> — see which paragraphs of your draft read as AI.</li>
-        <li><strong className="text-gray-800">Recruiter screening</strong> — sanity-check cover letters for AI generation.</li>
+        <li><strong className="text-gray-800">Draft self-review</strong> — notice which paragraphs read stiff or templated and revise them.</li>
+        <li><strong className="text-gray-800">Editor review</strong> — find generic phrasing before publication.</li>
+        <li><strong className="text-gray-800">Writing improvement</strong> — use the signals as a prompt to make your prose clearer and more natural.</li>
+        <li><strong className="text-gray-800">Not for</strong> — proving or disproving authorship, adjudicating school or workplace cases, or predicting a detector verdict.</li>
       </ul>
       <p className="text-xs text-gray-500 mb-0 pt-3 border-t border-gray-100">
-        Privacy: input text is discarded immediately after detection (stateless API). We never train on user submissions. Free quota is 5 submissions per IP per day, 3,000 characters each.
+        No persistent storage; a short-lived in-memory cache may retain a hash of the input and the output for up to 10 minutes. See the privacy page at /privacy for details. Free quota: 5 submissions per IP per rolling 24 hours, 3,000 characters each.
       </p>
-      <h3 className="text-base font-semibold text-gray-800 mb-2 mt-4">Text flagged as AI? Rewrite it</h3>
+      <h3 className="text-base font-semibold text-gray-800 mb-2 mt-4">Improve the writing instead</h3>
       <ul className="list-disc list-inside mb-3 space-y-1 pl-1">
-        <li><strong className="text-gray-800">Student essays</strong> — <Link href="/essay-humanizer" className="text-violet-600 hover:underline">EssayRewriter</Link> keeps citations and academic register intact.</li>
-        <li><strong className="text-gray-800">Blog & marketing copy</strong> — <Link href="/" className="text-violet-600 hover:underline">AI Humanizer</Link> rewrites general AI text into natural prose.</li>
-        <li><strong className="text-gray-800">Walter Writes style</strong> — <Link href="/walterwrites" className="text-violet-600 hover:underline">Walter Writes AI alternative</Link> mimics the voice detectors misclassify as human.</li>
-        <li><strong className="text-gray-800">Chinese papers</strong> — <Link href="/jiang-ai-lv" className="text-violet-600 hover:underline">降 AI 率 for Chinese essays</Link> lowers 知网 AIGC and 维普 scores while keeping 论点 and 引用 intact.</li>
+        <li><strong className="text-gray-800">Student essays</strong> — <Link href="/essay-humanizer" className="text-violet-600 hover:underline">EssayRewriter</Link> asks the model to keep citations and an academic register; check them yourself.</li>
+        <li><strong className="text-gray-800">Blog & marketing copy</strong> — <Link href="/" className="text-violet-600 hover:underline">AI Humanizer</Link> makes rough drafts read more naturally.</li>
+        <li><strong className="text-gray-800">Personal voice</strong> — <Link href="/walterwrites" className="text-violet-600 hover:underline">Walter Writes style</Link> rewrites toward a conversational tone.</li>
+        <li><strong className="text-gray-800">Chinese draft editing</strong> — <Link href="/jiang-ai-lv" className="text-violet-600 hover:underline">中文改写</Link> works on Chinese academic prose.</li>
       </ul>
-      <h3 className="text-base font-semibold text-gray-800 mb-2 mt-4">Which detector flagged it?</h3>
+      <h3 className="text-base font-semibold text-gray-800 mb-2 mt-4">Why detectors are unreliable</h3>
       <p className="mb-3">
-        The fix depends on the engine, and a rewrite that satisfies one can leave the others failing. If you do not know which detector you are facing, the <Link href="/bypass-ai" className="text-violet-600 hover:underline">bypass AI tool</Link> rebuilds sentence structure for all of them at once — Turnitin, GPTZero, Originality.ai and ZeroGPT. For the engine-specific version, see <Link href="/turnitin-bypass" className="text-violet-600 hover:underline">Turnitin bypass</Link>, <Link href="/gptzero-bypass" className="text-violet-600 hover:underline">GPTZero bypass</Link> and <Link href="/originality-ai-bypass" className="text-violet-600 hover:underline">Originality.ai bypass</Link>.
+        Detector verdicts depend on the engine, version and genre; false positives and false negatives both occur. A rewrite that changes one tool's output can leave another unchanged. Read the <Link href="/glossary" className="text-violet-600 hover:underline">glossary</Link> for the concepts behind these scores and the <Link href="/limitations" className="text-violet-600 hover:underline">known limitations</Link> for what this site cannot do. No writer should treat a score as proof of authorship or detector approval.
       </p>
       <p className="mt-3 text-sm">
-        Want this detector on your own site?{' '}
+        Want this heuristic self-review on your own site?{' '}
         <Link href="/embed" className="text-violet-600 underline underline-offset-2">
-          Embed the free AI detector
+          Embed the free tool
         </Link>{' '}
         with one iframe — no signup, no API key, no tracking.
       </p>
@@ -94,19 +94,19 @@ export default async function DetectorPage() {
 
   const seoBlockZh = (
     <section className="max-w-3xl mx-auto px-4 pt-8 pb-2 text-sm text-gray-600 leading-relaxed">
-      <h2 className="text-xl font-bold text-gray-800 mb-3">关于这款免费 AI 内容检测器</h2>
+      <h2 className="text-xl font-bold text-gray-800 mb-3">AI 文本自查 — 启发式参考，非判定</h2>
       <p className="mb-3">
-        本免费 AI 内容检测器可在 1 秒内分析你粘贴的任何文本并返回 AI 生成概率评分——无需注册、无需上传、无水印。可检测 ChatGPT (GPT-4 / GPT-4o)、Google Gemini、Anthropic Claude、Microsoft Copilot 及大多数主流大模型的输出。检测原理与 GPTZero、Originality.ai、ZeroGPT 同源,基于 5 个核心信号:<strong className="text-gray-800">perplexity</strong>(词的可预测性)、<strong className="text-gray-800">burstiness</strong>(句长方差)、<strong className="text-gray-800">AI 词汇密度</strong>(“深入探讨”“总而言之”等模板词)、<strong className="text-gray-800">列表式结构</strong>、<strong className="text-gray-800">可预测段落过渡</strong>。
+        这里提供的是提示词驱动的启发式文本自查：无需注册、无需上传、无水印。DeepSeek Chat（deepseek-chat）会被要求评论<strong className="text-gray-800">句长是否均匀</strong>、<strong className="text-gray-800">模板词密度</strong>、<strong className="text-gray-800">列表式结构</strong>和<strong className="text-gray-800">可预测的段落过渡</strong>。这些是写作信号，不是作者身份的证据。本站不直连 GPTZero、Turnitin、ZeroGPT 或任何第三方检测器，不能验证作者身份，也不保证任何检测器的判定。
       </p>
       <p className="mb-3">
-        对 3000 字以内的英文文本,与主流付费检测器的一致率为 85–90%;对简体中文文本,一致率为 70–80%(中文 AI 训练数据较少)。每次检测不仅返回总分,还返回 5 个信号的明细,帮助你<em>理解</em>为何文本被判为 AI——这在你是老师复查学生被误判论文、编辑核查作者投稿、或作者自查文稿时尤其有用。
+        早前未记录条件的 85–95% 内部印象已撤回；2026-11-24 自洽性试点用本站检测器只测得 13.3%（4/30），第三方抽查未完成。这些是检测局限的证据，不是产品效果承诺。数据与限定见 /zh/bypass-test-methodology。JSON 解析失败时会返回空 signals 和固定 50/50 分，不保证完整明细。
       </p>
-      <h3 className="text-base font-semibold text-gray-800 mb-2 mt-4">常见使用场景</h3>
+      <h3 className="text-base font-semibold text-gray-800 mb-2 mt-4">适合做什么</h3>
       <ul className="list-disc list-inside mb-3 space-y-1 pl-1">
-        <li><strong className="text-gray-800">学生论文复查</strong> — 在向 Turnitin AI 提交申诉前验证被标记论文。</li>
-        <li><strong className="text-gray-800">编辑审核</strong> — 发布前识别 AI 辅助稿件。</li>
-        <li><strong className="text-gray-800">作者自查</strong> — 看自己稿件中哪些段落读起来像 AI。</li>
-        <li><strong className="text-gray-800">招聘筛查</strong> — 校验求职信是否 AI 生成。</li>
+        <li><strong className="text-gray-800">草稿自查</strong> — 找出生硬、模板化的段落并自己改写。</li>
+        <li><strong className="text-gray-800">编辑审阅</strong> — 发布前发现泛泛的套话。</li>
+        <li><strong className="text-gray-800">写作改进</strong> — 把信号当作让文字更自然清晰的提示。</li>
+        <li><strong className="text-gray-800">不适合</strong> — 证明作者身份或预测检测器的判定。</li>
       </ul>
       <p className="text-xs text-gray-500 mb-0 pt-3 border-t border-gray-100">
         隐私:输入文本检测后立即丢弃(无状态 API)。我们从不基于用户提交训练。免费配额:每个 IP 每天 5 次,每次 3000 字。
@@ -127,6 +127,7 @@ export default async function DetectorPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       {seoBlockEn}
       <ToolClient mode="detector" lang={lang} i18n={detectorI18n} />
+      <p className="text-xs text-gray-400 mt-4">Last reviewed: 2026-11-24</p>
     </>
   )
 }

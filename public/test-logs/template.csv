@@ -1,0 +1,3 @@
+run_id,date_utc,detector,detector_version,sample_id,category,raw_verdict,rewritten_verdict,pass,prompt_version,model,temperature,regraded,input_hash,evidence_url
+EXAMPLE-2026-11-30,2026-11-30,GPTZero,web-interface-2026-11,essay-001,academic_essay,AI,human,1,v1.1,deepseek-chat,1.3,0,a1b2c3d4e5f6,https://example.com/evidence/gptzero-essay-001.png
+EXAMPLE-2026-11-30,2026-11-30,GPTZero,web-interface-2026-11,marketing-003,marketing_blog,AI,uncertain,0,v1.1,deepseek-chat,1.3,0,1234abcd5678ef90,

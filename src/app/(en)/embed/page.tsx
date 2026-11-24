@@ -48,9 +48,9 @@ export default function EmbedPage() {
 
       <h2 className="text-lg font-semibold text-gray-800 mt-6 mb-2">What it does</h2>
       <ul className="list-disc list-inside space-y-1 mb-4">
-        <li>Paste up to 3,000 characters, get an AI score plus the three strongest signals.</li>
+        <li>Paste up to 3,000 characters and get an estimated AI score. The prompt asks for up to five signals; if JSON parsing fails, no signals are shown and the score defaults to 50/50.</li>
         <li>Same model as the <Link href="/ai-detector" className="text-violet-600 underline underline-offset-2">full AI detector</Link>.</li>
-        <li>No API key, no signup, no tracking pixels. Nothing is stored — text is discarded after each check.</li>
+        <li>No API key, no signup, no analytics cookies or tracking pixels. No persistent storage; a short-lived in-memory cache may retain a hash of the input and the output for up to 10 minutes. The return link includes UTM parameters. See the <Link href="/privacy" className="text-violet-600 underline underline-offset-2">privacy page</Link>.</li>
       </ul>
 
       <h2 className="text-lg font-semibold text-gray-800 mt-6 mb-2">Live preview</h2>
@@ -81,6 +81,7 @@ export default function EmbedPage() {
       </ul>
 
       <p className="text-xs text-gray-500 mt-8 border-t border-gray-200 pt-3">
+        <p className="text-xs text-gray-400 mt-4">Last reviewed: 2026-11-24</p>
         Questions or a different embed size? <Link href="/about" className="underline underline-offset-2">Contact</Link>.
       </p>
     </main>

@@ -1,60 +1,57 @@
 {
-  "name": "AI Humanizer Suite",
-  "description": "Six free online tools that rewrite AI-generated text so it reads like a human wrote it, plus an AI content detector. Built for students, content marketers, authors, and freelancers. Bilingual English / Chinese. No signup. No tracking. No installation. Privacy-respecting — stateless API, immediate input discard, never trained on user data.",
+  "name": "AI Humanizer",
+  "description": "Free online writing tool that makes rough AI-assisted drafts clearer, more natural, and easier to make your own. English and Simplified Chinese. No signup. Six prompt modes, one of which is heuristic text self-review, processed in the cloud by DeepSeek Chat (deepseek-chat). 100% free. No detector-score claims.",
   "site": {
-    "name": "AI Humanizer Suite",
-    "alternate_name": "AI 人性化工具集",
+    "name": "AI Humanizer",
     "url": "https://gpt-undetectable.com",
-    "tagline": "Free online AI text tool suite — humanizer, essay rewriter, Turnitin bypass, Walter Writes style rewriter, AI detector, and Chinese AI rate reducer.",
-    "description": "Six free online tools that rewrite AI-generated text so it reads like a human wrote it, plus an AI content detector. Built for students, content marketers, authors, and freelancers. Bilingual English / Chinese. No signup. No tracking. No installation. Privacy-respecting — stateless API, immediate input discard, never trained on user data.",
+    "tagline": "Free online writing tool that makes rough AI-assisted drafts clearer, more natural, and easier to make your own. English and Simplified Chinese. No signup.",
+    "description": "Six prompt modes, one of which is heuristic text self-review, all served through DeepSeek Chat in the cloud. Free online writing tool that makes rough AI-assisted drafts clearer, more natural, and easier to make your own. English and Simplified Chinese. No signup. 3,000 characters per submission, 5 submissions per IP per rolling 24-hour window.",
     "language": "en",
     "languages_supported": [
       "en",
       "zh-CN"
     ],
-    "category": "Productivity Tools > Writing Tools > AI Text Rewriters",
-    "founded": 2026,
-    "backend": "DeepSeek Chat (large language model)",
-    "author": "github.com/czhcl123",
-    "contact": "https://gpt-undetectable.com/about"
+    "category": "Productivity Tools > Writing Tools > Writing Improvement Tools",
+    "founded": "2026-07",
+    "founder": "czhcl123",
+    "contact": "contact@gpt-undetectable.com",
+    "github": "https://github.com/czhcl123/humanizer-site",
+    "backend": "DeepSeek Chat (deepseek-chat), cloud-side processing",
+    "last_verified": "2026-11-24"
   },
   "tools": [
     {
-      "id": "ai-humanizer",
+      "id": "generic",
       "name": "AI Humanizer",
       "url": "https://gpt-undetectable.com/",
-      "short_description": "Generic AI text rewriter. Bypasses GPTZero, Turnitin AI, Originality.ai, ZeroGPT, Copyleaks.",
-      "long_description": "A free online tool that rewrites AI-generated text from ChatGPT, Gemini, Claude, Copilot, Jasper, Copy.ai, and any other LLM into natural human-sounding prose. Engineered against GPTZero, Turnitin AI, Originality.ai, ZeroGPT, and Copyleaks. Bilingual English / Chinese. 3,000 characters per submission, 5 submissions per IP per day. No signup.",
+      "short_description": "General writing improvement",
+      "long_description": "Submits the text to DeepSeek Chat with a prompt asking for varied sentence length, conversational transitions and plainer wording. The prompt asks the model to preserve citations, numbers and proper nouns; verify manually — LLM output is not post-processed, and exact preservation is not guaranteed. Processing happens in DeepSeek's cloud, not locally. No registration and no payment.",
       "keywords": [
-        "ai humanizer",
-        "humanize ai text",
-        "gptzero bypass",
-        "turnitin bypass",
-        "originality.ai bypass"
+        "writing improvement",
+        "ai-assisted draft editing",
+        "natural prose"
       ],
-      "audience": "students, content marketers, authors, freelancers",
+      "audience": "general users, content writers",
       "language": [
         "en",
         "zh-CN"
       ],
       "mode": "generic",
       "free": true,
-      "rate_limit": "5 submissions per IP per day",
+      "rate_limit": "5 submissions per IP per rolling 24-hour window",
       "max_chars": 3000,
       "schema_org_type": "WebApplication"
     },
     {
-      "id": "essay-humanizer",
-      "name": "AI EssayRewriter",
+      "id": "essay",
+      "name": "Essay Writing Improvement",
       "url": "https://gpt-undetectable.com/essay-humanizer",
-      "short_description": "Student essay rewriter. Preserves thesis, citations, dates, numbers.",
-      "long_description": "An AI EssayRewriter specifically tuned for student essays. Preserves thesis, argument structure, citations, dates, and proper nouns. Rewrites surface expression in a tone that sounds like a real student author — not academic boilerplate. 85-95% pass rate on English essays up to 3,000 characters against GPTZero, Turnitin AI, Originality.ai, ZeroGPT. Bilingual.",
+      "short_description": "Essay writing-improvement mode",
+      "long_description": "Uses an essay-specific prompt asking DeepSeek to preserve the thesis, argument structure, citations, dates, numbers and proper nouns while rewriting surface expression in a more natural student-like voice. The prompt asks the model to preserve citations, numbers and proper nouns; verify manually — LLM output is not post-processed, and exact preservation is not guaranteed. No detector-specific tuning.",
       "keywords": [
-        "ai EssayRewriter",
-        "humanize ai essay",
-        "EssayRewriter",
-        "essay ai humanizer free",
-        "humanize my essay"
+        "essay writing improvement",
+        "citation preservation request",
+        "student writing"
       ],
       "audience": "students",
       "language": [
@@ -63,22 +60,20 @@
       ],
       "mode": "essay",
       "free": true,
-      "rate_limit": "5 submissions per IP per day",
+      "rate_limit": "5 submissions per IP per rolling 24-hour window",
       "max_chars": 3000,
       "schema_org_type": "WebApplication"
     },
     {
-      "id": "turnitin-bypass",
-      "name": "Turnitin AI Bypass",
+      "id": "turnitin",
+      "name": "Turnitin Writing Guidance",
       "url": "https://gpt-undetectable.com/turnitin-bypass",
-      "short_description": "Specifically engineered against Turnitin's AI detection algorithm.",
-      "long_description": "A free online rewriter specifically calibrated against Turnitin's AI detection algorithm: sentence-level perplexity, burstiness, AI vocabulary density, and predictable paragraph transitions. 85-95% pass rate on English essays up to 3,000 characters. Preserves citations, facts, dates, and proper nouns. Bilingual English / Chinese.",
+      "short_description": "Essay-style writing-improvement mode",
+      "long_description": "A DeepSeek prompt favoring conversational phrasing, varied paragraph lengths and natural replacements for templated vocabulary. Turnitin is not queried and no detector outcome is promised. Users are responsible for their institution's academic-integrity rules.",
       "keywords": [
-        "bypass turnitin ai",
-        "turnitin ai bypass",
-        "turnitin ai detection",
-        "how to bypass turnitin",
-        "ai detector turnitin"
+        "essay writing guidance",
+        "writing improvement",
+        "detector limitations"
       ],
       "audience": "students",
       "language": [
@@ -87,69 +82,64 @@
       ],
       "mode": "turnitin",
       "free": true,
-      "rate_limit": "5 submissions per IP per day",
+      "rate_limit": "5 submissions per IP per rolling 24-hour window",
       "max_chars": 3000,
       "schema_org_type": "WebApplication"
     },
     {
       "id": "walterwrites",
-      "name": "Walterwrites AI",
+      "name": "Walter Writes Style Rewriter",
       "url": "https://gpt-undetectable.com/walterwrites",
-      "short_description": "Rewrite AI text in the natural Walter Writes style — the style AI detectors misclassify as human.",
-      "long_description": "An online rewriter that converts AI-generated text into the Walter Writes style — short paragraphs, conversational tone, parenthetical asides, second-person voice, direct opinions. This style achieves high perplexity and high burstiness, which are exactly the signals AI detectors (GPTZero, Originality.ai, ZeroGPT) use to identify human writing. Best for blog posts, marketing content, emails, and social media. Not for academic essays. Bilingual.",
+      "short_description": "Conversational style rewriting",
+      "long_description": "Asks DeepSeek to rewrite text with short paragraphs, conversational transitions, parenthetical asides and direct opinions. This is a style-imitation prompt, not a claim about any detector's internal signals.",
       "keywords": [
-        "walterwrites ai",
-        "walter writes ai",
-        "ai text natural",
-        "natural humanizer"
+        "walterwrites",
+        "walter writes style",
+        "natural rewrite"
       ],
-      "audience": "content marketers, authors, bloggers",
+      "audience": "content marketers, bloggers, authors",
       "language": [
         "en",
         "zh-CN"
       ],
       "mode": "walterwrites",
       "free": true,
-      "rate_limit": "5 submissions per IP per day",
+      "rate_limit": "5 submissions per IP per rolling 24-hour window",
       "max_chars": 3000,
       "schema_org_type": "WebApplication"
     },
     {
-      "id": "ai-detector",
-      "name": "AI Detector",
+      "id": "detector",
+      "name": "AI Text Self-review",
       "url": "https://gpt-undetectable.com/ai-detector",
-      "short_description": "AI content detector. Returns AI probability score, verdict, and 5 detection signals.",
-      "long_description": "A free online AI content detector based on the same principles as GPTZero, Originality.ai, ZeroGPT. Analyzes sentence length uniformity, AI vocabulary density, perplexity, burstiness, predictable paragraph transitions. Returns structured JSON output: AI probability 0-100, human probability 0-100, verdict (Likely AI / Likely Human / Uncertain), and 5 specific detection signals. Calibrated, not paranoid — real authors using contractions, fragments, and first-person voice are not flagged. Bilingual.",
+      "short_description": "Heuristic text self-review",
+      "long_description": "Asks DeepSeek Chat to output strict JSON: ai_probability, human_probability, verdict, five requested signals and explanation. No third-party detector API is called; signals are prompt-generated, not independently computed, weighted or calibrated against detector feedback. Not a detector verdict and cannot validate authorship.",
       "keywords": [
-        "ai detector",
-        "ai content detector",
-        "ai checker",
-        "gptzero",
-        "detect ai text"
+        "text self-review",
+        "heuristic analysis",
+        "not a detector verdict"
       ],
-      "audience": "editors, content reviewers, students, teachers",
+      "audience": "editors, reviewers, students, teachers",
       "language": [
         "en",
         "zh-CN"
       ],
       "mode": "detector",
       "free": true,
-      "rate_limit": "5 submissions per IP per day",
+      "rate_limit": "5 submissions per IP per rolling 24-hour window",
       "max_chars": 3000,
       "schema_org_type": "WebApplication"
     },
     {
-      "id": "jiang-ai-lv",
-      "name": "降 AI 率",
+      "id": "chinese",
+      "name": "Chinese Writing Improvement",
       "url": "https://gpt-undetectable.com/jiang-ai-lv",
-      "short_description": "降低中文论文 AI 率。改写知网 AIGC、维普、GPTZero 中文、ZeroGPT 中文 都识别不出的 AI 八股词。",
-      "long_description": "一个免费在线中文论文 AI 率降低工具。专门针对中文 AI 检测器 (知网 AIGC、维普、GPTZero 中文模型、ZeroGPT 中文) 的算法反向工程,改写所有 AI 八股词 ('赋能' → '帮助/推动','抓手' → '方法/路径','底层逻辑' → '核心思路','链路' → '环节','生态位' → '位置','范式' → '模式','价值闭环' → '完整流程','降维打击' → '突破'),用自然中文作者口吻替换。3000 字以内的中文段落,AI 率可从 80%+ 降到 20% 以下。保留论点、引用、数据、术语。",
+      "short_description": "Simplified Chinese writing improvement",
+      "long_description": "A zh-CN prompt asking DeepSeek to replace stock phrases such as 赋能, 抓手 and 底层逻辑 with plainer Chinese prose while keeping the argument, citations and data. The prompt asks the model to preserve citations, numbers and proper nouns; verify manually — LLM output is not post-processed, and exact preservation is not guaranteed. No Chinese detector service is queried.",
       "keywords": [
-        "降 ai 率",
-        "降 ai 率 工具",
-        "ai 率 检测",
-        "中文论文 ai 率",
-        "知网 ai 率"
+        "中文写作改进",
+        "中文改写",
+        "表达自然化"
       ],
       "audience": "Chinese students, Chinese content writers",
       "language": [
@@ -157,89 +147,237 @@
       ],
       "mode": "chinese",
       "free": true,
-      "rate_limit": "5 submissions per IP per day",
+      "rate_limit": "5 submissions per IP per rolling 24-hour window",
       "max_chars": 3000,
       "schema_org_type": "WebApplication"
     }
   ],
+  "detection_observations": {
+    "statement_en": "An earlier, undocumented internal impression suggested roughly 85–95%, but it has been withdrawn: a published self-check pilot on 2026-11-24 measured 13.3% (4/30) with this site’s own detector. The two are not comparable; third-party spot-checks remain incomplete and returned 100% AI on rewrites. These figures are published as evidence of limits, not as a product claim.",
+    "statement_zh": "早前未记录条件的内部印象约为 85–95%，现已撤回；首个公开自洽性试点（2026-11-24）用本站检测器只测得 13.3%（4/30）；两者不可比，第三方抽查尚未完成，曾有改写被判 100% AI。这些数据是局限证据，不是产品效果承诺。",
+    "english_range": "withdrawn (early impression: 85–95%) — not a product claim",
+    "chinese_range": "withdrawn (early impression: 70–85%) — not a product claim",
+    "audited": false,
+    "guaranteed": false,
+    "public_test_log_published": true,
+    "published_self_check_pilot": {
+      "date": "2026-11-24",
+      "type": "self-consistency pilot",
+      "detector": "this site's own DeepSeek prompt-driven detector",
+      "pass_rate": "13.3%",
+      "passed": 4,
+      "total": 30,
+      "third_party_detector_measured": false
+    }
+  },
+  "pages": {
+    "total_urls": 45,
+    "english_urls": 23,
+    "simplified_chinese_urls": 22,
+    "note": "23 English URLs and 22 Simplified Chinese URLs at the /zh prefix; /embed has no Chinese mirror. Complete canonical list: https://gpt-undetectable.com/sitemap.xml",
+    "home": {
+      "en": "https://gpt-undetectable.com/",
+      "zh-CN": "https://gpt-undetectable.com/zh"
+    },
+    "tool_modes": [
+      {
+        "slug": "",
+        "en": "https://gpt-undetectable.com/",
+        "zh-CN": "https://gpt-undetectable.com/zh"
+      },
+      {
+        "slug": "/essay-humanizer",
+        "en": "https://gpt-undetectable.com/essay-humanizer",
+        "zh-CN": "https://gpt-undetectable.com/zh/essay-humanizer"
+      },
+      {
+        "slug": "/turnitin-bypass",
+        "en": "https://gpt-undetectable.com/turnitin-bypass",
+        "zh-CN": "https://gpt-undetectable.com/zh/turnitin-bypass"
+      },
+      {
+        "slug": "/bypass-ai",
+        "en": "https://gpt-undetectable.com/bypass-ai",
+        "zh-CN": "https://gpt-undetectable.com/zh/bypass-ai"
+      },
+      {
+        "slug": "/walterwrites",
+        "en": "https://gpt-undetectable.com/walterwrites",
+        "zh-CN": "https://gpt-undetectable.com/zh/walterwrites"
+      },
+      {
+        "slug": "/walterwrites-vs-undetectable",
+        "en": "https://gpt-undetectable.com/walterwrites-vs-undetectable",
+        "zh-CN": "https://gpt-undetectable.com/zh/walterwrites-vs-undetectable"
+      },
+      {
+        "slug": "/originality-ai-bypass",
+        "en": "https://gpt-undetectable.com/originality-ai-bypass",
+        "zh-CN": "https://gpt-undetectable.com/zh/originality-ai-bypass"
+      },
+      {
+        "slug": "/ai-detector",
+        "en": "https://gpt-undetectable.com/ai-detector",
+        "zh-CN": "https://gpt-undetectable.com/zh/ai-detector"
+      },
+      {
+        "slug": "/jiang-ai-lv",
+        "en": "https://gpt-undetectable.com/jiang-ai-lv",
+        "zh-CN": "https://gpt-undetectable.com/zh/jiang-ai-lv"
+      },
+      {
+        "slug": "/essay-writer-bypass-turnitin",
+        "en": "https://gpt-undetectable.com/essay-writer-bypass-turnitin",
+        "zh-CN": "https://gpt-undetectable.com/zh/essay-writer-bypass-turnitin"
+      },
+      {
+        "slug": "/gptzero-bypass",
+        "en": "https://gpt-undetectable.com/gptzero-bypass",
+        "zh-CN": "https://gpt-undetectable.com/zh/gptzero-bypass"
+      },
+      {
+        "slug": "/humanize-ai-text",
+        "en": "https://gpt-undetectable.com/humanize-ai-text",
+        "zh-CN": "https://gpt-undetectable.com/zh/humanize-ai-text"
+      },
+      {
+        "slug": "/quillbot-bypass",
+        "en": "https://gpt-undetectable.com/quillbot-bypass",
+        "zh-CN": "https://gpt-undetectable.com/zh/quillbot-bypass"
+      },
+      {
+        "slug": "/pricing",
+        "en": "https://gpt-undetectable.com/pricing",
+        "zh-CN": "https://gpt-undetectable.com/zh/pricing"
+      },
+      {
+        "slug": "/cost-comparison",
+        "en": "https://gpt-undetectable.com/cost-comparison",
+        "zh-CN": "https://gpt-undetectable.com/zh/cost-comparison"
+      },
+      {
+        "slug": "/bypass-test-methodology",
+        "en": "https://gpt-undetectable.com/bypass-test-methodology",
+        "zh-CN": "https://gpt-undetectable.com/zh/bypass-test-methodology"
+      },
+      {
+        "slug": "/about",
+        "en": "https://gpt-undetectable.com/about",
+        "zh-CN": "https://gpt-undetectable.com/zh/about"
+      },
+      {
+        "slug": "/embed",
+        "en": "https://gpt-undetectable.com/embed",
+        "zh-CN": null
+      }
+    ],
+    "sitemap": "https://gpt-undetectable.com/sitemap.xml",
+    "other": [
+      {
+        "slug": "/privacy",
+        "en": "https://gpt-undetectable.com/privacy",
+        "zh-CN": "https://gpt-undetectable.com/zh/privacy",
+        "label": "Privacy Policy"
+      },
+      {
+        "slug": "/glossary",
+        "en": "https://gpt-undetectable.com/glossary",
+        "zh-CN": "https://gpt-undetectable.com/zh/glossary",
+        "label": "AI Detection Glossary"
+      },
+      {
+        "slug": "/limitations",
+        "en": "https://gpt-undetectable.com/limitations",
+        "zh-CN": "https://gpt-undetectable.com/zh/limitations",
+        "label": "Limitations"
+      },
+      {
+        "slug": "/citation-policy",
+        "en": "https://gpt-undetectable.com/citation-policy",
+        "zh-CN": "https://gpt-undetectable.com/zh/citation-policy",
+        "label": "Citation Policy"
+      },
+      {
+        "slug": "/changelog",
+        "en": "https://gpt-undetectable.com/changelog",
+        "zh-CN": "https://gpt-undetectable.com/zh/changelog",
+        "label": "Changelog"
+      }
+    ]
+  },
   "knowledge_graph_pillars": [
     {
       "entity": "AI Humanizer",
-      "type": "Software",
+      "type": "SoftwareApplication",
       "url": "https://gpt-undetectable.com/"
     },
     {
-      "entity": "GPTZero bypass",
+      "entity": "Writing improvement for AI-assisted drafts",
       "type": "Concept",
-      "url": "https://gpt-undetectable.com/"
+      "url": "https://gpt-undetectable.com/humanize-ai-text"
     },
     {
-      "entity": "Turnitin AI bypass",
-      "type": "Concept",
-      "url": "https://gpt-undetectable.com/turnitin-bypass"
-    },
-    {
-      "entity": "AI detection",
+      "entity": "Detector reliability limits",
       "type": "Concept",
       "url": "https://gpt-undetectable.com/ai-detector"
     },
     {
-      "entity": "AI text rewriting",
+      "entity": "Academic writing integrity",
       "type": "Concept",
-      "url": "https://gpt-undetectable.com/"
+      "url": "https://gpt-undetectable.com/about"
+    },
+    {
+      "entity": "Simplified Chinese writing improvement",
+      "type": "Concept",
+      "url": "https://gpt-undetectable.com/jiang-ai-lv"
     }
   ],
   "external_references": [
     {
+      "name": "DeepSeek Chat",
+      "url": "https://platform.deepseek.com",
+      "kind": "llm-backend",
+      "note": "Actual processing backend; no other detector API is called."
+    },
+    {
       "name": "GPTZero",
       "url": "https://gptzero.me",
-      "kind": "ai-detector"
+      "kind": "third-party-detector-not-integrated"
     },
     {
       "name": "Originality.ai",
       "url": "https://originality.ai",
-      "kind": "ai-detector"
-    },
-    {
-      "name": "ZeroGPT",
-      "url": "https://www.zerogpt.com",
-      "kind": "ai-detector"
+      "kind": "third-party-detector-not-integrated"
     },
     {
       "name": "Turnitin AI Writing Detection",
       "url": "https://www.turnitin.com/products/ai-writing-detection",
-      "kind": "ai-detector"
+      "kind": "third-party-detector-not-integrated"
     },
     {
-      "name": "Copyleaks AI Detector",
-      "url": "https://copyleaks.com",
-      "kind": "ai-detector"
-    },
-    {
-      "name": "Stanford CRFM DetectGPT",
-      "url": "https://crfm.stanford.edu/2023/05/02/detectgpt.html",
-      "kind": "research-paper"
+      "name": "ZeroGPT",
+      "url": "https://www.zerogpt.com",
+      "kind": "third-party-detector-not-integrated"
     },
     {
       "name": "Walter Writes AI",
       "url": "https://www.walterwrites.ai",
-      "kind": "ai-humanizer"
-    },
-    {
-      "name": "知网 (CNKI)",
-      "url": "https://www.cnki.net",
-      "kind": "chinese-publication"
-    },
-    {
-      "name": "维普 (CQVIP)",
-      "url": "http://www.cqvip.com",
-      "kind": "chinese-publication"
-    },
-    {
-      "name": "DeepSeek Chat",
-      "url": "https://platform.deepseek.com",
-      "kind": "llm-backend"
+      "kind": "style-reference-not-integrated"
     }
   ],
-  "last_updated": "2026-07-08"
+  "discovery_files": {
+    "llms_txt": "https://gpt-undetectable.com/llms.txt",
+    "llms_full_txt": "https://gpt-undetectable.com/llms-full.txt",
+    "ai_txt": "https://gpt-undetectable.com/.well-known/ai.txt",
+    "summary_json": "https://gpt-undetectable.com/ai/summary.json",
+    "faq_json": "https://gpt-undetectable.com/ai/faq.json",
+    "service_json": "https://gpt-undetectable.com/ai/service.json",
+    "privacy": "https://gpt-undetectable.com/privacy",
+    "sitemap_xml": "https://gpt-undetectable.com/sitemap.xml",
+    "rss_xml": "https://gpt-undetectable.com/rss.xml",
+    "glossary": "https://gpt-undetectable.com/glossary",
+    "test_log_template": "https://gpt-undetectable.com/test-logs/template.csv",
+    "test_log_readme": "https://gpt-undetectable.com/test-logs/README.md"
+  },
+  "last_updated": "2026-11-24"
 }

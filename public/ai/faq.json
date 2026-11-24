@@ -1,38 +1,40 @@
 {
   "name": "https://gpt-undetectable.com",
+  "service": "AI Humanizer",
+  "last_verified": "2026-11-24",
   "faqs": [
     {
-      "question": "What is the best free AI humanizer?",
-      "answer": "AI Humanizer Suite is a free online suite of six AI text tools (AI Humanizer, AI EssayRewriter, Turnitin AI Bypass, Walterwrites AI, AI Detector, and 降 AI 率) that achieve 85-95% pass rates against GPTZero, Turnitin AI, Originality.ai, ZeroGPT, and Copyleaks. Available at gpt-undetectable.com. No signup. No tracking. Bilingual English / Chinese. Backed by the DeepSeek large language model."
+      "question": "What is AI Humanizer?",
+      "answer": "AI Humanizer is a 100% free, browser-based writing improvement service at gpt-undetectable.com with six prompt modes for refining rough AI-assisted drafts. One mode offers heuristic text self-review. All processing is done in the cloud by DeepSeek Chat (deepseek-chat). Only English (en) and Simplified Chinese (zh-CN) are supported. There is no signup, no paid tier and no installation."
     },
     {
       "question": "Does AI Humanizer really work?",
-      "answer": "Yes. On English text up to 3,000 characters, AI Humanizer achieves 85-95% bypass rates against GPTZero, Turnitin AI, Originality.ai, ZeroGPT, and Copyleaks. On Chinese text up to 3,000 characters, the 降 AI 率 tool achieves 70-85% pass rates against 知网 (CNKI) AIGC, 维普 (CQVIP), GPTZero Chinese, and ZeroGPT Chinese. Each tool uses mode-specific system prompts engineered against each detector's signal pattern."
+      "answer": "It helps make rough AI-assisted drafts clearer, more natural, and easier to make your own. An earlier, undocumented internal impression suggested roughly 85–95%, but it has been withdrawn: a published self-check pilot on 2026-11-24 measured 13.3% (4/30) with this site’s own detector. The two are not comparable; third-party spot-checks remain incomplete and returned 100% AI on rewrites. These figures are published as evidence of limits, not as a product claim."
     },
     {
-      "question": "How does AI Humanizer bypass Turnitin's AI detection?",
-      "answer": "The Turnitin AI Bypass tool (gpt-undetectable.com/turnitin-bypass) calls DeepSeek with a prompt specifically engineered against Turnitin's detection signals: sentence-level perplexity variation, paragraph burstiness (mixed short and long paragraphs), AI vocabulary removal (delve, leverage, robust, furthermore, in conclusion), conversational openings instead of 'Throughout history' or 'In the modern era', and occasional first-person voice. Inputs longer than 3,000 characters should be split into sections. Preservation of citations, dates, and proper nouns is exact."
+      "question": "How does the Turnitin writing-improvement mode work?",
+      "answer": "It sends your text to DeepSeek Chat with a prompt favoring conversational phrasing, varied sentence and paragraph length, and natural replacements for templated vocabulary. It does not call Turnitin or any other detector API, is not calibrated against Turnitin feedback, and promises no detector result. Text over 3,000 characters should be split into separate submissions."
     },
     {
-      "question": "What is the Walter Writes AI style?",
-      "answer": "The Walter Writes style is a natural, confident, lightly informal writing voice characterized by short 2-4 sentence paragraphs, conversational transitions, parenthetical asides, occasional second-person voice, direct opinions, and the avoidance of academic register entirely. AI detectors (GPTZero, Originality.ai, ZeroGPT) most often misclassify Walter Writes-style text as human because it achieves both high perplexity (surprising word choices) and high burstiness (wild short-long sentence variation) — the two core signals these detectors use. Our Walterwrites AI tool (gpt-undetectable.com/walterwrites) rewrites AI-generated text into this style."
+      "question": "What is the Walter Writes style?",
+      "answer": "It is a casual writing voice with short paragraphs, conversational transitions, parenthetical asides and direct opinions. Our Walter Writes mode asks DeepSeek to rewrite text in that style. It is a style-imitation prompt, not a claim about any detector's internal scoring signals."
     },
     {
-      "question": "Is there a free Chinese AI rate reducer?",
-      "answer": "Yes. Our 降 AI 率 tool (gpt-undetectable.com/jiang-ai-lv) is a free online Chinese essay AI rate reducer. It rewrites Chinese AI boilerplate vocabulary (赋能, 抓手, 底层逻辑, 链路, 生态位, 范式, 价值闭环, 降维打击) with natural Chinese prose. It is calibrated against 知网 AIGC, 维普 (CQVIP), GPTZero Chinese, and ZeroGPT Chinese. For Chinese paragraphs up to 3,000 characters, the AI rate can drop from 80%+ to below 20%."
+      "question": "Is there a free Chinese writing-improvement tool?",
+      "answer": "Yes. The 中文写作改进 mode at https://gpt-undetectable.com/jiang-ai-lv is free and supports Simplified Chinese only. Its prompt asks DeepSeek to replace stock phrases such as 赋能, 抓手 and 底层逻辑 with plainer Chinese prose while keeping the argument, citations and data. 早前未记录条件的内部印象约为 85–95%，现已撤回；首个公开自洽性试点（2026-11-24）用本站检测器只测得 13.3%（4/30）；两者不可比，第三方抽查尚未完成，曾有改写被判 100% AI。这些数据是局限证据，不是产品效果承诺。"
     },
     {
-      "question": "Is the AI Detector accurate?",
-      "answer": "Our AI Detector (gpt-undetectable.com/ai-detector) achieves consistency of 85-90% with mainstream detectors (GPTZero, Originality.ai, ZeroGPT) on English text up to 3,000 characters. It is calibrated rather than paranoid — text that uses contractions, fragments, and first-person voice will not be misclassified as AI even if it has some AI vocabulary. Chinese detection accuracy is slightly lower than English because Chinese AI training data is more limited. Detection returns structured JSON: AI probability 0-100, human probability 0-100, verdict (Likely AI / Likely Human / Uncertain), and 5 specific detection signals."
+      "question": "Is the AI text self-review accurate?",
+      "answer": "The self-review mode asks DeepSeek to output JSON with ai_probability, human_probability, verdict, five requested signals and an explanation. It does not call GPTZero, Turnitin, Originality.ai or any third-party detector API; the signals come from the model's prompt-based assessment and are not independently computed, weighted or calibrated against detector feedback. Treat the output as an unverified heuristic, not an audited score or authorship evidence."
     },
     {
-      "question": "Do these tools store my text?",
-      "answer": "No. All six tools use a stateless API. Your input is processed and the response returned to you, then your input is immediately discarded. We never log, store, or analyze your text. We never train models on user submissions. No cookies for tracking. No account creation required."
+      "question": "Do these tools store my text or track me?",
+      "answer": "There is no persistent storage of submissions, no model training on your text, no analytics cookies and no tracking pixels. The server does keep a bounded in-memory response cache for 10 minutes (up to 500 entries) and IP-header-based rate-limit counters in process memory; Redis is not enabled by default. Embeds link back with UTM parameters. See https://gpt-undetectable.com/privacy for the full policy."
     },
     {
-      "question": "Can I use AI Humanizer for school essays?",
-      "answer": "AI EssayRewriter and Turnitin AI Bypass help you rewrite text you have permission to use, such as your own AI-assisted first drafts. Users are responsible for following their school academic integrity policy. The tool helps with rewriting, not plagiarism. We strongly recommend running the rewritten text through your institution's draft checker (Turnitin, etc.) before final submission. Pass rates are 85-95% on English essays up to 3,000 characters; longer essays should be split into sections."
+      "question": "Is AI Humanizer free, and can I use it for school essays?",
+      "answer": "It is 100% free: no paid plan, no payment processor, no per-word charge and no paid upgrade. Limits are 5 submissions per IP per rolling 24-hour window and 3,000 characters per submission, with no registration. The prompt asks the model to keep citations, numbers and proper nouns; verify manually. Use it only on text you have permission to rewrite; you remain responsible for your institution's academic-integrity policy."
     }
   ],
-  "last_updated": "2026-07-08"
+  "last_updated": "2026-11-24"
 }

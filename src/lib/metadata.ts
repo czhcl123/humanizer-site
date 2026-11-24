@@ -3,30 +3,31 @@ import { SITE_URL, SITE_NAME, SITE_LOCALE, type Lang } from './site'
 
 const copy: Record<Lang, { title: string; description: string; keywords: string[]; ogTitle: string; ogDescription: string }> = {
   en: {
-    title: 'Free AI Humanizer - Bypass Turnitin & GPTZero 2026 | No Signup',
+    title: 'Free AI Writing Improvement Tool — EN & 简体中文 | No Signup',
     description:
-      'Free AI humanizer that bypasses Turnitin AI, GPTZero, and Originality.ai in 2026. No signup, no install. Rewrites ChatGPT, Gemini, and Claude output to read like a human. Bilingual EN/中文.',
+      'Free online writing tool that makes rough AI-assisted drafts clearer, more natural, and easier to make your own. English and Simplified Chinese. No signup.',
     keywords: [
-      'free ai humanizer',
-      'bypass turnitin 2026',
-      'bypass gptzero',
-      'undetectable ai',
-      'ai text humanizer no signup',
-      'humanize chatgpt',
-      'turnitin ai bypass',
-      'ai 人性化工具',
+      'AI Humanizer',
+      'free AI humanizer',
+      'humanize AI text',
+      'AI writing improvement',
+      'writing improvement tool',
+      'essay writing improvement',
+      'Chinese writing improvement',
+      'AI text self-review',
+      'no signup writing tool',
     ],
-    ogTitle: 'Free AI Humanizer - Bypass Turnitin & GPTZero 2026',
+    ogTitle: 'Free AI Writing Improvement Tool — EN & 简体中文',
     ogDescription:
-      'Bypass Turnitin AI, GPTZero, Originality.ai — free, no signup. Rewrites ChatGPT, Gemini, Claude output to read like a human.',
+      'Free online writing tool that makes rough AI-assisted drafts clearer, more natural, and easier to make your own. English and Simplified Chinese. No signup.',
   },
   zh: {
-    title: '免费 AI 人性化工具 - 让 AI 文本通过 GPTZero 2026',
+    title: '免费在线写作改进工具 — 中英双语',
     description:
-      '免费 AI 人性化工具,把 ChatGPT / Gemini / Claude 的文本改写成像人写的,过 GPTZero、Turnitin AI、Originality.ai 检测。无需注册,中英双语,3000 字/次。',
-    keywords: ['AI 人性化工具', '过 Turnitin 检测', 'AI 去机器味', '免费 AI 改写', '过 GPTZero', '降 AI 率'],
-    ogTitle: '免费 AI 人性化工具 - 过 GPTZero 与 Turnitin 2026',
-    ogDescription: '免费、无需注册的 AI 人性化工具。改写 ChatGPT / Gemini / Claude 文本,过 GPTZero、Turnitin AI、Originality.ai。',
+      '免费在线写作改进工具：把生硬的 AI 辅助草稿改得更自然、清晰、更贴合你自己的表达。支持中英双语，无需注册。',
+    keywords: ['AI Humanizer', '免费 AI Humanizer', 'AI 文本改写', '写作改进工具', 'AI 辅助草稿改写', '论文写作改进', '中文写作改进', '中英双语写作', 'AI 文本自查', '免费写作工具 无需注册'],
+    ogTitle: '免费在线写作改进工具',
+    ogDescription: '免费在线写作改进工具：把生硬的 AI 辅助草稿改得更自然、清晰、更贴合你自己的表达。支持中英双语，无需注册。',
   },
 }
 

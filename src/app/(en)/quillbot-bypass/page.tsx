@@ -11,22 +11,22 @@ const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   mainEntity: [
-    { '@type': 'Question', name: 'Does QuillBot bypass AI detection?', acceptedAnswer: { '@type': 'Answer', text: 'No. QuillBot paraphrases inside the original sentence skeleton — it swaps synonyms but keeps sentence length uniform and structure intact, which is exactly what AI detectors score. Text paraphrased with QuillBot still gets flagged by GPTZero, Turnitin, and Originality.ai.' } },
-    { '@type': 'Question', name: 'What is the difference between paraphrasing and humanizing?', acceptedAnswer: { '@type': 'Answer', text: 'Paraphrasing changes words; humanizing changes structure. Detectors measure sentence-length variation (burstiness) and word predictability (perplexity). Only restructuring — flipping clause order, breaking uniform rhythm, removing template vocabulary — moves those numbers.' } },
-    { '@type': 'Question', name: 'How do I bypass AI detection after using QuillBot?', acceptedAnswer: { '@type': 'Answer', text: 'Run the QuillBot output through a humanizer that rebuilds sentence structure rather than swapping words. Our free tool does this in one pass: sentence skeletons rebuilt, AI vocabulary removed, citations and data held constant.' } },
-    { '@type': 'Question', name: 'Is QuillBot paraphrasing detectable by Turnitin?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Turnitin scores perplexity and burstiness, both of which survive synonym substitution. A QuillBot-paraphrased AI draft typically still scores as AI-generated.' } },
-    { '@type': 'Question', name: 'What QuillBot alternatives bypass AI detection?', acceptedAnswer: { '@type': 'Answer', text: 'Tools that rebuild sentence structure instead of swapping synonyms. Our humanizer preserves citations and factual data while varying sentence length and removing AI vocabulary — the two signals detectors rely on.' } },
+    { '@type': 'Question', name: 'What is QuillBot?', acceptedAnswer: { '@type': 'Answer', text: 'A general-purpose paraphrasing product. It can suggest different wording, but a word swap does not add detail, a point of view or checked sources. We have no controlled comparison with any detector and make no claim about how its output is scored.' } },
+    { '@type': 'Question', name: 'Why do AI detector scores stay unreliable after paraphrasing?', acceptedAnswer: { '@type': 'Answer', text: 'Detectors use different, unpublished methods; widely discussed signals such as perplexity and burstiness are general heuristics, not verified internal algorithms. Changing words does not settle an authorship question. The data published here documents limits only: an earlier undocumented 85–95% impression has been withdrawn as unreproduced; the 2026-11-24 self-check measured 13.3% (4/30) with this site’s own detector; incomplete third-party spot-checks returned 100% AI on rewrites.' } },
+    { '@type': 'Question', name: 'How do I make a paraphrased draft sound like me?', acceptedAnswer: { '@type': 'Answer', text: 'Go past wording: add concrete details you can verify, state your own judgment, explain why a source supports a claim, and check every citation, number and quotation yourself. Read the result aloud and keep the sentences you would actually write.' } },
+    { '@type': 'Question', name: 'Does AI Humanizer target QuillBot or any detector?', acceptedAnswer: { '@type': 'Answer', text: 'No. It is a free writing-improvement tool using a general conversational prompt. No detector-specific tuning, no reverse engineering and no guaranteed output. Its purpose is clearer, more natural prose.' } },
+    { '@type': 'Question', name: 'What does it cost and are citations preserved?', acceptedAnswer: { '@type': 'Answer', text: '100% free, no signup: 5 submissions per IP per rolling 24 hours, 3,000 characters each, English and Simplified Chinese. The prompt asks the model to preserve citations, numbers and proper nouns; verify manually because LLM output is not post-processed. See /privacy.' } },
   ],
 }
 
 export async function generateMetadata(): Promise<Metadata> {
   const titles = {
-    zh: 'QuillBot Bypass — 为什么 QuillBot 过不了检测',
-    en: 'QuillBot Bypass: Why Paraphrasing Fails',
+    zh: 'QuillBot 改写之后：检测器为什么不可靠 — 写作建议',
+    en: 'After QuillBot: Why AI Detectors Are Unreliable',
   }
   const descriptions = {
-    zh: 'QuillBot 改写为什么还是被 GPTZero/Turnitin 标记?同义词替换 vs 结构重建的区别,以及真正能过检测的免费工具。',
-    en: 'Why QuillBot paraphrases still get flagged by GPTZero and Turnitin — synonym swapping vs structure rebuilding, and the free tool that actually passes.',
+    zh: '免费在线写作改进工具：把生硬的 AI 辅助草稿改得更自然、清晰、更贴合你自己的表达。支持中英双语，无需注册。本页说明换词与写出自己声音的区别。',
+    en: 'Free writing tool: why word swaps do not fix a draft and how to write in your own voice. EN / zh-CN, no signup.',
   }
   return {
     title: titles[lang],
@@ -50,43 +50,21 @@ export default async function QuillbotBypassPage() {
 
   const seoBodyEn = (
     <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-100 mb-6 text-gray-700 leading-relaxed space-y-3">
-      <p>The most common failed attempt at beating AI detection is this: paste AI text into <strong>QuillBot</strong>, copy the paraphrase, submit — and get flagged anyway. It is not a bug. QuillBot and detectors are measuring different things, and paraphrasing never touches what detectors actually score.</p>
+      <p>People often paste a draft into <strong>QuillBot</strong> and expect different wording to settle a detector score. This page keeps its address for existing links, but the point now is simpler: <strong>detector verdicts are unreliable</strong>, and a paraphrase does not make a draft yours.</p>
 
-      <h2 className="text-lg font-semibold text-gray-800 pt-2">What QuillBot actually changes</h2>
-      <p>QuillBot swaps words and phrases inside the original sentence skeleton. The subject stays where it was, the verb order stays, sentence length stays within the same band. Perplexity drops slightly — a synonym is sometimes less predictable than the original word — but burstiness does not move at all. Detectors weight burstiness heavily, which is why QuillBot output still reads as machine-written to GPTZero and Turnitin.</p>
+      <h2 className="text-lg font-semibold text-gray-800 pt-2">Why a score is not a measure of authorship</h2>
+      <p>QuillBot is a general paraphraser; we have no controlled comparison with GPTZero, Turnitin or Originality.ai and cannot say how any output will be scored. Those detectors use unpublished methods, and the perplexity and burstiness often discussed in public are broad heuristics rather than verified internal signals. Published numbers here are evidence of limits: an earlier undocumented 85–95% impression has been withdrawn as unreproduced, the 2026-11-24 self-check measured 13.3% (4/30) with this site’s own detector, and incomplete third-party spot-checks returned 100% AI on rewrites. See <a href="/bypass-test-methodology" className="text-violet-600 hover:underline">test methodology</a> and <a href="/limitations" className="text-violet-600 hover:underline">limitations</a>.</p>
 
-      <h2 className="text-lg font-semibold text-gray-800 pt-2">Paraphrasing vs humanizing</h2>
+      <h2 className="text-lg font-semibold text-gray-800 pt-2">From word swaps to your own writing</h2>
       <ul className="list-disc pl-5 space-y-1">
-        <li><strong>Paraphrasing (QuillBot)</strong> — new words, same structure. The statistical signature survives.</li>
-        <li><strong>Humanizing</strong> — new structure. Clause order flipped, fragments mixed with long sentences, template vocabulary removed, voice added. The signature is what changes.</li>
+        <li><strong>Paraphrasing changes wording.</strong> It can make a sentence easier to read, but it cannot supply evidence or a position.</li>
+        <li><strong>Your voice changes the substance.</strong> Add the concrete detail you know, say what you conclude and why, and mark what remains uncertain.</li>
+        <li><strong>Checked sources change the trustworthiness.</strong> Open each source and verify the (Author, Year) marker, numbers and quoted words yourself. The rewrite prompt asks the model to keep them; it does not verify them.</li>
+        <li><strong>The reader is the audience.</strong> Vary rhythm where the idea calls for it, not to chase a score.</li>
       </ul>
 
-      <h2 className="text-lg font-semibold text-gray-800 pt-2">The fix: rebuild, don't reword</h2>
-      <p>Take the QuillBot output — or skip QuillBot entirely — and run it through a tool that rebuilds sentence skeletons. Our humanizer varies sentence length aggressively, strips AI vocabulary ("delve", "leverage", "robust", "furthermore"), and adds human rhythm, while holding citations, numbers, and proper nouns exactly where they were.</p>
-
-      <h2 className="text-lg font-semibold text-gray-800 pt-2">Verify before you submit</h2>
-      <p>Check the result with the <a href="/ai-detector" className="text-violet-600 hover:underline">free AI detector</a> — it scores the same signals detectors use. If you are working around Turnitin specifically, the <a href="/turnitin-bypass" className="text-violet-600 hover:underline">Turnitin Bypass</a> tool tunes the rewrite against Turnitin's extra heuristics. If you have not picked a detector yet, the <a href="/bypass-ai" className="text-violet-600 hover:underline">bypass AI tool</a> covers Turnitin, GPTZero, Originality.ai and ZeroGPT in a single rewrite.</p>
-    </div>
-  )
-
-  const seoBodyZh = (
-    <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-100 mb-6 text-gray-700 leading-relaxed space-y-3">
-      <p>绕 AI 检测最常见的失败操作是:把 AI 文本贴进 <strong>QuillBot</strong>,复制改写结果,提交——然后还是被标记。这不是 bug。QuillBot 和检测器测的是两回事,同义词替换永远碰不到检测器真正在打分的东西。</p>
-
-      <h2 className="text-lg font-semibold text-gray-800 pt-2">QuillBot 实际改了什么</h2>
-      <p>QuillBot 在原句骨架里换词换短语。主语位置不动,动词顺序不动,句长还在同一区间。perplexity 略降——替换词有时比原词少见一点——但 burstiness 完全不动。检测器对 burstiness 权重很高,这就是为什么 QuillBot 的输出在 GPTZero 和 Turnitin 眼里还是机器写的。</p>
-
-      <h2 className="text-lg font-semibold text-gray-800 pt-2">改写 vs 人性化</h2>
-      <ul className="list-disc pl-5 space-y-1">
-        <li><strong>改写(QuillBot)</strong> — 新词,旧结构。统计签名完整保留。</li>
-        <li><strong>人性化</strong> — 新结构。从句顺序重排、碎片句和长句混用、AI 词汇清除、加入人声。被改掉的正是签名本身。</li>
-      </ul>
-
-      <h2 className="text-lg font-semibold text-gray-800 pt-2">解法:重建,不是换词</h2>
-      <p>拿 QuillBot 的输出——或者干脆跳过 QuillBot——放进能重建句子骨架的工具。本工具剧烈变化句长、清除 AI 词汇("深入探讨""赋能""稳健""此外")、恢复人类节奏,同时把引用、数字、专有名词原样保留。</p>
-
-      <h2 className="text-lg font-semibold text-gray-800 pt-2">提交前验证</h2>
-      <p>用 <a href="/zh/ai-detector" className="text-violet-600 hover:underline">免费 AI 检测器</a>查一遍——它打的就是检测器用的同组信号。如果你主要在绕 Turnitin,用 <a href="/zh/turnitin-bypass" className="text-violet-600 hover:underline">Turnitin Bypass</a>,那个引擎针对 Turnitin 的额外规则调优。</p>
+      <h2 className="text-lg font-semibold text-gray-800 pt-2">What AI Humanizer is</h2>
+      <p>It is a free writing-improvement tool, not a detector product: 100% free, no signup, 5 submissions per IP per rolling 24 hours, 3,000 characters per submission, English and Simplified Chinese, cloud-processed with DeepSeek Chat. No persistent storage; a 10-minute in-memory cache; no analytics cookies or tracking pixels. We make no promise about any detector outcome. For academic writing, see <a href="/essay-writer-bypass-turnitin" className="text-violet-600 hover:underline">academic writing help</a>; for the general tool, see <a href="/bypass-ai" className="text-violet-600 hover:underline">writing improvement</a>.</p>
     </div>
   )
 
@@ -95,8 +73,9 @@ export default async function QuillbotBypassPage() {
       <BreadcrumbJsonLd slug="/quillbot-bypass" lang="en" />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       {seoBodyEn}
+      <p className="text-xs text-gray-400 mt-4">Last reviewed: 2026-11-24</p>
       <ToolClient mode="essay" lang={lang} i18n={essayI18n}
-      heroTitle={{ zh: 'QuillBot Bypass — 为什么改写后还是被检测标记', en: 'QuillBot Bypass — Why Paraphrasing Still Gets Flagged' }} heroSubtitle={{ zh: '换同义词不改变 perplexity 和 burstiness,所以检测器照样标记。真正管用的是重建句子结构。免费工具,无需注册。', en: 'Synonym swapping does not change perplexity or burstiness, so detectors keep flagging the result. Structure rebuilding does. Free tool, no signup.' }}
+      heroTitle={{ zh: 'QuillBot 改写之后：检测器为什么不可靠 — 写作建议', en: 'After QuillBot: Why AI Detectors Are Unreliable' }} heroSubtitle={{ zh: '换词不等于写出自己的声音。补上具体细节、个人判断，并亲自核对引用。AI Humanizer 免费、无需注册，不承诺任何检测结果。', en: 'A word swap is not your own voice. Add concrete details, your judgment, and citations you checked. AI Humanizer is free, needs no signup, and promises no detector result.' }}
     />
     </>
   )

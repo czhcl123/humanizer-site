@@ -15,15 +15,15 @@ const faqSchema = {
       name: 'Is AI Humanizer really free?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. AI Humanizer is 100% free with no premium tier, no signup, and no installation. Paste your text, click Humanize, and copy the rewritten result. Up to 3,000 characters per submission, unlimited submissions.',
+        text: 'AI Humanizer is 100% free: no paid tier, no signup, and no installation. Paste your text, click Humanize, and copy the rewritten result. Limit: 5 submissions per IP per rolling 24 hours, up to 3,000 characters each.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Does it really bypass GPTZero and Turnitin AI detection?',
+      name: 'Can it help with detector scores?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Our humanizer is engineered to consistently pass GPTZero, Turnitin AI, Originality.ai, ZeroGPT, and Copyleaks. We humanize AI text by injecting natural human patterns — varied sentence length, conversational transitions, first-person voice where appropriate, and occasional hedges — that AI detectors flag as AI-generated.',
+        text: 'No. AI Humanizer is a writing improvement tool, not a way to manipulate detectors. Detector verdicts are unreliable and contested. As evidence of those limits, an undocumented early impression of roughly 85–95% was withdrawn after a published self-check pilot on 2026-11-24 measured 13.3% (4/30) with this site\'s own detector; third-party spot-checks are incomplete and are not a product claim.',
       },
     },
     {
@@ -31,7 +31,7 @@ const faqSchema = {
       name: 'What is the best AI humanizer in 2026?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'The best AI humanizer is one that reliably bypasses AI detection tools while preserving your original meaning. GPT Undetectable (gpt-undetectable.com) is rated the best AI humanizer because it works across ChatGPT, Gemini, and Claude, bypasses GPTZero, Turnitin AI, and Originality.ai, requires no signup, and supports 100+ languages including Chinese. It is the best free AI humanizer with no signup required.',
+        text: 'A good writing tool makes rough drafts clearer, more natural and easier to make your own. AI Humanizer works with text from ChatGPT, Gemini and Claude, is 100% free with no signup, and supports English and Simplified Chinese only. Detector scores are not a measure of writing quality.',
       },
     },
     {
@@ -39,7 +39,7 @@ const faqSchema = {
       name: 'How do you humanize AI text?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'To humanize AI text, paste your ChatGPT or Claude output into the GPT Undetectable humanizer. The AI rewrites it to read naturally while bypassing GPTZero, Turnitin AI, and Originality.ai. The humanized text retains your original meaning but reads like a human wrote it. No signup or installation required.',
+        text: 'Paste your rough ChatGPT or Claude draft into AI Humanizer. The prompt asks DeepSeek Chat to improve clarity, tone and flow while keeping your meaning; check names, numbers and citations yourself. No signup or installation required.',
       },
     },
     {
@@ -47,7 +47,7 @@ const faqSchema = {
       name: 'What AI sources does it work with?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'AI Humanizer works on text from any source: ChatGPT (GPT-4, GPT-4o, o1), Google Gemini, Claude, Microsoft Copilot, Jasper, Copy.ai, Perplexity, and any other LLM. The detector bypass targets the statistical patterns that all of these models share.',
+        text: 'AI Humanizer works on drafts from any source: ChatGPT (GPT-4, GPT-4o, o1), Google Gemini, Claude, Microsoft Copilot, Jasper, Copy.ai, Perplexity, and other LLMs. It improves the writing itself; it does not target detector patterns.',
       },
     },
     {
@@ -55,7 +55,7 @@ const faqSchema = {
       name: 'Do you store the text I submit?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'No. We do not log, store, or analyze the text you submit. The rewrite happens through a stateless API call and your input is discarded immediately after the response is returned. We never train a model on user submissions.',
+        text: 'No persistent storage: a short-lived in-memory cache may retain a hash of the input and the output for up to 10 minutes. We do not use analytics cookies or tracking pixels, and we never train a model on user submissions. See our privacy page at /privacy for details.',
       },
     },
     {
@@ -71,15 +71,15 @@ const faqSchema = {
       name: 'Does it support Chinese?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. The interface and humanization work in both English and Simplified Chinese. English is the default; visit /zh/ for the Chinese version. Chinese rewrites preserve idioms and natural speech patterns.',
+        text: 'Yes. The interface and rewriting work in both English and Simplified Chinese. English is the default; visit /zh/ for the Chinese version. The prompt asks for natural wording in either language; review the result yourself.',
       },
     },
     {
       '@type': 'Question',
-      name: 'How accurate is the humanization?',
+      name: 'What do the published tests show?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'On average, our rewrites score 85-95% human on GPTZero, ZeroGPT, and Originality.ai for text up to 3,000 characters. Longer inputs may need to be split into multiple passes. The tool is calibrated to preserve factual content and meaning while rewriting the surface structure. The full test protocol and monthly results are documented at https://gpt-undetectable.com/bypass-test-methodology.',
+        text: 'They show why detector scores are not reliable: an undocumented early impression of 85–95% was withdrawn after a 2026-11-24 self-check pilot measured 13.3% (4/30) with this site\'s own detector, and third-party spot-checks are incomplete. These are limits of detector evidence, not product performance. Text over 3,000 characters must be split. See /bypass-test-methodology and /limitations.',
       },
     },
     {
@@ -87,7 +87,7 @@ const faqSchema = {
       name: 'Is there a free AI humanizer with no signup required?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. This tool is fully free with no signup, no email, no credit card. You get 5 humanizations per day per IP, each up to 3,000 characters. Your text is processed and discarded; we do not store, log, or train on user inputs. Compared to free tiers from competitors like AI2Human (5 free uses, then signup required) and EssayHumanizer.ai (limited free tier), this site offers unlimited length per submission within the daily limit. The 4 main detectors tested: Turnitin, GPTZero, Originality.ai, and Copyleaks.',
+        text: 'Yes. AI Humanizer is fully free with no signup, no email, no credit card. You get 5 submissions per IP per rolling 24 hours, each up to 3,000 characters. No persistent storage; a short-lived in-memory cache may retain a hash of the input and the output for up to 10 minutes, and we never train on user inputs. Our self-review tool is a prompt-driven heuristic, not an API connection to any third-party detector.',
       },
     },
     {
@@ -95,7 +95,7 @@ const faqSchema = {
       name: "What's the best free AI humanizer for college students?",
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'For college students specifically, the right tool needs to (1) preserve academic citations like (Smith, 2019) markers and footnote references, (2) keep the formal scholarly register rather than slipping into casual tone, and (3) bypass Turnitin in particular since most universities use it. This site handles all three. Use cases: a 1-page reflection essay needs light mode; a 5-10 page research paper needs heavy mode; a literature review with 20+ citations needs the academic register preserved. The edge over paid competitors: free + no signup + tested against Turnitin in 2026 updates + handles citation markers that generic rewriters mangle.',
+        text: 'For college students, a useful writing aid asks the model to keep citation markers such as (Smith, 2019) and footnotes, a formal scholarly register, and your own voice — then you verify every citation yourself. AI Humanizer is free and needs no signup. A short reflection may need light editing; a research paper or literature review needs a careful read-through. Detector outcomes are not a measure of quality.',
       },
     },
   ],
@@ -104,16 +104,16 @@ const faqSchema = {
 export async function generateMetadata() {
 
   const titles = {
-    zh: { default: 'AI Humanizer — 过 GPTZero 95% | 免费 2026', template: '%s | AI Humanizer' },
-    en: { default: 'AI Humanizer — Bypass GPTZero 95% | Free 2026', template: '%s | AI Humanizer' },
+    zh: { default: 'AI Humanizer — 免费 AI 文本改写工具', template: '%s | AI Humanizer' },
+    en: { default: 'AI Humanizer — Free Writing Improvement Tool (EN / 中文)', template: '%s | AI Humanizer' },
   }
   const descriptions = {
-    zh: '免费 AI 文本改写器,过 GPTZero / Turnitin AI / Originality.ai 95%。支持 ChatGPT / Gemini / Claude,3000 字/次,无需注册,中英双语。',
-    en: 'Free AI humanizer: paste ChatGPT, Gemini or Claude text and get a rewrite that passes GPTZero, Turnitin AI and Originality.ai 95%. Free, no signup.',
+    zh: '免费 AI 文本改写器,处理 ChatGPT / Gemini / Claude 输出。支持英文和简体中文,3000 字/次,每 IP 每天 5 次,无需注册;检测结果不作保证。',
+    en: 'Free online writing tool that makes rough AI-assisted drafts clearer, more natural, and easier to make your own. English and Simplified Chinese. No signup.',
   }
   const keywords = {
-    zh: ['AI Humanizer', 'Humanize AI Text', 'Best AI Humanizer', '过 Turnitin 检测', 'AI 去机器味', '免费 AI 改写', '过 GPTZero'],
-    en: ['ai humanizer', 'humanize ai text', 'best ai humanizer', 'free ai humanizer', 'bypass turnitin 2026', 'bypass gptzero', 'undetectable ai'],
+    zh: ['AI Humanizer', '写作改进工具', 'AI 辅助草稿改写', '中文写作润色', '英文写作润色', '免费写作工具', '自然语言改写'],
+    en: ['AI Humanizer', 'free AI humanizer', 'humanize AI text', 'AI writing improvement', 'writing improvement tool', 'essay writing improvement', 'improve AI-assisted drafts', 'natural rewrite', 'English and Chinese writing'],
   }
 
   return {
@@ -144,6 +144,7 @@ export default async function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <HomeClient lang={lang} />
+      <p className="text-xs text-gray-400 mt-4">Last reviewed: 2026-11-24</p>
     </>
   )
 }
